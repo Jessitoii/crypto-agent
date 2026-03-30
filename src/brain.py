@@ -8,7 +8,7 @@ import re
 from google import genai
 from google.genai import types
 
-# Local modules
+# Local module imports
 from config import (
     ANALYZE_SPECIFIC_PROMPT, 
     DETECT_SYMBOL_PROMPT, 
@@ -19,39 +19,39 @@ from config import (
 )
 from utils import search_web_sync, coin_categories
 
+# Constants
+RATE_LIMIT_BUFFER = 0.2
+MAX_LLM_RETRIES = 3
+DEFAULT_LLM_TEMPERATURE = 0.1
+DEFAULT_LLM_MAX_TOKENS = 1024
+
 class AgentBrain:
     def __init__(self, use_groqcloud=True, api_key=None, groqcloud_model="google/gemini-2.0-flash-exp:free", use_gemini = False, google_api_key = None, gemini_model = "gemma-3-27b-it"):
         self.use_groqcloud = use_groqcloud
         self.model = groqcloud_model
         self.ollama_model = "nexus-qwen3"  # Fallback
         self.api_key = api_key
-        self.coin_cache = {} # Cache
+        self.coin_cache = {}
         self.last_request_time = 0
-        # 60s for 1 request per minute limit. 62s for safety.
-        self.MIN_REQUEST_INTERVAL = 0
         self.use_gemini = use_gemini
         self.google_api_key = google_api_key
         self.gemini_model = gemini_model
-        # 1. OpenRouter (GroqCloud) Setup
-        if self.use_groqcloud:
-            print(f"🧠 [BRAIN] Mode: OPENROUTER ({self.model})")
-            self.client = AsyncGroq(
-                api_key=self.api_key,
-            )
-        
+
+        # Initialize LLM Client based on priority: Gemini -> GroqCloud -> Ollama
         if self.use_gemini:
-            print(f"🧠 [BRAIN] Mode: GOOGLE GEMINI ({self.gemini_model})")
+            print(f"[BRAIN] Mode: GOOGLE GEMINI ({self.gemini_model})")
             self.client = genai.Client(api_key=self.google_api_key)
-            
-        # 2. Local Ollama Setup (Fallback)
+        elif self.use_groqcloud:
+            print(f"[BRAIN] Mode: OPENROUTER ({self.model})")
+            self.client = AsyncGroq(api_key=self.api_key)
         else:
-            print(f"🧠 [BRAIN] Mode: LOCAL OLLAMA ({self.ollama_model})")
-            print("🔥 [SYSTEM] Loading Model to VRAM (Keep-Alive)...")
+            print(f"[BRAIN] Mode: LOCAL OLLAMA ({self.ollama_model})")
+            print("[SYSTEM] Loading Model to VRAM (Keep-Alive)...")
             try:
                 ollama.chat(model=self.ollama_model, messages=[{'role': 'user', 'content': 'hi'}], keep_alive=-1, options={'num_ctx': 2048})
-                print("✅ [SYSTEM] Model loaded!")
+                print("[SYSTEM] Model loaded!")
             except Exception as e:
-                print(f"⚠️ Model load warning: {e}")
+                print(f"[WARNING] Model load issue: {e}")
 
     async def _wait_for_rate_limit(self):
         """
@@ -62,41 +62,23 @@ class AgentBrain:
 
         current_time = time.time()
         time_diff = current_time - self.last_request_time
-
-        if time_diff < self.MIN_REQUEST_INTERVAL:
-            sleep_time = self.MIN_REQUEST_INTERVAL - time_diff
-            print(f"⏳ [RATE LIMIT] Waiting {sleep_time:.1f} seconds...")
-            await asyncio.sleep(sleep_time)
-        
         self.last_request_time = time.time()
-
-    def _clean_thinking(self, text):
-        """
-        Cleans <think>...</think> blocks.
-        """
-        if not text:
-            return ""
-        
-        pattern = r"<think>.*?</think>"
-        cleaned_text = re.sub(pattern, "", text, flags=re.DOTALL)
-        
-        return cleaned_text.strip()
 
     def _extract_json(self, text):
         """
-        Modelin gevezeliğini temizler, sadece JSON bloğunu alır.
+        Removes LLM conversational filler and extracts only the JSON block.
         """
         if not text:
             return ""
         
         try:
-            # 1. Markdown kod bloklarını (```json ... ```) temizle
+            # 1. Clean markdown code blocks
             if "```json" in text:
                 text = text.split("```json")[1].split("```")[0]
             elif "```" in text:
                 text = text.split("```")[1].split("```")[0]
             
-            # 2. En dıştaki { ve } parantezlerini bul (Metin arasındaki JSON'ı cımbızla çeker)
+            # 2. Extract JSON by finding outermost curly braces
             start = text.find('{')
             end = text.rfind('}')
             
@@ -107,13 +89,13 @@ class AgentBrain:
         except Exception:
             return text.strip()
 
+    # TODO: consider splitting
     async def _submit_to_llm(self, prompt, temperature=0.1, json_mode=True, max_tokens=1024, use_system_prompt=True, reasoning_mode="none", compound_custom=None):
         """
         Central LLM Call Function
         """
         retries = 0
-        max_retries = 3
-        while retries < max_retries:
+        while retries < MAX_LLM_RETRIES:
             try:
                 messages_payload = []
                 
@@ -144,7 +126,7 @@ class AgentBrain:
                     raw_response = completion.choices[0].message.content
                     cleaned_response = self._extract_json(raw_response)
                     return cleaned_response
-                # --- B. OLLAMA ---
+                # --- B. GOOGLE GEMINI / OLLAMA ---
                 elif self.use_gemini:
                     res = self.client.models.generate_content(
                         model=self.gemini_model,
@@ -175,30 +157,30 @@ class AgentBrain:
             except Exception as e:
                     error_msg = str(e)
                     
-                    # --- 429 RATE LIMIT AYIKLAMA MANTIĞI ---
+                    # --- 429 RATE LIMIT EXTRACTION LOGIC ---
                     if "429" in error_msg:
                         retries += 1
-                        # Regex ile bekleme süresini bul (ms veya s)
-                        # Örn: "Please try again in 690ms" veya "try again in 2s"
+                        
+                        # Identify wait time from error message (ms or s)
                         ms_match = re.search(r"try again in (\d+)ms", error_msg)
                         sec_match = re.search(r"try again in (\d+)s", error_msg)
                         
-                        wait_time = 1.0 # Default 1 saniye
+                        wait_time = 1.0 
                         
                         if ms_match:
                             wait_time = float(ms_match.group(1)) / 1000.0
                         elif sec_match:
                             wait_time = float(sec_match.group(1))
                         
-                        # Güvenlik payı ekle (0.2 saniye)
-                        wait_time += 0.2
+                        # Add safety margin
+                        wait_time += RATE_LIMIT_BUFFER
                         
-                        print(f"⏳ [RATE LIMIT] 429 Hata! {wait_time:.2f}s bekleniyor... (Deneme {retries}/{max_retries})")
+                        print(f"[RATE LIMIT] 429 Error! Waiting {wait_time:.2f}s... (Attempt {retries}/{MAX_LLM_RETRIES})")
                         await asyncio.sleep(wait_time)
-                        continue # Döngü başına dön ve tekrar dene
+                        continue 
                     
                     else:
-                        print(f"❌ [ERROR] LLM Request Failed: {e}")
+                        print(f"[ERROR] LLM Request Failed: {e}")
                         return None
 
     async def analyze_specific(self, news, symbol, price, changes, search_context="", coin_full_name="Unknown", market_cap_str="", rsi_val=0, btc_trend=0, volume_24h="", funding_rate=0):
@@ -206,8 +188,6 @@ class AgentBrain:
         await self._wait_for_rate_limit()
         coin_category = await self.get_coin_profile(symbol)
         current_time_str = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
-        print(f"🐛 [DEBUG] {symbol} Category: '{coin_category}'")
-        print(f"🐛 [DEBUG] Price: {price}, Changes: {changes}")
 
         prompt = ANALYZE_SPECIFIC_PROMPT.format(
             symbol=symbol.upper(),
@@ -236,6 +216,9 @@ class AgentBrain:
             return {"action": "HOLD", "confidence": 0, "reason": "Error parsing JSON"}
 
     async def detect_symbol(self, news, available_pairs):
+        """
+        Identifies the relevant crypto symbol from news text using LLM.
+        """
         prompt = DETECT_SYMBOL_PROMPT.format(news=news)
         compound_custom = {
             "tools":{
@@ -252,12 +235,14 @@ class AgentBrain:
             return None
 
     async def generate_search_query(self, news, symbol):
+        """
+        Generates an optimized web search query based on news and symbol.
+        """
         prompt = GENERATE_SEARCH_QUERY_PROMPT.format(
             news=news,
             symbol=symbol.upper()
         )
         
-        # Higher temperature
         response_text = await self._submit_to_llm(prompt, temperature=0.7, json_mode=False, max_tokens=64, use_system_prompt=False, reasoning_mode="none")
         return response_text.strip()
 
@@ -273,7 +258,7 @@ class AgentBrain:
             return self.coin_cache[sym]
 
         # 3. INTERNET SEARCH & LLM
-        print(f"🔍 [BRAIN] {sym} unknown, researching...")
+        print(f"[BRAIN] {sym} unknown, researching...")
         query = f"what is {sym} crypto category sector utility"
         
         try:
@@ -284,13 +269,11 @@ class AgentBrain:
                 symbol=sym
             )
             
-            # JSON mode off
             category = await self._submit_to_llm(profile_prompt, temperature=0.0, json_mode=False, max_tokens=256, use_system_prompt=False)
             category = category.strip()
             
-            # Cache
             self.coin_cache[sym] = category
-            print(f"🧬 [PROFILE] {symbol} classified: {category}")
+            print(f"[PROFILE] {symbol} classified: {category}")
             return category
 
         except Exception as e:
@@ -298,10 +281,12 @@ class AgentBrain:
             return "Unknown"
 
     async def analyze_specific_no_research(self, news, symbol):
-        """İnternet araştırması yapmadan, sadece teknik verilerle karar verir."""
+        """
+        Analyzes news using technical context only, bypassing web research.
+        """
         await self._wait_for_rate_limit()
 
-        # Prompt'u research_context olmadan dolduruyoruz
+        # Populate prompt without research context
         prompt = ANALYZE_GENERAL_PROMPT.format(
             symbol=symbol.upper(),
             news=news,

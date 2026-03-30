@@ -1,7 +1,6 @@
-
 import os
 from dotenv import load_dotenv
-# Import prompts into namespace to be used by other modules
+# Import prompts for external module access
 from prompts import (
     SYSTEM_PROMPT,
     ANALYZE_SPECIFIC_PROMPT,
@@ -19,7 +18,7 @@ GROQCLOUD_API_KEY = os.getenv('GROQCLOUD_API_KEY')
 GROQCLOUD_MODEL = os.getenv('GROQCLOUD_MODEL', 'google/gemini-2.0-flash-exp:free')
 GOOGLE_API_KEY = os.getenv('GOOGLE_API_KEY')
 GEMINI_MODEL = os.getenv('GEMINI_MODEL')
-USE_GEMINI = os.getenv('USE_GEMINI')
+USE_GEMINI = os.getenv('USE_GEMINI', 'False').lower() == 'true'
 LLM_CONFIG = {
     "system_prompt": SYSTEM_PROMPT,
     "temperature": 0.0,
@@ -69,24 +68,24 @@ IGNORE_KEYWORDS = [
     'daily', 'digest', 'recap', 'summary', 'analysis', 'price analysis', 
     'prediction', 'overview', 'roundup', 'market wrap', 'outlook', 
     'forecast', 'top gainer', 'top loser', 'market update',
-    'slides', 'declines', 'drops', 'plummet' # <-- Bunlar başlıkta geçiyorsa genelde özettir
+    'slides', 'declines', 'drops', 'plummet' # Summary keyword filters
 ]
 DANGEROUS_TICKERS = {
     'S', 'THE', 'A', 'I', 'IS', 'TO', 'IT', 'BY', 'ON', 'IN', 'AT', 'OF', 'M',
     'ME', 'MY', 'UP', 'DO', 'GO', 'OR', 'IF', 'BE', 'AS', 'WE', 'SO',
-    'NEAR', 'ONE', 'SUN', 'GAS', 'POL', 'BOND', 'OM', 'ELF', 'MEME', 'AI', 'MOVE', 'LINK', 'LİNK'
+    'NEAR', 'ONE', 'SUN', 'GAS', 'POL', 'BOND', 'OM', 'ELF', 'MEME', 'AI', 'MOVE', 'LINK'
 }
 
 AMBIGUOUS_COINS = {
     'link': 'Chainlink',
     'one': 'Harmony',
-    'pol': 'Polygon',  # "Police" veya "Policy" içinde geçebilir
-    'gas': 'NeoGas',   # "Gas fees" içinde geçebilir
-    'sun': 'Sun',      # "Sunday" veya güneş anlamında geçebilir
-    'just': 'Just',    # "Just now" içinde geçebilir
-    'omg': 'OMG Network', # "Oh my god" kısaltması
-    'meme': 'Memecoin',   # Genel "meme" kelimesi
-    'beta': 'Beta Finance', # Yazılım betası
-    'iot': 'Helium IOT', # IoT teknolojisi
+    'pol': 'Polygon',  # May appear in "Police" or "Policy"
+    'gas': 'NeoGas',   # May appear in "Gas fees"
+    'sun': 'Sun',      # May appear in "Sunday" or weather contexts
+    'just': 'Just',    # May appear in "Just now"
+    'omg': 'OMG Network', 
+    'meme': 'Memecoin', 
+    'beta': 'Beta Finance', 
+    'iot': 'Helium IOT', 
     'pump': 'Pump.fun',
 }

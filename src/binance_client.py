@@ -17,8 +17,8 @@ class BinanceExecutionEngine:
             for s in info['symbols']:
                 filters = {f['filterType']: f for f in s['filters']}
                 try:
-                    # MIN_NOTIONAL filtresini de çekiyoruz
-                    min_notional = 5.0 # Varsayılan (Altcoinler için genelde 5$)
+                    # Fetch MIN_NOTIONAL filter; default is 5.0 for altcoins
+                    min_notional = 5.0
                     if 'MIN_NOTIONAL' in filters:
                         min_notional = float(filters['MIN_NOTIONAL']['notional'])
                     
@@ -26,34 +26,40 @@ class BinanceExecutionEngine:
                         'stepSize': float(filters['LOT_SIZE']['stepSize']),
                         'tickSize': float(filters['PRICE_FILTER']['tickSize']),
                         'minQty': float(filters['LOT_SIZE']['minQty']),
-                        'minNotional': min_notional # <--- YENİ EKLENDİ
+                        'minNotional': min_notional
                     }
-                except: continue
+                except Exception:
+                    continue
             env = "TESTNET" if self.testnet else "MAINNET"
-            print(f"✅ [{env}] Borsa Bağlantısı Başarılı.")
         except Exception as e:
-            print(f"❌ [BORSA HATASI] {e}")
+            print(f"[EXCHANGE ERROR] {e}")
 
     def _get_precision(self, size):
         if size == 0: return 0
         return int(round(-math.log(size, 10), 0))
 
     def _round_step(self, quantity, step_size):
-        """Miktarı step size'a göre aşağı yuvarlar (Floor)"""
+        """
+        Rounds quantity down to the nearest multiple of step_size.
+        """
         if step_size == 0: return quantity
         precision = self._get_precision(step_size)
         qty = int(quantity / step_size) * step_size
         return float(f"{qty:.{precision}f}")
 
     def _ceil_step(self, quantity, step_size):
-        """Miktarı step size'a göre YUKARI yuvarlar (Ceiling) - Notional için gerekli"""
+        """
+        Rounds quantity up to the nearest multiple of step_size.
+        """
         if step_size == 0: return quantity
         precision = self._get_precision(step_size)
         qty = math.ceil(quantity / step_size) * step_size
         return float(f"{qty:.{precision}f}")
 
     def _round_price(self, price, tick_size):
-        """Fiyatı tick size'a göre en yakına yuvarlar"""
+        """
+        Rounds price to the nearest multiple of tick_size.
+        """
         if tick_size == 0: return price
         precision = self._get_precision(tick_size)
         price = round(price / tick_size) * tick_size
@@ -65,118 +71,112 @@ class BinanceExecutionEngine:
         sym_lower = symbol.lower()
         
         try:
-            # 1. Kaldıraç ve Fiyat
+            # 1. Leverage and Price
             await self.client.futures_change_leverage(symbol=sym, leverage=leverage)
             ticker = await self.client.futures_symbol_ticker(symbol=sym)
             current_market_price = float(ticker['price'])
             
-            # 2. Temel Miktar Hesapla
+            # 2. Base Quantity Calculation
             raw_qty = (amount_usdt * leverage) / current_market_price
             
             step_size = self.symbol_info[sym_lower]['stepSize']
             min_qty = self.symbol_info[sym_lower]['minQty']
-            min_notional = self.symbol_info[sym_lower]['minNotional'] # 100 USDT vb.
+            min_notional = self.symbol_info[sym_lower]['minNotional']
             
-            # Yuvarla
             qty = self._round_step(raw_qty, step_size)
             
-            # --- KONTROL 1: ADET SINIRI ---
+            # --- CHECK 1: QUANTITY LIMIT ---
             if qty < min_qty:
-                print(f"⚠️ Miktar ({qty}) min_qty ({min_qty}) altında. Yükseltiliyor.")
+                print(f"[WARNING] Qty ({qty}) below min_qty ({min_qty}). Adjusting.")
                 qty = min_qty
             
-            # --- KONTROL 2: TUTAR SINIRI (YENİ) ---
+            # --- CHECK 2: NOTIONAL LIMIT ---
             current_notional_value = qty * current_market_price
             
             if current_notional_value < min_notional:
-                print(f"⚠️ Tutar ({current_notional_value:.2f}$) min_notional ({min_notional}$) altında. Zorlanıyor...")
+                print(f"[WARNING] Notional ({current_notional_value:.2f}) below min_notional ({min_notional}). Forcing...")
                 
-                # Hedef tutara ulaşmak için gereken miktar
                 required_qty = min_notional / current_market_price
                 
-                # Yukarı yuvarla ki sınırın biraz üstünde olsun (100.01 gibi)
-                qty = self._ceil_step(required_qty * 1.01, step_size) # %1 güvenli pay ekle
+                # Round up with 1% safety margin to ensure notional threshold is met
+                qty = self._ceil_step(required_qty * 1.01, step_size)
                 
-                print(f"✅ Yeni Miktar: {qty} (Tahmini Tutar: {qty * current_market_price:.2f}$)")
+                print(f"[INFO] New Qty: {qty} (Est. Notional: {qty * current_market_price:.2f})")
 
-            # 3. İşlemi Aç
+            # 3. Open Position
             side_enum = SIDE_BUY if side == 'LONG' else SIDE_SELL
             order = await self.client.futures_create_order(
                 symbol=sym, side=side_enum, type=ORDER_TYPE_MARKET, quantity=qty
             )
             
-            # Gerçekleşen fiyatı al
+            # Get actual execution price
             filled_price = float(order.get('avgPrice', 0.0))
             entry_price = filled_price if filled_price > 0 else current_market_price
             
-            # 4. TP/SL Yerleştir
+            # 4. Place TP/SL
             try:
                 await self._place_tp_sl(sym, side, entry_price, tp_pct, sl_pct)
-                print(f"🚀 [API] {sym} {side} @ {entry_price} (Miktar: {qty})")
+                print(f"[API] {sym} {side} @ {entry_price} (Qty: {qty})")
             except Exception as e:
-                return "TP/SL Yerleştirme Hatası"
+                return "TP/SL Placement Error"
             
-            return "Pozisyon açıldı" # Her şey mükemmel        
+            return "Position opened"        
         except Exception as e: 
-            print(f"❌ [API HATA] {e}")
-            return "Pozisyon Açma Hatası"
+            print(f"[API ERROR] {e}")
+            return "Position Opening Error"
 
 
     async def _place_tp_sl(self, symbol, side, entry, tp_pct, sl_pct):
         try:
             tick = self.symbol_info[symbol.lower()]['tickSize']
             
-            # Yön Belirleme
+            # Direction setting
             if side == 'LONG':
                 tp_raw = entry * (1 + tp_pct/100)
                 sl_raw = entry * (1 - sl_pct/100)
-                close_side = 'SELL' # String olarak gönderiyoruz
+                close_side = 'SELL' 
             else: # SHORT
                 tp_raw = entry * (1 - tp_pct/100)
                 sl_raw = entry * (1 + sl_pct/100)
-                close_side = 'BUY' # String olarak gönderiyoruz
+                close_side = 'BUY' 
 
-            # Negatif fiyat koruması (Matematiksel Güvenlik)
+            # Negative price protection
             if tp_raw <= tick: tp_raw = entry + (tick * 10) if side=='LONG' else entry - (tick * 10)
             if sl_raw <= tick: sl_raw = entry - (tick * 10) if side=='LONG' else entry + (tick * 10)
 
-            # Yuvarlama
+            # Rounding
             tp = self._round_price(tp_raw, tick)
             sl = self._round_price(sl_raw, tick)
             
-            print(f"🛡️ TP/SL Hesaplanıyor: TP={tp} | SL={sl}")
+            print(f"[INFO] Calculating TP/SL: TP={tp} | SL={sl}")
 
-            # --- STOP LOSS EMRI (STOP_MARKET) ---
-            # closePosition=True dediğimiz için miktar (quantity) göndermiyoruz.
-            # workingType='MARK_PRICE' iğnelerden korur.
+            # --- STOP LOSS ORDER ---
+            # workingType='MARK_PRICE' protects against volatility spikes
             await self.client.futures_create_algo_order(
                 symbol=symbol, 
                 side=close_side, 
                 type='STOP_MARKET', 
-                triggerPrice=sl, # <--- BURASI DEĞİŞTİ
+                triggerPrice=sl,
                 closePosition=True, 
                 workingType='MARK_PRICE',
                 algoType='CONDITIONAL'
             )
             
-            # --- TAKE PROFIT EMRI (ALGO ENDPOINT) ---
-            # DÜZELTME: stopPrice -> triggerPrice
+            # --- TAKE PROFIT ORDER ---
             await self.client.futures_create_algo_order(
                 symbol=symbol, 
                 side=close_side, 
                 type='TAKE_PROFIT_MARKET', 
-                triggerPrice=tp, # <--- BURASI DEĞİŞTİ
+                triggerPrice=tp,
                 closePosition=True, 
                 workingType='MARK_PRICE',
                 algoType='CONDITIONAL'
             )
             
-            print(f"✅ [API] TP/SL Yerleştirildi ({symbol})")
+            print(f"[API] TP/SL placed successfully for {symbol}")
 
         except Exception as e: 
-            print(f"⚠️ [TP/SL HATASI] {e}")
-            # Hata detayını görmek için (Opsiyonel):
-            # print(f"Hata Detayı: {e.message if hasattr(e, 'message') else e}")
+            print(f"[TP/SL ERROR] {e}")
 
     async def close(self):
         if self.client: await self.client.close_connection()
@@ -192,8 +192,8 @@ class BinanceExecutionEngine:
                 if amt != 0:
                     side = SIDE_SELL if amt > 0 else SIDE_BUY
                     await self.client.futures_create_order(symbol=sym, side=side, type=ORDER_TYPE_MARKET, quantity=abs(amt))
-                    print(f"🚨 [API] {sym} Pozisyon Kapatıldı.")
-        except Exception as e: print(f"❌ [KAPATMA HATA] {e}")
+                    print(f"[API] {sym} position closed market.")
+        except Exception as e: print(f"[CLOSE ERROR] {e}")
 
     async def fetch_missing_data(self, symbol):
         if not self.client: return None, 0.0
@@ -202,76 +202,69 @@ class BinanceExecutionEngine:
             data = [(float(k[4]), int(k[0])/1000) for k in klines]
             ticker = await self.client.futures_ticker(symbol=symbol.upper())
             return data, float(ticker['priceChangePercent'])
-        except: return None, 0.0
+        except Exception: 
+            return None, 0.0
     
     async def get_usdt_balance(self):
         """
-        Binance Futures hesabındaki güncel USDT bakiyesini çeker.
-        Dönüş: (Toplam Bakiye, Kullanılabilir Bakiye)
+        Fetches current USDT balance from Binance Futures account.
+        Returns: (Total Balance, Available Balance)
         """
         if not self.client:
-            print("⚠️ [BAKİYE] API bağlı değil, bakiye çekilemedi.")
+            print("[BALANCE] API not connected.")
             return 0.0, 0.0
             
         try:
-            # Futures hesabındaki tüm varlıkları çek
             balances = await self.client.futures_account_balance()
             
             for asset in balances:
                 if asset['asset'] == 'USDT':
-                    # balance: Toplam Varlık (Pozisyonlar dahil)
-                    # withdrawAvailable: İşlem açılabilir boş bakiye
-                    print(f"🧾 [BAKİYE VERİSİ] {asset}")
-
                     total_balance = float(asset['balance'])
                     available_balance = float(asset.get('availableBalance', 0.0))                    
-                    print(f"💰 [CÜZDAN] Toplam: {total_balance:.2f} USDT | Boşta: {available_balance:.2f} USDT")
+                    print(f"[WALLET] Total: {total_balance:.2f} USDT | Available: {available_balance:.2f} USDT")
                     return total_balance, available_balance
             
-            print("⚠️ [BAKİYE] USDT varlığı bulunamadı.")
+            print("[BALANCE] USDT asset not found.")
             return 0.0, 0.0
             
         except Exception as e:
-            print(f"❌ [BAKİYE HATASI] {e}")
+            print(f"[BALANCE ERROR] {e}")
             return 0.0, 0.0
 
     async def get_extended_metrics(self, symbol):
         """
-        Gelişmiş analiz için 24h Hacim ve Fonlama Oranını çeker.
+        Fetches 24h Volume and Funding Rate for advanced analysis.
         """
         if not self.client: return "Unknown", 0.0
 
         try:
-            # 1. 24 Saatlik Veriler (Hacim için)
-            # quoteVolume = USDT cinsinden hacim
+            # 1. 24h Ticker Stats (for Volume)
             ticker_stats = await self.client.futures_ticker(symbol=symbol.upper())
             volume_usdt = float(ticker_stats.get('quoteVolume', 0))
             
-            # Formatla (Milyar/Milyon)
+            # Format Volume (Billion/Million)
             if volume_usdt > 1_000_000_000:
                 vol_str = f"${volume_usdt / 1_000_000_000:.2f}B"
             else:
                 vol_str = f"${volume_usdt / 1_000_000:.2f}M"
 
-            # 2. Fonlama Oranı (Funding Rate)
-            # premiumIndex endpoint'i anlık fonlamayı verir
+            # 2. Funding Rate
             premium_index = await self.client.futures_mark_price(symbol=symbol.upper())
-            funding_rate = float(premium_index.get('lastFundingRate', 0)) * 100 # Yüzdeye çevir
+            funding_rate = float(premium_index.get('lastFundingRate', 0)) * 100 
             
             return vol_str, funding_rate
 
         except Exception as e:
-            print(f"⚠️ [METRİK HATA] {symbol}: {e}")
+            print(f"[METRIC ERROR] {symbol}: {e}")
             return "Unknown", 0.0
         
     async def get_order_book_imbalance(self, symbol, limit=100):
         """
-        Tahtadaki Alıcı/Satıcı dengesizliğini ölçer.
+        Measures Buyer/Seller imbalance in the order book.
         """
         if not self.client: return 0.0, "No Connection"
         
         try:
-            # DÜZELTME: futures_depth Yerine futures_order_book kullanıyoruz
             depth = await self.client.futures_order_book(symbol=symbol.upper(), limit=limit)
             
             total_bids = sum([float(x[1]) for x in depth['bids']])
@@ -283,5 +276,5 @@ class BinanceExecutionEngine:
             return imbalance, f"Bids: {total_bids:.2f} | Asks: {total_asks:.2f}"
             
         except Exception as e:
-            print(f"⚠️ [DEPTH HATA] {e}")
+            print(f"[DEPTH ERROR] {e}")
             return 0.0, "Error"

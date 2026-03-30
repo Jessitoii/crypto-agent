@@ -1,5 +1,5 @@
 import asyncio
-from collections import defaultdict, deque  # <--- 'deque' EKLENDİ
+from collections import defaultdict, deque
 import time
 import os
 from nicegui import ui, app
@@ -32,11 +32,11 @@ from price_buffer import PriceBuffer
 from binance_client import BinanceExecutionEngine
 from data_collector import TrainingDataCollector
 from dataset_manager import DatasetManager
-from database import MemoryManager  # NewsMemory yerine
+from database import MemoryManager
 from dashboard import create_dashboard
 import services
 
-# Path Fix
+# Path Configuration
 path = os.path.realpath(__file__)
 dir = os.path.dirname(path)
 dir = dir.replace("src", "data")
@@ -60,7 +60,6 @@ if __name__ == "__main__":
     ctx = BotContext()
 
     # --- INITIALIZATION ---
-    # 1. Objects
     ctx.app_state = SharedState()
     ctx.market_memory = defaultdict(PriceBuffer)
     ctx.exchange = PaperExchange(STARTING_BALANCE)
@@ -72,7 +71,6 @@ if __name__ == "__main__":
     ctx.real_exchange = BinanceExecutionEngine(API_KEY, API_SECRET, testnet=IS_TESTNET)
     ctx.collector = TrainingDataCollector()
     ctx.dataset_manager = DatasetManager()
-    SESSION_PATH = os.path.join(dir, "crypto_agent_session")
     ctx.telegram_client = TelegramClient(
         SESSION_PATH, API_ID, API_HASH, use_ipv6=False, timeout=10
     )
@@ -80,39 +78,34 @@ if __name__ == "__main__":
     ctx.memory = MemoryManager()
 
 
-    # 2. Logger Wrapper
+    # Technical Logger Wrapper
     def log_ui_wrapper(message, type="info"):
         timestamp = time.strftime("%H:%M:%S")
-        icon = "📝"
-        if type == "success":
-            icon = "✅"
-        elif type == "error":
-            icon = "❌"
-        elif type == "warning":
-            icon = "⚠️"
+        
+        log_label = f"[{type.upper()}]"
+        if type == "info":
+            log_label = "[LOG]"
 
-        full_msg = f"[{timestamp}] {icon} {message}"
+        full_msg = f"[{timestamp}] {log_label} {message}"
         print(full_msg)
 
-        # 1. HAFIZAYA KAYDET (Kritik Hamle)
+        # 1. Store in memory for UI persistence
         ctx.runtime_logs.append(full_msg)
 
-        # 2. Ekrana Bas (Eğer UI açıksa)
+        # 2. Push to UI if container is initialized
         try:
             if ctx.log_container is not None:
                 ctx.log_container.push(full_msg)
         except Exception:
             pass
 
-
     ctx.log_ui = log_ui_wrapper
-
 
     # --- STARTUP TASKS ---
     async def start_tasks():
         ctx.memory.load_recent_history(ctx)
         ctx.stream_command_queue = asyncio.Queue()
-        # 1. API Connection & Sync
+        
         if REAL_TRADING_ENABLED:
             await ctx.real_exchange.connect()
 
@@ -121,22 +114,20 @@ if __name__ == "__main__":
             if real_total > 0:
                 ctx.exchange.balance = real_total
                 ctx.exchange.initial_balance = real_total
-                # Note: STARTING_BALANCE is a constant, so we update the instance only
 
                 ctx.log_ui(
-                    f"✅ Bakiye Eşitlendi: {real_total:.2f} USDT (Kullanılabilir: {real_available:.2f})",
+                    f"Balance Synced: {real_total:.2f} USDT (Available: {real_available:.2f})",
                     "success",
                 )
             else:
                 ctx.log_ui(
-                    "⚠️ Gerçek bakiye çekilemedi veya 0. Varsayılan kullanılıyor.", "warning"
+                    "Real balance could not be fetched or is zero. Using default.", "warning"
                 )
         else:
             await ctx.real_exchange.connect()
-            ctx.log_ui("⚠️ Gerçek İşlem Kapalı (Paper Trading Modu)", "warning")
+            ctx.log_ui("Real Trading Disabled (Paper Trading Mode)", "warning")
 
-        # 2. Launch Loops
-        # asyncio.create_task(services.rss_loop(ctx)) # RSS Loopü devre dışı bırakıldı
+        # Launch Background Loops
         asyncio.create_task(services.websocket_loop(ctx))
         asyncio.create_task(services.collector_loop(ctx))
         asyncio.create_task(services.telegram_loop(ctx))
@@ -149,9 +140,8 @@ if __name__ == "__main__":
         async def manual_news_handler(text, source="MANUAL"):
             await services.process_news(text, source, ctx)
 
-        # Dashboard'a artık 'ctx' nesnesini de gönderiyoruz
         ctx.log_container = create_dashboard(
-            ctx=ctx,  # <--- YENİ: Tüm context'i gönder
+            ctx=ctx,
             on_manual_submit=manual_news_handler,
             existing_logs=ctx.runtime_logs,
         )

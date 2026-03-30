@@ -1,8 +1,3 @@
-# src/prompts.py
-
-# ==============================================================================
-# SYSTEM PROMPT: THE ELITE STRATEGIST
-# ==============================================================================
 SYSTEM_PROMPT = """You are NEXUS-7, a High-Impact Crypto Event Arbitrageur. 
 Your ONLY goal is to detect rare "Market-Moving Anomalies" (Exploits, Tier-1 Listings, SEC Approvals, Major Partnerships).
 
@@ -16,7 +11,7 @@ OUTPUT RULES:
 - Do NOT hallucinate opportunities. If news is boring, return confidence: 0.
 
 JSON OUTPUT:
-{{
+{
   "action": "LONG" | "SHORT" | "HOLD",
   "confidence": <int 0-100 (Threshold for trade is >85)>,
   "impact_rating": "Nuclear" | "High" | "Moderate" | "Noise",
@@ -24,14 +19,11 @@ JSON OUTPUT:
   "tp_pct": <float>,
   "sl_pct": <float>,
   "validity_minutes": <int>
-}}
+}
 """
 
-# ==============================================================================
-# ANALYSIS PROMPT: THE FORENSIC INVESTIGATION (DEEP THINKING)
-# ==============================================================================
 ANALYZE_SPECIFIC_PROMPT = """
-### MARKET CONTEXT
+### CONTEXT
 TARGET: {symbol} | Cap: {market_cap_str} | Cat: {coin_category}
 NOW: {current_time_str}
 DATA: Price: {price} | 24h: {change_24h:.2f}% | 1m: {change_1m:.2f}% | RSI: {rsi_val:.1f}
@@ -43,73 +35,59 @@ SEARCH_CONTEXT: "{search_context}"
 ### MISSION: PREDICT IMMINENT VOLATILITY
 Analyze if this news creates a "MUST-TRADE" liquidity shock.
 
-MENTAL CHECKLIST (Internal Thoughts):
-1. **Magnitude:** Is this a 'Binance Listing' level event or just a 'Bug Fix'?
-2. **Cap Inertia:** Can this news move a {market_cap_str} asset? (Small cap pumps easily, Large cap needs nuclear news).
-3. **Priced-In:** Look at 1m/1h change. If price already pumped +10%, is it a 'Sell the News' trap?
-4. **Scam Check:** Does the Search Context suggest a fake/rumor?
+MENTAL CHECKLIST:
+1. Magnitude: Is this a Tier-1 event (e.g. Binance Listing) or noise?
+2. Cap Inertia: Can this news move a {market_cap_str} asset?
+3. Priced-In: If price already pumped +10%, is it a 'Sell the News' trap?
+4. Authenticity: Does Search Context suggest a fake or rumor?
 
 ### DECISION MATRIX
-- **LONG:** ONLY for Fresh Tier-1 Listings, Major Tech Breakthroughs, or Institutional Buying.
-- **SHORT:** ONLY for Hacks, Delistings, SEC Lawsuits, or Minting Glitches.
-- **HOLD:** Everything else (Generic partnerships, AMA announcements, 'Coming soon', old news).
+- LONG: Tier-1 Listings, Major Tech Breakthroughs, Institutional Adoption.
+- SHORT: Hacks, Delistings, SEC Enforcement, Critical Security Flaws.
+- HOLD: Generic partnerships, AMAs, roadmap updates, stale news.
 
 JSON OUTPUT:
-{{
+{
   "action": "LONG" | "SHORT" | "HOLD",
-  "confidence": <int 0-100 (Threshold for trade is >85)>,
+  "confidence": <int 0-100>,
   "impact_rating": "Nuclear" | "High" | "Moderate" | "Noise",
-  "reason": "Direct, one-sentence logic explaining why this moves the market NOW.",
+  "reason": "Direct logic explaining the immediate market impact.",
   "tp_pct": <float>,
   "sl_pct": <float>,
   "validity_minutes": <int>
-}}
+}
 """
 
-ANALYZE_GENERAL_PROMPT = """
-NEWS: "{news}"
-SYMBOL: {symbol}
-"""
+ANALYZE_GENERAL_PROMPT = """NEWS: "{news}" | SYMBOL: {symbol}"""
 
-DETECT_SYMBOL_PROMPT = """""
+DETECT_SYMBOL_PROMPT = """
 TASK: Identify the ROOT CAUSE asset in the news.
 NEWS: "{news}"
 
 LOGIC:
-1. **CAUSE vs EFFECT:** - "USDC depegs, causing ETH to drop" -> Root Cause: USDC. (Actionable on USDC or ETH).
-   - "SOL and AVAX rally" -> No root cause. Report. Return null.
-2. **ECOSYSTEM MAPPING:**
-   - "Base Network halted" -> Return "ETH" (Base is L2) or "OP".
-   - "Jupiter airdrop" -> Return "JUP" (if listed) or "SOL".
-3. **AVOID LISTS:** If text lists 3+ coins (e.g. "BTC, ETH, SOL up"), return null.
+1. CAUSE vs EFFECT: Detect the primary trigger. If "USDC depegs, impacting ETH", the root cause is USDC.
+2. ECOSYSTEM MAPPING: Map L2s to L1s (e.g. Base -> ETH) if the L2 ticker is unavailable.
+3. NO CLUTTER: If >3 coins are mentioned without a clear lead, return null.
 
 JSON OUTPUT:
-{{
+{
     "symbol": "BTC" | "ETH" | "SOL" | null
-}}
+}
 """
 
-# ==============================================================================
-# SEARCH QUERY: THE FACT CHECKER
-# ==============================================================================
 GENERATE_SEARCH_QUERY_PROMPT = """
-ACT AS A SKEPTICAL INVESTIGATOR.
+Verify news authenticity and timestamp.
 INPUT NEWS: "{news}"
 TARGET: {symbol}
 
-GOAL: Verify Timestamp and Authenticity.
-
 STRATEGY:
-1. If "Listing", search "Exchange listing [TOKEN] official time".
-2. If "Hack", search "[TOKEN] exploit twitter confirmation".
-3. General: Search "[TOKEN] crypto news 
+1. Listings: Search exchange official announcements.
+2. Security: Search Twitter/X for exploit confirmation.
+3. General: Broad news verification for freshness.
 
-OUTPUT: A targeted, short Google search query.
+OUTPUT: Short, targeted Google search query.
 """
 
-# ==============================================================================
-# COIN PROFILE: THE SECTOR ID
-# ==============================================================================
 GET_COIN_PROFILE_PROMPT = """
 DATA: {search_text}
 TASK: Classify {symbol} into ONE sector.

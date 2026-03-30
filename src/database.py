@@ -12,11 +12,11 @@ class MemoryManager:
         self.vectorizer = TfidfVectorizer(stop_words='english')
 
     def _init_db(self):
-        """Veritabanı tablolarını oluşturur."""
+        """Initializes database tables."""
         conn = sqlite3.connect(self.db_path)
         cursor = conn.cursor()
         
-        # 1. TABLO: HABERLER (Eskisi gibi)
+        # 1. TABLE: NEWS
         cursor.execute('''
             CREATE TABLE IF NOT EXISTS news (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -27,7 +27,7 @@ class MemoryManager:
         ''')
         cursor.execute('CREATE INDEX IF NOT EXISTS idx_news_timestamp ON news (timestamp)')
 
-        # 2. TABLO: AI KARARLARI (GÜNLÜK)
+        # 2. TABLE: AI DECISIONS
         cursor.execute('''
             CREATE TABLE IF NOT EXISTS decisions (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -45,8 +45,7 @@ class MemoryManager:
             )
         ''')
 
-        # 3. TABLO: İŞLEM GEÇMİŞİ (TRADE HISTORY)
-        # decision_id: Karar tablosuna bağlayan anahtar
+        # 3. TABLE: TRADE HISTORY
         cursor.execute('''
             CREATE TABLE IF NOT EXISTS trades (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -66,14 +65,15 @@ class MemoryManager:
         conn.commit()
         conn.close()
 
-    # --- ESKİ HABER FONKSİYONLARI (Aynen Korundu) ---
     def clean_text(self, text):
+        """Normalizes text by lowercasing and removing URLs/special characters."""
         text = text.lower()
         text = re.sub(r'http\S+', '', text)
         text = re.sub(r'[^\w\s]', '', text)
         return text
 
     def is_duplicate(self, new_text, threshold=0.75):
+        """Checks if the news content is a duplicate of recent entries using TF-IDF and cosine similarity."""
         clean_new = self.clean_text(new_text)
         if not clean_new.strip(): return True, 1.0
 
@@ -94,13 +94,15 @@ class MemoryManager:
             max_sim = similarities.flatten().max() if similarities.size > 0 else 0.0
             
             if max_sim >= threshold:
-                print(f"🛑 [BENZERLİK] Tespit edildi: {max_sim:.2f}")
+                print(f"[SIMILARITY] Duplicate content detected: {max_sim:.2f}")
                 return True, max_sim
             return False, max_sim
-        except:
+        except Exception as e:
+            print(f"[ERROR] Similarity check failed: {e}")
             return False, 0.0
 
     def add_news(self, source, content):
+        """Adds news entry to the database."""
         try:
             conn = sqlite3.connect(self.db_path)
             cursor = conn.cursor()
@@ -109,14 +111,11 @@ class MemoryManager:
             conn.commit()
             conn.close()
         except Exception as e:
-            print(f"❌ DB Yazma Hatası: {e}")
-
-    # --- YENİ: KARAR VE TRADE KAYIT FONKSİYONLARI ---
+            print(f"[ERROR] Database write failed: {e}")
 
     def log_decision(self, record):
         """
-        AI Kararını DB'ye kaydeder ve ID'sini döner.
-        record: dict
+        Logs an AI decision to the database and returns the inserted ID.
         """
         decision_id = None
         try:
@@ -129,16 +128,16 @@ class MemoryManager:
                 record['time'], record['symbol'], record['action'], record['confidence'], 
                 record['reason'], record['price'], record['news_snippet'], record['validity'], record['tp_pct'], record['sl_pct'], json.dumps(record)
             ))
-            decision_id = cursor.lastrowid # Bu ID'yi Trade açarken kullanacağız
+            decision_id = cursor.lastrowid
             conn.commit()
             conn.close()
         except Exception as e:
-            print(f"❌ DB Decision Log Hatası: {e}")
+            print(f"[ERROR] Database decision log failed: {e}")
         return decision_id
 
     def log_trade(self, record, decision_id=None):
         """
-        Kapanan işlemi DB'ye kaydeder.
+        Logs a completed trade to the database.
         """
         try:
             conn = sqlite3.connect(self.db_path)
@@ -155,27 +154,25 @@ class MemoryManager:
                     record.get('exit'), 
                     record.get('pnl'), 
                     record.get('reason'), 
-                    record.get('peak', 0) # <--- Tutarlılık sağlandı
+                    record.get('peak', 0)
                 ))
             conn.commit()
             conn.close()
         except Exception as e:
-            print(f"❌ DB Trade Log Hatası: {e}")
-
-    # --- YENİ: YÜKLEME VE RAPORLAMA ---
+            print(f"[ERROR] Database trade log failed: {e}")
 
     def load_recent_history(self, ctx):
         """
-        Program açılışında son 100 kararı ve işlemi hafızaya yükler.
+        Loads the last 100 decisions and 50 trades into context on startup.
         """
         conn = sqlite3.connect(self.db_path)
-        conn.row_factory = sqlite3.Row # Dict gibi erişmek için
+        conn.row_factory = sqlite3.Row
         cursor = conn.cursor()
         
-        # 1. Kararları Yükle
+        # 1. Load Decisions
         cursor.execute('SELECT * FROM decisions ORDER BY id DESC LIMIT 100')
         decisions = cursor.fetchall()
-        for d in reversed(decisions): # Eskiden yeniye ekle (Deque yapısı için)
+        for d in reversed(decisions):
             rec = {
                 "time": d['timestamp'], "symbol": d['symbol'], "action": d['action'],
                 "confidence": d['confidence'], "reason": d['reason'], "price": d['price'],
@@ -183,7 +180,7 @@ class MemoryManager:
             }
             ctx.ai_decisions.append(rec)
 
-        # 2. İşlemleri Yükle
+        # 2. Load Trades
         cursor.execute('SELECT * FROM trades ORDER BY id DESC LIMIT 50')
         trades = cursor.fetchall()
         for t in reversed(trades):
@@ -195,15 +192,14 @@ class MemoryManager:
             ctx.exchange.history.append(rec)
             
         conn.close()
-        print(f"♻️ Hafıza Tazelendi: {len(decisions)} Karar, {len(trades)} İşlem yüklendi.")
+        print(f"[SYSTEM] Memory refreshed: {len(decisions)} decisions, {len(trades)} trades loaded.")
 
     def get_full_trade_story(self):
-        """Hangi Karar -> Hangi İşleme -> Hangi Sonuca yol açtı? (Genişletilmiş)"""
+        """Retrieves combined report: Decision -> Trade -> Outcome."""
         conn = sqlite3.connect(self.db_path)
         conn.row_factory = sqlite3.Row
         cursor = conn.cursor()
         
-        # peak_price, entry_price ve exit_price verilerini de çekiyoruz
         query = '''
             SELECT 
                 d.timestamp as time, d.symbol, d.action, d.confidence, d.reason as ai_reason,

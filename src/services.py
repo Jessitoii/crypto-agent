@@ -24,6 +24,7 @@ TARGET_PAIRS = get_top_100_map()
 
 
 def log_txt(message, filename="trade_logs.txt"):
+    """Logs trade-related messages to a text file for auditing."""
     base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     data_dir = os.path.join(base_dir, "data")
     if not os.path.exists(data_dir):
@@ -34,6 +35,7 @@ def log_txt(message, filename="trade_logs.txt"):
 
 
 async def update_system_balance(ctx, last_pnl=0.0):
+    """Syncs system balance from either the real exchange or simulation PnL."""
     if REAL_TRADING_ENABLED:
         await asyncio.sleep(1)
         total, available = await ctx.real_exchange.get_usdt_balance()
@@ -41,51 +43,46 @@ async def update_system_balance(ctx, last_pnl=0.0):
             old_balance = ctx.exchange.balance
             ctx.exchange.balance = total
             diff = total - old_balance
-            icon = "📈" if diff >= 0 else "📉"
             ctx.log_ui(
-                f"{icon} Bakiye Güncellendi: {total:.2f} USDT (Fark: {diff:+.2f})",
+                f"Balance Updated: {total:.2f} USDT (Diff: {diff:+.2f})",
                 "info",
             )
     else:
         ctx.exchange.balance += last_pnl
         ctx.log_ui(
-            f"📝 Simülasyon Bakiyesi: {ctx.exchange.balance:.2f} USDT (PnL: {last_pnl:+.2f})",
+            f"Simulation Balance: {ctx.exchange.balance:.2f} USDT (PnL: {last_pnl:+.2f})",
             "info",
         )
 
 
 async def send_telegram_alert(ctx, message):
+    """Sends an alert message to the 'me' chat on Telegram."""
     try:
-        # Önce bağlı mı diye bak, değilse bağlanmayı dene
         if not ctx.telegram_client.is_connected():
-            print("❌ TELEGRAM UYARISI: Bağlantı yok, bağlanmayı dene...")
+            print("[TELEGRAM] Warning: No connection, attempting to connect...")
             await ctx.telegram_client.connect()
 
-        # Yetki kontrolü (Session dosyası geçerli mi?)
         if not await ctx.telegram_client.is_user_authorized():
             ctx.log_ui(
-                "❌ TELEGRAM UYARISI: Oturum yetkisi yok (Session geçersiz).", "error"
+                "[TELEGRAM] Warning: Unauthorized session.", "error"
             )
-            print("❌ TELEGRAM UYARISI: Oturum yetkisi yok (Session geçersiz).")
+            print("[TELEGRAM] Warning: Unauthorized session.")
             return
 
-        # Mesajı gönder
-        await ctx.telegram_client.send_message("me", f"🤖 **BOT ALERT**\n{message}")
-        print("✅ TELEGRAM UYARISI: Mesaj gönderildi.")
+        await ctx.telegram_client.send_message("me", f"**BOT ALERT**\n{message}")
+        print("[TELEGRAM] Info: Message sent.")
 
     except Exception as e:
-        # Hatayı gizleme, YÜZÜME VUR!
-        print(f"❌ [TELEGRAM SEND ERROR]: {e}")
-        ctx.log_ui(f"❌ Telegram Gönderme Hatası: {e}", "error")
+        print(f"[ERROR] Telegram send error: {e}")
+        ctx.log_ui(f"Telegram Send Error: {e}", "error")
 
 
 async def ensure_fresh_data(ctx, pair):
-    """Verinin güncelliğini kontrol eder ve gerekirse eksikleri tamamlar."""
+    """Checks data freshness and fetches missing historical candles if needed."""
     stats = ctx.market_memory[pair]
     is_stale = False
     current_minute = int(time.time() / 60)
 
-    # Veri bayat mı kontrolü
     if stats.current_price == 0:
         is_stale = True
     elif stats.candles:
@@ -95,9 +92,8 @@ async def ensure_fresh_data(ctx, pair):
     else:
         is_stale = True
 
-    # Bayatsa çek
     if is_stale:
-        ctx.log_ui(f"⚠️ {pair} Verisi Bayat/Yok. Taze veri çekiliyor...", "warning")
+        ctx.log_ui(f"{pair} data stale or missing. Fetching fresh data...", "warning")
         hist_data, chg_24h = await ctx.real_exchange.fetch_missing_data(pair)
 
         if hist_data:
@@ -106,36 +102,34 @@ async def ensure_fresh_data(ctx, pair):
                 stats.update_candle(c, t, True)
             stats.set_24h_change(chg_24h)
             stats.current_price = hist_data[-1][0]
-            return True  # Veri başarıyla güncellendi
+            return True
         else:
-            return False  # Veri çekilemedi
+            return False
 
-    return True  # Veri zaten taze
+    return True
 
 
 async def execute_trade_logic(ctx, pair, dec, stats, source, msg, changes, search_res):
-    """Karar onaylandıysa işlemi (Real/Paper) gerçekleştirir."""
-    # ------------------------------------------------------------------
-    # MENTÖR GÜNCELLEMESİ: DİNAMİK KASA & KALDIRAÇ YÖNETİMİ
-    # ------------------------------------------------------------------
+    """Executes trade logic based on AI decision, including risk scaling and order placement."""
     confidence = dec.get("confidence", 0)
     balance = ctx.exchange.balance
 
-    # SEVİYE 1: ÇIRAK (Güven %65 - %74) -> Düşük Risk
-    trade_amount = balance * 0.40  # Bakiyenin %20'si
-    leverage = 10  # 5x Kaldıraç (Güvenli
-    # SEVİYE 2: USTA (Güven %75 - %84) -> Orta Risk (Standart)
+    # Risk Tier 1: Low Risk (Conf 65-74%)
+    trade_amount = balance * 0.40  
+    leverage = 10  
+    
+    # Risk Tier 2: Standard Risk (Conf 75-89%)
     if confidence >= 75:
-        trade_amount = balance * 0.50  # Bakiyenin %40'ı
-        leverage = 15  # 10x Kaldıra
-    # SEVİYE 3: BALİNA (Güven %85+) -> "NUCLEAR" Modu ☢️
+        trade_amount = balance * 0.50  
+        leverage = 15  
+    
+    # Risk Tier 3: Nuclear Mode (Conf 90%+)
     if confidence >= 90:
-        trade_amount = balance * 0.60  # Bakiyenin %60'ı
-        leverage = 20  # 20x Kaldıraç (Saldır!)
+        trade_amount = balance * 0.60  
+        leverage = 20  
 
-        # Terminalde uyarı verelim ki heyecan olsun
         ctx.log_ui(
-            f"☢️ NUCLEAR MOD AKTİF: {pair} için 20x Kaldıraç ve %60 Kasa basılıyor!",
+            f"NUCLEAR MODE ACTIVE: {pair} | 20x | 60% Balance Allocation",
             "warning",
         )
 
@@ -145,27 +139,26 @@ async def execute_trade_logic(ctx, pair, dec, stats, source, msg, changes, searc
 
     can_open_paper_trade = False
 
-    # --- 1. GERÇEK BORSA ---
+    # --- 1. Real Exchange Execution ---
     if REAL_TRADING_ENABLED:
         api_result = await ctx.real_exchange.execute_trade(
             pair, dec["action"], trade_amount, leverage, tp_pct, sl_pct
         )
         if api_result == "Pozisyon Açma Hatası":
             ctx.log_ui(
-                f"❌ Binance işlemi reddetti: {pair.upper()}. Simülasyon iptal.",
+                f"Binance rejected trade: {pair.upper()}. Simulation cancelled.",
                 "error",
             )
             can_open_paper_trade = False
         elif api_result == "Bağlantı Yok":
-            ctx.log_ui("⚠️ API Bağlı değil. Sadece Paper Trading yapılıyor.", "warning")
+            ctx.log_ui("API not connected. Falling back to Paper Trading.", "warning")
             can_open_paper_trade = True
         else:
-            # "Pozisyon açıldı" veya "TP/SL Hatası" (Manuel takip gerekir) durumlarında paper trade devam eder
             can_open_paper_trade = True
     else:
         can_open_paper_trade = True
 
-    # --- 2. KAĞIT ÜZERİNDE (SİMÜLASYON) & LOGLAMA ---
+    # --- 2. Simulation & Logging ---
     if can_open_paper_trade:
         log, color = ctx.exchange.open_position(
             symbol=pair,
@@ -184,7 +177,6 @@ async def execute_trade_logic(ctx, pair, dec, stats, source, msg, changes, searc
         ctx.log_ui(full_log, color)
         log_txt(full_log)
 
-        # Dataset ve Telegram
         ctx.dataset_manager.log_trade_entry(
             symbol=pair,
             news=msg,
@@ -195,7 +187,7 @@ async def execute_trade_logic(ctx, pair, dec, stats, source, msg, changes, searc
         )
         asyncio.create_task(send_telegram_alert(ctx, full_log))
 
-        # WebSocket Takibi Başlat
+        # Start WebSocket tracking for the pair
         subscribe_msg = {
             "method": "SUBSCRIBE",
             "params": [f"{pair.lower()}@kline_1m"],
@@ -205,67 +197,62 @@ async def execute_trade_logic(ctx, pair, dec, stats, source, msg, changes, searc
 
 
 async def process_news(msg, source, ctx):
-    """Haber akışını yöneten ana orkestra şefi."""
+    """Main news processing workflow: filtering, detection, research, and analysis."""
     start_time = time.time()
     if not ctx.app_state.is_running:
         return
 
-    # --- 1. FİLTRELEME & HAZIRLIK ---
+    # --- 1. Filtering & Preparation ---
     is_dup, score = ctx.memory.is_duplicate(msg)
     if is_dup:
-        ctx.log_ui(f"♻️ [TEKRAR] Haber engellendi (Benzerlik: {score:.2f})", "warning")
+        ctx.log_ui(f"[DUPLICATE] News filtered (Similarity: {score:.2f})", "warning")
         return
 
     ctx.memory.add_news(source, msg)
     clean_msg = msg.replace("— link", "").replace("Link:", "")
     msg_lower = clean_msg.lower()
 
-    log_txt(f"[{source}] Gelen Haber: {clean_msg}")
+    log_txt(f"[{source}] Incoming News: {clean_msg}")
 
     for word in IGNORE_KEYWORDS:
         if word in msg_lower:
-            ctx.log_ui(f"🛑 [FİLTRE] Bayat haber: '{word}'", "warning")
+            ctx.log_ui(f"[FILTER] Stale keywords detected: '{word}'", "warning")
             return
 
-    ctx.log_ui(f"[{source}] Taranıyor: {msg[:40]}...", "info")
+    ctx.log_ui(f"[{source}] Processing: {msg[:40]}...", "info")
 
-    # --- 2. COIN TESPİTİ ---
+    # --- 2. Coin Detection ---
     detected_pairs = find_coins(msg, coin_map=TARGET_PAIRS)
 
     if not detected_pairs:
-        ctx.log_ui("⚠️ Regex bulamadı, Ajan'a soruluyor...", "warning")
+        ctx.log_ui("Regex failed, consulting agent...", "warning")
         found_symbol = await ctx.brain.detect_symbol(msg, TARGET_PAIRS)
         if found_symbol:
             pot_pair = f"{found_symbol.lower()}usdt"
             if pot_pair in TARGET_PAIRS:
-                ctx.log_ui(f"🕵️ AJAN BULDU: {found_symbol}", "success")
+                ctx.log_ui(f"AGENT FOUND: {found_symbol}", "success")
                 detected_pairs.append(pot_pair)
 
-    # --- 3. ANALİZ DÖNGÜSÜ ---
-    coin_map = (
-        get_top_100_map()
-    )  # Global cache olsa iyi olur ama şimdilik burada kalsın.
+    # --- 3. Analysis Loop ---
+    coin_map = get_top_100_map()
 
     for pair in detected_pairs:
-        # A) Veri Tazeleme (Yardımcı Fonksiyon Çağrısı)
         data_ready = await ensure_fresh_data(ctx, pair)
         if not data_ready:
-            ctx.log_ui(f"❌ {pair} verisi çekilemedi, analiz iptal.", "error")
+            ctx.log_ui(f"Failed to fetch {pair} data, analysis aborted.", "error")
             continue
 
         stats = ctx.market_memory[pair]
 
-        # B) Araştırma
+        # Web Research
         smart_query = await ctx.brain.generate_search_query(
             msg, pair.replace("usdt", "")
         )
-        ctx.log_ui(f"🌍 Araştırılıyor: '{smart_query}'", "info")
+        ctx.log_ui(f"Researching: '{smart_query}'", "info")
         search_res = await perform_research(smart_query)
 
-        # C) Metadata ve Teknik Veriler
         clean_symbol = pair.replace("usdt", "").lower()
 
-        # Güvenli Sözlük Erişimi
         c_data = coin_map.get(clean_symbol)
         if isinstance(c_data, dict):
             coin_full_name = c_data.get("name", "Unknown").title()
@@ -274,7 +261,7 @@ async def process_news(msg, source, ctx):
             coin_full_name = "Unknown"
             m_cap = 0
 
-        # Market Cap Formatlama
+        # Market Cap Format
         if m_cap > 1_000_000_000:
             cap_str = f"${m_cap / 1_000_000_000:.2f} BILLION"
         elif m_cap > 1_000_000:
@@ -285,7 +272,7 @@ async def process_news(msg, source, ctx):
         rsi_val = stats.calculate_rsi()
         changes = stats.get_all_changes()
 
-        # BTC Trend
+        # BTC Trend Correlation
         btc_pair = "btcusdt"
         btc_stats = ctx.market_memory.get(btc_pair)
 
@@ -296,25 +283,22 @@ async def process_news(msg, source, ctx):
             btc_is_stale = True
 
         if btc_is_stale:
-            # BTC verisi çekiliyor...
             btc_hist, btc_24h = await ctx.real_exchange.fetch_missing_data(btc_pair)
             if btc_hist:
                 if btc_pair not in ctx.market_memory:
                     ctx.market_memory[btc_pair] = PriceBuffer()
 
-                # Hafızayı doldur
                 ctx.market_memory[btc_pair].candles.clear()
                 for c, t in btc_hist:
                     ctx.market_memory[btc_pair].update_candle(c, t, True)
                 ctx.market_memory[btc_pair].current_price = btc_hist[-1][0]
                 btc_stats = ctx.market_memory[btc_pair]
 
-        # Artık btc_stats dolu, hesapla
         btc_trend = btc_stats.get_change(60) if btc_stats else 0.0
 
-        ctx.log_ui(f"🔍 Analiz Fiyatı ({pair}): {stats.current_price}", "info")
+        ctx.log_ui(f"Analysis Price ({pair}): {stats.current_price}", "info")
 
-        # D) Yapay Zeka Kararı
+        # AI Analysis Execution
         volume_24h, funding_rate = await ctx.real_exchange.get_extended_metrics(pair)
         
         dec = await ctx.brain.analyze_specific(
@@ -331,22 +315,10 @@ async def process_news(msg, source, ctx):
             funding_rate,
         )
 
-        # for testing
-        """
-        dec = {
-            "symbol": pair,
-            "action": "LONG",
-            "confidence": 100,
-            "reason": "Test",
-            "validity_minutes": 1,
-            "tp_pct": 1.5,
-            "sl_pct": 1.5,
-        }"""
-
-        # Data Collector Kaydı
+        # Data collection for model refinement
         ctx.collector.log_decision(msg, pair, stats.current_price, str(changes), dec)
 
-        # Dashboard Karar Günlüğü Kaydı
+        # Dashboard Decision Log
         decision_record = {
             "time": datetime.datetime.now().strftime("%H:%M:%S"),
             "symbol": pair.upper().replace("USDT", ""),
@@ -360,92 +332,70 @@ async def process_news(msg, source, ctx):
             "sl_pct": dec.get("sl_pct", 0.0),
         }
         ctx.ai_decisions.append(decision_record)
-        decision_id = ctx.memory.log_decision(decision_record)  # <--- DB ID GELDİ
+        decision_id = ctx.memory.log_decision(decision_record)  
         dec["db_id"] = decision_id
-        # ----------------------------------------------------------------------
-        # MENTÖR GÜNCELLEMESİ: DERİNLİK KONTROLÜ (DUVAR KORUMASI)
-        # ----------------------------------------------------------------------
-        # Sadece LONG veya SHORT kararı varsa tahtaya bak (HOLD için bakmaya gerek yok)
-        is_order_book_safe = True
 
+        # --- 4. Order Book Safety Checks ---
         if dec["action"] in ["LONG", "SHORT"] and REAL_TRADING_ENABLED:
             imbalance, depth_info = await ctx.real_exchange.get_order_book_imbalance(
                 pair
             )
             ctx.log_ui(
-                f"📊 Derinlik Analizi ({pair}): Oran {imbalance:.2f} | {depth_info}",
+                f"Depth Analysis ({pair}): Imbalance {imbalance:.2f} | {depth_info}",
                 "info",
             )
 
-            # KURAL 1: LONG girmek istiyorsun ama Satıcılar (Asks) çok baskın
-            # Eğer imbalance < -0.4 ise (Satıcılar %70'ten fazla), LONG girme!
             if dec["action"] == "LONG" and imbalance < -0.5:
                 ctx.log_ui(
-                    f"🛑 DUVAR TESPİT EDİLDİ: Aşırı Satış Baskısı ({imbalance:.2f}). LONG İptal.",
+                    f"Order Wall Detected: High Sell Pressure ({imbalance:.2f}). LONG Cancelled.",
                     "warning",
                 )
-                dec["action"] = "HOLD"  # Kararı zorla HOLD'a çevir
-                dec["reason"] += " [CANCELLED: Sell Wall Detected]"
-                is_order_book_safe = False
+                dec["action"] = "HOLD"  
+                dec["reason"] += " [CANCELLED: Sell Wall]"
 
-            # KURAL 2: SHORT girmek istiyorsun ama Alıcılar (Bids) çok baskın
-            # Eğer imbalance > 0.4 ise (Alıcılar %70'ten fazla), SHORT girme!
             elif dec["action"] == "SHORT" and imbalance > 0.5:
                 ctx.log_ui(
-                    f"🛑 DUVAR TESPİT EDİLDİ: Aşırı Alış Baskısı ({imbalance:.2f}). SHORT İptal.",
+                    f"Order Wall Detected: High Buy Pressure ({imbalance:.2f}). SHORT Cancelled.",
                     "warning",
                 )
-                dec["action"] = "HOLD"  # Kararı zorla HOLD'a çevir
-                dec["reason"] += " [CANCELLED: Buy Wall Detected]"
-                is_order_book_safe = False
+                dec["action"] = "HOLD"  
+                dec["reason"] += " [CANCELLED: Buy Wall]"
 
-            # ------------------------------------------------------------------
-            # ADIM 4: SPREAD KONTROLÜ (GİZLİ MALİYET FİLTRESİ)
-            # ------------------------------------------------------------------
-            # Spread > %0.3 ise girme.
-            # Çünkü kar etmek için fiyatın Spread + Komisyon kadar gitmesi gerekir.
             try:
-                # Anlık Ticker verisini çek (En güncel Bid/Ask)
                 ticker = await ctx.real_exchange.client.futures_orderbook_ticker(
                     symbol=pair.upper()
                 )
                 bid = float(ticker["bidPrice"])
                 ask = float(ticker["askPrice"])
 
-                # Spread Hesapla: (Ask - Bid) / Ask
                 spread_pct = ((ask - bid) / ask) * 100
 
-                ctx.log_ui(f"📏 Spread Analizi ({pair}): %{spread_pct:.3f}", "info")
+                ctx.log_ui(f"Spread Analysis ({pair}): {spread_pct:.3f}%", "info")
 
-                if spread_pct > 0.3:  # Eşik Değer: %0.3 (Bu HFT için çoktur)
+                if spread_pct > 0.3:  
                     ctx.log_ui(
-                        f"🛑 SPREAD ÇOK YÜKSEK (%{spread_pct:.2f}). Makas açık, girilmez.",
+                        f"High Spread Warning ({spread_pct:.2f}%). Execution skipped.",
                         "warning",
                     )
-                    dec["action"] = "HOLD"  # Kararı iptal et
+                    dec["action"] = "HOLD"  
                     dec["reason"] += f" [CANCELLED: High Spread {spread_pct:.2f}%]"
-                    is_order_book_safe = False
 
             except Exception as e:
-                # Veri çekemiyorsak risk almayalım
-                ctx.log_ui(f"⚠️ Spread verisi alınamadı: {e}", "warning")
-                # is_order_book_safe = False # (İsteğe bağlı: Veri yoksa girme diyebilirsin)
+                ctx.log_ui(f"Could not retrieve spread data: {e}", "warning")
 
-        # ----------------------------------------------------------------------
-        # E) Karar Uygulama (Yardımcı Fonksiyon Çağrısı)
         if dec["confidence"] >= 65 and dec["action"] in ["LONG", "SHORT"]:
             await execute_trade_logic(
                 ctx, pair, dec, stats, source, msg, changes, search_res
             )
         else:
-            log = f"🛑 Pas: {pair.upper()} ({coin_full_name}) | {dec['action']} | (G: %{dec['confidence']}) | Reason : {dec.get('reason')}\nNews: {msg}"
+            log = f"Pass: {pair.upper()} ({coin_full_name}) | {dec['action']} | (Conf: {dec['confidence']}%) | Reason: {dec.get('reason')}\nNews: {msg}"
             ctx.log_ui(log, "warning")
             log_txt(log)
             asyncio.create_task(send_telegram_alert(ctx, log))
 
     end_time = time.time()
     ctx.log_ui(
-        f"[{source}] Haber İşleme Süresi: {end_time - start_time:.2f} saniye.", "info"
+        f"[{source}] Processing Time: {end_time - start_time:.2f} s.", "info"
     )
 
 
@@ -453,133 +403,98 @@ async def process_news(msg, source, ctx):
 
 
 async def websocket_loop(ctx):
-    """
-    Binance Websocket verilerini yöneten ana döngü.
-    Hatalara karşı korumalı, otomatik hafıza başlatan ve PnL güncelleyen versiyon.
-    """
-    ctx.log_ui("🔌 Websocket Bağlantısı Başlatılıyor (Sniper Mode)...", "info")
+    """Main Binance Websocket loop with auto-recovery and memory initialization."""
+    ctx.log_ui("Connecting Websocket (Sniper Mode)...", "info")
 
-    # Ana Reconnection Döngüsü (Koparsa tekrar bağlanır)
     while ctx.app_state.is_running:
         try:
             async with websockets.connect(WEBSOCKET_URL) as ws:
-                ctx.log_ui("✅ Websocket Bağlandı.", "success")
+                ctx.log_ui("Websocket Connected.", "success")
 
-                # --- ALT GÖREV 1: GÖNDERİCİ (Sender) ---
-                # Abonelik (Subscribe) emirlerini Binance'e iletir
                 async def sender():
                     while ctx.app_state.is_running:
                         try:
-                            # Kuyruktan emir gelmesini bekle
                             command = await ctx.stream_command_queue.get()
                             await ws.send(json.dumps(command))
-                            # Log kirliliği olmaması için print kapalı, gerekirse aç:
-                            # print(f"📡 Stream Komutu Gönderildi: {command}")
                         except Exception as e:
-                            ctx.log_ui(f"⚠️ WS Sender Hatası: {e}", "error")
-                            break  # Hata varsa döngüyü kır ki ana döngü yeniden bağlansın
+                            ctx.log_ui(f"WS Sender Error: {e}", "error")
+                            break  
 
-                # --- ALT GÖREV 2: ALICI (Receiver) ---
-                # Binance'den gelen fiyatları işler
                 async def receiver():
+                    """Handles incoming WebSocket messages for price updates and position tracking."""
                     async for msg in ws:
                         try:
                             raw_data = json.loads(msg)
 
-                            # Veri formatını ayıkla ('data' içinde veya direkt gelebilir)
                             if "data" in raw_data:
                                 data = raw_data["data"]
                             else:
                                 data = raw_data
 
-                            # Kline (Mum) verisi mi?
                             if isinstance(data, dict) and data.get("e") == "kline":
-                                # 1. SEMBOLÜ KÜÇÜLT (Hayati Düzeltme)
-                                # Binance 'BTCUSDT' yollar, biz 'btcusdt' kullanıyoruz.
                                 pair = data["s"].lower()
                                 k = data["k"]
                                 price = float(k["c"])
                                 is_closed = k["x"]
                                 ts = k["t"] / 1000
 
-                                # 2. HAFIZA KONTROLÜ (KeyError Çözümü)
-                                # Eğer bu coin hafızada yoksa, anında oluştur!
                                 if pair not in ctx.market_memory:
                                     ctx.market_memory[pair] = PriceBuffer()
 
-                                # 3. HAFIZAYI GÜNCELLE
                                 ctx.market_memory[pair].update_candle(
                                     price, ts, is_closed
                                 )
 
-                                # 4. POZİSYON VE PNL KONTROLÜ
-                                # Eğer bu coinde açık işlemimiz varsa, Exchange'e haber ver
                                 if pair in ctx.exchange.positions:
                                     log, color, closed_sym, pnl, peak_price, decision_id = (
                                         ctx.exchange.check_positions(pair, price)
                                     )
 
                                     if log:
-                                        # Log varsa (TP, SL, Trailing, Time Limit tetiklendiyse)
                                         ctx.log_ui(log, color)
                                         log_txt(log)
 
-                                        if log:
-                                            ctx.log_ui(log, color)
-                                            log_txt(log)
-                                            if closed_sym:
-                                                await handle_closed_position(
-                                                    ctx, closed_sym, pnl, peak_price, log, decision_id
-                                                )
-
+                                        if closed_sym:
+                                            await handle_closed_position(
+                                                ctx, closed_sym, pnl, peak_price, log, decision_id
+                                            )
 
                         except Exception as e:
-                            # Tek bir mesajın bozuk olması tüm bağlantıyı koparmamalı
-                            # Sadece logla ve devam et
-                            ctx.log_ui(f"⚠️ WS Msg İşleme Hatası: {e}", "warning")
+                            ctx.log_ui(f"WS Msg Processing Error: {e}", "warning")
                             continue
 
-                # Gönderici ve Alıcıyı paralel çalıştır
                 await asyncio.gather(sender(), receiver())
 
         except Exception as e:
             ctx.log_ui(
-                f"❌ Websocket Bağlantısı Koptu: {e}. 5sn içinde yeniden bağlanılıyor...",
+                f"Websocket Disconnected: {e}. Retrying in 5s...",
                 "error",
             )
             await asyncio.sleep(5)
 
 
 async def position_monitor_loop(ctx):
-    """
-    Bekçi Köpeği: Websocket takılsa bile hafızadaki son fiyatla
-    süre (validity) kontrolü yapar.
-    """
-    ctx.log_ui("🛡️ Position Monitor (Bekçi) Devrede...", "success")
+    """Watchdog loop to monitor open positions for expiry and validity."""
+    ctx.log_ui("Position Monitor Active.", "success")
 
     while ctx.app_state.is_running:
         try:
-            await asyncio.sleep(2)  # 2 Saniyede bir kontrol (Daha sıkı takip)
+            await asyncio.sleep(2)  
 
             if not ctx.exchange.positions:
                 continue
 
-            # Sözlük değişirken hata almamak için listeye çevirip dönüyoruz
-            # Keys zaten küçük harf ('btcusdt') olmalı
             open_symbols = list(ctx.exchange.positions.keys())
 
             for pair in open_symbols:
-                # Hafızadaki son fiyatı al
                 if pair not in ctx.market_memory:
                     continue
 
                 current_price = ctx.market_memory[pair].current_price
 
-                # Fiyat 0 ise pas geç
                 if current_price == 0:
                     continue
 
-                # Kontrol Et
                 log, color, closed_sym, pnl, peak, decision_id = (
                     ctx.exchange.check_positions(pair, current_price)
                 )
@@ -592,32 +507,26 @@ async def position_monitor_loop(ctx):
                             ctx, closed_sym, pnl, peak, log, decision_id
                         )
 
-                
-
         except Exception as e:
-            print(f"⚠️ Monitor Loop Hatası: {e}")
+            print(f"[ERROR] Monitor Loop Warning: {e}")
             await asyncio.sleep(5)
 
 
-# Yardımcı Fonksiyon (Kod tekrarını önlemek için)
-async def handle_closed_position(ctx, symbol, pnl, peak_price, log_msg, decision_id=None): # <-- log_msg eklendi
-    """Pozisyon kapandığında yapılacak standart işlemler."""
+async def handle_closed_position(ctx, symbol, pnl, peak_price, log_msg, decision_id=None): 
+    """Cleanup tasks when a position is closed: real-exchange sync, logging, and metrics."""
 
     if REAL_TRADING_ENABLED:
         asyncio.create_task(ctx.real_exchange.close_position_market(symbol))
 
     try:
-        # 1. Dataset ve Telegram (HATA BURADAYDI, ARTIK log_msg KULLANIYORUZ)
         ctx.dataset_manager.log_trade_exit(symbol, pnl, "Closed", peak_price)
         asyncio.create_task(send_telegram_alert(ctx, log_msg))
         
-        # 2. SQLite Veritabanı Kaydı (Artık bu satıra ulaşılabilecek)
         if ctx.exchange.history:
             last_trade = ctx.exchange.history[-1]
             last_trade["peak_price"] = peak_price
             ctx.memory.log_trade(last_trade, decision_id)
 
-        # 4. Stream İptal ve Bakiye Güncelleme
         try:
             unsubscribe_msg = {
                 "method": "UNSUBSCRIBE",
@@ -625,42 +534,42 @@ async def handle_closed_position(ctx, symbol, pnl, peak_price, log_msg, decision
                 "id": int(time.time()),
             }
             await ctx.stream_command_queue.put(unsubscribe_msg)
-        except:
+        except Exception:
             pass
         
         asyncio.create_task(update_system_balance(ctx, last_pnl=pnl))
 
     except Exception as e:
-        ctx.log_ui(f"💥 handle_closed_position KRİTİK HATA: {e}", "error")
+        ctx.log_ui(f"CRITICAL ERROR in handle_closed_position: {e}", "error")
+
 
 async def telegram_loop(ctx):
-    ctx.log_ui("Telegram Bağlanıyor...", "info")
+    """Initializes and runs the Telegram client listener for news channels."""
+    ctx.log_ui("Connecting Telegram...", "info")
     try:
         await ctx.telegram_client.start()
 
-        print("CONNECTED:", ctx.telegram_client.is_connected())
-        print("AUTHORIZED:", await ctx.telegram_client.is_user_authorized())
-        await send_telegram_alert(ctx, "Telegram Bağlandı ✅")
+        print(f"TELEGRAM CONNECTED: {ctx.telegram_client.is_connected()}")
+        print(f"TELEGRAM AUTHORIZED: {await ctx.telegram_client.is_user_authorized()}")
+        await send_telegram_alert(ctx, "Telegram Connected")
         if not await ctx.telegram_client.is_user_authorized():
-            ctx.log_ui("❌ TELEGRAM OTURUMU YOK!", "error")
+            ctx.log_ui("TELEGRAM SESSION FAILED", "error")
             return
 
-        ctx.log_ui("Telegram Listening 📡", "success")
+        ctx.log_ui("Telegram Listening", "success")
 
         @ctx.telegram_client.on(events.NewMessage(chats=TARGET_CHANNELS))
         async def handler(event):
             if event.message.message:
                 await process_news(event.message.message, "TELEGRAM", ctx)
 
-        # 🔴 BURASI SİLİNDİ
-        # await ctx.telegram_client.run_until_disconnected()
-
     except Exception as e:
-        ctx.log_ui(f"❌ Telegram Hatası: {e}", "error")
+        ctx.log_ui(f"Telegram Error: {e}", "error")
 
 
 async def collector_loop(ctx):
-    ctx.log_ui("Data Collector Active 💾", "success")
+    """Periodically triggers data collection verification for pending model analysis events."""
+    ctx.log_ui("Data Collector Active", "success")
     while True:
         await asyncio.sleep(60)
         curr_prices = {
@@ -673,8 +582,8 @@ async def collector_loop(ctx):
 
 
 async def rss_loop(ctx):
-    ctx.log_ui("RSS Modülü Başlatılıyor... 📡", "info")
-    # RSSMonitor'a bir loglama ekleyemiyoruz ama başlatıldığını buradan logluyoruz.
+    """Starts the RSS feed monitor loop."""
+    ctx.log_ui("Initializing RSS Module...", "info")
     rss_bot = RSSMonitor(
         callback_func=lambda msg, src: asyncio.create_task(process_news(msg, src, ctx))
     )

@@ -260,3 +260,5 @@ wandb/
 *.pkl
 *.pt
 .env
+
+.agents/

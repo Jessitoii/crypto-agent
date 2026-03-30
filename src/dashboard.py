@@ -1,12 +1,11 @@
 from nicegui import ui
 import asyncio
 import time
-import config  # Panic button için gerekli
+import config
 from services import update_system_balance
 
-
-# --- YARDIMCI FONKSİYONLAR ---
 def create_kpi(label, icon="attach_money"):
+    """Creates a KPI card with icon and label."""
     with ui.card().classes(
         "bg-gray-900 border-l-4 border-primary p-3 flex-row gap-3 items-center"
     ):
@@ -16,9 +15,8 @@ def create_kpi(label, icon="attach_money"):
             lbl = ui.label("...").classes("text-xl font-mono font-bold")
             return lbl
 
-
 def create_dashboard(ctx, on_manual_submit, existing_logs=None):
-    # Renk Paleti
+    # Color Palette
     ui.colors(
         primary="#00B4D8",
         secondary="#0077B6",
@@ -68,14 +66,14 @@ def create_dashboard(ctx, on_manual_submit, existing_logs=None):
                 "text-xs font-bold px-2 py-1 rounded bg-blue-500/20 text-blue-400"
             )
 
-    # --- PANIC BUTTON FONKSİYONU ---
+    # --- PANIC BUTTON LOGIC ---
     async def panic_close_all():
         open_symbols = list(ctx.exchange.positions.keys())
         if not open_symbols:
-            ui.notify("Kapatılacak açık pozisyon yok.", type="warning")
+            ui.notify("No open positions to close.", type="warning")
             return
         n = len(open_symbols)
-        ctx.log_ui(f"🚨 PANIC MODE TETİKLENDİ! {n} Pozisyon kapatılıyor...", "warning")
+        ctx.log_ui(f"🚨 PANIC MODE TRIGGERED! Closing {n} positions...", "warning")
         for symbol in open_symbols:
             try:
                 pos = ctx.exchange.positions.get(symbol)
@@ -95,39 +93,39 @@ def create_dashboard(ctx, on_manual_submit, existing_logs=None):
                 await ctx.stream_command_queue.put(unsubscribe_msg)
                 asyncio.create_task(update_system_balance(ctx, last_pnl=pnl))
             except Exception as e:
-                ctx.log_ui(f"⚠️ Kapatma Hatası ({symbol}): {e}", "error")
+                ctx.log_ui(f"⚠️ Close Error ({symbol}): {e}", "error")
         ui.notify(
-            f"Tüm Pozisyonlar ({n}) Kapatıldı.", type="positive", position="center"
+            f"All Positions ({n}) Closed.", type="positive", position="center"
         )
 
     # --- TABS ---
     with ui.tabs().classes("w-full text-gray-400") as tabs:
-        dash_tab = ui.tab("KOKPİT", icon="dashboard")
-        ai_tab = ui.tab("AI GÜNLÜĞÜ", icon="psychology")
-        report_tab = ui.tab("STRATEJİ RAPORU", icon="assessment")  # <--- YENİ SEKME
-        market_tab = ui.tab("PİYASA", icon="show_chart")
-        history_tab = ui.tab("İŞLEM GEÇMİŞİ", icon="history")
+        dash_tab = ui.tab("COCKPIT", icon="dashboard")
+        ai_tab = ui.tab("AI LOGS", icon="psychology")
+        report_tab = ui.tab("STRATEGY REPORT", icon="assessment")
+        market_tab = ui.tab("MARKET", icon="show_chart")
+        history_tab = ui.tab("HISTORY", icon="history")
 
     with ui.tab_panels(tabs, value=dash_tab).classes("w-full bg-transparent p-0"):
 
-        # --- TAB 1: KOKPİT ---
+        # --- TAB 1: COCKPIT ---
         with ui.tab_panel(dash_tab).classes("p-4 gap-4"):
             with ui.grid(columns=4).classes("w-full gap-4 mb-4"):
-                bal_label = create_kpi("Cüzdan")
-                pnl_label = create_kpi("Toplam K/Z", icon="trending_up")
+                bal_label = create_kpi("Wallet")
+                pnl_label = create_kpi("Total PnL", icon="trending_up")
                 win_label = create_kpi("Win Rate", icon="pie_chart")
-                pos_count_label = create_kpi("Aktif İşlem", icon="layers")
+                pos_count_label = create_kpi("Active Trades", icon="layers")
 
             with ui.grid(columns=3).classes("w-full h-[70vh] gap-4"):
                 with ui.column().classes(
                     "col-span-2 h-full bg-gray-900/50 rounded-lg border border-gray-800 p-4"
                 ):
                     with ui.row().classes("w-full justify-between items-center mb-2"):
-                        ui.label("⚡ AKTİF POZİSYONLAR").classes(
+                        ui.label("⚡ ACTIVE POSITIONS").classes(
                             "text-sm font-bold text-primary"
                         )
                         ui.button(
-                            "TÜMÜNÜ KAPAT",
+                            "CLOSE ALL",
                             icon="close",
                             color="negative",
                             on_click=panic_close_all,
@@ -154,7 +152,7 @@ def create_dashboard(ctx, on_manual_submit, existing_logs=None):
             ):
                 ui.icon("edit_note", size="24px").classes("text-blue-400 ml-2")
                 news_input = (
-                    ui.input(placeholder="Manuel Analiz: 'Bitcoin ETF approved...'")
+                    ui.input(placeholder="Manual Analysis: 'Bitcoin ETF approved...'")
                     .classes("w-full flex-1")
                     .props("dark dense borderless")
                 )
@@ -168,43 +166,43 @@ def create_dashboard(ctx, on_manual_submit, existing_logs=None):
                     "flat dense color=primary"
                 )
 
-        # --- TAB 2: AI GÜNLÜĞÜ ---
+        # --- TAB 2: AI LOGS ---
         with ui.tab_panel(ai_tab).classes("p-4"):
-            ui.label("🧠 YAPAY ZEKA KARAR HAFIZASI (Son 100 Analiz)").classes(
+            ui.label("🧠 AI DECISION LOG (Last 100 Analyses)").classes(
                 "text-lg font-bold mb-4 text-white"
             )
             with ui.row().classes("w-full grid grid-cols-12 text-[10px] font-bold text-gray-500 border-b border-gray-700 pb-2 mb-2 items-center"):
-                ui.label("SAAT").classes("col-span-1")
+                ui.label("TIME").classes("col-span-1")
                 ui.label("COIN").classes("col-span-1")
-                ui.label("KARAR").classes("col-span-1")
-                ui.label("GÜVEN/VAL").classes("col-span-1") # Güven ve Validity birleşti
-                ui.label("FİYAT").classes("col-span-1")
-                ui.label("TP/SL").classes("col-span-1")    # TP ve SL birleşti
-                ui.label("SEBEP").classes("col-span-3")    # Sebep alanı
-                ui.label("HABER").classes("col-span-3")    # Haber alanı
+                ui.label("ACTION").classes("col-span-1")
+                ui.label("CONF/VAL").classes("col-span-1")
+                ui.label("PRICE").classes("col-span-1")
+                ui.label("TP/SL").classes("col-span-1")
+                ui.label("REASON").classes("col-span-3")
+                ui.label("NEWS").classes("col-span-3")
             ai_decisions_container = ui.column().classes(
                 "w-full gap-1 overflow-y-auto h-[75vh]"
             )
 
-        # --- TAB 3: STRATEJİ RAPORU (YENİ SEKME) ---
+        # --- TAB 3: STRATEGY REPORT ---
         with ui.tab_panel(report_tab).classes("p-4"):
             with ui.row().classes("items-center justify-between w-full mb-4"):
-                ui.label("📊 DETAYLI STRATEJİ VE PERFORMANS RAPORU").classes(
+                ui.label("📊 STRATEGY & PERFORMANCE REPORT").classes(
                     "text-lg font-bold text-white"
                 )
 
-                # Raporu Yenileme Butonu
+                # Strategy Report Refresh Logic
                 async def refresh_report():
                     full_story = ctx.memory.get_full_trade_story()
                     
-                    # ROI ve Diğer Hesaplamaları Tabloya Gitmeden Önce Yapalım
+                    # Pre-calculate ROI and formatting
                     for row in full_story:
                         entry = row.get('entry_price')
                         exit = row.get('exit_price')
                         peak = row.get('peak_price')
                         
                         if entry and exit:
-                            # İşlem yönüne göre ROI hesapla
+                            # Calculate ROI based on trade direction
                             if row['action'] == 'LONG':
                                 row['roi'] = f"%{((exit - entry) / entry * 100):.2f}"
                             else: # SHORT
@@ -212,39 +210,38 @@ def create_dashboard(ctx, on_manual_submit, existing_logs=None):
                         else:
                             row['roi'] = "-"
                             
-                        # Formatlama (Fiyatların okunabilirliği için)
+                        # Price formatting
                         row['entry_price'] = f"{entry:.4f}" if entry else "-"
                         row['exit_price'] = f"{exit:.4f}" if exit else "-"
                         row['peak_price'] = f"{peak:.4f}" if peak else "-"
                     
                     report_table.rows = full_story
                     report_table.update()
-                    ui.notify("Strateji Raporu Güncellendi.", type="info")
+                    ui.notify("Strategy Report Updated.", type="info")
 
                 ui.button(
-                    "RAPORU YENİLE", icon="refresh", on_click=refresh_report
+                    "REFRESH REPORT", icon="refresh", on_click=refresh_report
                 ).props("outline size=sm")
 
-            # Tablo Yapısı
+            # Strategy Table Columns
             columns = [
-                {"name": "time", "label": "Giriş Saati", "field": "time", "sortable": True, "align": "left"},
+                {"name": "time", "label": "Entry Time", "field": "time", "sortable": True, "align": "left"},
                 {"name": "symbol", "label": "Coin", "field": "symbol", "sortable": True, "align": "left"},
-                {"name": "action", "label": "Yön", "field": "action", "align": "center"},
-                {"name": "entry_price", "label": "Giriş Fiyatı", "field": "entry_price", "align": "right"},
-                {"name": "exit_price", "label": "Çıkış Fiyatı", "field": "exit_price", "align": "right"},
+                {"name": "action", "label": "Side", "field": "action", "align": "center"},
+                {"name": "entry_price", "label": "Entry", "field": "entry_price", "align": "right"},
+                {"name": "exit_price", "label": "Exit", "field": "exit_price", "align": "right"},
                 {"name": "peak_price", "label": "Peak Seen", "field": "peak_price", "align": "right"},
-                {"name": "roi", "label": "ROI (%)", "field": "roi", "align": "right"}, # Hesaplanan alan
+                {"name": "roi", "label": "ROI (%)", "field": "roi", "align": "right"},
                 {"name": "pnl", "label": "Pnl ($)", "field": "pnl", "sortable": True, "align": "right"},
-                {"name": "close_reason", "label": "Çıkış Sebebi", "field": "close_reason", "align": "left"},
-                {"name": "ai_reason", "label": "Giriş Mantığı", "field": "ai_reason", "align": "left"}
+                {"name": "close_reason", "label": "Exit Reason", "field": "close_reason", "align": "left"},
+                {"name": "ai_reason", "label": "Entry Logic", "field": "ai_reason", "align": "left"}
             ]
 
-            # Tabloyu Oluştur (Veriler refresh butonuna basınca veya otomatik dolacak)
             report_table = ui.table(columns=columns, rows=[], row_key="time").classes(
                 "w-full bg-gray-900 text-gray-300"
             )
 
-            # PnL'e göre satır renklendirmesi için slot (Opsiyonel ama şık durur)
+            # Optional row coloring for PnL
             report_table.add_slot(
                 "body-cell-trade_result",
                 """
@@ -256,25 +253,21 @@ def create_dashboard(ctx, on_manual_submit, existing_logs=None):
             """,
             )
 
-            # Başlangıçta bir kere çekelim
-            # (Ama UI oluşurken async çağırmak bazen sorun olabilir, butonla yapmak daha güvenli)
-            # Biz yine de boş bırakalım, kullanıcı butona bassın ya da timer ile dolabilir.
-
-        # --- TAB 4: PİYASA ---
+        # --- TAB 4: MARKET ---
         with ui.tab_panel(market_tab).classes("p-4"):
-            ui.label("📡 CANLI PİYASA VERİLERİ (MEMORY)").classes(
+            ui.label("📡 LIVE MARKET DATA (MEMORY)").classes(
                 "text-lg font-bold mb-4 text-white"
             )
             market_grid = ui.grid(columns=5).classes("w-full gap-3")
 
-        # --- TAB 5: İŞLEM GEÇMİŞİ ---
+        # --- TAB 5: HISTORY ---
         with ui.tab_panel(history_tab).classes("p-4"):
-            ui.label("📜 KAPANMIŞ İŞLEMLER (ÖZET)").classes(
+            ui.label("📜 CLOSED TRADES SUMMARY").classes(
                 "text-lg font-bold mb-4 text-white"
             )
             history_container = ui.column().classes("w-full gap-2")
 
-    # --- REFRESH LOOP ---
+    # --- UI REFRESH LOOP ---
     def refresh_ui():
         try:
             exchange = ctx.exchange
@@ -293,11 +286,11 @@ def create_dashboard(ctx, on_manual_submit, existing_logs=None):
             win_label.set_text(f"%{wr:.1f} ({wins}/{total_closed})")
             pos_count_label.set_text(str(len(exchange.positions)))
 
-            # 2. POZİSYONLAR
+            # 2. POSITIONS
             positions_container.clear()
             if not exchange.positions:
                 with positions_container:
-                    ui.label("Beklemede... İşlem yok.").classes(
+                    ui.label("Idle... No active trades.").classes(
                         "text-gray-600 italic text-sm w-full text-center mt-10"
                     )
 
@@ -336,8 +329,7 @@ def create_dashboard(ctx, on_manual_submit, existing_logs=None):
                                 ui.label(f"TP: {pos['tp']:.2f}")
                                 ui.label(f"SL: {pos['sl']:.2f}")
 
-                                # CANLI GERİ SAYIM (Expiry Time)
-                                # Expiry varsa hesapla, yoksa hata vermesin
+                                # Live expiry countdown
                                 exp_time = pos.get("expiry_time", 0)
                                 if exp_time > 0:
                                     remaining_sec = max(0, exp_time - time.time())
@@ -352,11 +344,11 @@ def create_dashboard(ctx, on_manual_submit, existing_logs=None):
                                         f"{time_color} font-mono"
                                     )
 
-            # 3. AI KARARLARI
+            # 3. AI DECISIONS
             ai_decisions_container.clear()
             with ai_decisions_container:
                 if not ctx.ai_decisions:
-                    ui.label("Henüz analiz yapılmadı.").classes("text-gray-600 italic")
+                    ui.label("No analyses yet.").classes("text-gray-600 italic")
                 for d in reversed(ctx.ai_decisions):
                     if d["action"] == "LONG":
                         action_col = "text-green-400 font-bold"
@@ -370,15 +362,15 @@ def create_dashboard(ctx, on_manual_submit, existing_logs=None):
                         ui.label(d['symbol']).classes('col-span-1 font-bold text-blue-300')
                         ui.label(d['action']).classes(f'col-span-1 {action_col} font-bold')
                         
-                        # Güven ve Validity yan yana (Örn: %85 / 15m)
+                        # Confidence and Validity (e.g., %85 / 15m)
                         ui.label(f"%{d.get('confidence',0)} / {d.get('validity_minutes',0)}m").classes('col-span-1 text-yellow-500 font-mono')
                         
                         ui.label(f"{d.get('price',0)}").classes('col-span-1 text-gray-400 font-mono')
                         
-                        # TP ve SL yan yana (Örn: 0.8 / 0.5)
+                        # TP and SL (e.g., 0.8 / 0.5)
                         ui.label(f"{d.get('tp_pct',0)} / {d.get('sl_pct',0)}").classes('col-span-1 text-blue-200 font-mono')
                         
-                        # Sebep ve Haber: Kısaltılmış metin + Tooltip
+                        # Reason and News: Truncated text with tooltip
                         ui.label(d.get('reason', 'N/A')).classes('col-span-3 text-gray-300 truncate').tooltip(d.get('reason'))
                         ui.label(d.get('news_snippet', 'N/A')).classes('col-span-3 text-gray-500 truncate italic').tooltip(d.get('news_snippet'))
 
@@ -389,7 +381,7 @@ def create_dashboard(ctx, on_manual_submit, existing_logs=None):
                     k: v for k, v in ctx.market_memory.items() if v.current_price > 0
                 }
                 if not active_coins:
-                    ui.label("Veri toplanıyor...").classes(
+                    ui.label("Collecting data...").classes(
                         "col-span-5 text-center text-gray-500"
                     )
                 for pair, buffer in active_coins.items():
@@ -407,20 +399,19 @@ def create_dashboard(ctx, on_manual_submit, existing_logs=None):
                         )
                         ui.label(f"%{change_1h:.2f}").classes(f"text-xs {txt_col}")
 
-            # 5. GEÇMİŞ İŞLEMLER
+            # 5. HISTORY
             history_container.clear()
             with history_container:
                 if not exchange.history:
-                    ui.label("Henüz kapanmış işlem yok.").classes('text-gray-500')
+                    ui.label("No closed trades yet.").classes('text-gray-500')
                 else:
-                    # Başlıkları güncelle: PEAK eklendi, grid 6 sütuna çıktı
                     with ui.row().classes('w-full grid grid-cols-6 text-xs font-bold text-gray-500 border-b border-gray-700 pb-1'):
-                        ui.label('ZAMAN')
+                        ui.label('TIME')
                         ui.label('SYMBOL')
                         ui.label('PNL')
-                        ui.label('PEAK SEEN') # <--- YENİ SÜTUN
-                        ui.label('SEBEP')
-                        ui.label('YÖN')
+                        ui.label('PEAK SEEN')
+                        ui.label('REASON')
+                        ui.label('SIDE')
                     
                     for trade in reversed(exchange.history[-20:]):
                         col = "text-green-400" if trade['pnl'] > 0 else "text-red-400"
@@ -429,7 +420,7 @@ def create_dashboard(ctx, on_manual_submit, existing_logs=None):
                             ui.label(trade['symbol']).classes('font-bold text-gray-300')
                             ui.label(f"${trade['pnl']:.2f}").classes(f"font-bold {col}")
                             
-                            # Peak Seen gösterimi
+                            # Peak Seen display
                             ui.label(f"{trade.get('peak', 0):.4f}").classes('text-yellow-500 font-mono')
                             
                             ui.label(trade['reason']).classes('text-gray-500 truncate')
