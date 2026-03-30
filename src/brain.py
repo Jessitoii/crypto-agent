@@ -23,7 +23,7 @@ class AgentBrain:
     def __init__(self, use_groqcloud=True, api_key=None, groqcloud_model="google/gemini-2.0-flash-exp:free", use_gemini = False, google_api_key = None, gemini_model = "gemma-3-27b-it"):
         self.use_groqcloud = use_groqcloud
         self.model = groqcloud_model
-        self.ollama_model = "MinistralTrader"  # Fallback
+        self.ollama_model = "nexus-qwen3"  # Fallback
         self.api_key = api_key
         self.coin_cache = {} # Cache
         self.last_request_time = 0
@@ -165,7 +165,7 @@ class AgentBrain:
                     res = await asyncio.to_thread(
                         ollama.chat,
                         model=self.ollama_model,
-                        messages=messages_payload,
+                        messages=[{"role": "user", "content": prompt}],
                         format='json' if json_mode else '',
                         options=options,
                         keep_alive=-1
@@ -297,31 +297,13 @@ class AgentBrain:
             print(f"Profile Error: {e}")
             return "Unknown"
 
-    async def analyze_specific_no_research(self, news, symbol, price, changes, coin_full_name="Unknown", market_cap_str="", rsi_val=0, btc_trend=0, volume_24h="", funding_rate=0):
+    async def analyze_specific_no_research(self, news, symbol):
         """İnternet araştırması yapmadan, sadece teknik verilerle karar verir."""
         await self._wait_for_rate_limit()
-        # Kategori bilgisini cache'den veya statik listeden çek (Araştırma yapma!)
-        sym_clean = symbol.upper().replace('USDT', '')
-        coin_category = coin_categories.get(sym_clean, "Unknown")
-        
-        current_time_str = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 
         # Prompt'u research_context olmadan dolduruyoruz
         prompt = ANALYZE_GENERAL_PROMPT.format(
             symbol=symbol.upper(),
-            coin_full_name=coin_full_name,
-            market_cap_str=market_cap_str,
-            coin_category=coin_category,
-            rsi_val=rsi_val,
-            btc_trend=btc_trend,
-            volume_24h=volume_24h,
-            funding_rate=funding_rate,
-            current_time_str=current_time_str,
-            price=price,
-            change_1m=changes['1m'],
-            change_10m=changes['10m'],
-            change_1h=changes['1h'],
-            change_24h=changes['24h'],
             news=news,
         )
 

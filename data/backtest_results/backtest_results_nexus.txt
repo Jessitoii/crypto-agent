@@ -1,0 +1,866 @@
+
+--- SIMULATION RUN (SetFit): 2026-01-05 18:00:28.440609 ---
+
+============================================================
+⚠️ FIRSAT KAÇTI (HOLD) | 2025-12-31 02:00:09
+------------------------------------------------------------
+📰 HABER: 🚨 **TODAY**: Bitwise files for 11 cryptocurrency ETFs which includes $AAVE, $CC, $ENA, $HYPE, $NEAR, $STRK, $SUI, $TAO, $TRX, $UNI and $ZEC.
+
+[News |]( [Markets |]( [YouTube](
+🎯 HEDEF: CCUSDT (Canton)
+🧠 AI KARARI: HOLD (Güven: %100.00)
+📉 GERÇEKLEŞEN (20dk): %1.88 (LONG Yönlü)
+💸 10x ile KAÇAN FIRSAT: %18.75 PnL
+📈 TEKNİK: RSI=23.74 | MOM=-0.55
+============================================================
+
+============================================================
+⚠️ FIRSAT KAÇTI (HOLD) | 2025-12-27 13:51:30
+------------------------------------------------------------
+📰 HABER: According to Binance market data, the price of FLOW token plummeted today, dropping from $0.17 to a low of $0.079, with the current price at $0.1, marking a 24-hour drop of 42.61%. Flow Foundation announced it is investigating a potential security incident affecting the Flow network and is further examining the cause. Upbit and Bithumb have suspended deposits and withdrawals of FLOW tokens. The Digital Asset Exchange Association (DAXA) in South Korea has issued a "trading risk warning" for FLOW. [— link](
+
+The Flow Foundation confirmed that on Dec. 27 an attacker exploited a vulnerability in Flow’s execution layer and moved approximately $3.9 million off-network before validators halted operations. The incident did not impact existing user balances, and all user deposits remain intact. The protocol fix has been developed and released, and node operators are now coordinating the upgrade deployment.[ — link](
+🎯 HEDEF: FLOWUSDT (Unknown)
+🧠 AI KARARI: HOLD (Güven: %100.00)
+📉 GERÇEKLEŞEN (20dk): %3.67 (LONG Yönlü)
+💸 10x ile KAÇAN FIRSAT: %36.70 PnL
+📈 TEKNİK: RSI=50.00 | MOM=4.85
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-31 02:30:34
+------------------------------------------------------------
+📰 HABER: On December 30, Bitwise submitted applications to the U.S. SEC for 11 cryptocurrency ETFs, including the Bitwise AAVE Strategy ETF, Bitwise UNI Strategy ETF, Bitwise ZEC Strategy ETF, Bitwise CC Strategy ETF, Bitwise ENA Strategy ETF, Bitwise Hyperliquid Strategy ETF, Bitwise NEAR Strategy ETF, Bitwise STRK Strategy ETF, Bitwise SUI Strategy ETF, Bitwise TAO Strategy ETF, and Bitwise TRX Strategy ETF. [— link](
+🎯 HEDEF: UNIUSDT (Uniswap)
+💰 MCAP: $3.69 BILLION
+📈 TEKNİK: RSI=39.13 (NEUTRAL) | MOM=0.17 (FLAT)
+🧠 AI KARARI (NEXUS v2):
+   - Aksiyon: LONG
+   - Güven: %82.87
+   - Raw Probs: [0.080499807300623, 0.0908102873704154, 0.8286899053289617]
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-31 06:00:45):
+   - Durum: 🏁 [TEST] KAPANDI: UNIUSDT | PnL: 0.00 USDT
+   - Giriş: 5.963 | Çıkış: 5.963
+   - Kaldıraç: 10x
+   - Süre: 30.2 dk
+   - Kar/Zarar: 0.00 USDT
+   - Görülen En İyi Fiyat (Peak): 5.972
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-04 06:38:37
+------------------------------------------------------------
+📰 HABER: According to CryptoRank, among tokens with a market cap above $500 million, the top gainers in 2025 were ZEC (+861%), WBT (+131%), XMR (+123%), OKB (+118%), PAX Gold (+67%), Tether Gold (+66%), Bitcoin Cash (+37%), Beldex (+24%), BNB (+22%), and Dash (+12%). [— link](
+🎯 HEDEF: ZECUSDT (Zcash)
+💰 MCAP: $8.11 BILLION
+📈 TEKNİK: RSI=41.73 (NEUTRAL) | MOM=-0.80 (BEARISH_MOM)
+🧠 AI KARARI (NEXUS v2):
+   - Aksiyon: LONG
+   - Güven: %86.21
+   - Raw Probs: [0.08489956510473243, 0.05299848685648345, 0.8621019480387841]
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-04 10:08:45):
+   - Durum: 🏁 [TEST] KAPANDI: ZECUSDT | PnL: -7.70 USDT
+   - Giriş: 510.29 | Çıkış: 506.36
+   - Kaldıraç: 10x
+   - Süre: 30.1 dk
+   - Kar/Zarar: -7.70 USDT
+   - Görülen En İyi Fiyat (Peak): 510.81
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-26 16:07:28
+------------------------------------------------------------
+📰 HABER: Crypto regulation in 2026: SEC’s ambitious agenda meets a more empowered CFTC - [The Block](
+🎯 HEDEF: BTCUSDT (Bitcoin)
+💰 MCAP: $1867.04 BILLION
+📈 TEKNİK: RSI=62.34 (NEUTRAL) | MOM=0.23 (FLAT)
+🧠 AI KARARI (NEXUS v2):
+   - Aksiyon: LONG
+   - Güven: %89.46
+   - Raw Probs: [0.011490818800388668, 0.09391795008724378, 0.8945912311123675]
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-26 19:37:30):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: 2.22 USDT
+   - Giriş: 87094.6 | Çıkış: 87288.0
+   - Kaldıraç: 10x
+   - Süre: 30.0 dk
+   - Kar/Zarar: 2.22 USDT
+   - Görülen En İyi Fiyat (Peak): 87349.1
+============================================================
+
+============================================================
+⚠️ FIRSAT KAÇTI (HOLD) | 2025-12-27 18:53:43
+------------------------------------------------------------
+📰 HABER: Flow blockchain probes security incident as FLOW token plunges over 40% - [The Block](
+🎯 HEDEF: FLOWUSDT (Unknown)
+🧠 AI KARARI: HOLD (Güven: %100.00)
+📉 GERÇEKLEŞEN (20dk): %1.85 (LONG Yönlü)
+💸 10x ile KAÇAN FIRSAT: %18.52 PnL
+📈 TEKNİK: RSI=37.50 | MOM=1.90
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-29 06:13:26
+------------------------------------------------------------
+📰 HABER: China to let banks pay interest on digital yuan to drive adoption - [The Block](
+🎯 HEDEF: BTCUSDT (Bitcoin)
+💰 MCAP: $1867.04 BILLION
+📈 TEKNİK: RSI=55.90 (NEUTRAL) | MOM=-0.19 (FLAT)
+🧠 AI KARARI (NEXUS v2):
+   - Aksiyon: LONG
+   - Güven: %83.36
+   - Raw Probs: [0.00022174336957393097, 0.16617931941649794, 0.8335989372139282]
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-29 09:43:30):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: -0.82 USDT
+   - Giriş: 89969.6 | Çıkış: 89895.4
+   - Kaldıraç: 10x
+   - Süre: 30.1 dk
+   - Kar/Zarar: -0.82 USDT
+   - Görülen En İyi Fiyat (Peak): 90097.6
+============================================================
+
+============================================================
+⚠️ FIRSAT KAÇTI (HOLD) | 2025-12-30 07:04:47
+------------------------------------------------------------
+📰 HABER: Lighter launches native token LIT, allocates half to ecosystem growth - [The Block](
+🎯 HEDEF: LITUSDT (Unknown)
+🧠 AI KARARI: HOLD (Güven: %100.00)
+📉 GERÇEKLEŞEN (20dk): %-10.15 (SHORT Yönlü)
+💸 10x ile KAÇAN FIRSAT: %101.48 PnL
+📈 TEKNİK: RSI=43.12 | MOM=-11.69
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-01 20:07:08
+------------------------------------------------------------
+📰 HABER: BTC, SOL and HYPE treasury execs forecast M&A, diversification and more institutional adoption in 2026 - [The Block](
+🎯 HEDEF: SOLUSDT (Wrapped Sol)
+💰 MCAP: $1.67 BILLION
+📈 TEKNİK: RSI=42.03 (NEUTRAL) | MOM=0.17 (FLAT)
+🧠 AI KARARI (NEXUS v2):
+   - Aksiyon: LONG
+   - Güven: %99.90
+   - Raw Probs: [7.382052702473116e-05, 0.0009317039978154808, 0.9989944754751598]
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-01 23:37:15):
+   - Durum: 🏁 [TEST] KAPANDI: SOLUSDT | PnL: -0.72 USDT
+   - Giriş: 125.58 | Çıkış: 125.49
+   - Kaldıraç: 10x
+   - Süre: 30.1 dk
+   - Kar/Zarar: -0.72 USDT
+   - Görülen En İyi Fiyat (Peak): 125.77
+============================================================
+
+============================================================
+⚠️ FIRSAT KAÇTI (HOLD) | 2025-12-29 14:18:56
+------------------------------------------------------------
+📰 HABER: [**Polkadot's DOT dips, with token underperforming wider crypto markets**](
+
+Currently at $1.84, DOT has support at the $1.83 level and resistance at $1.88.
+🎯 HEDEF: DOTUSDT (Polkadot)
+🧠 AI KARARI: HOLD (Güven: %100.00)
+📉 GERÇEKLEŞEN (20dk): %1.53 (LONG Yönlü)
+💸 10x ile KAÇAN FIRSAT: %15.30 PnL
+📈 TEKNİK: RSI=60.00 | MOM=-0.33
+============================================================
+
+============================================================
+⚠️ FIRSAT KAÇTI (HOLD) | 2025-12-29 14:18:56
+------------------------------------------------------------
+📰 HABER: [**CoinDesk 20 Performance Update: Polkadot (DOT) Rises 6% Over Weekend**](
+
+ Cardano (ADA) was also a top performer, gaining 4.2% from Friday.
+🎯 HEDEF: DOTUSDT (Polkadot)
+🧠 AI KARARI: HOLD (Güven: %100.00)
+📉 GERÇEKLEŞEN (20dk): %1.53 (LONG Yönlü)
+💸 10x ile KAÇAN FIRSAT: %15.30 PnL
+📈 TEKNİK: RSI=60.00 | MOM=-0.33
+============================================================
+
+============================================================
+⚠️ FIRSAT KAÇTI (HOLD) | 2025-12-29 19:18:56
+------------------------------------------------------------
+📰 HABER: [**Flow scraps blockchain 'rollback' plan after community backlash over decentralization**](
+
+The layer-1 network reversed course after ecosystem partners warned that rewriting chain history would undermine decentralization and create operational risks following a $3.9 million exploit.
+🎯 HEDEF: FLOWUSDT (Unknown)
+🧠 AI KARARI: HOLD (Güven: %100.00)
+📉 GERÇEKLEŞEN (20dk): %2.04 (LONG Yönlü)
+💸 10x ile KAÇAN FIRSAT: %20.41 PnL
+📈 TEKNİK: RSI=50.00 | MOM=-1.01
+============================================================
+
+============================================================
+⚠️ FIRSAT KAÇTI (HOLD) | 2025-12-30 08:18:56
+------------------------------------------------------------
+📰 HABER: [**Lighter DEX launches LIT token with 25% airdrop**](
+
+The LIT token supply is split evenly between the ecosystem and team/investors, with a portion airdropped to early participants.
+🎯 HEDEF: LITUSDT (Unknown)
+🧠 AI KARARI: HOLD (Güven: %100.00)
+📉 GERÇEKLEŞEN (20dk): %8.00 (LONG Yönlü)
+💸 10x ile KAÇAN FIRSAT: %79.97 PnL
+📈 TEKNİK: RSI=57.00 | MOM=9.81
+============================================================
+
+============================================================
+⚠️ FIRSAT KAÇTI (HOLD) | 2025-12-30 10:18:56
+------------------------------------------------------------
+📰 HABER: [**Traders split over whether Lighter’s LIT clears $3 billion FDV after launch**](
+
+Prediction markets show traders clustering around a $2 billion–$3 billion range, with odds for $4 billion and $6 billion outcomes falling steadily after October's crash.
+🎯 HEDEF: LITUSDT (Unknown)
+🧠 AI KARARI: HOLD (Güven: %100.00)
+📉 GERÇEKLEŞEN (20dk): %3.25 (LONG Yönlü)
+💸 10x ile KAÇAN FIRSAT: %32.52 PnL
+📈 TEKNİK: RSI=42.50 | MOM=3.62
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-05 13:18:56
+------------------------------------------------------------
+📰 HABER: [**U.S. jobs report, Ethereum upgrade: Crypto Week Ahead**](
+
+Your look at what's coming in the week starting Jan. 5.
+🎯 HEDEF: ETHUSDT (Ethereum)
+💰 MCAP: $382.80 BILLION
+📈 TEKNİK: RSI=30.06 (NEUTRAL) | MOM=-0.41 (FLAT)
+🧠 AI KARARI (NEXUS v2):
+   - Aksiyon: LONG
+   - Güven: %97.23
+   - Raw Probs: [0.00019770403433457852, 0.027503768615958154, 0.9722985273497071]
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-05 16:19:00):
+   - Durum: 🏁 [TEST] KAPANDI: ETHUSDT | PnL: -0.03 USDT
+   - Giriş: 3160.25 | Çıkış: 3162.79
+   - Kaldıraç: 10x
+   - Süre: 0.1 dk
+   - Kar/Zarar: -0.03 USDT
+   - Görülen En İyi Fiyat (Peak): 3205.0
+============================================================
+
+--- OFFLINE SIMULATION RUN: 2026-01-05 19:34:38.086708 ---
+
+============================================================
+⚠️ FIRSAT KAÇTI (HOLD) | 2025-12-26 02:00:54
+------------------------------------------------------------
+📰 HABER: 🔥 **UPDATE**: Uniswap's Unification proposal passes with overwhelming support.
+
+100M UNI tokens will be burned, fee switches activated, and frontend fees removed after a 2-day timelock.
+
+[News |](https://cointelegraph.com/) [Markets |](https://cointelegraph.com/markets) [YouTube](https://youtube.com/@cointelegraph?si=4ge6Mqs-_0fvJCM2)
+🎯 HEDEF: UNIUSDT (Uniswap)
+🧠 AI KARARI: HOLD (Güven: %100.00)
+📉 GERÇEKLEŞEN (20dk): %2.74 (LONG Yönlü)
+💸 10x ile KAÇAN FIRSAT: %27.41 PnL
+📈 TEKNİK: RSI=48.28 | MOM=0.49
+============================================================
+
+============================================================
+⚠️ FIRSAT KAÇTI (HOLD) | 2025-12-31 02:00:09
+------------------------------------------------------------
+📰 HABER: 🚨 **TODAY**: Bitwise files for 11 cryptocurrency ETFs which includes $AAVE, $CC, $ENA, $HYPE, $NEAR, $STRK, $SUI, $TAO, $TRX, $UNI and $ZEC.
+
+[News |](https://cointelegraph.com/) [Markets |](https://cointelegraph.com/markets) [YouTube](https://youtube.com/@cointelegraph?si=4ge6Mqs-_0fvJCM2)
+🎯 HEDEF: CCUSDT (Canton)
+🧠 AI KARARI: HOLD (Güven: %100.00)
+📉 GERÇEKLEŞEN (20dk): %1.88 (LONG Yönlü)
+💸 10x ile KAÇAN FIRSAT: %18.75 PnL
+📈 TEKNİK: RSI=29.26 | MOM=-0.54
+============================================================
+
+============================================================
+⚠️ FIRSAT KAÇTI (HOLD) | 2025-12-22 01:49:12
+------------------------------------------------------------
+📰 HABER: According to Tokenomist, large single unlocks (each exceeding $5 million) over the next seven days include H, XPL, JUP, SOON, MBG, and UDS. Large linear unlocks with daily releases exceeding $1 million over the same period include RAIN, SOL, TRUMP, WLD, DOGE, AVAX, and ASTER, with the total unlock value exceeding $268 million. [— link](https://tokenomist.ai/)
+🎯 HEDEF: DOGEUSDT (Dogecoin)
+🧠 AI KARARI: HOLD (Güven: %100.00)
+📉 GERÇEKLEŞEN (20dk): %-2.07 (SHORT Yönlü)
+💸 10x ile KAÇAN FIRSAT: %20.67 PnL
+📈 TEKNİK: RSI=31.36 | MOM=-0.28
+============================================================
+
+============================================================
+⚠️ FIRSAT KAÇTI (HOLD) | 2025-12-22 01:49:12
+------------------------------------------------------------
+📰 HABER: According to Tokenomist, large single unlocks (each exceeding $5 million) over the next seven days include H, XPL, JUP, SOON, MBG, and UDS. Large linear unlocks with daily releases exceeding $1 million over the same period include RAIN, SOL, TRUMP, WLD, DOGE, AVAX, and ASTER, with the total unlock value exceeding $268 million. [— link](https://tokenomist.ai/)
+🎯 HEDEF: SOLUSDT (Wrapped SOL)
+🧠 AI KARARI: HOLD (Güven: %69.63)
+📉 GERÇEKLEŞEN (20dk): %-1.83 (SHORT Yönlü)
+💸 10x ile KAÇAN FIRSAT: %18.31 PnL
+📈 TEKNİK: RSI=31.03 | MOM=-0.06
+============================================================
+
+============================================================
+⚠️ FIRSAT KAÇTI (HOLD) | 2025-12-22 01:49:12
+------------------------------------------------------------
+📰 HABER: According to Tokenomist, large single unlocks (each exceeding $5 million) over the next seven days include H, XPL, JUP, SOON, MBG, and UDS. Large linear unlocks with daily releases exceeding $1 million over the same period include RAIN, SOL, TRUMP, WLD, DOGE, AVAX, and ASTER, with the total unlock value exceeding $268 million. [— link](https://tokenomist.ai/)
+🎯 HEDEF: ASTERUSDT (Aster)
+🧠 AI KARARI: HOLD (Güven: %95.56)
+📉 GERÇEKLEŞEN (20dk): %-1.58 (SHORT Yönlü)
+💸 10x ile KAÇAN FIRSAT: %15.85 PnL
+📈 TEKNİK: RSI=38.46 | MOM=-0.47
+============================================================
+
+============================================================
+⚠️ FIRSAT KAÇTI (HOLD) | 2025-12-22 01:49:12
+------------------------------------------------------------
+📰 HABER: According to Tokenomist, large single unlocks (each exceeding $5 million) over the next seven days include H, XPL, JUP, SOON, MBG, and UDS. Large linear unlocks with daily releases exceeding $1 million over the same period include RAIN, SOL, TRUMP, WLD, DOGE, AVAX, and ASTER, with the total unlock value exceeding $268 million. [— link](https://tokenomist.ai/)
+🎯 HEDEF: WLDUSDT (Worldcoin)
+🧠 AI KARARI: HOLD (Güven: %99.98)
+📉 GERÇEKLEŞEN (20dk): %-2.25 (SHORT Yönlü)
+💸 10x ile KAÇAN FIRSAT: %22.48 PnL
+📈 TEKNİK: RSI=29.23 | MOM=-0.33
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-22 01:49:12
+------------------------------------------------------------
+📰 HABER: According to Tokenomist, large single unlocks (each exceeding $5 million) over the next seven days include H, XPL, JUP, SOON, MBG, and UDS. Large linear unlocks with daily releases exceeding $1 million over the same period include RAIN, SOL, TRUMP, WLD, DOGE, AVAX, and ASTER, with the total unlock value exceeding $268 million. [— link](https://tokenomist.ai/)
+🎯 HEDEF: AVAXUSDT (Avalanche)
+💰 MCAP: $6.08 BILLION
+📈 TEKNİK: RSI=31.36 (NEUTRAL) | MOM=-0.24 (FLAT)
+🧠 AI KARARI (NEXUS v2):
+   - Aksiyon: LONG
+   - Güven: %85.88
+   - Raw Probs: [0.14018541750547497, 0.001005693170960099, 0.8588088893235649]
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-22 05:03:30):
+   - Durum: 🏁 [TEST] KAPANDI: AVAXUSDT | PnL: -10.12 USDT
+   - Giriş: 12.256 | Çıkış: 12.132
+   - Kaldıraç: 10x
+   - Süre: 14.3 dk
+   - Kar/Zarar: -10.12 USDT
+   - Görülen En İyi Fiyat (Peak): 12.257
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-25 02:43:27
+------------------------------------------------------------
+📰 HABER: According to CryptoRank, the top 10 token sales of 2025 are as follows: Pumpfun - $600 million, WLFI - $550 million, Monad - $217 million, MegaETH - $78 million, Aztec - $52 million, Plasma - $50 million, Gensyn - $16 million, Solayer - $10.5 million, Sahara AI - $8.5 million, and Lombard - $6.7 million. [— link](https://x.com/CryptoRank_VCs/status/2003865638624997486?s=20)
+🎯 HEDEF: WLFIUSDT (World Liberty Financial)
+💰 MCAP: $4.72 BILLION
+📈 TEKNİK: RSI=41.67 (NEUTRAL) | MOM=0.45 (FLAT)
+🧠 AI KARARI (NEXUS v2):
+   - Aksiyon: SHORT
+   - Güven: %97.01
+   - Raw Probs: [8.545387293457645e-05, 0.9700731986840195, 0.029841347443045774]
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-25 06:13:30):
+   - Durum: 🏁 [TEST] KAPANDI: WLFIUSDT | PnL: -2.23 USDT
+   - Giriş: 0.1346 | Çıkış: 0.1349
+   - Kaldıraç: 10x
+   - Süre: 30.1 dk
+   - Kar/Zarar: -2.23 USDT
+   - Görülen En İyi Fiyat (Peak): 0.1343
+============================================================
+
+============================================================
+⚠️ FIRSAT KAÇTI (HOLD) | 2025-12-26 02:07:54
+------------------------------------------------------------
+📰 HABER: Wintermute founder Evgeny Gaevoy said Wintermute has invested in AAVE since 2022, participates in its governance, and that he personally holds AAVE, while having no equity exposure to Aave Labs. He said the AAVE governance dispute centers on token value accrual and mismatched expectations, adding that it remains unclear whether the front-end and brand governance structure would ensure value accrual to token holders, and that the proposal lacks sufficient detail and Wintermute will vote against it. [— link](https://x.com/EvgenyGaevoy/status/2004234070109385155)
+🎯 HEDEF: AAVEUSDT (Aave)
+🧠 AI KARARI: HOLD (Güven: %100.00)
+📉 GERÇEKLEŞEN (20dk): %2.33 (LONG Yönlü)
+💸 10x ile KAÇAN FIRSAT: %23.28 PnL
+📈 TEKNİK: RSI=64.03 | MOM=0.41
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-31 02:30:34
+------------------------------------------------------------
+📰 HABER: On December 30, Bitwise submitted applications to the U.S. SEC for 11 cryptocurrency ETFs, including the Bitwise AAVE Strategy ETF, Bitwise UNI Strategy ETF, Bitwise ZEC Strategy ETF, Bitwise CC Strategy ETF, Bitwise ENA Strategy ETF, Bitwise Hyperliquid Strategy ETF, Bitwise NEAR Strategy ETF, Bitwise STRK Strategy ETF, Bitwise SUI Strategy ETF, Bitwise TAO Strategy ETF, and Bitwise TRX Strategy ETF. [— link](https://www.sec.gov/Archives/edgar/data/1928561/000121390025126503/ea0271172-01_485apos.htm)
+🎯 HEDEF: HYPEUSDT (Hyperliquid)
+💰 MCAP: $6.32 BILLION
+📈 TEKNİK: RSI=33.54 (NEUTRAL) | MOM=-0.40 (FLAT)
+🧠 AI KARARI (NEXUS v2):
+   - Aksiyon: LONG
+   - Güven: %80.90
+   - Raw Probs: [0.11832184212245787, 0.07271980797978025, 0.8089583498977619]
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-31 06:00:45):
+   - Durum: 🏁 [TEST] KAPANDI: HYPEUSDT | PnL: -5.78 USDT
+   - Giriş: 25.968 | Çıkış: 25.818
+   - Kaldıraç: 10x
+   - Süre: 30.2 dk
+   - Kar/Zarar: -5.78 USDT
+   - Görülen En İyi Fiyat (Peak): 25.988
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-31 02:30:34
+------------------------------------------------------------
+📰 HABER: On December 30, Bitwise submitted applications to the U.S. SEC for 11 cryptocurrency ETFs, including the Bitwise AAVE Strategy ETF, Bitwise UNI Strategy ETF, Bitwise ZEC Strategy ETF, Bitwise CC Strategy ETF, Bitwise ENA Strategy ETF, Bitwise Hyperliquid Strategy ETF, Bitwise NEAR Strategy ETF, Bitwise STRK Strategy ETF, Bitwise SUI Strategy ETF, Bitwise TAO Strategy ETF, and Bitwise TRX Strategy ETF. [— link](https://www.sec.gov/Archives/edgar/data/1928561/000121390025126503/ea0271172-01_485apos.htm)
+🎯 HEDEF: UNIUSDT (Uniswap)
+💰 MCAP: $3.70 BILLION
+📈 TEKNİK: RSI=55.56 (NEUTRAL) | MOM=0.10 (FLAT)
+🧠 AI KARARI (NEXUS v2):
+   - Aksiyon: LONG
+   - Güven: %82.69
+   - Raw Probs: [0.09290163491000268, 0.08015855732731478, 0.8269398077626826]
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-31 06:00:45):
+   - Durum: 🏁 [TEST] KAPANDI: UNIUSDT | PnL: 0.00 USDT
+   - Giriş: 5.963 | Çıkış: 5.963
+   - Kaldıraç: 10x
+   - Süre: 30.2 dk
+   - Kar/Zarar: 0.00 USDT
+   - Görülen En İyi Fiyat (Peak): 5.972
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-31 02:30:34
+------------------------------------------------------------
+📰 HABER: On December 30, Bitwise submitted applications to the U.S. SEC for 11 cryptocurrency ETFs, including the Bitwise AAVE Strategy ETF, Bitwise UNI Strategy ETF, Bitwise ZEC Strategy ETF, Bitwise CC Strategy ETF, Bitwise ENA Strategy ETF, Bitwise Hyperliquid Strategy ETF, Bitwise NEAR Strategy ETF, Bitwise STRK Strategy ETF, Bitwise SUI Strategy ETF, Bitwise TAO Strategy ETF, and Bitwise TRX Strategy ETF. [— link](https://www.sec.gov/Archives/edgar/data/1928561/000121390025126503/ea0271172-01_485apos.htm)
+🎯 HEDEF: TAOUSDT (Bittensor)
+💰 MCAP: $2.55 BILLION
+📈 TEKNİK: RSI=34.74 (NEUTRAL) | MOM=0.20 (FLAT)
+🧠 AI KARARI (NEXUS v2):
+   - Aksiyon: LONG
+   - Güven: %94.68
+   - Raw Probs: [0.010652692822398856, 0.0425918618037292, 0.9467554453738719]
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-31 06:00:45):
+   - Durum: 🏁 [TEST] KAPANDI: TAOUSDT | PnL: -4.11 USDT
+   - Giriş: 224.09 | Çıkış: 223.17
+   - Kaldıraç: 10x
+   - Süre: 30.2 dk
+   - Kar/Zarar: -4.11 USDT
+   - Görülen En İyi Fiyat (Peak): 224.32
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-31 02:30:34
+------------------------------------------------------------
+📰 HABER: On December 30, Bitwise submitted applications to the U.S. SEC for 11 cryptocurrency ETFs, including the Bitwise AAVE Strategy ETF, Bitwise UNI Strategy ETF, Bitwise ZEC Strategy ETF, Bitwise CC Strategy ETF, Bitwise ENA Strategy ETF, Bitwise Hyperliquid Strategy ETF, Bitwise NEAR Strategy ETF, Bitwise STRK Strategy ETF, Bitwise SUI Strategy ETF, Bitwise TAO Strategy ETF, and Bitwise TRX Strategy ETF. [— link](https://www.sec.gov/Archives/edgar/data/1928561/000121390025126503/ea0271172-01_485apos.htm)
+🎯 HEDEF: CCUSDT (Canton)
+💰 MCAP: $5.36 BILLION
+📈 TEKNİK: RSI=42.93 (NEUTRAL) | MOM=0.63 (BULLISH_MOM)
+🧠 AI KARARI (NEXUS v2):
+   - Aksiyon: LONG
+   - Güven: %97.68
+   - Raw Probs: [0.004443875299756438, 0.01871554230470153, 0.9768405823955421]
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-31 05:39:30):
+   - Durum: 🏁 [TEST] KAPANDI: CCUSDT | PnL: -12.39 USDT
+   - Giriş: 0.14929 | Çıkış: 0.14744
+   - Kaldıraç: 10x
+   - Süre: 8.9 dk
+   - Kar/Zarar: -12.39 USDT
+   - Görülen En İyi Fiyat (Peak): 0.14936
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-31 02:30:34
+------------------------------------------------------------
+📰 HABER: On December 30, Bitwise submitted applications to the U.S. SEC for 11 cryptocurrency ETFs, including the Bitwise AAVE Strategy ETF, Bitwise UNI Strategy ETF, Bitwise ZEC Strategy ETF, Bitwise CC Strategy ETF, Bitwise ENA Strategy ETF, Bitwise Hyperliquid Strategy ETF, Bitwise NEAR Strategy ETF, Bitwise STRK Strategy ETF, Bitwise SUI Strategy ETF, Bitwise TAO Strategy ETF, and Bitwise TRX Strategy ETF. [— link](https://www.sec.gov/Archives/edgar/data/1928561/000121390025126503/ea0271172-01_485apos.htm)
+🎯 HEDEF: ZECUSDT (Zcash)
+💰 MCAP: $8.07 BILLION
+📈 TEKNİK: RSI=50.00 (NEUTRAL) | MOM=-0.29 (FLAT)
+🧠 AI KARARI (NEXUS v2):
+   - Aksiyon: LONG
+   - Güven: %75.13
+   - Raw Probs: [0.005220696934957242, 0.24347026721425846, 0.7513090358507842]
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-31 06:00:45):
+   - Durum: 🏁 [TEST] KAPANDI: ZECUSDT | PnL: -3.65 USDT
+   - Giriş: 529.09 | Çıkış: 527.16
+   - Kaldıraç: 10x
+   - Süre: 30.2 dk
+   - Kar/Zarar: -3.65 USDT
+   - Görülen En İyi Fiyat (Peak): 529.42
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-31 02:30:34
+------------------------------------------------------------
+📰 HABER: On December 30, Bitwise submitted applications to the U.S. SEC for 11 cryptocurrency ETFs, including the Bitwise AAVE Strategy ETF, Bitwise UNI Strategy ETF, Bitwise ZEC Strategy ETF, Bitwise CC Strategy ETF, Bitwise ENA Strategy ETF, Bitwise Hyperliquid Strategy ETF, Bitwise NEAR Strategy ETF, Bitwise STRK Strategy ETF, Bitwise SUI Strategy ETF, Bitwise TAO Strategy ETF, and Bitwise TRX Strategy ETF. [— link](https://www.sec.gov/Archives/edgar/data/1928561/000121390025126503/ea0271172-01_485apos.htm)
+🎯 HEDEF: SUIUSDT (Sui)
+💰 MCAP: $6.49 BILLION
+📈 TEKNİK: RSI=45.10 (NEUTRAL) | MOM=-0.19 (FLAT)
+🧠 AI KARARI (NEXUS v2):
+   - Aksiyon: LONG
+   - Güven: %75.60
+   - Raw Probs: [0.11340247388508452, 0.13059374179644345, 0.7560037843184719]
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-31 06:00:45):
+   - Durum: 🏁 [TEST] KAPANDI: SUIUSDT | PnL: 1.25 USDT
+   - Giriş: 1.4441 | Çıkış: 1.4459
+   - Kaldıraç: 10x
+   - Süre: 30.2 dk
+   - Kar/Zarar: 1.25 USDT
+   - Görülen En İyi Fiyat (Peak): 1.4467
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-04 06:38:37
+------------------------------------------------------------
+📰 HABER: According to CryptoRank, among tokens with a market cap above $500 million, the top gainers in 2025 were ZEC (+861%), WBT (+131%), XMR (+123%), OKB (+118%), PAX Gold (+67%), Tether Gold (+66%), Bitcoin Cash (+37%), Beldex (+24%), BNB (+22%), and Dash (+12%). [— link](https://x.com/CryptoRank_io/status/2007598481385660765)
+🎯 HEDEF: ZECUSDT (Zcash)
+💰 MCAP: $8.07 BILLION
+📈 TEKNİK: RSI=40.68 (NEUTRAL) | MOM=-1.07 (BEARISH_MOM)
+🧠 AI KARARI (NEXUS v2):
+   - Aksiyon: LONG
+   - Güven: %83.96
+   - Raw Probs: [0.1282752912657464, 0.03215519258529932, 0.8395695161489544]
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-04 10:08:45):
+   - Durum: 🏁 [TEST] KAPANDI: ZECUSDT | PnL: -7.70 USDT
+   - Giriş: 510.29 | Çıkış: 506.36
+   - Kaldıraç: 10x
+   - Süre: 30.1 dk
+   - Kar/Zarar: -7.70 USDT
+   - Görülen En İyi Fiyat (Peak): 510.3
+============================================================
+
+============================================================
+⚠️ FIRSAT KAÇTI (HOLD) | 2025-12-22 08:45:53
+------------------------------------------------------------
+📰 HABER: 📈**Market Overview**
+
+Fed’s $7B liquidity injection + rumors Binance bought $800M+ [BTC](https://cryptorank.io/price/bitcoin) sparked small bounce, as risk appetite improved. Sentiment is climbing out of extreme fear as majors rebound.
+
+[Bitcoin](https://cryptorank.io/price/bitcoin): $88,911 +0.9%
+[Ethereum](https://cryptorank.io/price/ethereum): $3,027 +1.8%
+
+Last week ETF flows:
+[BTC](https://cryptorank.io/price/bitcoin) ETFs: - $479M
+[ETH](https://cryptorank.io/price/ethereum) ETFs: - $644M
+
+Altcoins are mixed, with [NIGHT](https://cryptorank.io/price/midnight-network) gain +23% today, and +56% on the week, following [BEAT](https://cryptorank.io/price/audiera) +66% today, +73% weekly gain. Outside new launches, most alts lag, with [HYPE](https://cryptorank.io/price/hyperliquid) one of few green, up ~4%.
+
+**Market Cap: $3.09T
+Liquidations: $196M**
+[Fear & Greed Index](https://cryptorank.io/charts/fear-and-greed): **25 (Extreme Fear)**
+[Altcoin Index](https://cryptorank.io/charts/altcoin-index): **17/100**
+
+👉 [Latest News](https://cryptorank.io/news)
+
+- Fundstrat [says](https://cryptorank.io/news/feed/685d2-bitcoin-correction-forecast-fundstrat-2026) a major correction is likely in H1 2026, contradicting Tom Lee’s public stance.
+- Eight [CryptoPunks](https://cryptorank.io/price/cryptopunks) were [added](https://cryptorank.io/news/feed/7b56b-moma-adds-eight-cryptopunks-to-its-permanent-collection) to MoMA’s permanent collection in New York.
+- U.S. House members are [drafting](https://cryptorank.io/news/feed/d93ab-us-house-draft-proposes-tax-safe-harbor-for-some-stablecoin-transactions) a bill to exempt sub-$200 stablecoin crypto transactions from capital gains tax.
+
+👉 [Small Cap Gainers](https://cryptorank.io/gainers)
+
+[zkPass](https://cryptorank.io/coins/zkpass) +63%
+[The Official 67 Coin](https://cryptorank.io/coins/the-official-67-coin) +61%
+[XPIN Network](https://cryptorank.io/coins/xpin-network) +39%
+[PayAI](https://cryptorank.io/coins/payai) +35%
+[Niza Global](https://cryptorank.io/coins/niza-global-new) +31%
+
+👉 [Recent Funding Rounds](https://cryptorank.io/funding-rounds)
+
+- [Ready player me](https://cryptorank.io/ico/ready-player-me#funding-rounds) M&A round backed by [Netflix](https://cryptorank.io/funds/netflix)
+- [Fuse](https://cryptorank.io/ico/fuse#funding-rounds) $70M Series B round led by [Balderton Capital](https://cryptorank.io/funds/balderton-capital)
+- [Andrena (dawn)](https://cryptorank.io/ico/andrena#funding-rounds) $13M Series B round led by [Polychain Capital](https://cryptorank.io/funds/polychain-capital)
+🎯 HEDEF: NIGHTUSDT (Midnight)
+🧠 AI KARARI: HOLD (Güven: %100.00)
+📉 GERÇEKLEŞEN (20dk): %-4.93 (SHORT Yönlü)
+💸 10x ile KAÇAN FIRSAT: %49.27 PnL
+📈 TEKNİK: RSI=59.16 | MOM=0.42
+============================================================
+
+============================================================
+⚠️ FIRSAT KAÇTI (HOLD) | 2025-12-22 11:45:39
+------------------------------------------------------------
+📰 HABER: **Key Crypto Events This Week🚀**
+
+**🔹 December 22:**
+- [Aster](https://cryptorank.io/price/astherus): Airdrop Ahead of Aster Chain
+- [BNB](https://cryptorank.io/price/bnb): Builder Night Seoul Summit – AI Web3 Builders Gathering
+- [Plume](https://cryptorank.io/price/plume-network): Transfers PLUME Custody to Fireblocks
+
+**🔹 December 23:**
+- [Delysium](https://cryptorank.io/price/delysium): Lucy Beta v2 Update
+- [Flare](https://cryptorank.io/price/flare): Flare Ecosystem 2025 Overview 
+
+**🔹 December 24:**
+- [Tradoor](https://cryptorank.io/price/tradoor): V4 Trading Platform Interface Launch
+- [SoSoValue](https://cryptorank.io/price/sosovalue): 4.16M Token Unlock (1.59% of supply)
+
+**🔹 December 25:**
+- [Plasma](https://cryptorank.io/price/plasma): 88.89M Token Unlock (4.52% of supply)
+- [Uniswap](https://cryptorank.io/price/uniswap): Protocol Fee Activation and UNI Burn Governance Vote
+- [Degen](https://cryptorank.io/price/degen-base): Treasury-Matched Token Burn Campaign
+
+**🔹 December 26:**
+- [Sahara AI](https://cryptorank.io/price/sahara): 132.93M Token Unlock (5.30% of supply)
+- [Delysium](https://cryptorank.io/price/delysium): Price Monitoring and Comparison Agent Goes Live
+- [ONUS](https://cryptorank.io/price/onus): CEO Talk Global Financial Hub Vision
+
+**🔹 December 27:**
+- [WalletConnect](https://cryptorank.io/price/walletconnect-network): 15.27M Token Unlock (1.53% of supply)
+
+**🔹 December 28:**
+- [Altlayer](https://cryptorank.io/price/altlayer): EIGEN Phase 2 Airdrop Launch
+
+Did we miss anything? Reply in comments to let others know! 🔥
+
+**Don't miss out on the daily activities in our Community Chat**
+👉 [t.me/CryptoRankEn](https://t.me/CryptoRankEn)
+🎯 HEDEF: ASTERUSDT (Aster)
+🧠 AI KARARI: HOLD (Güven: %100.00)
+📉 GERÇEKLEŞEN (20dk): %2.49 (LONG Yönlü)
+💸 10x ile KAÇAN FIRSAT: %24.88 PnL
+📈 TEKNİK: RSI=66.67 | MOM=0.01
+============================================================
+
+============================================================
+⚠️ FIRSAT KAÇTI (HOLD) | 2025-12-23 09:09:11
+------------------------------------------------------------
+📰 HABER: [​​](http://telegraph.controller.bot/files/8336652911/AgACAgIAAxkBAAISqmlKW0F8MLeDTRWIfTEAASCwd7lXDgAClQ5rG1gOUUptfb2uBI3dzAEAAwIAA3kAAzYE)📉 **Market Overview**
+
+After a sentiment rebound and [BTC](https://cryptorank.io/price/bitcoin) reclaiming $90K, the market flipped red again today. The move likely reflects positioning ahead of U.S. GDP and inflation data on Dec 23–24.
+
+[Bitcoin](https://cryptorank.io/price/bitcoin): $87,409 -1.8%
+[Ethereum](https://cryptorank.io/price/ethereum): $2,961 -2.3%
+
+Monday ETF flows:
+[BTC](https://cryptorank.io/price/bitcoin) ETFs: - $148M
+[ETH](https://cryptorank.io/price/ethereum) ETFs: $85M
+
+In these conditions, the previous leaders lost momentum and flipped into the red, with [BEAT](https://cryptorank.io/price/audiera) down 26%, followed by [NIGHT](https://cryptorank.io/price/midnight-network) at -17%. For now, among major alts, only [CRV](https://cryptorank.io/price/curve) is up 5% and [XDC](https://cryptorank.io/price/xdc-network) is up 2%.
+
+**Market Cap: $3.04T
+Liquidations: $262M**
+[Fear & Greed Index](https://cryptorank.io/charts/fear-and-greed): **24 (Extreme Fear)**
+[Altcoin Index](https://cryptorank.io/charts/altcoin-index): **16/100**
+
+👉 [Latest News](https://cryptorank.io/news)
+
+- [Aster](https://cryptorank.io/price/astherus) will [allocate](https://cryptorank.io/news/feed/e3d9f-aster-stage-5-buyback-december-23) up to 80% of daily platform fees to buy back [ASTER](https://cryptorank.io/price/astherus).
+- Ghana [passed](https://cryptorank.io/news/feed/b0ba6-ghana-cryptocurrency-legalization-bill) a law to legalize broad crypto use.
+- [Strategy](https://cryptorank.io/price/strategy) didn’t buy [BTC](https://cryptorank.io/price/bitcoin) last week, Citi cut its price target from $485 to $325 while keeping a Buy rating.
+
+👉 [Small Cap Gainers](https://cryptorank.io/gainers)
+
+[LC SHIB](https://cryptorank.io/coins/lc-shib) +48%
+[ULTILAND](https://cryptorank.io/coins/ultiland) +44%
+[READY!](https://cryptorank.io/coins/bravoready) +41%
+[Ecomi](https://cryptorank.io/coins/ecomi) +36%
+[GaiAI](https://cryptorank.io/coins/gaiai) +24%
+
+👉 [Recent Funding Rounds](https://cryptorank.io/funding-rounds)
+
+- [The clearing company](https://cryptorank.io/ico/the-clearing-company#funding-rounds) M&A round backed by [Coinbase Ventures](https://cryptorank.io/funds/coinbase-ventures)
+- [Blife protocol](https://cryptorank.io/ico/blife-protocol#funding-rounds) M&A round backed by [Portal](https://cryptorank.io/funds/portal)
+- [Enigma nordic](https://cryptorank.io/ico/enigma-nordic#funding-rounds) $32M M&A round backed by [Hilbert Group](https://cryptorank.io/funds/hilbert-group)
+🎯 HEDEF: NIGHTUSDT (Midnight)
+🧠 AI KARARI: HOLD (Güven: %100.00)
+📉 GERÇEKLEŞEN (20dk): %-3.20 (SHORT Yönlü)
+💸 10x ile KAÇAN FIRSAT: %31.96 PnL
+📈 TEKNİK: RSI=65.04 | MOM=1.95
+============================================================
+
+============================================================
+⚠️ FIRSAT KAÇTI (HOLD) | 2025-12-25 09:00:22
+------------------------------------------------------------
+📰 HABER: [​​](http://telegraph.controller.bot/files/8336652911/AgACAgIAAxkBAAIS2GlM_RhdtZL_rhhnoINC-4YQvZQmAAJEDWsbVGFpSlgQ5cWGnMGvAQADAgADeQADNgQ)📈**Market Overview**
+
+Crypto bounced after a few down days as stocks kept rallying, with the S&P 500 printing a fresh ATH. Commodities followed suit: gold, silver, and platinum made new highs too.
+
+[Bitcoin](https://cryptorank.io/price/bitcoin): $87,714 +0.8%
+[Ethereum](https://cryptorank.io/price/ethereum): $2,939 +0.03%
+
+Wednesday ETF flows:
+[BTC](https://cryptorank.io/price/bitcoin) ETFs: - $175M
+[ETH](https://cryptorank.io/price/ethereum) ETFs: - $53M
+
+Today, major alts are in the green, bouncing with the broader market. Privacy coins are back in the lead, with [CC](https://cryptorank.io/price/digital-asset) up 17%, [ZEC](https://cryptorank.io/price/zcash) up 10%, and [DASH](https://cryptorank.io/price/dash) up 8%.
+
+**Market Cap: $3.05T
+Liquidations: $133M**
+[Fear & Greed Index](https://cryptorank.io/charts/fear-and-greed): **23 (Extreme Fear)**
+[Altcoin Index](https://cryptorank.io/charts/altcoin-index): **18/100**
+
+👉 [Latest News](https://cryptorank.io/news)
+
+- Spain will fully [implement](https://cryptorank.io/news/feed/51803-spain-to-implement-full-eu-mica-regulations-starting-july-2026-report) two key crypto laws in 2026.
+- [Pudgy Penguins](https://cryptorank.io/price/pudgy-penguins) [appeared](https://cryptorank.io/news/feed/8847f-pudgy-penguins-las-vegas-sphere) on the Sphere in Las Vegas.
+- In December, whale inflows to Binance fell by half.
+
+👉 [Small Cap Gainers](https://cryptorank.io/gainers)
+
+[Beefy](https://cryptorank.io/coins/beefyfinance) +216%
+[Zerobase](https://cryptorank.io/coins/zerobase) +50%
+[Bullish Degen](https://cryptorank.io/coins/bullish-degen) +46%
+[The White Whale](https://cryptorank.io/coins/the-white-whale) +43%
+[Banana Gun](https://cryptorank.io/coins/banana-gun) +30%
+
+👉 [Recent Funding Rounds](https://cryptorank.io/funding-rounds)
+
+- [Easy.fun](https://cryptorank.io/ico/easy-fun#funding-rounds) $2M Seed round led by [Mirana Ventures](https://cryptorank.io/funds/mirana-ventures)
+- [Rocket](https://cryptorank.io/ico/rocket-prediction#funding-rounds) $1.5M Pre-Seed round led by [Electric Capital](https://cryptorank.io/funds/electric-capital)
+- [Architect](https://cryptorank.io/ico/architect#funding-rounds) $35M Series A round backed by [Coinbase Ventures](https://cryptorank.io/funds/coinbase-ventures)
+🎯 HEDEF: CCUSDT (Canton)
+🧠 AI KARARI: HOLD (Güven: %100.00)
+📉 GERÇEKLEŞEN (20dk): %-1.88 (SHORT Yönlü)
+💸 10x ile KAÇAN FIRSAT: %18.82 PnL
+📈 TEKNİK: RSI=55.26 | MOM=1.41
+============================================================
+
+============================================================
+⚠️ FIRSAT KAÇTI (HOLD) | 2025-12-22 09:39:32
+------------------------------------------------------------
+📰 HABER: ‘A hostile takeover attempt’: Aave Labs’ unilateral push to vote on brand-rights proposal sparks community outcry - [The Block](https://www.theblock.co/post/383464/aave-labs-vote-sparks-community-outcry?utm_source=telegram2&utm_medium=social)
+🎯 HEDEF: AAVEUSDT (Aave)
+🧠 AI KARARI: HOLD (Güven: %100.00)
+📉 GERÇEKLEŞEN (20dk): %-1.73 (SHORT Yönlü)
+💸 10x ile KAÇAN FIRSAT: %17.26 PnL
+📈 TEKNİK: RSI=63.03 | MOM=-0.25
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-01 20:07:08
+------------------------------------------------------------
+📰 HABER: BTC, SOL and HYPE treasury execs forecast M&A, diversification and more institutional adoption in 2026 - [The Block](https://www.theblock.co/post/383989/btc-sol-hype-treasury-execs-forecast-ma-diversification-more-institutional-adoption-2026?utm_source=telegram2&utm_medium=social)
+🎯 HEDEF: HYPEUSDT (Hyperliquid)
+💰 MCAP: $6.32 BILLION
+📈 TEKNİK: RSI=52.44 (NEUTRAL) | MOM=0.02 (FLAT)
+🧠 AI KARARI (NEXUS v2):
+   - Aksiyon: LONG
+   - Güven: %98.95
+   - Raw Probs: [0.010214986451702924, 0.0002670576965711155, 0.989517955851726]
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-01 23:25:30):
+   - Durum: 🏁 [TEST] KAPANDI: HYPEUSDT | PnL: -14.77 USDT
+   - Giriş: 24.38 | Çıkış: 24.02
+   - Kaldıraç: 10x
+   - Süre: 18.4 dk
+   - Kar/Zarar: -14.77 USDT
+   - Görülen En İyi Fiyat (Peak): 24.507
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-01 20:07:08
+------------------------------------------------------------
+📰 HABER: BTC, SOL and HYPE treasury execs forecast M&A, diversification and more institutional adoption in 2026 - [The Block](https://www.theblock.co/post/383989/btc-sol-hype-treasury-execs-forecast-ma-diversification-more-institutional-adoption-2026?utm_source=telegram2&utm_medium=social)
+🎯 HEDEF: BTCUSDT (Bitcoin)
+💰 MCAP: $1873.58 BILLION
+📈 TEKNİK: RSI=37.52 (NEUTRAL) | MOM=0.23 (FLAT)
+🧠 AI KARARI (NEXUS v2):
+   - Aksiyon: LONG
+   - Güven: %89.42
+   - Raw Probs: [0.10426053771947484, 0.0015133333903891402, 0.8942261288901361]
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-01 23:37:15):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: -0.44 USDT
+   - Giriş: 88289.0 | Çıkış: 88250.0
+   - Kaldıraç: 10x
+   - Süre: 30.1 dk
+   - Kar/Zarar: -0.44 USDT
+   - Görülen En İyi Fiyat (Peak): 88335.6
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-01 20:07:08
+------------------------------------------------------------
+📰 HABER: BTC, SOL and HYPE treasury execs forecast M&A, diversification and more institutional adoption in 2026 - [The Block](https://www.theblock.co/post/383989/btc-sol-hype-treasury-execs-forecast-ma-diversification-more-institutional-adoption-2026?utm_source=telegram2&utm_medium=social)
+🎯 HEDEF: SOLUSDT (Wrapped SOL)
+💰 MCAP: $1.68 BILLION
+📈 TEKNİK: RSI=41.18 (NEUTRAL) | MOM=0.24 (FLAT)
+🧠 AI KARARI (NEXUS v2):
+   - Aksiyon: LONG
+   - Güven: %99.89
+   - Raw Probs: [0.00010614686986129759, 0.0009744623754812395, 0.9989193907546575]
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-01 23:37:15):
+   - Durum: 🏁 [TEST] KAPANDI: SOLUSDT | PnL: -0.72 USDT
+   - Giriş: 125.58 | Çıkış: 125.49
+   - Kaldıraç: 10x
+   - Süre: 30.1 dk
+   - Kar/Zarar: -0.72 USDT
+   - Görülen En İyi Fiyat (Peak): 125.77
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-05 15:25:23
+------------------------------------------------------------
+📰 HABER: Tom Lee’s BitMine adds 32,977 ETH as total crypto and cash holdings top $14 billion - [The Block](https://www.theblock.co/post/384318/tom-lee-bitmine-adds-32977-eth-total-crypto-cash-holdings-top-14-billion-usd?utm_source=telegram2&utm_medium=social)
+🎯 HEDEF: ETHUSDT (Ethereum)
+💰 MCAP: $384.74 BILLION
+📈 TEKNİK: RSI=55.97 (NEUTRAL) | MOM=0.42 (FLAT)
+🧠 AI KARARI (NEXUS v2):
+   - Aksiyon: LONG
+   - Güven: %97.87
+   - Raw Probs: [4.6086852397463686e-08, 0.02131173279631028, 0.9786882211168373]
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-05 18:55:30):
+   - Durum: 🏁 [TEST] KAPANDI: ETHUSDT | PnL: 7.83 USDT
+   - Giriş: 3162.87 | Çıkış: 3187.62
+   - Kaldıraç: 10x
+   - Süre: 30.1 dk
+   - Kar/Zarar: 7.83 USDT
+   - Görülen En İyi Fiyat (Peak): 3205.0
+============================================================
+
+============================================================
+⚠️ FIRSAT KAÇTI (HOLD) | 2025-12-23 12:18:56
+------------------------------------------------------------
+📰 HABER: [**Crypto Markets Today: Cardano-based NIGHT crashes, ZEC, XMR also drop**](https://www.coindesk.com/markets/2025/12/23/crypto-markets-today-cardano-based-night-crashes-zec-xmr-also-drop)
+
+Most tokens that debuted this year are trading below their initial valuations.
+🎯 HEDEF: NIGHTUSDT (Midnight)
+🧠 AI KARARI: HOLD (Güven: %100.00)
+📉 GERÇEKLEŞEN (20dk): %-5.02 (SHORT Yönlü)
+💸 10x ile KAÇAN FIRSAT: %50.25 PnL
+📈 TEKNİK: RSI=53.33 | MOM=2.63
+============================================================
+
+============================================================
+⚠️ FIRSAT KAÇTI (HOLD) | 2025-12-29 14:18:56
+------------------------------------------------------------
+📰 HABER: [**Polkadot's DOT dips, with token underperforming wider crypto markets**](https://www.coindesk.com/markets/2025/12/29/polkadot-s-dot-dips-with-token-underperforming-wider-crypto-markets)
+
+Currently at $1.84, DOT has support at the $1.83 level and resistance at $1.88.
+🎯 HEDEF: DOTUSDT (Polkadot)
+🧠 AI KARARI: HOLD (Güven: %100.00)
+📉 GERÇEKLEŞEN (20dk): %1.53 (LONG Yönlü)
+💸 10x ile KAÇAN FIRSAT: %15.30 PnL
+📈 TEKNİK: RSI=62.50 | MOM=-0.27
+============================================================
+
+============================================================
+⚠️ FIRSAT KAÇTI (HOLD) | 2025-12-29 14:18:56
+------------------------------------------------------------
+📰 HABER: [**CoinDesk 20 Performance Update: Polkadot (DOT) Rises 6% Over Weekend**](https://www.coindesk.com/coindesk-indices/2025/12/29/coindesk-20-performance-update-polkadot-dot-rises-6-over-weekend)
+
+ Cardano (ADA) was also a top performer, gaining 4.2% from Friday.
+🎯 HEDEF: DOTUSDT (Polkadot)
+🧠 AI KARARI: HOLD (Güven: %100.00)
+📉 GERÇEKLEŞEN (20dk): %1.53 (LONG Yönlü)
+💸 10x ile KAÇAN FIRSAT: %15.30 PnL
+📈 TEKNİK: RSI=62.50 | MOM=-0.27
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-05 13:18:56
+------------------------------------------------------------
+📰 HABER: [**U.S. jobs report, Ethereum upgrade: Crypto Week Ahead**](https://www.coindesk.com/markets/2026/01/05/u-s-jobs-report-ethereum-upgrade-crypto-week-ahead)
+
+Your look at what's coming in the week starting Jan. 5.
+🎯 HEDEF: ETHUSDT (Ethereum)
+💰 MCAP: $384.74 BILLION
+📈 TEKNİK: RSI=23.95 (OVERSOLD) | MOM=-0.40 (FLAT)
+🧠 AI KARARI (NEXUS v2):
+   - Aksiyon: LONG
+   - Güven: %99.12
+   - Raw Probs: [4.019645534993861e-05, 0.008724245418443612, 0.9912355581262063]
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-05 16:49:00):
+   - Durum: 🏁 [TEST] KAPANDI: ETHUSDT | PnL: -4.34 USDT
+   - Giriş: 3160.25 | Çıkış: 3146.52
+   - Kaldıraç: 10x
+   - Süre: 30.1 dk
+   - Kar/Zarar: -4.34 USDT
+   - Görülen En İyi Fiyat (Peak): 3161.02
+============================================================
+
+--- OFFLINE SIMULATION RUN: 2026-01-06 21:26:40.262739 ---
+
+--- OFFLINE SIMULATION RUN: 2026-01-06 21:28:20.079688 ---
+
+--- OFFLINE SIMULATION RUN: 2026-01-07 19:45:00.040562 ---

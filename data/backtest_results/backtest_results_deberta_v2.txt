@@ -1,0 +1,342 @@
+
+--- SIMULATION RUN: 2026-01-04 22:54:33.633713 ---
+
+--- SIMULATION RUN: 2026-01-04 22:55:29.869492 ---
+
+--- SIMULATION RUN: 2026-01-04 22:56:41.713756 ---
+
+--- SIMULATION RUN (SetFit): 2026-01-05 09:40:05.493965 ---
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-03 11:11:27
+------------------------------------------------------------
+📰 HABER: 🔥 INSIGHT: Coinbase says the CLARITY Act isn’t slow, it’s the hard level and real crypto rules take time.
+
+[News |](https://cointelegraph.com/) [Marke...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+🧠 AI KARARI (NEXUS v2):
+   - Aksiyon: SHORT
+   - Güven: %79.85
+   - Raw Probs: [0.17566818965269806, 0.7985418902476885, 0.02578992009961331]
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-03 14:41:30):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: -0.90 USDT
+   - Kar/Zarar: -0.90 USDT
+   - Görülen En İyi Fiyat (Peak): 89632.0
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-04 07:41:32
+------------------------------------------------------------
+📰 HABER: According to Lookonchain, hours before the capture of Venezuelan President Nicolás Maduro, three wallets on Polymarket placed large bets on Maduro bei...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+🧠 AI KARARI (NEXUS v2):
+   - Aksiyon: SHORT
+   - Güven: %95.38
+   - Raw Probs: [0.046019733724329916, 0.9538436069041082, 0.00013665937156189515]
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-04 11:11:45):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: 2.73 USDT
+   - Kar/Zarar: 2.73 USDT
+   - Görülen En İyi Fiyat (Peak): 91221.8
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-02 10:18:56
+------------------------------------------------------------
+📰 HABER: [**Internet Computer climbs back to $3 as short-term momentum improves**](https://www.coindesk.com/markets/2026/01/02/internet-computer-climbs-back-to...
+🎯 HEDEF: ICPUSDT (Internet Computer)
+🧠 AI KARARI (NEXUS v2):
+   - Aksiyon: LONG
+   - Güven: %81.76
+   - Raw Probs: [0.0020906447158646024, 0.1803192750218482, 0.8175900802622872]
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-02 13:49:00):
+   - Durum: 🏁 [TEST] KAPANDI: ICPUSDT | PnL: 2.99 USDT
+   - Kar/Zarar: 2.99 USDT
+   - Görülen En İyi Fiyat (Peak): 3.02
+============================================================
+
+--- SIMULATION RUN (SetFit): 2026-01-05 09:53:40.010972 ---
+
+--- SIMULATION RUN (SetFit): 2026-01-05 09:54:26.884866 ---
+
+--- SIMULATION RUN (SetFit): 2026-01-05 09:56:27.684544 ---
+
+--- SIMULATION RUN (SetFit): 2026-01-05 09:58:40.993286 ---
+
+--- SIMULATION RUN (SetFit): 2026-01-05 09:59:43.709500 ---
+
+--- SIMULATION RUN (SetFit): 2026-01-05 10:00:50.043235 ---
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-28 06:04:48
+------------------------------------------------------------
+📰 HABER: On December 26, spot Bitcoin ETFs recorded $276 million in net outflows, marking the sixth consecutive day of outflows. Spot Ethereum ETFs saw $38.70 ...
+🎯 HEDEF: BTCUSDT (Unknown)
+🧠 AI KARARI (NEXUS v2):
+   - Aksiyon: SHORT
+   - Güven: %97.34
+   - Raw Probs: [0.0097515669302953, 0.9733633602588103, 0.016885072810894276]
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-28 09:35:00):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: -1.10 USDT
+   - Kar/Zarar: -1.10 USDT
+   - Görülen En İyi Fiyat (Peak): 87612.6
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-30 11:32:55
+------------------------------------------------------------
+📰 HABER: A SlowMist report shows that around 200 blockchain security incidents occurred in 2025, causing losses of approximately $2.935 billion. While incident...
+🎯 HEDEF: ETHUSDT (Unknown)
+🧠 AI KARARI (NEXUS v2):
+   - Aksiyon: LONG
+   - Güven: %94.56
+   - Raw Probs: [0.052434436275731494, 0.002004927350128687, 0.9455606363741398]
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-30 15:03:00):
+   - Durum: 🏁 [TEST] KAPANDI: ETHUSDT | PnL: 1.57 USDT
+   - Kar/Zarar: 1.57 USDT
+   - Görülen En İyi Fiyat (Peak): 2983.65
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-30 13:22:16
+------------------------------------------------------------
+📰 HABER: WuBlockChain's Top 10 Project News of 2025:  Rapid growth in on-chain derivatives led by Hyperliquid, accelerating RWA tokenization of U.S. stocks and...
+🎯 HEDEF: ETHUSDT (Unknown)
+🧠 AI KARARI (NEXUS v2):
+   - Aksiyon: LONG
+   - Güven: %99.08
+   - Raw Probs: [0.006595688065003779, 0.0025734995090975245, 0.9908308124258988]
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-30 16:52:30):
+   - Durum: 🏁 [TEST] KAPANDI: ETHUSDT | PnL: 0.44 USDT
+   - Kar/Zarar: 0.44 USDT
+   - Görülen En İyi Fiyat (Peak): 2991.93
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-26 10:58:59
+------------------------------------------------------------
+📰 HABER: US eyes crypto mining at disputed nuclear plant in Russia-Ukraine conflict: report - [The Block](...
+🎯 HEDEF: BTCUSDT (Unknown)
+🧠 AI KARARI (NEXUS v2):
+   - Aksiyon: SHORT
+   - Güven: %96.90
+   - Raw Probs: [0.004452452052927049, 0.9689722641639726, 0.026575283783100253]
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-26 14:29:00):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: 2.71 USDT
+   - Kar/Zarar: 2.71 USDT
+   - Görülen En İyi Fiyat (Peak): 88571.9
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-26 16:07:28
+------------------------------------------------------------
+📰 HABER: Crypto regulation in 2026: SEC’s ambitious agenda meets a more empowered CFTC - [The Block](...
+🎯 HEDEF: BTCUSDT (Unknown)
+🧠 AI KARARI (NEXUS v2):
+   - Aksiyon: LONG
+   - Güven: %81.72
+   - Raw Probs: [0.000872189297119006, 0.18189900667349818, 0.8172288040293828]
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-26 19:37:30):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: 2.22 USDT
+   - Kar/Zarar: 2.22 USDT
+   - Görülen En İyi Fiyat (Peak): 87349.1
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-28 18:57:28
+------------------------------------------------------------
+📰 HABER: Flow’s controversial planned rollback to undo $3.9 million exploit ‘blindsided’ some partners - [The Block](...
+🎯 HEDEF: FLOWUSDT (Unknown)
+🧠 AI KARARI (NEXUS v2):
+   - Aksiyon: LONG
+   - Güven: %93.86
+   - Raw Probs: [4.030395446400483e-05, 0.061396355035341604, 0.9385633410101945]
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-28 22:27:30):
+   - Durum: 🏁 [TEST] KAPANDI: FLOWUSDT | PnL: -12.30 USDT
+   - Kar/Zarar: -12.30 USDT
+   - Görülen En İyi Fiyat (Peak): 0.122
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-29 06:13:26
+------------------------------------------------------------
+📰 HABER: China to let banks pay interest on digital yuan to drive adoption - [The Block](...
+🎯 HEDEF: BTCUSDT (Unknown)
+🧠 AI KARARI (NEXUS v2):
+   - Aksiyon: SHORT
+   - Güven: %92.34
+   - Raw Probs: [2.9196706647725715e-07, 0.9233655519298853, 0.07663415610304827]
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-29 09:43:30):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: 1.24 USDT
+   - Kar/Zarar: 1.24 USDT
+   - Görülen En İyi Fiyat (Peak): 89849.2
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-29 21:45:34
+------------------------------------------------------------
+📰 HABER: SEC Corporation Finance Deputy Director Cicely LaMothe to retire after shaping crypto guidance - [The Block](...
+🎯 HEDEF: BTCUSDT (Unknown)
+🧠 AI KARARI (NEXUS v2):
+   - Aksiyon: SHORT
+   - Güven: %83.49
+   - Raw Probs: [3.781699216468815e-05, 0.8349166142721625, 0.16504556873567292]
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-30 01:15:45):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: 2.07 USDT
+   - Kar/Zarar: 2.07 USDT
+   - Görülen En İyi Fiyat (Peak): 87043.4
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-30 07:04:47
+------------------------------------------------------------
+📰 HABER: Lighter launches native token LIT, allocates half to ecosystem growth - [The Block](...
+🎯 HEDEF: LITUSDT (Unknown)
+🧠 AI KARARI (NEXUS v2):
+   - Aksiyon: LONG
+   - Güven: %95.13
+   - Raw Probs: [0.0010224996658354493, 0.047692080668090275, 0.9512854196660744]
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-30 10:05:00):
+   - Durum: 🏁 [TEST] KAPANDI: LITUSDT | PnL: -48.13 USDT
+   - Kar/Zarar: -48.13 USDT
+   - Görülen En İyi Fiyat (Peak): 2.493
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-30 15:35:38
+------------------------------------------------------------
+📰 HABER: Grayscale files for spot Bittensor ETF following network’s first halving event - [The Block](...
+🎯 HEDEF: TAOUSDT (Unknown)
+🧠 AI KARARI (NEXUS v2):
+   - Aksiyon: LONG
+   - Güven: %97.11
+   - Raw Probs: [0.00020936003387570616, 0.028700799052469254, 0.971089840913655]
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-30 19:05:45):
+   - Durum: 🏁 [TEST] KAPANDI: TAOUSDT | PnL: 5.21 USDT
+   - Kar/Zarar: 5.21 USDT
+   - Görülen En İyi Fiyat (Peak): 224.11
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-31 08:31:18
+------------------------------------------------------------
+📰 HABER: Spot bitcoin ETFs record $355 million net inflows, ending 7-day negative streak - [The Block](...
+🎯 HEDEF: BTCUSDT (Unknown)
+🧠 AI KARARI (NEXUS v2):
+   - Aksiyon: SHORT
+   - Güven: %87.07
+   - Raw Probs: [0.06765972495498798, 0.8706647850083254, 0.06167549003668658]
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-31 12:01:30):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: 2.15 USDT
+   - Kar/Zarar: 2.15 USDT
+   - Görülen En İyi Fiyat (Peak): 88339.9
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-31 20:17:04
+------------------------------------------------------------
+📰 HABER: Flow exploit leaves NFT loan borrowers ‘in limbo’ after network pause - [The Block](...
+🎯 HEDEF: FLOWUSDT (Unknown)
+🧠 AI KARARI (NEXUS v2):
+   - Aksiyon: SHORT
+   - Güven: %75.84
+   - Raw Probs: [0.005417443738187378, 0.7584408009144378, 0.2361417553473748]
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-31 23:18:15):
+   - Durum: 🏁 [TEST] KAPANDI: FLOWUSDT | PnL: -11.24 USDT
+   - Kar/Zarar: -11.24 USDT
+   - Görülen En İyi Fiyat (Peak): 0.089
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-02 06:15:16
+------------------------------------------------------------
+📰 HABER: Hundreds of crypto wallets drained across EVM chains, root cause still unidentified: ZachXBT - [The Block](...
+🎯 HEDEF: ETHUSDT (Unknown)
+🧠 AI KARARI (NEXUS v2):
+   - Aksiyon: SHORT
+   - Güven: %98.54
+   - Raw Probs: [1.510876297793613e-05, 0.9854381469277205, 0.014546744309301626]
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-02 09:45:30):
+   - Durum: 🏁 [TEST] KAPANDI: ETHUSDT | PnL: -9.68 USDT
+   - Kar/Zarar: -9.68 USDT
+   - Görülen En İyi Fiyat (Peak): 3016.54
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-02 09:37:53
+------------------------------------------------------------
+📰 HABER: Crypto exchange volume falls to 15-month low in December - [The Block](...
+🎯 HEDEF: BTCUSDT (Unknown)
+🧠 AI KARARI (NEXUS v2):
+   - Aksiyon: SHORT
+   - Güven: %89.98
+   - Raw Probs: [2.0489621684162906e-08, 0.899760114082039, 0.10023986542833936]
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-02 13:08:00):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: -9.38 USDT
+   - Kar/Zarar: -9.38 USDT
+   - Görülen En İyi Fiyat (Peak): 89087.2
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-02 10:42:36
+------------------------------------------------------------
+📰 HABER: Ethereum daily transactions hit all-time high, surpassing 2021 NFT boom - [The Block](...
+🎯 HEDEF: ETHUSDT (Unknown)
+🧠 AI KARARI (NEXUS v2):
+   - Aksiyon: LONG
+   - Güven: %89.24
+   - Raw Probs: [0.00019968591374243256, 0.10736942708941376, 0.8924308869968438]
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-02 14:12:45):
+   - Durum: 🏁 [TEST] KAPANDI: ETHUSDT | PnL: -6.17 USDT
+   - Kar/Zarar: -6.17 USDT
+   - Görülen En İyi Fiyat (Peak): 3060.88
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-03 17:18:08
+------------------------------------------------------------
+📰 HABER: SEC’s sole Democratic Commissioner Caroline Crenshaw departs agency, leaving all-Republican panel - [The Block](...
+🎯 HEDEF: BTCUSDT (Unknown)
+🧠 AI KARARI (NEXUS v2):
+   - Aksiyon: SHORT
+   - Güven: %94.24
+   - Raw Probs: [0.00014890088013959533, 0.9424324397145885, 0.05741865940527198]
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-03 20:48:15):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: -0.87 USDT
+   - Kar/Zarar: -0.87 USDT
+   - Görülen En İyi Fiyat (Peak): 89981.6
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-04 22:54:04
+------------------------------------------------------------
+📰 HABER: Bitcoin Core sees development uptick, reversing multi-year decline: Casa CSO - [The Block](...
+🎯 HEDEF: BTCUSDT (Unknown)
+🧠 AI KARARI (NEXUS v2):
+   - Aksiyon: SHORT
+   - Güven: %99.19
+   - Raw Probs: [2.1474069249622727e-06, 0.9919111828517205, 0.008086669741354628]
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-05 02:24:15):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: -7.45 USDT
+   - Kar/Zarar: -7.45 USDT
+   - Görülen En İyi Fiyat (Peak): 91143.7
+============================================================

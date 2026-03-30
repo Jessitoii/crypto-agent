@@ -67,12 +67,8 @@ JSON OUTPUT:
 """
 
 ANALYZE_GENERAL_PROMPT = """
-- **TARGET:** {symbol} (Market Cap: {market_cap_str} | Category: {coin_category})
-- **TIME CHECK:** Current Time: {current_time_str}
-- **TECHNICALS:** RSI: {rsi_val:.1f} | Funding: {funding_rate:.4f}% | BTC 1h Trend: {btc_trend:.2f}%
-- **MOMENTUM:** 1h: {change_1h:.2f}% | 24h: {change_24h:.2f}%
-- **SOURCE INTEL:** "{news}"
-- **CURRENT TIME:** {current_time_str}
+NEWS: "{news}"
+SYMBOL: {symbol}
 """
 
 DETECT_SYMBOL_PROMPT = """""

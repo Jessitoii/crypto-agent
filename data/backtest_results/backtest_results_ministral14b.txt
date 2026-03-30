@@ -1,0 +1,367 @@
+
+--- SIMULATION RUN: 2026-01-01 16:33:16.389229 ---
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-29 17:36:01
+------------------------------------------------------------
+📰 HABER: **🔥 LATEST: **Ethereum’s validator [entry queue has surged to nearly double](https://cointelegraph.com/news/ethereum-staking-queues-flip) the exit que...
+🎯 HEDEF: ETHUSDT (Ethereum)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 2930.0
+   - RSI: 38.07
+   - BTC Trend (1h): %-0.19
+   - Market Cap: $359.68 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %78)
+   - TP/SL: %2.5/%-1.8
+   - Sebep: Staking queue divergence + oversold RSI = high-probability short-term reversal. BTC weakness caps upside but doesn’t justify short.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-29 20:37:00):
+   - Durum: 🏁 [TEST] KAPANDI: ETHUSDT | PnL: 0.52 USDT
+   - Kar/Zarar: 0.52 USDT
+   - Görülen En İyi Fiyat (Peak): 2931.53
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-31 01:36:35
+------------------------------------------------------------
+📰 HABER: 🔥 **BULLISH**: Bitmine bought another 32,938 $ETH worth $97.6M for its treasury and staked 118,944 $ETH worth $352.16M today.
+
+[News |](https://cointe...
+🎯 HEDEF: ETHUSDT (Ethereum)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 2980.4
+   - RSI: 52.47
+   - BTC Trend (1h): %0.43
+   - Market Cap: $359.68 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %65)
+   - TP/SL: %1.5/%-1.0
+   - Sebep: Institutional staking + accumulation in a BTC-positive trend, but mid-RSI and 24h flatness cap upside. Trade liquidity grab with tight stops.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-31 04:37:00):
+   - Durum: 🏁 [TEST] KAPANDI: ETHUSDT | PnL: 0.12 USDT
+   - Kar/Zarar: 0.12 USDT
+   - Görülen En İyi Fiyat (Peak): 2980.76
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-31 02:00:09
+------------------------------------------------------------
+📰 HABER: 🚨 **TODAY**: Bitwise files for 11 cryptocurrency ETFs which includes $AAVE, $CC, $ENA, $HYPE, $NEAR, $STRK, $SUI, $TAO, $TRX, $UNI and $ZEC.
+
+[News |]...
+🎯 HEDEF: SUIUSDT (Sui)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 1.4424
+   - RSI: 35.64
+   - BTC Trend (1h): %0.39
+   - Market Cap: $5.33 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %85)
+   - TP/SL: %3.5/%-2.0
+   - Sebep: ETF inclusion (fresh catalyst) + oversold RSI (35.6) in positive BTC trend (0.39%). Avoids overbought traps; target 1h high ($1.25) with stop below 200MA ($1.18).
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-31 05:01:00):
+   - Durum: 🏁 [TEST] KAPANDI: SUIUSDT | PnL: 1.04 USDT
+   - Kar/Zarar: 1.04 USDT
+   - Görülen En İyi Fiyat (Peak): 1.4439
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-31 11:05:18
+------------------------------------------------------------
+📰 HABER: **🔥 BIG:** Spot XRP ETFs have now logged 30 straight days of net inflows.
+
+[News |](https://cointelegraph.com/) [Markets |](https://cointelegraph.com/...
+🎯 HEDEF: XRPUSDT (Xrp)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 1.8738
+   - RSI: 86.27
+   - BTC Trend (1h): %0.18
+   - Market Cap: $112.52 BILLION
+🧠 AI KARARI:
+   - Aksiyon: SHORT (Güven: %85)
+   - TP/SL: %-2.5/%-0.5
+   - Sebep: Overbought RSI (86.3) + weak BTC trend (0.18%) + lagging ETF inflows = imminent liquidity exhaustion. Short for a 2–5% retest of 200MA or RSI 70.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-31 14:06:00):
+   - Durum: 🏁 [TEST] KAPANDI: XRPUSDT | PnL: 0.75 USDT
+   - Kar/Zarar: 0.75 USDT
+   - Görülen En İyi Fiyat (Peak): 1.8724
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-01 06:04:39
+------------------------------------------------------------
+📰 HABER: 🚨 **UPDATE**: Tron saw the largest stablecoin supply inflows in the last 24 hours, adding $1.4B, per Artemis data.
+
+[News |](https://cointelegraph.com...
+🎯 HEDEF: TRXUSDT (Tron)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 0.284
+   - RSI: 92.86
+   - BTC Trend (1h): %-0.00
+   - Market Cap: $26.91 BILLION
+🧠 AI KARARI:
+   - Aksiyon: SHORT (Güven: %85)
+   - TP/SL: %2.0/%0.5
+   - Sebep: RSI 92.9 + Lagging Catalyst = Imminent Reversal. Short for exhaustion with tight SL if RSI dips below 90.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-01 09:19:45):
+   - Durum: 🏁 [TEST] KAPANDI: TRXUSDT | PnL: -0.32 USDT
+   - Kar/Zarar: -0.32 USDT
+   - Görülen En İyi Fiyat (Peak): 0.28391
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-30 12:42:37
+------------------------------------------------------------
+📰 HABER: Cypherpunk announced that it has invested $29 million to acquire an additional 56,418.09 ZEC at an average price of $514.02 per token. Following the p...
+🎯 HEDEF: ZECUSDT (Zcash)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 536.52
+   - RSI: 13.97
+   - BTC Trend (1h): %0.09
+   - Market Cap: $8.71 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %88)
+   - TP/SL: %3.5/%-2.0
+   - Sebep: Institutional accumulation into oversold ZEC (RSI 14) with neutral funding and BTC tailwind; 5% supply target implies sustained demand. Monitor volume spikes for exhaustion.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-30 15:43:00):
+   - Durum: 🏁 [TEST] KAPANDI: ZECUSDT | PnL: -0.02 USDT
+   - Kar/Zarar: -0.02 USDT
+   - Görülen En İyi Fiyat (Peak): 536.52
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-30 14:34:21
+------------------------------------------------------------
+📰 HABER: Users on the Lighter are currently unable to withdraw funds normally, with the error message “Too many L2 Withdrawals” appearing. The issue appears to...
+🎯 HEDEF: LIGHTUSDT (Unknown)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 0.4517
+   - RSI: 58.88
+   - BTC Trend (1h): %-0.02
+   - Market Cap: UNKNOWN/SMALL
+🧠 AI KARARI:
+   - Aksiyon: SHORT (Güven: %85)
+   - TP/SL: %15.0/%-5.0
+   - Sebep: Withdrawal freeze + no team response = **liquidity drain risk** (forcing panic sells). RSI 58.9 (neutral) and funding 0.01% (no extreme bias) suggest **no exhaustion**, but small-cap inertia amplifies downside. **BTC trend (-0.02%) is irrelevant here**—this is an **idiosyncratic risk** with high asymmetric reward.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-30 17:35:00):
+   - Durum: 🏁 [TEST] KAPANDI: LIGHTUSDT | PnL: 1.33 USDT
+   - Kar/Zarar: 1.33 USDT
+   - Görülen En İyi Fiyat (Peak): 0.4511
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-31 09:46:32
+------------------------------------------------------------
+📰 HABER: Neo co-founder Erik Zhang accused Da Hongfei of failing to disclose Neo Foundation finances and urged a full, verifiable report. He said Da will step ...
+🎯 HEDEF: NEOUSDT (Unknown)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 3.607
+   - RSI: 69.23
+   - BTC Trend (1h): %0.30
+   - Market Cap: UNKNOWN/SMALL
+🧠 AI KARARI:
+   - Aksiyon: SHORT (Güven: %85)
+   - TP/SL: %5.0/%2.0
+   - Sebep: Governance crisis + RSI 69.2 (overbought) + BTC trend divergence (0.30% vs. NEO’s -0.36%). **Sell the News** trap likely; liquidity grab risk in thin-cap asset.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-31 13:01:45):
+   - Durum: 🏁 [TEST] KAPANDI: NEOUSDT | PnL: 0.00 USDT
+   - Kar/Zarar: 0.00 USDT
+   - Görülen En İyi Fiyat (Peak): 3.605
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-01 04:04:29
+------------------------------------------------------------
+📰 HABER: South Korea’s largest crypto exchange, Upbit, will list XAUT trading pairs against KRW, BTC, and USDT. XAUT is backed 1:1 by gold bars that meet the L...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 87785.5
+   - RSI: 15.42
+   - BTC Trend (1h): %-0.14
+   - Market Cap: $1754.75 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %85)
+   - TP/SL: %0.5/%-0.3
+   - Sebep: XAUT listing = gold-crypto convergence catalyst; BTC oversold (RSI 15.4) + neutral funding = no exhaustion risk. Target: 0.5% on breakout; SL: -0.3% if no follow-through.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-01 07:05:00):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: -0.04 USDT
+   - Kar/Zarar: -0.04 USDT
+   - Görülen En İyi Fiyat (Peak): 87785.5
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-29 15:00:25
+------------------------------------------------------------
+📰 HABER: ‘Back to Orange’: Strategy buys another 1,229 bitcoin for about $109 million after brief pause - [The Block](https://www.theblock.co/post/383849/strat...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 87291.0
+   - RSI: 19.05
+   - BTC Trend (1h): %0.06
+   - Market Cap: $1754.75 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %88)
+   - TP/SL: %0.5/%-0.3
+   - Sebep: Institutional BTC accumulation in oversold RSI (19) with neutral funding (0.01%) and positive 1h momentum (0.06%) signals short-term liquidity grab. High cap mitigates volatility, but 1,229 BTC purchase is catalyst-sized for HFT.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-29 18:01:00):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: 1.13 USDT
+   - Kar/Zarar: 1.13 USDT
+   - Görülen En İyi Fiyat (Peak): 87390.0
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-30 16:08:06
+------------------------------------------------------------
+📰 HABER: Winklevoss-backed Cypherpunk adds $29 million in ZEC, lifts holdings to nearly 2% of supply - [The Block](https://www.theblock.co/post/383974/winklevo...
+🎯 HEDEF: ZECUSDT (Zcash)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 534.87
+   - RSI: 30.70
+   - BTC Trend (1h): %0.73
+   - Market Cap: $8.71 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %82)
+   - TP/SL: %3.5/%-2.0
+   - Sebep: Whale accumulation in oversold ZEC (RSI 30.7) + BTC uptrend triggers short-covering; funding neutral but momentum exhaustion suggests controlled move. TP: 3.5% (targets RSI 45-50); SL: -2.0% (invalidates oversold thesis).
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-30 19:09:00):
+   - Durum: 🏁 [TEST] KAPANDI: ZECUSDT | PnL: 0.97 USDT
+   - Kar/Zarar: 0.97 USDT
+   - Görülen En İyi Fiyat (Peak): 535.39
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-31 08:31:18
+------------------------------------------------------------
+📰 HABER: Spot bitcoin ETFs record $355 million net inflows, ending 7-day negative streak - [The Block](https://www.theblock.co/post/384037/spot-bitcoin-etf-355...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 88549.2
+   - RSI: 36.19
+   - BTC Trend (1h): %0.06
+   - Market Cap: $1754.75 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %85)
+   - TP/SL: %1.5/%-0.8
+   - Sebep: ETF inflows + oversold RSI = high-conviction LONG, but BTC’s cap inertia caps volatility. TP at 1.5% (RSI 50 target), SL at -0.8% (funding spike >0.02%).
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-31 11:32:00):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: 0.00 USDT
+   - Kar/Zarar: 0.00 USDT
+   - Görülen En İyi Fiyat (Peak): 88549.5
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-31 20:17:04
+------------------------------------------------------------
+📰 HABER: Flow exploit leaves NFT loan borrowers ‘in limbo’ after network pause - [The Block](https://www.theblock.co/post/384094/flow-exploit-nft-loan-borrower...
+🎯 HEDEF: FLOWUSDT (Unknown)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 0.089
+   - RSI: 50.00
+   - BTC Trend (1h): %-0.31
+   - Market Cap: UNKNOWN/SMALL
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %65)
+   - TP/SL: %3.5/%-2.0
+   - Sebep: Exploit-induced panic likely overdone; RSI 50 + low funding signals exhaustion. High volatility risk due to small cap and liquidity freeze, but BTC trend (-0.31%) caps upside.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-31 23:18:00):
+   - Durum: 🏁 [TEST] KAPANDI: FLOWUSDT | PnL: 0.00 USDT
+   - Kar/Zarar: 0.00 USDT
+   - Görülen En İyi Fiyat (Peak): 0.089
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-29 14:18:56
+------------------------------------------------------------
+📰 HABER: [**CoinDesk 20 Performance Update: Polkadot (DOT) Rises 6% Over Weekend**](https://www.coindesk.com/coindesk-indices/2025/12/29/coindesk-20-performanc...
+🎯 HEDEF: DOTUSDT (Polkadot)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 1.83
+   - RSI: 60.00
+   - BTC Trend (1h): %0.02
+   - Market Cap: $3.02 BILLION
+🧠 AI KARARI:
+   - Aksiyon: SHORT (Güven: %65)
+   - TP/SL: %1.5/%0.8
+   - Sebep: Lagging bullish news in a neutral RSI (60) with 1h weakness (-0.33%) and no catalyst. Higher probability of pullback continuation than breakout.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-29 17:32:15):
+   - Durum: 🏁 [TEST] KAPANDI: DOTUSDT | PnL: -12.57 USDT
+   - Kar/Zarar: -12.57 USDT
+   - Görülen En İyi Fiyat (Peak): 1.823
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-31 06:18:56
+------------------------------------------------------------
+📰 HABER: [**Bullish calls of XRP to jump 300% in 2026 do the rounds again, implying $8 target**](https://www.coindesk.com/markets/2025/12/31/bullish-calls-of-x...
+🎯 HEDEF: XRPUSDT (Xrp)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 1.8742
+   - RSI: 70.91
+   - BTC Trend (1h): %0.14
+   - Market Cap: $112.52 BILLION
+🧠 AI KARARI:
+   - Aksiyon: SHORT (Güven: %78)
+   - TP/SL: %5.0/%2.0
+   - Sebep: Overbought RSI + stale catalyst = short-term liquidity grab. Target: $2.00 (5% retest of 24h high).
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-31 09:34:00):
+   - Durum: 🏁 [TEST] KAPANDI: XRPUSDT | PnL: 0.05 USDT
+   - Kar/Zarar: 0.05 USDT
+   - Görülen En İyi Fiyat (Peak): 1.8725
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-31 10:18:56
+------------------------------------------------------------
+📰 HABER: [**Winklevoss-backed Cypherpunk buys $28 million of zcash, now owns 1.7% of supply**](https://www.coindesk.com/business/2025/12/31/winklevoss-backed-c...
+🎯 HEDEF: ZECUSDT (Zcash)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 525.55
+   - RSI: 60.39
+   - BTC Trend (1h): %0.27
+   - Market Cap: $8.71 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %78)
+   - TP/SL: %1.5/%-1.0
+   - Sebep: Winklevoss-backed accumulation in ZEC (1.7% supply) is a **high-impact catalyst** with **neutral technicals** (RSI 60, stable funding). **LONG** for short-term liquidity-driven rally, but **size-adjusted cap** limits upside. **TP at +1.5% (17:55 UTC)**, **SL at -1.0% (17:45 UTC support break)**.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-31 13:19:00):
+   - Durum: 🏁 [TEST] KAPANDI: ZECUSDT | PnL: 0.08 USDT
+   - Kar/Zarar: 0.08 USDT
+   - Görülen En İyi Fiyat (Peak): 525.59
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-31 12:18:56
+------------------------------------------------------------
+📰 HABER: [**Bitwise files for 11 'strategy' ETFs, tracking tokens including AAVE, ZEC, TAO**](https://www.coindesk.com/markets/2025/12/31/bitwise-files-for-11-...
+🎯 HEDEF: AAVEUSDT (Aave)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 149.31
+   - RSI: 41.51
+   - BTC Trend (1h): %0.19
+   - Market Cap: $2.20 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %78)
+   - TP/SL: %3.5/%-2.0
+   - Sebep: ETF filings (institutional demand) + oversold RSI + BTC uptrend = high-probability short-term squeeze. Wait for **approval confirmation** or **volume surge** before full entry.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-31 15:19:00):
+   - Durum: 🏁 [TEST] KAPANDI: AAVEUSDT | PnL: -0.60 USDT
+   - Kar/Zarar: -0.60 USDT
+   - Görülen En İyi Fiyat (Peak): 149.31
+============================================================

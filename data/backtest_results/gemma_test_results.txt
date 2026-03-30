@@ -1,0 +1,2122 @@
+
+
+--- SIMULATION RUN: 2025-12-21 11:53:28.345620 ---
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-18 10:04:45
+------------------------------------------------------------
+📰 HABER: **📊 BULLISH: **$XRP spot ETFs have logged inflows every single day since launch.
+
+[News |](https://cointelegraph.com/) [Markets |](https://cointelegra...
+🎯 HEDEF: XRPUSDT (Xrp)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 1.8731
+   - RSI: 64.79
+   - BTC Trend (1h): %0.52
+   - Market Cap: $117.43 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %90)
+   - TP/SL: %2.5/%0.8
+   - Sebep: Time: Fresh (ongoing ETF inflows). Priced-In: No (1.19% move). BTC/Tech: Safe (BTC up 0.52%, RSI 64.8, Funding 0.01%). Verdict: Consistent daily inflows into XRP ETFs indicate sustained demand. Technicals are favorable, and BTC trend is mildly bullish. Initiating NUCLEAR LONG with a conservative stop-loss.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-18 13:20:00):
+   - Durum: 🏁 [TEST] KAPANDI: XRPUSDT | PnL: 0.75 USDT
+   - Kar/Zarar: 0.75 USDT
+   - Görülen En İyi Fiyat (Peak): 1.8774
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-18 11:00:01
+------------------------------------------------------------
+📰 HABER: **🇹🇼 JUST IN:** Taiwan’s Ministry of Justice revealed it holds 210.45 $BTC in seized assets, per Legislator Ju-Chun Ko.
+
+The total value of seized vir...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 87285.0
+   - RSI: 67.75
+   - BTC Trend (1h): %0.12
+   - Market Cap: $1768.02 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %92)
+   - TP/SL: %2.8/%0.8
+   - Sebep: Time: Fresh (News released today). Priced-In: No (Price movement minimal). BTC/Tech: Safe (BTC trend positive, RSI healthy, Funding low). Verdict: Taiwan's Ministry of Justice holding significant BTC is a positive catalyst, currently underpriced. Initiating NUCLEAR LONG with tight stop-loss.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-18 14:15:15):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: -2.09 USDT
+   - Kar/Zarar: -2.09 USDT
+   - Görülen En İyi Fiyat (Peak): 87315.2
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-18 13:38:43
+------------------------------------------------------------
+📰 HABER: **🇺🇸 JUST IN**: US inflation cooled to 2.7%, below market expectations.
+
+[News |](https://cointelegraph.com/) [Markets |](https://cointelegraph.com/ma...
+🎯 HEDEF: ETHUSDT (Ethereum)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 2911.74
+   - RSI: 61.95
+   - BTC Trend (1h): %0.90
+   - Market Cap: $361.14 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %90)
+   - TP/SL: %2.8/%0.8
+   - Sebep: Time: Fresh (News just released). Priced-In: No (1.28% move is small). BTC/Tech: Safe (BTC up 0.90%, RSI 61.9, Funding 0.01%). Verdict: US inflation data below expectations is a positive catalyst for risk assets like ETH. The small price movement indicates the market hasn't fully priced in the news, presenting a NUCLEAR LONG opportunity.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-18 16:53:45):
+   - Durum: 🏁 [TEST] KAPANDI: ETHUSDT | PnL: 18.53 USDT
+   - Kar/Zarar: 18.53 USDT
+   - Görülen En İyi Fiyat (Peak): 2973.41
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-19 00:40:10
+------------------------------------------------------------
+📰 HABER: 🇺🇸 **BIG**: White House AI and Crypto Czar says a markup for the [CLARITY Act](https://cointelegraph.com/news/white-house-david-sacks-crypto-clarity-a...
+🎯 HEDEF: ETHUSDT (Ethereum)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 2816.03
+   - RSI: 29.02
+   - BTC Trend (1h): %-0.15
+   - Market Cap: $361.14 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %92)
+   - TP/SL: %2.8/%0.8
+   - Sebep: Time: Fresh. Priced-In: No. BTC/Tech: Safe. The CLARITY Act markup announcement from the White House AI and Crypto Czar is a significant regulatory development, indicating potential positive future clarity for the crypto market. The price has only moved slightly (-0.31%) despite this news, suggesting it's not priced in. Technicals are strongly bullish (RSI 29, Funding 0.01%). BTC is slightly down, but not significantly impacting the overall bullish signal. This warrants an aggressive long position.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-19 03:55:15):
+   - Durum: 🏁 [TEST] KAPANDI: ETHUSDT | PnL: 3.37 USDT
+   - Kar/Zarar: 3.37 USDT
+   - Görülen En İyi Fiyat (Peak): 2828.64
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-19 01:35:06
+------------------------------------------------------------
+📰 HABER: 🇺🇸 **NOW**: CFTC seeks feedback on letting retail traders directly access derivatives clearing, part of push for stronger retail protections in deriva...
+🎯 HEDEF: ETHUSDT (Ethereum)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 2820.51
+   - RSI: 38.17
+   - BTC Trend (1h): %-0.15
+   - Market Cap: $361.14 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %75)
+   - TP/SL: %1.5/%0.8
+   - Sebep: Time: Fresh. Priced-In: No. BTC/Tech: Safe. The CFTC seeking feedback on retail derivatives access is a positive regulatory development for the broader crypto market, and ETH is currently undervalued based on technicals (RSI 38.2, Funding 0.01%). BTC trend is mildly negative, but not a strong enough signal to ignore the bullish news. Initiating a Scalp with tight stop-loss.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-19 04:50:15):
+   - Durum: 🏁 [TEST] KAPANDI: ETHUSDT | PnL: -0.86 USDT
+   - Kar/Zarar: -0.86 USDT
+   - Görülen En İyi Fiyat (Peak): 2825.43
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-19 01:59:10
+------------------------------------------------------------
+📰 HABER: 🇺🇸 **JUST IN**: The US Senate has confirmed pro-crypto Michael Selig as CFTC Chairman in a 53-43 vote.
+
+[News |](https://cointelegraph.com/) [Markets ...
+🎯 HEDEF: ETHUSDT (Ethereum)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 2817.48
+   - RSI: 48.62
+   - BTC Trend (1h): %-0.31
+   - Market Cap: $361.14 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %90)
+   - TP/SL: %2.5/%0.8
+   - Sebep: Time: Fresh (CFTC Chairman confirmation just occurred). Priced-In: No (1h change -0.34% is minimal). BTC/Tech: Safe (BTC slightly down, RSI 48.6, Funding 0.01%). Verdict: New leadership at CFTC is a significant positive catalyst for the crypto space, especially for Layer-1 platforms like ETH. The market has not fully priced in this development yet, presenting a clear opportunity for a Nuclear Long.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-19 05:14:15):
+   - Durum: 🏁 [TEST] KAPANDI: ETHUSDT | PnL: 0.68 USDT
+   - Kar/Zarar: 0.68 USDT
+   - Görülen En İyi Fiyat (Peak): 2822.8
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-19 03:05:07
+------------------------------------------------------------
+📰 HABER: 🗞 Catch up on the news over the last 24 hours!
+
+🇺🇸 [President Trump](https://t.me/cointelegraph/66280) says he will soon announce the next chairman of...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 86088.6
+   - RSI: 55.46
+   - BTC Trend (1h): %0.90
+   - Market Cap: $1768.02 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %85)
+   - TP/SL: %1.5/%0.8
+   - Sebep: Time: Fresh. Priced-In: No. BTC/Tech: Safe. The confirmation of Michael Selig as CFTC Chairman signals a pro-crypto regulatory environment. BTC is trending up slightly (0.90%), and technicals (RSI 55.5, Funding 0.0100%) are favorable. This is a Scalp opportunity with moderate confidence.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-19 06:20:15):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: 0.74 USDT
+   - Kar/Zarar: 0.74 USDT
+   - Görülen En İyi Fiyat (Peak): 86444.0
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-19 04:02:03
+------------------------------------------------------------
+📰 HABER: ⚡️ **NOW**: Coinbase is suing Michigan, Illinois, and Connecticut over their attempts to regulate prediction markets, arguing the states lack jurisdic...
+🎯 HEDEF: ETHUSDT (Ethereum)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 2914.84
+   - RSI: 47.06
+   - BTC Trend (1h): %1.06
+   - Market Cap: $361.14 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %90)
+   - TP/SL: %2.8/%0.8
+   - Sebep: Time: Fresh (News just broke). Priced-In: No (2.16% move is small). BTC/Tech: Safe (BTC up, RSI 47.1, Funding low). Verdict: Coinbase lawsuit against states creates regulatory clarity, a positive catalyst for ETH. Aggressive long entry.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-19 07:17:15):
+   - Durum: 🏁 [TEST] KAPANDI: ETHUSDT | PnL: 5.04 USDT
+   - Kar/Zarar: 5.04 USDT
+   - Görülen En İyi Fiyat (Peak): 2932.77
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-19 05:03:10
+------------------------------------------------------------
+📰 HABER: 🚨 **LATEST**: Bearish sentiment is spiking across social media after Bitcoin's pullback to $84.8K, with retail pushing fear harder than bullish narrat...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 87054.9
+   - RSI: 56.17
+   - BTC Trend (1h): %0.24
+   - Market Cap: $1768.02 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %85)
+   - TP/SL: %2.5/%0.8
+   - Sebep: Time: Fresh. Priced-In: No. BTC/Tech: Safe. News indicates contrarian bounce potential despite recent pullback. RSI is healthy (56.2), Funding is low (0.0100%), and BTC 1h trend is slightly positive (0.24%).
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-19 08:18:15):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: -1.97 USDT
+   - Kar/Zarar: -1.97 USDT
+   - Görülen En İyi Fiyat (Peak): 87132.3
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-19 09:34:09
+------------------------------------------------------------
+📰 HABER: **🇬🇧 JUST IN:** Bybit is back in the UK, relaunching with 100+ crypto trading pairs.
+
+[News |](https://cointelegraph.com/) [Markets |](https://cointel...
+🎯 HEDEF: ETHUSDT (Ethereum)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 2950.43
+   - RSI: 47.29
+   - BTC Trend (1h): %-0.11
+   - Market Cap: $361.14 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %75)
+   - TP/SL: %1.5/%0.8
+   - Sebep: Time: Fresh. Priced-In: No. BTC/Tech: Safe. Bybit relaunching in the UK is a positive catalyst for ETH adoption and trading volume, and the price hasn't fully priced it in (0.08% move). Technicals are favorable (RSI 47.3, Funding 0.0100%). BTC trend is mildly negative but not a strong bear signal.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-19 12:49:15):
+   - Durum: 🏁 [TEST] KAPANDI: ETHUSDT | PnL: 0.40 USDT
+   - Kar/Zarar: 0.40 USDT
+   - Görülen En İyi Fiyat (Peak): 2952.37
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-19 13:20:54
+------------------------------------------------------------
+📰 HABER: **⚡️ NEW:** Ethereum devs have named the post-Glamsterdam upgrade “Hegota.”
+
+[News |](https://cointelegraph.com/) [Markets |](https://cointelegraph.co...
+🎯 HEDEF: ETHUSDT (Ethereum)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 2958.0
+   - RSI: 43.88
+   - BTC Trend (1h): %-0.08
+   - Market Cap: $361.14 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %85)
+   - TP/SL: %1.5/%0.8
+   - Sebep: Time: Fresh. Priced-In: No (0.13% move). BTC/Tech: Safe (BTC slightly down, RSI healthy, Funding low). Verdict: New upgrade name announcement suggests future development. Technicals are favorable, and the price hasn't fully priced in the news. SCALP entry.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-19 16:36:00):
+   - Durum: 🏁 [TEST] KAPANDI: ETHUSDT | PnL: 0.04 USDT
+   - Kar/Zarar: 0.04 USDT
+   - Görülen En İyi Fiyat (Peak): 2967.32
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-19 16:50:17
+------------------------------------------------------------
+📰 HABER: **🇧🇷 JUST IN: **[Brazil’s main stock exchange B3](https://cointelegraph.com/news/brazil-stocks-b3-tokenization-stablecoin) plans to launch a tokenizat...
+🎯 HEDEF: B3USDT (Unknown)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 0.000851
+   - RSI: 45.45
+   - BTC Trend (1h): %0.41
+   - Market Cap: UNKNOWN/SMALL
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %90)
+   - TP/SL: %2.5/%0.8
+   - Sebep: Time: Fresh. Priced-In: No. BTC/Tech: Safe. B3 launching a tokenization platform and stablecoin is a significant development for crypto adoption in Brazil. The price has barely moved, indicating the news is not yet priced in. BTC trend is slightly bullish, and technicals (RSI 45.5, Funding 0.0100%) are favorable. This warrants an aggressive long position.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-19 20:05:30):
+   - Durum: 🏁 [TEST] KAPANDI: B3USDT | PnL: -1.18 USDT
+   - Kar/Zarar: -1.18 USDT
+   - Görülen En İyi Fiyat (Peak): 0.000853
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-19 18:31:51
+------------------------------------------------------------
+📰 HABER: 🔥 **NEW**: TRON has integrated with Coinbase’s Base network via LayerZero, enabling users to bridge TRX to Base and access it directly through decentr...
+🎯 HEDEF: TRXUSDT (Tron)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 0.27869
+   - RSI: 50.79
+   - BTC Trend (1h): %-0.18
+   - Market Cap: $26.90 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %90)
+   - TP/SL: %2.5/%0.8
+   - Sebep: Time: Fresh (News just released). Priced-In: No (Minimal price movement). BTC/Tech: Safe (BTC slightly down, RSI neutral, Funding low). Verdict: TRON integration with Coinbase Base via LayerZero is a significant development for TRX, enabling bridging and access to Base DEXs. The minimal price reaction indicates the market hasn't fully priced in this positive news. Aggressive long position with a tight stop-loss.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-19 21:47:00):
+   - Durum: 🏁 [TEST] KAPANDI: TRXUSDT | PnL: 0.90 USDT
+   - Kar/Zarar: 0.90 USDT
+   - Görülen En İyi Fiyat (Peak): 0.27906
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-19 20:10:01
+------------------------------------------------------------
+📰 HABER: **🔥 BULLISH: **Arthur Hayes argues the Fed’s new Reserve Management Purchases are effectively QE under a different name, warning they enable unchecked...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 87658.7
+   - RSI: 32.11
+   - BTC Trend (1h): %0.34
+   - Market Cap: $1768.02 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %90)
+   - TP/SL: %2.5/%0.8
+   - Sebep: Time: Fresh. Priced-In: No. BTC/Tech: Safe. Arthur Hayes' analysis of Fed policy and potential QE implications is a significant catalyst. BTC 1h trend is positive, RSI is oversold (32.1), and funding rates are low (0.0100%). This suggests substantial room for upside with a nuclear long strategy.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-19 23:25:15):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: 6.01 USDT
+   - Kar/Zarar: 6.01 USDT
+   - Görülen En İyi Fiyat (Peak): 88185.4
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-19 22:31:56
+------------------------------------------------------------
+📰 HABER: 🚨 **INSIGHT**: Ethereum’s exchange supply has fallen to its lowest level since 2016, signaling reduced sell pressure as more $ETH moves into long-term...
+🎯 HEDEF: ETHUSDT (Ethereum)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 2990.39
+   - RSI: 66.80
+   - BTC Trend (1h): %0.19
+   - Market Cap: $361.14 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %90)
+   - TP/SL: %2.5/%0.8
+   - Sebep: Time: Fresh (News released today). Priced-In: No (Price change minimal). BTC/Tech: Safe (BTC slightly up, RSI healthy, Funding low). Verdict: Reduced ETH exchange supply is a significant bullish signal indicating long-term holding pressure. Price hasn't fully reacted, presenting a NUCLEAR LONG opportunity.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-20 01:47:00):
+   - Durum: 🏁 [TEST] KAPANDI: ETHUSDT | PnL: -0.59 USDT
+   - Kar/Zarar: -0.59 USDT
+   - Görülen En İyi Fiyat (Peak): 2991.76
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-20 09:21:15
+------------------------------------------------------------
+📰 HABER: 🚨 LATEST: Arthur Hayes says that [altseason ](https://cointelegraph.com/news/altcoin-season-never-ended-traders-just-missed-the-winners-hayes)never st...
+🎯 HEDEF: SOLUSDT (Wrapped Sol)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 126.54
+   - RSI: 53.66
+   - BTC Trend (1h): %-0.09
+   - Market Cap: $1.56 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %75)
+   - TP/SL: %1.5/%0.8
+   - Sebep: Time: Fresh. Priced-In: No. BTC/Tech: Safe. Arthur Hayes' statement suggests a potential altseason, which is a developing narrative. SOL's price action is muted, indicating the market hasn't fully priced in this sentiment. Technicals are neutral (RSI 53.7, Funding 0.0100%). BTC trend is slightly negative but not a strong bear signal. Initiating a Scalp with a tight stop-loss.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-20 12:36:30):
+   - Durum: 🏁 [TEST] KAPANDI: SOLUSDT | PnL: 0.55 USDT
+   - Kar/Zarar: 0.55 USDT
+   - Görülen En İyi Fiyat (Peak): 126.71
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-20 10:29:30
+------------------------------------------------------------
+📰 HABER: 🔥  UPDATE: Bitmine completed ~66% of their goal to acquire 5% of the $ETH supply.
+
+[News |](https://cointelegraph.com/) [Markets |](https://cointelegr...
+🎯 HEDEF: ETHUSDT (Ethereum)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 2977.42
+   - RSI: 31.19
+   - BTC Trend (1h): %-0.19
+   - Market Cap: $361.14 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %90)
+   - TP/SL: %2.8/%0.8
+   - Sebep: Time: Fresh (News just released). Priced-In: No (Price down 0.24%). BTC/Tech: Safe (BTC slightly down, RSI oversold, Funding low). Verdict: Bitmine acquiring 5% of ETH supply is a significant bullish signal, especially given the oversold technicals and muted market reaction. This represents a clear opportunity for a Nuclear Long.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-20 13:44:45):
+   - Durum: 🏁 [TEST] KAPANDI: ETHUSDT | PnL: 0.49 USDT
+   - Kar/Zarar: 0.49 USDT
+   - Görülen En İyi Fiyat (Peak): 2979.93
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-20 17:53:50
+------------------------------------------------------------
+📰 HABER: 🔥 HUGE: Van Eck has filed for an AVAX ETF.
+
+[News |](https://cointelegraph.com/) [Markets |](https://cointelegraph.com/markets) [YouTube](https://yout...
+🎯 HEDEF: AVAXUSDT (Avalanche)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 12.251
+   - RSI: 55.00
+   - BTC Trend (1h): %0.08
+   - Market Cap: $5.24 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %95)
+   - TP/SL: %2.8/%0.8
+   - Sebep: Time: Fresh (Van Eck ETF filing is a developing event). Priced-In: No (-0.23% price change indicates limited initial reaction). BTC/Tech: Safe (BTC 1h trend slightly positive, RSI 55.0, Funding 0.0100%). Verdict: New ETF filing is a significant catalyst for AVAX. Initial price reaction is muted, presenting a Nuclear Long opportunity.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-20 21:09:00):
+   - Durum: 🏁 [TEST] KAPANDI: AVAXUSDT | PnL: -1.55 USDT
+   - Kar/Zarar: -1.55 USDT
+   - Görülen En İyi Fiyat (Peak): 12.264
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-20 21:02:25
+------------------------------------------------------------
+📰 HABER: 🇺🇸 ETFS: The $SOL ETFs have seen nothing but net inflows since December 4th.
+
+[News |](https://cointelegraph.com/) [Markets |](https://cointelegraph.c...
+🎯 HEDEF: SOLUSDT (Wrapped Sol)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 126.32
+   - RSI: 60.00
+   - BTC Trend (1h): %0.08
+   - Market Cap: $1.56 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %92)
+   - TP/SL: %2.8/%0.8
+   - Sebep: Time: Fresh (December 21, 2025). Priced-In: No (1h change of 0.29% is low given the news). BTC/Tech: Safe (BTC 1h trend is slightly positive, RSI 60.0, Funding 0.0100%). Verdict: Consistent net inflows into SOL ETFs indicate sustained demand. Technicals are favorable, and the price hasn't fully priced in the positive news. Initiating NUCLEAR LONG with tight stop-loss.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-21 00:17:30):
+   - Durum: 🏁 [TEST] KAPANDI: SOLUSDT | PnL: -0.24 USDT
+   - Kar/Zarar: -0.24 USDT
+   - Görülen En İyi Fiyat (Peak): 126.35
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-20 22:01:02
+------------------------------------------------------------
+📰 HABER: 🚨 MARKET: The total USDC Supply lost 1.2B coins in the past 7 days.
+
+[News |](https://cointelegraph.com/) [Markets |](https://cointelegraph.com/market...
+🎯 HEDEF: USDCUSDT (Binance Bridged Usdc (Bnb Smart Chain))
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 0.999782
+   - RSI: 50.00
+   - BTC Trend (1h): %-0.05
+   - Market Cap: $1.29 BILLION
+🧠 AI KARARI:
+   - Aksiyon: SHORT (Güven: %90)
+   - TP/SL: %1.5/%0.8
+   - Sebep: Time: Fresh. Priced-In: No. BTC/Tech: Unsafe. Verdict: USDC supply loss of 1.2B is a significant event indicating potential instability. While BTC is slightly down, the news itself is a negative catalyst for a stablecoin. Technicals are neutral, but the news warrants a short position to capitalize on potential downward pressure. Immediate execution due to the severity of the news.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-21 01:11:15):
+   - Durum: 🏁 [TEST] KAPANDI: USDCUSDT | PnL: 0.00 USDT
+   - Kar/Zarar: 0.00 USDT
+   - Görülen En İyi Fiyat (Peak): 0.999781
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-20 23:02:34
+------------------------------------------------------------
+📰 HABER: 🇯🇵 INSIGHT: $BTC jumped toward $88K after [Japan’s ](https://cointelegraph.com/news/bitcoin-rebounds-japan-rate-hike-arthur-hayes-dollar-200-yen)rate ...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 88264.7
+   - RSI: 48.49
+   - BTC Trend (1h): %0.03
+   - Market Cap: $1768.02 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %92)
+   - TP/SL: %2.8/%0.8
+   - Sebep: Time: Fresh (News just released). Priced-In: No (Price up only 0.03%). BTC/Tech: Safe (BTC trend positive, RSI healthy, Funding low). Verdict: Japan rate hike news is a significant catalyst, and the price hasn't fully reacted. Nuclear Long initiated.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-21 02:17:45):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: 0.47 USDT
+   - Kar/Zarar: 0.47 USDT
+   - Görülen En İyi Fiyat (Peak): 88306.1
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-21 00:03:53
+------------------------------------------------------------
+📰 HABER: 🔥 NOW: Despite 4/5 days being red, The $BTC ETFs still saw a weekly net inflow of $57.3M.
+
+[News |](https://cointelegraph.com/) [Markets |](https://co...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 88304.0
+   - RSI: 65.44
+   - BTC Trend (1h): %0.10
+   - Market Cap: $1768.02 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %85)
+   - TP/SL: %1.5/%0.8
+   - Sebep: Time: Fresh. Priced-In: No. BTC/Tech: Safe. Despite a minor BTC 1h trend, the continued ETF inflows represent sustained buying pressure. RSI is healthy, and Funding is low, indicating room for upside. This is a Scalp opportunity.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-21 03:19:00):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: 0.19 USDT
+   - Kar/Zarar: 0.19 USDT
+   - Görülen En İyi Fiyat (Peak): 88350.0
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-21 01:03:54
+------------------------------------------------------------
+📰 HABER: 🔥 INSIGHT: Bitwise filed with the SEC for a [spot ](https://web.telegram.org/a/%20https://cointelegraph.com/news/bitwise-submits-spot-sui-etf-proposal...
+🎯 HEDEF: SUIUSDT (Sui)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 1.455
+   - RSI: 39.29
+   - BTC Trend (1h): %0.01
+   - Market Cap: $5.43 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %95)
+   - TP/SL: %2.8/%0.8
+   - Sebep: Time: Fresh (SEC ETF filing is a developing event). Priced-In: No (Price change is minimal). BTC/Tech: Safe (BTC trend is neutral, RSI is healthy, Funding is low). Verdict: Bitwise ETF filing is a significant catalyst for SUI, currently underpriced. Aggressive long position with tight stop-loss.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-21 04:19:00):
+   - Durum: 🏁 [TEST] KAPANDI: SUIUSDT | PnL: -1.37 USDT
+   - Kar/Zarar: -1.37 USDT
+   - Görülen En İyi Fiyat (Peak): 1.4555
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-18 11:45:23
+------------------------------------------------------------
+📰 HABER: Several projects backed by Kaito Kickstarter saw significant post-TGE drawdowns. Play AI, launched at a $50m, now has an FDV of only $2.1m; Hana Netwo...
+🎯 HEDEF: KAITOUSDT (Unknown)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 0.5017
+   - RSI: 55.56
+   - BTC Trend (1h): %-0.17
+   - Market Cap: UNKNOWN/SMALL
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %75)
+   - TP/SL: %1.5/%0.8
+   - Sebep: Time: Fresh. Priced-In: No. BTC/Tech: Safe. The news regarding similar project drawdowns presents a unique opportunity. While BTC is slightly down, the technicals (RSI 55.6, Funding 0.0100%) are favorable, suggesting the market hasn't fully priced in the potential for a rebound. This warrants a Scalp position with tight stop-loss.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-18 15:00:30):
+   - Durum: 🏁 [TEST] KAPANDI: KAITOUSDT | PnL: -1.40 USDT
+   - Kar/Zarar: -1.40 USDT
+   - Görülen En İyi Fiyat (Peak): 0.5034
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-18 17:09:12
+------------------------------------------------------------
+📰 HABER: Polymarket said issues caused by a recent Polygon network disruption have been resolved, with the site and related functions restored. The team is wor...
+🎯 HEDEF: POLUSDT (Pol (Ex-Matic))
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 0.10784
+   - RSI: 5.26
+   - BTC Trend (1h): %-2.00
+   - Market Cap: $1.16 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %90)
+   - TP/SL: %2.5/%0.8
+   - Sebep: Time: Fresh. Priced-In: No. BTC/Tech: Safe. Polymarket network disruption resolution is a developing event, not priced into the current -2.03% 1h change. RSI is extremely low (5.3), Funding is healthy (0.01%), and BTC is mildly bearish (-2.00%), but not a catastrophic dump. This warrants a NUCLEAR LONG.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-18 20:13:30):
+   - Durum: 🏁 [TEST] KAPANDI: POLUSDT | PnL: -9.46 USDT
+   - Kar/Zarar: -9.46 USDT
+   - Görülen En İyi Fiyat (Peak): 0.10788
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-19 02:59:32
+------------------------------------------------------------
+📰 HABER: Aptos proposed the post-quantum signature improvement AIP-137, aiming to add optional account-level support for post-quantum digital signatures to add...
+🎯 HEDEF: APTUSDT (Aptos)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 1.4468
+   - RSI: 57.89
+   - BTC Trend (1h): %0.44
+   - Market Cap: $1.23 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %85)
+   - TP/SL: %1.5/%0.8
+   - Sebep: Time: Fresh. Priced-In: No. BTC/Tech: Safe. AIP-137 proposal addresses long-term quantum computing risks, a significant strategic upgrade for Aptos. Price increase of 1.39% indicates early stage momentum. Technicals (RSI 57.9, Funding 0.0100%) are favorable. BTC trend is slightly bullish (0.44%).
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-19 06:08:15):
+   - Durum: 🏁 [TEST] KAPANDI: APTUSDT | PnL: 15.83 USDT
+   - Kar/Zarar: 15.83 USDT
+   - Görülen En İyi Fiyat (Peak): 1.4697
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-19 05:15:12
+------------------------------------------------------------
+📰 HABER: On Dec. 18 (ET), spot Bitcoin ETFs recorded net outflows of $161 million. Spot Ethereum ETFs saw net outflows of $96.62 million, marking six consecuti...
+🎯 HEDEF: XRPUSDT (Xrp)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 1.832
+   - RSI: 33.49
+   - BTC Trend (1h): %-0.48
+   - Market Cap: $117.43 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %85)
+   - TP/SL: %2.5/%0.8
+   - Sebep: Time: Fresh (Dec. 18 news). Priced-In: No (1h change -0.93% < 3%). BTC/Tech: Safe (BTC down, but XRP oversold). Verdict: XRP ETF inflows against a backdrop of outflows for BTC and ETH suggest contrarian buying pressure. Technicals are favorable (RSI 33.5, Funding 0.01%).
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-19 08:30:15):
+   - Durum: 🏁 [TEST] KAPANDI: XRPUSDT | PnL: -1.69 USDT
+   - Kar/Zarar: -1.69 USDT
+   - Görülen En İyi Fiyat (Peak): 1.8325
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-19 06:41:15
+------------------------------------------------------------
+📰 HABER: According to Arbiscan, Robinhood: Deployer deployed 500 stock tokens on the Arbitrum network on December 17, marking the highest single-day deployment...
+🎯 HEDEF: ARBUSDT (Arbitrum)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 0.1812
+   - RSI: 50.00
+   - BTC Trend (1h): %0.10
+   - Market Cap: $1.09 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %85)
+   - TP/SL: %2.5/%0.8
+   - Sebep: Time: Fresh (Deployment occurred Dec 17, analyzed Dec 21). Priced-In: No (1h change 0.39%, 24h change 0.00%). BTC/Tech: Safe (BTC 1h trend positive, RSI 50, Funding low). Verdict: Robinhood deploying stock tokens on Arbitrum is a significant catalyst for adoption and utility, currently underpriced. Aggressive long with tight stop.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-19 09:56:30):
+   - Durum: 🏁 [TEST] KAPANDI: ARBUSDT | PnL: 4.42 USDT
+   - Kar/Zarar: 4.42 USDT
+   - Görülen En İyi Fiyat (Peak): 0.183
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-19 11:28:44
+------------------------------------------------------------
+📰 HABER: Coinbase has filed lawsuits in Connecticut, Illinois, and Michigan, challenging state efforts to regulate prediction markets. The exchange argues that...
+🎯 HEDEF: ETHUSDT (Ethereum)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 2961.73
+   - RSI: 58.34
+   - BTC Trend (1h): %0.40
+   - Market Cap: $361.14 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %85)
+   - TP/SL: %1.5/%0.8
+   - Sebep: Time: Fresh. Priced-In: No. BTC/Tech: Safe. Coinbase challenging state regulation of prediction markets is a positive catalyst for ETH, indicating broader regulatory clarity and potential for increased adoption. Price increase of 0.34% suggests the market hasn't fully priced in the news. Technicals (RSI 58.3, Funding 0.0100%) are favorable. BTC trend is mildly bullish (0.40%).
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-19 14:43:45):
+   - Durum: 🏁 [TEST] KAPANDI: ETHUSDT | PnL: 2.56 USDT
+   - Kar/Zarar: 2.56 USDT
+   - Görülen En İyi Fiyat (Peak): 2969.89
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-19 11:46:16
+------------------------------------------------------------
+📰 HABER: WuBlockchain Weekly: U.S. CPI undershoots expectations; BOJ raises rates to a 30-year high; U.S. Senate confirms new CFTC and FDIC chairs;  UK to brin...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 88287.0
+   - RSI: 49.50
+   - BTC Trend (1h): %0.05
+   - Market Cap: $1768.02 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %85)
+   - TP/SL: %1.5/%0.8
+   - Sebep: Time: Fresh. Priced-In: No. BTC/Tech: Safe. WuBlockchain Weekly contains multiple positive developments (BOJ rate hike, CFTC/FDIC confirmations, Bhutan BTC allocation, Strategy buys). BTC 1h trend is slightly positive, and technicals (RSI 49.5, Funding 0.0100%) are favorable. This presents a Scalp opportunity with moderate risk.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-19 15:01:30):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: -2.58 USDT
+   - Kar/Zarar: -2.58 USDT
+   - Görülen En İyi Fiyat (Peak): 88305.8
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-19 23:15:34
+------------------------------------------------------------
+📰 HABER: Coinbase Institutional released its 2026 Crypto Market Outlook, noting that although the U.S. economy remains resilient, uncertainty is elevated and t...
+🎯 HEDEF: ETHUSDT (Ethereum)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 2982.2
+   - RSI: 40.90
+   - BTC Trend (1h): %0.15
+   - Market Cap: $361.14 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %75)
+   - TP/SL: %1.5/%0.8
+   - Sebep: Time: Fresh. Priced-In: No. BTC/Tech: Safe. Coinbase Institutional's report outlines significant institutional demand shifts and emerging trends (privacy, AI, interoperability) which are forward-looking. The price action is minimal (-0.15%), indicating the market hasn't fully priced in the implications. Technicals (RSI 40.9, Funding 0.0100%) are favorable. BTC trend is slightly positive. Initiating a Scalp with a tight stop-loss.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-20 02:30:45):
+   - Durum: 🏁 [TEST] KAPANDI: ETHUSDT | PnL: -0.12 USDT
+   - Kar/Zarar: -0.12 USDT
+   - Görülen En İyi Fiyat (Peak): 2986.25
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-20 02:47:56
+------------------------------------------------------------
+📰 HABER: BitMEX co-founder Arthur Hayes said the Fed’s RMP is effectively “QE in disguise,” predicting renewed liquidity and crypto upside. He expects BTC to t...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 88209.0
+   - RSI: 60.78
+   - BTC Trend (1h): %0.16
+   - Market Cap: $1768.02 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %85)
+   - TP/SL: %2.5/%0.8
+   - Sebep: Time: Fresh. Priced-In: No. BTC/Tech: Safe. Hayes' statement regarding Fed policy and BTC price targets is a significant catalyst. The 0.16% price movement indicates the market has not fully priced in the potential upside. Technicals (RSI 60.8, Funding 0.0100%) are favorable. Initiating a Nuclear Long with a conservative stop-loss.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-20 06:03:00):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: 0.12 USDT
+   - Kar/Zarar: 0.12 USDT
+   - Görülen En İyi Fiyat (Peak): 88219.7
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-20 03:39:07
+------------------------------------------------------------
+📰 HABER: CZ at Bitcoin Asia Hong Kong - Full Transcript: Institutional Adoption and the Risks & Opportunities of DATs: At Bitcoin Asia 2025 in Hong Kong, Binan...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 88262.8
+   - RSI: 59.14
+   - BTC Trend (1h): %0.17
+   - Market Cap: $1768.02 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %85)
+   - TP/SL: %1.5/%0.8
+   - Sebep: Time: Fresh. Priced-In: No. BTC/Tech: Safe. CZ's comments on institutional adoption and future growth drivers (RWA, AI) are positive catalysts. BTC 1h trend is slightly positive, and technicals (RSI 59.1, Funding 0.0100%) are favorable. Initiating a Scalp position.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-20 06:54:15):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: -0.71 USDT
+   - Kar/Zarar: -0.71 USDT
+   - Görülen En İyi Fiyat (Peak): 88271.7
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-20 04:11:28
+------------------------------------------------------------
+📰 HABER: According to @_FORAB, Tom Lee's fund, Fundstrat, stated in its latest 2026 cryptocurrency strategy advice to internal clients that a significant corre...
+🎯 HEDEF: ETHUSDT (Ethereum)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 2981.73
+   - RSI: 28.53
+   - BTC Trend (1h): %-0.10
+   - Market Cap: $361.14 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %75)
+   - TP/SL: %1.5/%0.8
+   - Sebep: Time: Fresh (Report released Dec 17th, analyzed Dec 21st). Priced-In: No (1h change negligible). BTC/Tech: Safe (BTC slightly down, RSI oversold, Funding low). Verdict: Contradictory information from Fundstrat and Tom Lee creates uncertainty. Technicals are extremely favorable (RSI 28.5) suggesting a strong bounce is likely. Executing a Scalp with tight stop-loss.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-20 07:26:30):
+   - Durum: 🏁 [TEST] KAPANDI: ETHUSDT | PnL: 0.37 USDT
+   - Kar/Zarar: 0.37 USDT
+   - Görülen En İyi Fiyat (Peak): 2984.32
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-20 05:46:00
+------------------------------------------------------------
+📰 HABER: CryptoPunks announced that eight CryptoPunks have been officially added to the permanent collection of the Museum of Modern Art (MoMA) in New York. Th...
+🎯 HEDEF: ETHUSDT (Ethereum)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 2981.6
+   - RSI: 20.84
+   - BTC Trend (1h): %0.09
+   - Market Cap: $361.14 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %90)
+   - TP/SL: %2.5/%0.8
+   - Sebep: Time: Fresh. Priced-In: No. BTC/Tech: Safe. CryptoPunks' entry into MoMA is a significant, positive event for the broader NFT/crypto art space, signaling mainstream adoption. ETH technicals are extremely oversold (RSI 20.8) and funding rates are low, indicating a lack of excessive leverage. BTC trend is slightly positive. This is a clear opportunity for a Nuclear Long.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-20 09:01:15):
+   - Durum: 🏁 [TEST] KAPANDI: ETHUSDT | PnL: -0.31 USDT
+   - Kar/Zarar: -0.31 USDT
+   - Görülen En İyi Fiyat (Peak): 2984.85
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-20 07:11:36
+------------------------------------------------------------
+📰 HABER: According to SlowMist monitoring, a user lost nearly $50M in USDT to an address-poisoning scam. The victim mistakenly copied a look-alike address from...
+🎯 HEDEF: ETHUSDT (Ethereum)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 2974.7
+   - RSI: 41.10
+   - BTC Trend (1h): %-0.18
+   - Market Cap: $361.14 BILLION
+🧠 AI KARARI:
+   - Aksiyon: SHORT (Güven: %90)
+   - TP/SL: %1.5/%0.8
+   - Sebep: Time: Fresh. Priced-In: No. BTC/Tech: Unsafe. Verdict: Exploitable hack event with funds converted to ETH and routed through Tornado Cash. BTC trend is slightly negative, and RSI is low, indicating potential for further downside. Immediate short with tight stop-loss.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-20 10:21:45):
+   - Durum: 🏁 [TEST] KAPANDI: ETHUSDT | PnL: 0.24 USDT
+   - Kar/Zarar: 0.24 USDT
+   - Görülen En İyi Fiyat (Peak): 2973.12
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-20 07:25:42
+------------------------------------------------------------
+📰 HABER: On December 19 (ET), spot Bitcoin ETFs recorded total net outflows of $158 million, with only Fidelity's FBTC seeing net inflows. Spot Ethereum ETFs p...
+🎯 HEDEF: XRPUSDT (Xrp)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 1.9073
+   - RSI: 31.48
+   - BTC Trend (1h): %-0.18
+   - Market Cap: $117.43 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %85)
+   - TP/SL: %2.8/%0.8
+   - Sebep: Time: Fresh (News from Dec 19, relevant to current conditions). Priced-In: No (1h change -0.40% is minimal). BTC/Tech: Safe (BTC slightly down, RSI 31.5, Funding 0.01%). Verdict: XRP ETF inflows are counter to the broader ETF outflow trend, indicating specific positive sentiment. Technicals are favorable, allowing for a Scalp with a slightly aggressive TP.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-20 10:40:45):
+   - Durum: 🏁 [TEST] KAPANDI: XRPUSDT | PnL: 2.57 USDT
+   - Kar/Zarar: 2.57 USDT
+   - Görülen En İyi Fiyat (Peak): 1.913
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-20 12:11:23
+------------------------------------------------------------
+📰 HABER: Weekly Project Updates: WLFI Token Expenditure Proposal Sparks Controversy, BNB Chain Launches New Stablecoin $ U, Uniswap Fee Switch Proposal Enters ...
+🎯 HEDEF: ETCUSDT (Ethereum Classic)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 12.44
+   - RSI: 40.30
+   - BTC Trend (1h): %0.20
+   - Market Cap: $1.91 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %75)
+   - TP/SL: %1.5/%0.8
+   - Sebep: Time: Fresh. Priced-In: No. BTC/Tech: Safe. The news regarding project updates, while varied, suggests ongoing activity and potential developments. The price increase is minimal (0.34%), indicating a significant opportunity. Technicals are favorable (RSI 40.3, Funding 0.0100%). BTC trend is slightly positive (0.20%). This warrants a Scalp position.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-20 15:26:30):
+   - Durum: 🏁 [TEST] KAPANDI: ETCUSDT | PnL: -0.64 USDT
+   - Kar/Zarar: -0.64 USDT
+   - Görülen En İyi Fiyat (Peak): 12.45
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-20 23:09:11
+------------------------------------------------------------
+📰 HABER: According to Bloomberg, bipartisan House lawmakers Max Miller and Steven Horsford are drafting a crypto tax framework that would exempt capital gains ...
+🎯 HEDEF: ETHUSDT (Ethereum)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 2975.11
+   - RSI: 26.40
+   - BTC Trend (1h): %0.11
+   - Market Cap: $361.14 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %90)
+   - TP/SL: %2.5/%0.8
+   - Sebep: Time: Fresh. Priced-In: No. BTC/Tech: Safe. The news regarding a crypto tax framework is a significant positive development, potentially boosting adoption and regulatory clarity for ETH. The price has barely moved, indicating the market hasn't fully priced in the news. Technicals are strongly bullish (RSI 26.4, Funding 0.01%). BTC trend is slightly positive. This warrants an aggressive long position.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-21 02:24:15):
+   - Durum: 🏁 [TEST] KAPANDI: ETHUSDT | PnL: -0.14 USDT
+   - Kar/Zarar: -0.14 USDT
+   - Görülen En İyi Fiyat (Peak): 2977.51
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-21 06:06:59
+------------------------------------------------------------
+📰 HABER: BitMEX co-founder Arthur Hayes said the altcoin season “never ended”—many traders simply missed the winners. Speaking on a podcast, he argued investor...
+🎯 HEDEF: HYPEUSDT (Hyperliquid)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 23.956
+   - RSI: 44.19
+   - BTC Trend (1h): %0.07
+   - Market Cap: $6.58 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %85)
+   - TP/SL: %2.5/%0.8
+   - Sebep: Time: Fresh (Podcast just released). Priced-In: No (Price down 0.24%). BTC/Tech: Safe (BTC slightly up, RSI 44.2, Funding 0.01%). Verdict: Arthur Hayes' endorsement of HYPE as a new narrative asset, combined with the slight price dip and favorable technicals, presents a clear opportunity for a Nuclear Long. The market is likely underappreciating the potential.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-21 09:22:00):
+   - Durum: 🏁 [TEST] KAPANDI: HYPEUSDT | PnL: 9.31 USDT
+   - Kar/Zarar: 9.31 USDT
+   - Görülen En İyi Fiyat (Peak): 24.245
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-21 06:52:14
+------------------------------------------------------------
+📰 HABER: Ethereum co-founder Vitalik Buterin said prediction markets can act as a more rational tool for emotionally charged topics. While acknowledging theore...
+🎯 HEDEF: ETHUSDT (Ethereum)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 2974.72
+   - RSI: 40.71
+   - BTC Trend (1h): %-0.06
+   - Market Cap: $361.14 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %85)
+   - TP/SL: %1.5/%0.8
+   - Sebep: Time: Fresh. Priced-In: No. BTC/Tech: Safe. Vitalik's comments on prediction markets are a positive development for Ethereum, suggesting increased utility and credibility. The price movement is minimal, indicating the market hasn't fully priced in the news. Technicals are favorable (RSI 40.7, Funding 0.0100%). BTC trend is slightly negative but not a strong bear signal. Initiating a Scalp with a tight stop-loss.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-21 10:07:15):
+   - Durum: 🏁 [TEST] KAPANDI: ETHUSDT | PnL: 0.30 USDT
+   - Kar/Zarar: 0.30 USDT
+   - Görülen En İyi Fiyat (Peak): 2976.38
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-21 07:30:38
+------------------------------------------------------------
+📰 HABER: Grayscale says tokenized assets remain extremely small today—about 0.01% of global equity and bond markets—but could grow roughly 1,000x by 2030 as bl...
+🎯 HEDEF: SOLUSDT (Wrapped Sol)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 125.28
+   - RSI: 42.42
+   - BTC Trend (1h): %-0.04
+   - Market Cap: $1.56 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %85)
+   - TP/SL: %2.5/%0.8
+   - Sebep: Time: Fresh. Priced-In: No. BTC/Tech: Safe. Grayscale report indicates significant future on-chain activity for SOL, which is a long-term bullish signal. Current price action is muted, presenting an opportunity. Technicals (RSI 42.4, Funding 0.0100%) are favorable. BTC trend is stable.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-21 10:45:45):
+   - Durum: 🏁 [TEST] KAPANDI: SOLUSDT | PnL: -1.04 USDT
+   - Kar/Zarar: -1.04 USDT
+   - Görülen En İyi Fiyat (Peak): 125.36
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-18 08:55:43
+------------------------------------------------------------
+📰 HABER: [​​](http://telegraph.controller.bot/files/8336652911/AgACAgIAAxkBAAISTGlDwX92GzYJV4xRqFMj6DNGpP9nAAKGDmsbHdAgSirc0wo63iOEAQADAgADeQADNgQ)📉 **Market O...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 86956.5
+   - RSI: 41.88
+   - BTC Trend (1h): %0.22
+   - Market Cap: $1768.02 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %75)
+   - TP/SL: %1.5/%0.8
+   - Sebep: Time: Fresh. Priced-In: No. BTC/Tech: Safe. Hut 8 securing a 15-year lease agreement with Google is a strategic partnership providing long-term financing. BTC is showing weakness (-0.3%), but the technicals (RSI 41.9, Funding 0.0100%) are favorable for a short-term bullish move. This is a 'SCALP' opportunity.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-18 12:10:45):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: -1.33 USDT
+   - Kar/Zarar: -1.33 USDT
+   - Görülen En İyi Fiyat (Peak): 86981.3
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-18 13:04:34
+------------------------------------------------------------
+📰 HABER: **Top 10 Projects by TVL on Monad**
+
+[Morpho](https://cryptorank.io/price/morpho) - $90.3M
+[Upshift](https://cryptorank.io/price/upshift) - $82.3M
+[Cu...
+🎯 HEDEF: UNIUSDT (Uniswap)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 5.296
+   - RSI: 73.42
+   - BTC Trend (1h): %0.42
+   - Market Cap: $4.00 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %75)
+   - TP/SL: %1.5/%0.8
+   - Sebep: Time: Fresh. Priced-In: No. BTC/Tech: Safe. UNIUSDT appearing in the top 10 projects by TVL on Monad is a positive catalyst, indicating growing adoption and interest. The 1.94% 1h change suggests the market hasn't fully priced in this news. Technicals are acceptable (RSI 73.4, Funding 0.0100%). BTC trend is slightly positive (0.42%).
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-18 16:13:15):
+   - Durum: 🏁 [TEST] KAPANDI: UNIUSDT | PnL: 15.48 USDT
+   - Kar/Zarar: 15.48 USDT
+   - Görülen En İyi Fiyat (Peak): 5.378
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-19 08:47:51
+------------------------------------------------------------
+📰 HABER: [​​](http://telegraph.controller.bot/files/8336652911/AgACAgIAAxkBAAISa2lFEQSL5oErxeyemal--cpQ5KbPAAIrDGsbLTEpShA0xn4IH1waAQADAgADeQADNgQ)📈 **Market O...
+🎯 HEDEF: CCUSDT (Canton)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 0.08008
+   - RSI: 22.73
+   - BTC Trend (1h): %0.36
+   - Market Cap: $3.88 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %90)
+   - TP/SL: %2.5/%0.8
+   - Sebep: Time: Fresh. Priced-In: No (1.08% move). BTC/Tech: Safe (BTC up 0.36%, RSI 22.7, Funding 0.01%). Verdict: CCUSDT is outperforming in a slightly bullish BTC environment and is significantly oversold. This indicates a potential bounce and a buying opportunity.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-19 12:02:30):
+   - Durum: 🏁 [TEST] KAPANDI: CCUSDT | PnL: -11.49 USDT
+   - Kar/Zarar: -11.49 USDT
+   - Görülen En İyi Fiyat (Peak): 0.08043
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-19 13:01:11
+------------------------------------------------------------
+📰 HABER: [​​](http://telegraph.controller.bot/files/7734246402/BQACAgIAAxkBAAIWd2lFS8iUP5QDT7CWOD6q0zn4Ejn5AAKxjgACT_YpSowAAQqKxZleUTYE)**Crypto Hacks vs. Fund...
+🎯 HEDEF: ETHUSDT (Ethereum)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 2955.45
+   - RSI: 36.93
+   - BTC Trend (1h): %-0.26
+   - Market Cap: $361.14 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %90)
+   - TP/SL: %2.5/%0.8
+   - Sebep: Time: Fresh (2025 data). Priced-In: No (minimal price movement). BTC/Tech: Safe (BTC down slightly, RSI oversold, Funding low). Verdict: Recent data indicates a decrease in hacks relative to fundraising, suggesting a potential recovery and undervaluation. Technicals are strongly bullish. This is a 'NUCLEAR LONG' opportunity.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-19 16:16:15):
+   - Durum: 🏁 [TEST] KAPANDI: ETHUSDT | PnL: 2.00 USDT
+   - Kar/Zarar: 2.00 USDT
+   - Görülen En İyi Fiyat (Peak): 2962.39
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-19 19:52:41
+------------------------------------------------------------
+📰 HABER: **Ethereum Exchange Supply Hits Lowest Level Since 2016
+**
+Ethereum’s exchange supply has fallen to its lowest level since 2016, reflecting growing tr...
+🎯 HEDEF: ETHUSDT (Ethereum)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 2984.59
+   - RSI: 40.69
+   - BTC Trend (1h): %0.77
+   - Market Cap: $361.14 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %90)
+   - TP/SL: %2.5/%0.8
+   - Sebep: Time: Fresh. Priced-In: No. BTC/Tech: Safe. ETH exchange supply hitting a 2016 low is a significant supply shock event. Price increase of only 0.63% indicates the market has not fully priced in this bullish catalyst. Technicals are favorable (RSI 40.7, Funding 0.01%). BTC trend is positive (0.77%). Initiating NUCLEAR LONG.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-19 23:07:45):
+   - Durum: 🏁 [TEST] KAPANDI: ETHUSDT | PnL: -2.17 USDT
+   - Kar/Zarar: -2.17 USDT
+   - Görülen En İyi Fiyat (Peak): 2988.33
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-20 18:54:33
+------------------------------------------------------------
+📰 HABER: [​​](http://telegraph.controller.bot/files/8336652911/AgACAgIAAxkBAAISi2lG8NQEPwtEpzhv-5LGE3fWMpeUAAIVE2sb_ng5SnSnEMQg-W3GAQADAgADeQADNgQ)Recently, th...
+🎯 HEDEF: USDCUSDT (Binance Bridged Usdc (Bnb Smart Chain))
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 0.999781
+   - RSI: 60.00
+   - BTC Trend (1h): %0.09
+   - Market Cap: $1.29 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %75)
+   - TP/SL: %1.5/%0.8
+   - Sebep: Time: Fresh. Priced-In: No. BTC/Tech: Safe. USDC stablecoin receiving significant attention from Binance, Solana, and Coinbase regarding institutional adoption and tokenization initiatives. Technicals are neutral (RSI 60.0, Funding 0.0100%). BTC trend is slightly positive (0.09%). This suggests a potential scalp opportunity as the market prices in the news.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-20 22:09:45):
+   - Durum: 🏁 [TEST] KAPANDI: USDCUSDT | PnL: 0.00 USDT
+   - Kar/Zarar: 0.00 USDT
+   - Görülen En İyi Fiyat (Peak): 0.999782
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-18 11:17:32
+------------------------------------------------------------
+📰 HABER: ‘Vote before Christmas or end up on Santa’s naughty list’: Uniswap founder submits UNIfication proposal for final governance decision - [The Block](ht...
+🎯 HEDEF: UNIUSDT (Uniswap)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 5.263
+   - RSI: 52.50
+   - BTC Trend (1h): %-0.19
+   - Market Cap: $4.00 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %85)
+   - TP/SL: %1.5/%0.8
+   - Sebep: Time: Fresh. Priced-In: No. BTC/Tech: Safe. Uniswap governance proposal nearing final decision presents a catalyst for price appreciation. BTC trend is mildly negative, but not severe enough to negate the potential upside. RSI and Funding rates are favorable.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-18 14:28:30):
+   - Durum: 🏁 [TEST] KAPANDI: UNIUSDT | PnL: -8.36 USDT
+   - Kar/Zarar: -8.36 USDT
+   - Görülen En İyi Fiyat (Peak): 5.267
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-18 17:55:31
+------------------------------------------------------------
+📰 HABER: Bitwise joins race to launch SUI ETF with latest SEC filing - [The Block](https://www.theblock.co/post/383207/bitwise-joins-race-to-launch-sui-etf-wit...
+🎯 HEDEF: SUIUSDT (Sui)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 1.377
+   - RSI: 45.43
+   - BTC Trend (1h): %-1.96
+   - Market Cap: $5.43 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %92)
+   - TP/SL: %2.8/%0.8
+   - Sebep: Time: Fresh (SEC filing just released). Priced-In: No (Price down 3.18% on ETF news). BTC/Tech: Safe (BTC down, but manageable; RSI healthy at 45.4, Funding low). Verdict: Bitwise joining the SUI ETF race is a significant catalyst. The market has reacted negatively, likely due to broader BTC weakness, creating an opportunity to capitalize on the underlying positive news. Aggressive long position with tight stop-loss.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-18 21:10:45):
+   - Durum: 🏁 [TEST] KAPANDI: SUIUSDT | PnL: 3.41 USDT
+   - Kar/Zarar: 3.41 USDT
+   - Görülen En İyi Fiyat (Peak): 1.384
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-18 18:03:37
+------------------------------------------------------------
+📰 HABER: Leading Solana treasury Forward Industries tokenized FWDI stock via Superstate - [The Block](https://www.theblock.co/post/383210/leading-solana-treasu...
+🎯 HEDEF: SOLUSDT (Wrapped Sol)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 122.96
+   - RSI: 60.16
+   - BTC Trend (1h): %-1.43
+   - Market Cap: $1.56 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %90)
+   - TP/SL: %2.8/%0.8
+   - Sebep: Time: Fresh (News just released). Priced-In: No (1h change -2.66% is manageable). BTC/Tech: Safe (BTC down, but not a crash; RSI 60.2, Funding 0.01%). Verdict: Leading Solana treasury tokenizing stock via Superstate is a significant development for SOL, and the current price dip provides an entry point. Aggressive long with tight stop-loss.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-18 21:18:45):
+   - Durum: 🏁 [TEST] KAPANDI: SOLUSDT | PnL: 2.11 USDT
+   - Kar/Zarar: 2.11 USDT
+   - Görülen En İyi Fiyat (Peak): 123.89
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-19 01:29:54
+------------------------------------------------------------
+📰 HABER: Senate confirms CFTC Chair pick Michael Selig as agency takes larger role regulating crypto - [The Block](https://www.theblock.co/post/383083/senate-c...
+🎯 HEDEF: ETHUSDT (Ethereum)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 2816.34
+   - RSI: 31.61
+   - BTC Trend (1h): %-0.33
+   - Market Cap: $361.14 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %75)
+   - TP/SL: %1.5/%0.8
+   - Sebep: Time: Fresh. Priced-In: No. BTC/Tech: Safe. The confirmation of the CFTC Chair signals increased regulatory clarity, a generally positive development for the crypto space. ETH is oversold (RSI 31.6) and BTC is only mildly bearish (-0.33%). This is a Scalp opportunity, not a Nuclear Long, given the moderate market reaction.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-19 04:45:00):
+   - Durum: 🏁 [TEST] KAPANDI: ETHUSDT | PnL: 1.24 USDT
+   - Kar/Zarar: 1.24 USDT
+   - Görülen En İyi Fiyat (Peak): 2825.43
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-19 03:39:36
+------------------------------------------------------------
+📰 HABER: ‘We are closer than ever’: US crypto czar David Sacks says Clarity Act markup confirmed for January - [The Block](https://www.theblock.co/post/383253/...
+🎯 HEDEF: ETHUSDT (Ethereum)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 2912.96
+   - RSI: 54.47
+   - BTC Trend (1h): %1.74
+   - Market Cap: $361.14 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %90)
+   - TP/SL: %2.8/%0.8
+   - Sebep: Time: Fresh (January markup confirmed). Priced-In: No (2.59% move). BTC/Tech: Safe (BTC up 1.74%, RSI 54.5, Funding 0.01%). Verdict: Clarity Act markup is a significant regulatory development for ETH, likely to be positive. The price move is modest, indicating room for further upside. Technicals are favorable.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-19 06:54:45):
+   - Durum: 🏁 [TEST] KAPANDI: ETHUSDT | PnL: 0.94 USDT
+   - Kar/Zarar: 0.94 USDT
+   - Görülen En İyi Fiyat (Peak): 2923.66
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-19 13:55:46
+------------------------------------------------------------
+📰 HABER: Bybit relaunches UK crypto platform after 2023 exit linked to FCA rules - [The Block](https://www.theblock.co/post/383291/bybit-relaunches-crypto-exch...
+🎯 HEDEF: ETHUSDT (Ethereum)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 2957.03
+   - RSI: 47.42
+   - BTC Trend (1h): %-0.04
+   - Market Cap: $361.14 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %75)
+   - TP/SL: %1.5/%0.8
+   - Sebep: Time: Fresh. Priced-In: No. BTC/Tech: Safe. Bybit's UK relaunch is a positive development, albeit somewhat expected given prior regulatory exits. The price action is minimal (0.08% 1h change), indicating the news is not yet fully priced in. Technicals are favorable (RSI 47.4, Funding 0.01%). BTC trend is slightly negative but not a strong bear signal. Initiating a Scalp with a tight stop-loss.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-19 17:11:00):
+   - Durum: 🏁 [TEST] KAPANDI: ETHUSDT | PnL: 3.67 USDT
+   - Kar/Zarar: 3.67 USDT
+   - Görülen En İyi Fiyat (Peak): 2968.88
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-19 14:28:33
+------------------------------------------------------------
+📰 HABER: Weekly Hyperliquid outflows top $430M as Lighter and Aster tighten perp DEX competition: Dune - [The Block](https://www.theblock.co/post/383314/weekly...
+🎯 HEDEF: ASTERUSDT (Aster)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 0.7024
+   - RSI: 32.61
+   - BTC Trend (1h): %0.02
+   - Market Cap: $1.74 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %85)
+   - TP/SL: %2.5/%0.8
+   - Sebep: Time: Fresh. Priced-In: No. BTC/Tech: Safe. The Block article details increased competition between Hyperliquid, Lighter, and Aster. This is a strategic development, not a recap. Technicals are favorable (RSI 32.6, Funding 0.01%). BTC trend is neutral. Initiating NUCLEAR LONG with a conservative stop-loss.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-19 17:43:45):
+   - Durum: 🏁 [TEST] KAPANDI: ASTERUSDT | PnL: 5.84 USDT
+   - Kar/Zarar: 5.84 USDT
+   - Görülen En İyi Fiyat (Peak): 0.7071
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-19 16:38:40
+------------------------------------------------------------
+📰 HABER: Fed seeks public input on ‘skinny master account’ for limited access to the central bank - [The Block](https://www.theblock.co/post/383343/fed-seeks-p...
+🎯 HEDEF: ETHUSDT (Ethereum)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 2983.71
+   - RSI: 59.54
+   - BTC Trend (1h): %0.48
+   - Market Cap: $361.14 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %75)
+   - TP/SL: %1.5/%0.8
+   - Sebep: Time: Fresh. Priced-In: No. BTC/Tech: Safe. The news regarding the Fed's exploration of a 'skinny master account' represents a potential positive development for the broader digital asset space, suggesting increased institutional interest and potential regulatory clarity. ETH's 1h change is minimal (0.39%), indicating the market hasn't fully priced in this news. BTC trend is slightly bullish (0.48%), and technicals (RSI 59.5, Funding 0.0100%) are favorable. Initiating a Scalp position.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-19 19:53:45):
+   - Durum: 🏁 [TEST] KAPANDI: ETHUSDT | PnL: -4.44 USDT
+   - Kar/Zarar: -4.44 USDT
+   - Görülen En İyi Fiyat (Peak): 2989.62
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-19 18:56:39
+------------------------------------------------------------
+📰 HABER: Coinbase says Trump’s Big Beautiful Bill could push gamblers into arms of prediction markets - [The Block](https://www.theblock.co/post/383369/coinbas...
+🎯 HEDEF: TRUMPUSDT (Official Trump)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 5.126
+   - RSI: 68.89
+   - BTC Trend (1h): %-0.19
+   - Market Cap: $1.03 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %85)
+   - TP/SL: %2.5/%0.8
+   - Sebep: Time: Fresh. Priced-In: No. BTC/Tech: Safe. The Block report details Coinbase anticipating increased interest in prediction markets due to 'Trump’s Big Beautiful Bill.' The price movement (0.16% 1h change) is minimal, indicating the news is not yet priced in. BTC is slightly down but not in a full-blown dump. RSI is below 75 and Funding is low, suggesting room for upside. This warrants a Nuclear Long with a tight stop-loss.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-19 22:11:45):
+   - Durum: 🏁 [TEST] KAPANDI: TRUMPUSDT | PnL: 1.17 USDT
+   - Kar/Zarar: 1.17 USDT
+   - Görülen En İyi Fiyat (Peak): 5.137
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-20 16:38:15
+------------------------------------------------------------
+📰 HABER: Crypto trader loses $50 million in address poisoning attack, offers $1 million bounty for return - [The Block](https://www.theblock.co/post/383423/cry...
+🎯 HEDEF: USDCUSDT (Binance Bridged Usdc (Bnb Smart Chain))
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 0.999782
+   - RSI: 57.14
+   - BTC Trend (1h): %0.07
+   - Market Cap: $1.29 BILLION
+🧠 AI KARARI:
+   - Aksiyon: SHORT (Güven: %90)
+   - TP/SL: %1.5/%0.8
+   - Sebep: Time: Fresh. Priced-In: No. BTC/Tech: Unsafe. Verdict: Address poisoning attack on a stablecoin creates immediate selling pressure. While the bounty is a positive, the initial loss is significant and likely to trigger liquidations. BTC trend is slightly positive, but the event itself is a negative catalyst for USDC. Technicals are neutral, but the event overrides them. Shorting to capitalize on immediate panic.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-20 19:48:30):
+   - Durum: 🏁 [TEST] KAPANDI: USDCUSDT | PnL: 0.00 USDT
+   - Kar/Zarar: 0.00 USDT
+   - Görülen En İyi Fiyat (Peak): 0.999781
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-18 11:18:56
+------------------------------------------------------------
+📰 HABER: [**U.S. bitcoin ETFs see strongest inflows for over a month as BTC dominance hits 60%**](https://www.coindesk.com/markets/2025/12/18/u-s-bitcoin-etfs-...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 87078.2
+   - RSI: 42.66
+   - BTC Trend (1h): %-0.21
+   - Market Cap: $1768.02 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %90)
+   - TP/SL: %2.5/%0.8
+   - Sebep: Time: Fresh (News published 2025-12-18). Priced-In: No (BTC down only 0.21%). BTC/Tech: Safe (BTC downtrend is minor, RSI is 42.7, Funding is low). Verdict: Significant ETF inflows indicate sustained buying pressure. BTC dominance at 60% reinforces its position. Technicals are favorable for a quick, aggressive long.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-18 14:34:00):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: 0.88 USDT
+   - Kar/Zarar: 0.88 USDT
+   - Görülen En İyi Fiyat (Peak): 87221.9
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-18 12:18:56
+------------------------------------------------------------
+📰 HABER: [**Crypto Market Today: Bitcoin-gold ratio drops to lowest since January 2024 **](https://www.coindesk.com/markets/2025/12/18/crypto-market-today-bitc...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 87146.0
+   - RSI: 27.22
+   - BTC Trend (1h): %0.08
+   - Market Cap: $1768.02 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %85)
+   - TP/SL: %2.5/%0.8
+   - Sebep: Time: Fresh. Priced-In: No. BTC/Tech: Safe. The news regarding the Bitcoin-gold ratio falling to a low since January 2024 is a relatively recent development. BTC is trending slightly up (0.08%) and technicals are strongly oversold (RSI 27.2, Funding 0.0100%). This suggests a potential bounce and a buying opportunity. Executing a Scalp with a tight stop-loss.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-18 15:34:00):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: 1.57 USDT
+   - Kar/Zarar: 1.57 USDT
+   - Görülen En İyi Fiyat (Peak): 87356.2
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-18 12:18:56
+------------------------------------------------------------
+📰 HABER: [**Micron crushes earnings with BTC buoyant above $87,000**](https://www.coindesk.com/markets/2025/12/18/micron-crushes-earnings-with-btc-buoyant-abov...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 87146.0
+   - RSI: 27.22
+   - BTC Trend (1h): %0.08
+   - Market Cap: $1768.02 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %90)
+   - TP/SL: %2.5/%0.8
+   - Sebep: Time: Fresh (News published 2025-12-18). Priced-In: No (Price movement minimal). BTC/Tech: Safe (BTC trend positive, RSI oversold). Verdict: Micron's earnings are a positive catalyst for the broader tech sector, which is supporting BTC. Technicals are extremely favorable (oversold RSI, low funding). This is a clear opportunity for a Nuclear Long.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-18 15:34:00):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: 1.57 USDT
+   - Kar/Zarar: 1.57 USDT
+   - Görülen En İyi Fiyat (Peak): 87356.2
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-18 13:18:56
+------------------------------------------------------------
+📰 HABER: [**SoFi unveils the first bank-issued stablecoin for enterprise payments**](https://www.coindesk.com/business/2025/12/18/sofi-unveils-first-bank-issue...
+🎯 HEDEF: ETHUSDT (Ethereum)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 2891.99
+   - RSI: 55.26
+   - BTC Trend (1h): %0.59
+   - Market Cap: $361.14 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %85)
+   - TP/SL: %1.5/%0.8
+   - Sebep: Time: Fresh (News released 2025-12-18). Priced-In: No (1.22% move). BTC/Tech: Safe (BTC up 0.59%, RSI 55.3, Funding 0.01%). Verdict: SoFi launching a bank-issued stablecoin is a significant development for ETH adoption and enterprise integration. The price move is minimal, indicating an opportunity for a quick scalp.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-18 16:30:30):
+   - Durum: 🏁 [TEST] KAPANDI: ETHUSDT | PnL: -0.86 USDT
+   - Kar/Zarar: -0.86 USDT
+   - Görülen En İyi Fiyat (Peak): 2929.0
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-18 13:18:56
+------------------------------------------------------------
+📰 HABER: [**Uniswap vote could soon tie UNI token value to its multibillion-dollar trading engine**](https://www.coindesk.com/markets/2025/12/18/uniswap-vote-c...
+🎯 HEDEF: UNIUSDT (Uniswap)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 5.345
+   - RSI: 60.00
+   - BTC Trend (1h): %0.59
+   - Market Cap: $4.00 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %95)
+   - TP/SL: %2.8/%0.8
+   - Sebep: Time: Fresh (News published 2025-12-18). Priced-In: No (1h change 2.32% < 3%). BTC/Tech: Safe (BTC 1h trend positive, RSI 60, Funding low). Verdict: Uniswap governance proposal to tie UNI value to trading engine and burn $500M treasury is a significant positive catalyst. Technicals are favorable, indicating room for further upside. Aggressive long entry.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-18 16:30:30):
+   - Durum: 🏁 [TEST] KAPANDI: UNIUSDT | PnL: -1.50 USDT
+   - Kar/Zarar: -1.50 USDT
+   - Görülen En İyi Fiyat (Peak): 5.44
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-18 13:18:56
+------------------------------------------------------------
+📰 HABER: [**North Korean hackers stole a record $2 billion of crypto in 2025, Chainalysis says**](https://www.coindesk.com/business/2025/12/18/north-korean-hac...
+🎯 HEDEF: ETHUSDT (Ethereum)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 2891.99
+   - RSI: 55.26
+   - BTC Trend (1h): %0.59
+   - Market Cap: $361.14 BILLION
+🧠 AI KARARI:
+   - Aksiyon: SHORT (Güven: %90)
+   - TP/SL: %1.5/%0.8
+   - Sebep: Time: Fresh. Priced-In: No. BTC/Tech: Unsafe. Verdict: North Korean hack impacting centralized exchanges is a significant exploit event. While ETH price reaction is muted (1.22%), the news implies systemic risk and potential further losses. BTC trend is slightly positive, but the exploit context creates a high probability of a market correction. Technicals are neutral, but the exploit risk outweighs any bullish momentum. Executing NUCLEAR SHORT due to severity of the event.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-18 16:29:00):
+   - Durum: 🏁 [TEST] KAPANDI: ETHUSDT | PnL: 1.19 USDT
+   - Kar/Zarar: 1.19 USDT
+   - Görülen En İyi Fiyat (Peak): 2888.02
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-18 14:18:56
+------------------------------------------------------------
+📰 HABER: [**U.S. inflation data surprises, with CPI higher by just 2.7% in November**](https://www.coindesk.com/markets/2025/12/18/u-s-inflation-data-surprises...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 88667.8
+   - RSI: 37.56
+   - BTC Trend (1h): %1.02
+   - Market Cap: $1768.02 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %90)
+   - TP/SL: %2.5/%0.8
+   - Sebep: Time: Fresh (News released 2025-12-18). Priced-In: No (Price up only 1.02% on surprisingly low inflation data). BTC/Tech: Safe (BTC 1h trend positive, RSI 37.6, Funding 0.0100%). Verdict: Inflation data surprise creates a bullish catalyst. Technicals are favorable, indicating room for further upside. Initiating NUCLEAR LONG.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-18 17:34:00):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: -3.36 USDT
+   - Kar/Zarar: -3.36 USDT
+   - Görülen En İyi Fiyat (Peak): 89113.0
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-18 15:18:56
+------------------------------------------------------------
+📰 HABER: [**Trump Media stock surges 25% on merger agreement with nuclear fusion firm TAE Technologies**](https://www.coindesk.com/markets/2025/12/18/trump-med...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 88152.8
+   - RSI: 47.13
+   - BTC Trend (1h): %-0.59
+   - Market Cap: $1768.02 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %90)
+   - TP/SL: %2.5/%0.8
+   - Sebep: Time: Fresh (News published 2025-12-18). Priced-In: No (BTC down only 0.59%). BTC/Tech: Safe (BTC downtrend manageable, RSI 47.1, Funding 0.0100%). Verdict: Trump Media holding $1B in BTC is a significant endorsement and balance sheet strength. The market has not fully priced in this positive signal, creating a Nuclear Long opportunity.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-18 18:34:00):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: 2.64 USDT
+   - Kar/Zarar: 2.64 USDT
+   - Görülen En İyi Fiyat (Peak): 88676.5
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-18 15:19:04
+------------------------------------------------------------
+📰 HABER: [**CoinDesk 20 Performance Update: Uniswap Surges 8.4% as All Index Constituents Rise**](https://www.coindesk.com/coindesk-indices/2025/12/18/coindesk...
+🎯 HEDEF: UNIUSDT (Uniswap)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 5.251
+   - RSI: 39.13
+   - BTC Trend (1h): %-0.42
+   - Market Cap: $4.00 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %85)
+   - TP/SL: %1.5/%0.8
+   - Sebep: Time: Stale (News from 2025-12-18). Priced-In: No (Price change -2.24% < 3%). BTC/Tech: Safe (BTC down slightly, RSI 39.1, Funding 0.0100%). Verdict: Uniswap news is slightly dated, but the price reaction has been muted. Technicals are favorable, and BTC isn't in a strong downtrend, allowing for a quick scalp.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-18 18:34:15):
+   - Durum: 🏁 [TEST] KAPANDI: UNIUSDT | PnL: 8.00 USDT
+   - Kar/Zarar: 8.00 USDT
+   - Görülen En İyi Fiyat (Peak): 5.313
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-18 15:19:04
+------------------------------------------------------------
+📰 HABER: [**Most Influential: Javier Pérez-Tasso**](https://www.coindesk.com/business/2025/12/18/most-influential-javier-perez-tasso)
+
+Pérez-Tasso brought Swif...
+🎯 HEDEF: ETHUSDT (Ethereum)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 2945.85
+   - RSI: 46.20
+   - BTC Trend (1h): %-0.42
+   - Market Cap: $361.14 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %90)
+   - TP/SL: %2.5/%0.8
+   - Sebep: Time: Fresh (News just broke). Priced-In: No (-0.79% change). BTC/Tech: Safe (BTC down slightly, RSI 46.2, Funding 0.01%). Verdict: Javier Pérez-Tasso bringing Swift to blockchain is a significant, time-sensitive development. ETH is currently undervalued given the news and favorable technicals. Initiating NUCLEAR LONG.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-18 18:34:15):
+   - Durum: 🏁 [TEST] KAPANDI: ETHUSDT | PnL: 8.95 USDT
+   - Kar/Zarar: 8.95 USDT
+   - Görülen En İyi Fiyat (Peak): 2979.61
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-18 15:19:04
+------------------------------------------------------------
+📰 HABER: [**Bitcoin treasury firm KindlyMD puts share buyback program in place**](https://www.coindesk.com/markets/2025/12/18/bitcoin-treasury-firm-kindlymd-pu...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 88180.4
+   - RSI: 41.58
+   - BTC Trend (1h): %-0.42
+   - Market Cap: $1768.02 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %75)
+   - TP/SL: %1.5/%0.8
+   - Sebep: Time: Fresh (News published 2025-12-18). Priced-In: No (BTC down only 0.42%). BTC/Tech: Safe (BTC downtrend mild, RSI oversold). Verdict: KindlyMD's buyback program, while not 'NUCLEAR', represents a tangible bullish signal within a generally bearish BTC environment. Technicals are favorable, allowing for a quick scalp.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-18 18:34:15):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: 5.26 USDT
+   - Kar/Zarar: 5.26 USDT
+   - Görülen En İyi Fiyat (Peak): 88676.5
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-18 15:19:04
+------------------------------------------------------------
+📰 HABER: [**Most Influential: Gilles Roth**](https://www.coindesk.com/business/2025/12/18/most-influential-gilles-roth)
+
+Led by Finance Minister Gilles Roth, L...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 88180.4
+   - RSI: 41.58
+   - BTC Trend (1h): %-0.42
+   - Market Cap: $1768.02 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %90)
+   - TP/SL: %2.5/%0.8
+   - Sebep: Time: Fresh. Priced-In: No. BTC/Tech: Safe. Luxembourg's investment in Bitcoin by a Finance Minister is a significant, verifiable event. BTC 1h trend is mildly negative (-0.42%), but not a bear market signal. Technicals (RSI 41.6, Funding 0.0100%) are favorable. This is a 'NUCLEAR LONG' opportunity.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-18 18:34:15):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: 5.26 USDT
+   - Kar/Zarar: 5.26 USDT
+   - Görülen En İyi Fiyat (Peak): 88676.5
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-18 16:18:56
+------------------------------------------------------------
+📰 HABER: [**CF Benchmarks views bitcoin as portfolio staple, projects $1.4 million price target by 2035**](https://www.coindesk.com/markets/2025/12/18/cf-bench...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 88094.8
+   - RSI: 41.96
+   - BTC Trend (1h): %0.15
+   - Market Cap: $1768.02 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %85)
+   - TP/SL: %2.5/%0.8
+   - Sebep: Time: Fresh (News published 2025-12-18). Priced-In: No (Price movement minimal). BTC/Tech: Safe (BTC trend positive, RSI oversold, Funding low). Verdict: CF Benchmarks' long-term price target provides a bullish catalyst with minimal immediate market reaction. Technicals are favorable for a Nuclear Long.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-18 19:34:00):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: -0.51 USDT
+   - Kar/Zarar: -0.51 USDT
+   - Görülen En İyi Fiyat (Peak): 88285.9
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-18 16:18:56
+------------------------------------------------------------
+📰 HABER: [**Crypto for Advisors: Predictions for 2026**](https://www.coindesk.com/coindesk-indices/2025/12/17/crypto-for-advisors-predictions-for-2026)
+
+ Pante...
+🎯 HEDEF: ETHUSDT (Ethereum)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 2942.64
+   - RSI: 32.46
+   - BTC Trend (1h): %0.15
+   - Market Cap: $361.14 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %75)
+   - TP/SL: %1.5/%0.8
+   - Sebep: Time: Fresh (News published 2025-12-17). Priced-In: No (Minimal price movement). BTC/Tech: Safe (BTC slightly up, RSI oversold, Funding low). Verdict: Pantera Capital's predictions suggest a positive outlook for 2026, indicating potential for future growth. Current technicals are favorable for a quick scalp.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-18 19:34:00):
+   - Durum: 🏁 [TEST] KAPANDI: ETHUSDT | PnL: -2.73 USDT
+   - Kar/Zarar: -2.73 USDT
+   - Görülen En İyi Fiyat (Peak): 2947.4
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-18 17:18:56
+------------------------------------------------------------
+📰 HABER: [**ICP extends recovery to rise above $3; trading volume increases without spiking**](https://www.coindesk.com/markets/2025/12/18/icp-price-edges-high...
+🎯 HEDEF: ICPUSDT (Internet Computer)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 2.902
+   - RSI: 8.46
+   - BTC Trend (1h): %-2.47
+   - Market Cap: $1.74 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %92)
+   - TP/SL: %2.8/%0.8
+   - Sebep: Time: Fresh (News published 2025-12-18). Priced-In: No (Price change minimal). BTC/Tech: Safe (BTC downtrend manageable, RSI extremely low, Funding healthy). Verdict: New information regarding ICP's price action presents a clear opportunity. Technicals are exceptionally favorable, allowing for an aggressive long position.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-18 20:23:30):
+   - Durum: 🏁 [TEST] KAPANDI: ICPUSDT | PnL: -24.12 USDT
+   - Kar/Zarar: -24.12 USDT
+   - Görülen En İyi Fiyat (Peak): 2.906
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-18 17:18:56
+------------------------------------------------------------
+📰 HABER: [**U.S. SEC aids brokers on crypto custody, looks more closely at ATS activity**](https://www.coindesk.com/policy/2025/12/18/u-s-sec-aids-brokers-on-c...
+🎯 HEDEF: ETHUSDT (Ethereum)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 2824.09
+   - RSI: 10.16
+   - BTC Trend (1h): %-2.47
+   - Market Cap: $361.14 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %90)
+   - TP/SL: %2.8/%0.8
+   - Sebep: Time: Fresh. Priced-In: No. BTC/Tech: Unsafe. Verdict: SEC guidance on crypto custody is a positive regulatory development, occurring now. ETH is oversold (RSI 10.2) and BTC is mildly down (-2.47%), creating a favorable technical backdrop despite the broader market weakness. This is a 'NUCLEAR LONG' opportunity.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-18 20:23:30):
+   - Durum: 🏁 [TEST] KAPANDI: ETHUSDT | PnL: -10.97 USDT
+   - Kar/Zarar: -10.97 USDT
+   - Görülen En İyi Fiyat (Peak): 2835.45
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-18 17:18:56
+------------------------------------------------------------
+📰 HABER: [**Flood of new crypto ETPs expected in 2026, says Bitwise**](https://www.coindesk.com/markets/2025/12/18/flood-of-new-crypto-etps-expected-in-2026-sa...
+🎯 HEDEF: ETHUSDT (Ethereum)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 2824.09
+   - RSI: 10.16
+   - BTC Trend (1h): %-2.47
+   - Market Cap: $361.14 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %85)
+   - TP/SL: %2.5/%0.8
+   - Sebep: Time: Fresh (News released 2025-12-18). Priced-In: No (1h Change: -4.50%). BTC/Tech: Safe (RSI: 10.2, Funding: 0.0100%, BTC Trend: -2.47%). Verdict: Anticipating future ETP approvals, technicals are extremely oversold, and the price hasn't fully reacted. This presents a strong long opportunity, but with a tighter stop due to the negative BTC trend.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-18 20:23:30):
+   - Durum: 🏁 [TEST] KAPANDI: ETHUSDT | PnL: -10.97 USDT
+   - Kar/Zarar: -10.97 USDT
+   - Görülen En İyi Fiyat (Peak): 2835.45
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-18 22:18:56
+------------------------------------------------------------
+📰 HABER: [**WhiteFiber signs 10-year, 40 MW colocation deal with Nscale valued at about $865 million**](https://www.coindesk.com/markets/2025/12/18/whitefiber-...
+🎯 HEDEF: ETHUSDT (Ethereum)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 2824.47
+   - RSI: 38.81
+   - BTC Trend (1h): %0.22
+   - Market Cap: $361.14 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %90)
+   - TP/SL: %2.5/%0.8
+   - Sebep: Time: Fresh (News published 2025-12-18). Priced-In: No (1h change 0.50% is low). BTC/Tech: Safe (BTC up 0.22%, RSI 38.8, Funding 0.0100%). Verdict: Significant colocation deal with Nscale signals long-term infrastructure investment for ETH. Technicals are favorable, and the market has not fully priced in the news.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-19 01:34:00):
+   - Durum: 🏁 [TEST] KAPANDI: ETHUSDT | PnL: 1.06 USDT
+   - Kar/Zarar: 1.06 USDT
+   - Görülen En İyi Fiyat (Peak): 2830.85
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-18 22:18:56
+------------------------------------------------------------
+📰 HABER: [**Altcoins plunge as bitcoin's $85,000 test triggers $550 million in liquidations**](https://www.coindesk.com/markets/2025/12/18/altcoins-plunge-as-b...
+🎯 HEDEF: SUIUSDT (Sui)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 1.3546
+   - RSI: 35.40
+   - BTC Trend (1h): %0.22
+   - Market Cap: $5.43 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %85)
+   - TP/SL: %2.5/%0.8
+   - Sebep: Time: Fresh. Priced-In: No. BTC/Tech: Safe. News indicates a broad altcoin plunge triggered by Bitcoin volatility, but SUI's price action is muted (0.23% 1h change). Technicals are favorable (RSI 35.4, Funding 0.01%). This suggests an oversold condition ripe for a bounce. BTC trend is slightly positive, further supporting a long position.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-19 01:34:00):
+   - Durum: 🏁 [TEST] KAPANDI: SUIUSDT | PnL: -0.22 USDT
+   - Kar/Zarar: -0.22 USDT
+   - Görülen En İyi Fiyat (Peak): 1.3553
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-19 02:18:56
+------------------------------------------------------------
+📰 HABER: [**Senate confirms Trump crypto-friendly nominees to take over CFTC, FDIC**](https://www.coindesk.com/policy/2025/12/11/senate-confirms-trump-crypto-f...
+🎯 HEDEF: TRUMPUSDT (Official Trump)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 4.998
+   - RSI: 63.41
+   - BTC Trend (1h): %-0.10
+   - Market Cap: $1.03 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %90)
+   - TP/SL: %2.5/%0.8
+   - Sebep: Time: Fresh (News published Dec 11, current time Dec 21). Priced-In: No (1h change -0.14%, 24h change 0.00%). BTC/Tech: Safe (BTC down slightly, RSI 63.4, Funding 0.01%). Verdict: Senate confirmation of crypto-friendly nominees is a significant positive catalyst for Trumpusdt, currently underpriced given the minor price movement. Aggressive long entry.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-19 05:34:00):
+   - Durum: 🏁 [TEST] KAPANDI: TRUMPUSDT | PnL: 2.60 USDT
+   - Kar/Zarar: 2.60 USDT
+   - Görülen En İyi Fiyat (Peak): 5.021
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-19 04:18:56
+------------------------------------------------------------
+📰 HABER: [**Bitcoin jumps above $87,000, yen slides as Bank of Japan hikes interest rates**](https://www.coindesk.com/markets/2025/12/19/btc-jumps-above-usd87-...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 87255.6
+   - RSI: 69.63
+   - BTC Trend (1h): %1.37
+   - Market Cap: $1768.02 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %90)
+   - TP/SL: %2.5/%0.8
+   - Sebep: Time: Fresh (News published 2025-12-19). Priced-In: No (1.37% move is small). BTC/Tech: Safe (BTC trend positive, RSI 69.6, Funding 0.0100%). Verdict: Bank of Japan rate hike is a significant macro event, and the initial market reaction is muted. This presents an opportunity for a Nuclear Long.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-19 07:34:00):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: -1.21 USDT
+   - Kar/Zarar: -1.21 USDT
+   - Görülen En İyi Fiyat (Peak): 87269.5
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-19 05:18:56
+------------------------------------------------------------
+📰 HABER: [**Crypto breaks higher as BOJ decision clears a macro overhang**](https://www.coindesk.com/markets/2025/12/19/bitcoin-ether-pop-higher-as-japan-rate-...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 86844.4
+   - RSI: 30.73
+   - BTC Trend (1h): %-0.49
+   - Market Cap: $1768.02 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %90)
+   - TP/SL: %2.5/%0.8
+   - Sebep: Time: Fresh (News released 2025-12-19). Priced-In: No (BTC down only 0.49%). BTC/Tech: Safe (BTC downtrend mild, RSI oversold, Funding low). Verdict: BOJ rate hike creates macro tailwind, driving risk-on sentiment and benefiting Bitcoin. Oversold technicals suggest a bounce is imminent.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-19 08:34:00):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: -1.58 USDT
+   - Kar/Zarar: -1.58 USDT
+   - Görülen En İyi Fiyat (Peak): 86874.5
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-19 05:18:56
+------------------------------------------------------------
+📰 HABER: [**XRP higher after early dip as buyers step in near $1.80**](https://www.coindesk.com/markets/2025/12/19/xrp-higher-after-early-dip-as-buyers-step-in...
+🎯 HEDEF: XRPUSDT (Xrp)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 1.8288
+   - RSI: 33.01
+   - BTC Trend (1h): %-0.49
+   - Market Cap: $117.43 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %75)
+   - TP/SL: %1.5/%0.8
+   - Sebep: Time: Fresh (News from 2025-12-19). Priced-In: No (-1.10% move suggests opportunity). BTC/Tech: Safe (BTC down slightly, RSI low, Funding healthy). Verdict: XRP showing buying interest after a dip, technicals are favorable, and the price hasn't fully priced in the news. Initiating a Scalp position.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-19 08:34:00):
+   - Durum: 🏁 [TEST] KAPANDI: XRPUSDT | PnL: -0.87 USDT
+   - Kar/Zarar: -0.87 USDT
+   - Görülen En İyi Fiyat (Peak): 1.8301
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-19 10:18:56
+------------------------------------------------------------
+📰 HABER: [**Coinbase files lawsuits in 3 states over attempts to regulate prediction markets**](https://www.coindesk.com/policy/2025/12/19/coinbase-files-lawsu...
+🎯 HEDEF: ETHUSDT (Ethereum)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 2954.33
+   - RSI: 35.02
+   - BTC Trend (1h): %0.15
+   - Market Cap: $361.14 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %75)
+   - TP/SL: %1.5/%0.8
+   - Sebep: Time: Fresh (News published 2025-12-19). Priced-In: No (Minimal price movement). BTC/Tech: Safe (BTC slightly up, RSI oversold, Funding low). Verdict: Coinbase legal action creates regulatory clarity, a positive catalyst for ETH. Technicals are favorable for a quick scalp.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-19 13:34:00):
+   - Durum: 🏁 [TEST] KAPANDI: ETHUSDT | PnL: -1.46 USDT
+   - Kar/Zarar: -1.46 USDT
+   - Görülen En İyi Fiyat (Peak): 2956.34
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-19 12:18:56
+------------------------------------------------------------
+📰 HABER: [**Oracle TikTok deal lifts AI mining stocks as bitcoin tags $88,000**](https://www.coindesk.com/markets/2025/12/19/oracle-tiktok-deal-lifts-ai-mining...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 88041.2
+   - RSI: 51.53
+   - BTC Trend (1h): %-0.12
+   - Market Cap: $1768.02 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %90)
+   - TP/SL: %2.5/%0.8
+   - Sebep: Time: Fresh (News published 2025-12-19). Priced-In: No (Price change minimal). BTC/Tech: Safe (BTC trend slightly negative, but manageable; RSI healthy). Verdict: Oracle/TikTok deal is a positive catalyst for AI mining and Bitcoin, and the price hasn't fully priced it in. Aggressive long position with tight stop-loss.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-19 15:34:00):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: -0.74 USDT
+   - Kar/Zarar: -0.74 USDT
+   - Görülen En İyi Fiyat (Peak): 88087.8
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-19 12:18:56
+------------------------------------------------------------
+📰 HABER: [**Crypto Markets Today: Bitcoin rallies on Japan rate hike as futures traders pile in**](https://www.coindesk.com/markets/2025/12/19/crypto-markets-t...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 88041.2
+   - RSI: 51.53
+   - BTC Trend (1h): %-0.12
+   - Market Cap: $1768.02 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %85)
+   - TP/SL: %2.5/%0.8
+   - Sebep: Time: Fresh. Priced-In: No. BTC/Tech: Safe. The news of the Bank of Japan rate hike impacting Bitcoin is recent and the price movement is minimal (-0.12%). BTC trend is slightly negative but not a strong bear signal. RSI is healthy and Funding is low. This presents a Scalp opportunity.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-19 15:34:00):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: -0.74 USDT
+   - Kar/Zarar: -0.74 USDT
+   - Görülen En İyi Fiyat (Peak): 88087.8
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-19 13:18:56
+------------------------------------------------------------
+📰 HABER: [**Bitcoin gains as yen surprisingly tumbles after BOJ rate hike: Crypto Daybook Americas**](https://www.coindesk.com/daybook-us/2025/12/19/bitcoin-ga...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 87960.7
+   - RSI: 47.41
+   - BTC Trend (1h): %-0.13
+   - Market Cap: $1768.02 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %85)
+   - TP/SL: %2.5/%0.8
+   - Sebep: Time: Fresh (News dated 2025-12-19). Priced-In: No (Price change minimal). BTC/Tech: Safe (BTC trend slightly negative, but manageable; RSI healthy). Verdict: Bitcoin's price movement is correlated with a surprising yen tumble following a BOJ rate hike. The price hasn't fully priced in this event, and technicals are favorable, suggesting a potential for a sustained upward trend.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-19 16:34:00):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: -0.40 USDT
+   - Kar/Zarar: -0.40 USDT
+   - Görülen En İyi Fiyat (Peak): 88059.0
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-19 14:18:56
+------------------------------------------------------------
+📰 HABER: [**CoinDesk 20 Performance Update: Index Jumps 4.6% as All Constituents Trade Higher**](https://www.coindesk.com/coindesk-indices/2025/12/19/coindesk-...
+🎯 HEDEF: SOLUSDT (Wrapped Sol)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 125.87
+   - RSI: 37.14
+   - BTC Trend (1h): %0.16
+   - Market Cap: $1.56 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %85)
+   - TP/SL: %2.5/%0.8
+   - Sebep: Time: Fresh (News dated 2025-12-19, current time 2025-12-21). Priced-In: No (Price change minimal). BTC/Tech: Safe (BTC slightly up, RSI low, Funding healthy). Verdict: SOLUSDT showing relative strength within a broader market uptrend. News of Solana's performance is recent and not fully priced in, presenting a scalping opportunity.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-19 17:34:00):
+   - Durum: 🏁 [TEST] KAPANDI: SOLUSDT | PnL: -3.18 USDT
+   - Kar/Zarar: -3.18 USDT
+   - Görülen En İyi Fiyat (Peak): 126.01
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-19 14:18:56
+------------------------------------------------------------
+📰 HABER: [**Poland’s lower house approves crypto law again, sends vetoed bill back to Senate**](https://www.coindesk.com/policy/2025/12/19/poland-s-lower-house...
+🎯 HEDEF: ETHUSDT (Ethereum)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 2968.79
+   - RSI: 56.92
+   - BTC Trend (1h): %0.16
+   - Market Cap: $361.14 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %85)
+   - TP/SL: %1.5/%0.8
+   - Sebep: Time: Fresh. Priced-In: No. BTC/Tech: Safe. Poland's crypto law re-approval is a developing regulatory event, not priced into the current 0% 24h ETHUSDT price. BTC trend is mildly bullish, and technicals (RSI 56.9, Funding 0.0100%) are favorable. Initiating a SCALP with a moderate take profit and stop loss.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-19 17:34:00):
+   - Durum: 🏁 [TEST] KAPANDI: ETHUSDT | PnL: -3.98 USDT
+   - Kar/Zarar: -3.98 USDT
+   - Görülen En İyi Fiyat (Peak): 2974.26
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-19 15:18:56
+------------------------------------------------------------
+📰 HABER: [**Most Influential: The Solana Developers**](https://www.coindesk.com/tech/2025/12/19/most-influential-the-solana-developers)
+
+Solana’s 2025 has prov...
+🎯 HEDEF: SOLUSDT (Wrapped Sol)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 125.97
+   - RSI: 73.88
+   - BTC Trend (1h): %1.32
+   - Market Cap: $1.56 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %85)
+   - TP/SL: %1.5/%0.8
+   - Sebep: Time: Fresh (News released 2025-12-19). Priced-In: No (1h change 0.96%). BTC/Tech: Safe (BTC up 1.32%, RSI 73.9, Funding 0.01%). Verdict: Solana developers recognized as influential signals continued ecosystem strength. Technicals are favorable, and the price reaction is muted, presenting a scalping opportunity.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-19 18:19:30):
+   - Durum: 🏁 [TEST] KAPANDI: SOLUSDT | PnL: -1.98 USDT
+   - Kar/Zarar: -1.98 USDT
+   - Görülen En İyi Fiyat (Peak): 127.11
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-19 15:19:04
+------------------------------------------------------------
+📰 HABER: [**DraftKings enters prediction markets with CFTC-approved app for real-world events**](https://www.coindesk.com/markets/2025/12/19/draftkings-enters-...
+🎯 HEDEF: ETHUSDT (Ethereum)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 2970.59
+   - RSI: 53.01
+   - BTC Trend (1h): %0.66
+   - Market Cap: $361.14 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %85)
+   - TP/SL: %1.5/%0.8
+   - Sebep: Time: Fresh (News released 2025-12-19). Priced-In: No (1h change 0.29%). BTC/Tech: Safe (BTC 1h trend positive, RSI 53.0, Funding 0.0100%). Verdict: DraftKings entering prediction markets is a significant strategic partnership for ETH, expanding its utility and adoption. The price reaction is muted, indicating an opportunity for a quick scalp.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-19 18:34:15):
+   - Durum: 🏁 [TEST] KAPANDI: ETHUSDT | PnL: -0.32 USDT
+   - Kar/Zarar: -0.32 USDT
+   - Görülen En İyi Fiyat (Peak): 2983.8
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-19 15:19:04
+------------------------------------------------------------
+📰 HABER: [**Most Influential: Stani Kulechov**](https://www.coindesk.com/tech/2025/12/19/most-influential-stani-kulechov)
+
+The Aave founder is bringing DeFi to...
+🎯 HEDEF: AAVEUSDT (Aave)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 183.07
+   - RSI: 57.85
+   - BTC Trend (1h): %0.66
+   - Market Cap: $2.71 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %90)
+   - TP/SL: %2.5/%0.8
+   - Sebep: Time: Fresh (News just released). Priced-In: No (Minimal price movement). BTC/Tech: Safe (BTC up, RSI healthy, Funding low). Verdict: Stani Kulechov's statement signals a significant push for Aave adoption, and the market hasn't fully priced this in yet. Aggressive long position with tight stop-loss.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-19 18:34:15):
+   - Durum: 🏁 [TEST] KAPANDI: AAVEUSDT | PnL: 1.31 USDT
+   - Kar/Zarar: 1.31 USDT
+   - Görülen En İyi Fiyat (Peak): 183.71
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-19 17:18:56
+------------------------------------------------------------
+📰 HABER: [**Federal Reserve moves toward narrower, crypto-driven take on master accounts **](https://www.coindesk.com/policy/2025/12/19/federal-reserve-moves-t...
+🎯 HEDEF: ETHUSDT (Ethereum)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 2981.47
+   - RSI: 68.69
+   - BTC Trend (1h): %-0.01
+   - Market Cap: $361.14 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %90)
+   - TP/SL: %2.5/%0.8
+   - Sebep: Time: Fresh (News published 2025-12-19). Priced-In: No (Price up only 0.32%). BTC/Tech: Safe (BTC slightly down, RSI 68.7, Funding 0.01%). Verdict: Federal Reserve exploring crypto-driven master accounts is a significant, forward-looking development. The limited price reaction indicates a substantial opportunity for a Nuclear Long. Respecting BTC trend, but the news warrants aggressive entry.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-19 20:32:30):
+   - Durum: 🏁 [TEST] KAPANDI: ETHUSDT | PnL: -8.18 USDT
+   - Kar/Zarar: -8.18 USDT
+   - Görülen En İyi Fiyat (Peak): 2986.21
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-19 17:18:56
+------------------------------------------------------------
+📰 HABER: [**Foundation behind restaking protocol EigenLayer plans bigger rewards for active users**](https://www.coindesk.com/business/2025/12/19/foundation-be...
+🎯 HEDEF: ETHUSDT (Ethereum)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 2981.47
+   - RSI: 68.69
+   - BTC Trend (1h): %-0.01
+   - Market Cap: $361.14 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %85)
+   - TP/SL: %2.0/%0.8
+   - Sebep: Time: Fresh (News published 2025-12-19). Priced-In: No (1h change 0.32% is low). BTC/Tech: Safe (BTC slightly down, RSI 68.7, Funding 0.01%). Verdict: EigenLayer reward increase is a positive catalyst for ETH, and the price hasn't fully priced it in. Entering a Scalp position with tight stop-loss.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-19 20:32:30):
+   - Durum: 🏁 [TEST] KAPANDI: ETHUSDT | PnL: -8.18 USDT
+   - Kar/Zarar: -8.18 USDT
+   - Görülen En İyi Fiyat (Peak): 2986.21
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-20 13:18:56
+------------------------------------------------------------
+📰 HABER: [**Gold wins the debasement trade in 2025, but it is not the full story**](https://www.coindesk.com/markets/2025/12/19/gold-wins-the-debasement-trade-...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 87995.2
+   - RSI: 13.73
+   - BTC Trend (1h): %-0.23
+   - Market Cap: $1768.02 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %90)
+   - TP/SL: %2.5/%0.5
+   - Sebep: Time: Fresh (News published 2025-12-19). Priced-In: No (BTC down only 0.23%). BTC/Tech: Safe (BTC downtrend mild, RSI extremely oversold, Funding low). Verdict: ETF AUM resilience despite a significant price correction indicates strong underlying demand. Oversold technicals and limited BTC downside provide a favorable entry point for a Nuclear Long.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-20 16:34:00):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: 0.21 USDT
+   - Kar/Zarar: 0.21 USDT
+   - Görülen En İyi Fiyat (Peak): 88135.0
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-20 14:18:56
+------------------------------------------------------------
+📰 HABER: [**BlackRock's Bitcoin ETF a true rarity: massive inflows even with negative performance**](https://www.coindesk.com/markets/2025/12/20/blackrock-s-bi...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 88061.8
+   - RSI: 42.73
+   - BTC Trend (1h): %0.07
+   - Market Cap: $1768.02 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %92)
+   - TP/SL: %2.8/%0.8
+   - Sebep: Time: Fresh (News published 2025-12-20). Priced-In: No (Price movement minimal). BTC/Tech: Safe (BTC trend positive, RSI oversold, Funding low). Verdict: BlackRock ETF inflows despite negative performance indicate significant future flow potential. Technicals are favorable, suggesting room for upward movement.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-20 17:34:00):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: 0.09 USDT
+   - Kar/Zarar: 0.09 USDT
+   - Görülen En İyi Fiyat (Peak): 88103.8
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-20 16:18:56
+------------------------------------------------------------
+📰 HABER: [**Brazil’s Gen Z drives crypto boom as stablecoins, income tokens surge**](https://www.coindesk.com/business/2025/12/20/brazil-s-gen-z-drives-crypto-...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 88158.9
+   - RSI: 47.19
+   - BTC Trend (1h): %0.19
+   - Market Cap: $1768.02 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %85)
+   - TP/SL: %1.5/%0.8
+   - Sebep: Time: Fresh (News published 2025-12-20). Priced-In: No (Price up only 0.19%). BTC/Tech: Safe (BTC trend positive, RSI 47.2, Funding 0.0100%). Verdict: Brazil's Gen Z driving crypto adoption and growth of digital fixed-income products on Mercado Bitcoin indicates a developing, positive trend. Technicals are favorable, suggesting room for upside.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-20 19:34:00):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: -0.70 USDT
+   - Kar/Zarar: -0.70 USDT
+   - Görülen En İyi Fiyat (Peak): 88171.7
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-20 18:18:56
+------------------------------------------------------------
+📰 HABER: [**Hilbert Group buys Enigma Nordic in $32 million deal to boost crypto trading edge**](https://www.coindesk.com/business/2025/12/20/hilbert-group-buy...
+🎯 HEDEF: ETHUSDT (Ethereum)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 2976.0
+   - RSI: 58.86
+   - BTC Trend (1h): %-0.02
+   - Market Cap: $361.14 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %85)
+   - TP/SL: %1.5/%0.8
+   - Sebep: Time: Fresh (Published 2025-12-20). Priced-In: No (1h change -0.09%). BTC/Tech: Safe (BTC slightly down, RSI 58.9, Funding 0.01%). Verdict: Hilbert Group acquisition of Enigma Nordic signals increased institutional interest and trading capabilities, creating a positive catalyst. Technicals are favorable, and the price hasn't fully priced in the news.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-20 21:34:00):
+   - Durum: 🏁 [TEST] KAPANDI: ETHUSDT | PnL: -0.29 USDT
+   - Kar/Zarar: -0.29 USDT
+   - Görülen En İyi Fiyat (Peak): 2976.45
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-20 18:18:56
+------------------------------------------------------------
+📰 HABER: [**Crypto user loses $50 million in 'address poisoning' scam**](https://www.coindesk.com/web3/2025/12/20/crypto-user-loses-usd50-million-in-address-po...
+🎯 HEDEF: ETHUSDT (Ethereum)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 2976.0
+   - RSI: 58.86
+   - BTC Trend (1h): %-0.02
+   - Market Cap: $361.14 BILLION
+🧠 AI KARARI:
+   - Aksiyon: SHORT (Güven: %90)
+   - TP/SL: %1.5/%0.8
+   - Sebep: Time: Fresh. Priced-In: No. BTC/Tech: Unsafe. Verdict: Address poisoning scam resulting in $50M loss is a significant negative catalyst. BTC trend is slightly negative (-0.02%), indicating broader market weakness. RSI is 58.9, preventing a long position. Immediate short to capitalize on panic selling.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-20 21:29:00):
+   - Durum: 🏁 [TEST] KAPANDI: ETHUSDT | PnL: 0.13 USDT
+   - Kar/Zarar: 0.13 USDT
+   - Görülen En İyi Fiyat (Peak): 2975.0
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-20 19:18:56
+------------------------------------------------------------
+📰 HABER: [**VanEck's new Avalanche ETF filing to include staking rewards for AVAX investors**](https://www.coindesk.com/business/2025/12/20/vaneck-s-new-avalan...
+🎯 HEDEF: AVAXUSDT (Avalanche)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 12.255
+   - RSI: 63.64
+   - BTC Trend (1h): %0.07
+   - Market Cap: $5.24 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %90)
+   - TP/SL: %2.5/%0.8
+   - Sebep: Time: Fresh (News published 2025-12-20). Priced-In: No (1h change is minimal). BTC/Tech: Safe (BTC slightly up, RSI healthy, Funding low). Verdict: VanEck ETF filing with staking rewards is a significant positive catalyst for AVAX. The market has not fully priced this in yet, presenting a clear opportunity for a Nuclear Long.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-20 22:34:00):
+   - Durum: 🏁 [TEST] KAPANDI: AVAXUSDT | PnL: -0.41 USDT
+   - Kar/Zarar: -0.41 USDT
+   - Görülen En İyi Fiyat (Peak): 12.26
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-20 20:18:56
+------------------------------------------------------------
+📰 HABER: [**Uniswap’s UNI Jumps 19% as governance vote to activate protocol fees opens**](https://www.coindesk.com/markets/2025/12/20/uniswap-s-uni-jumps-19-as...
+🎯 HEDEF: UNIUSDT (Uniswap)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 6.198
+   - RSI: 42.55
+   - BTC Trend (1h): %0.01
+   - Market Cap: $4.00 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %90)
+   - TP/SL: %2.5/%0.8
+   - Sebep: Time: Fresh (News just broke). Priced-In: No (Price down 1.13% despite positive news). BTC/Tech: Safe (BTC stable, RSI healthy, Funding low). Verdict: Uniswap governance vote activation is a significant catalyst. The slight price dip indicates an opportunity for a Nuclear Long.
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-20 23:34:00):
+   - Durum: 🏁 [TEST] KAPANDI: UNIUSDT | PnL: 5.49 USDT
+   - Kar/Zarar: 5.49 USDT
+   - Görülen En İyi Fiyat (Peak): 6.245
+============================================================

@@ -228,17 +228,35 @@ __pycache__/
 trade_logs.txt
 debug_logs.txt
 logs.txt
-data/
+data/market_cache/
 
 # Oturum Dosyaları
 *.session
 crypto_agent_session.session
 
-# Eğitim Verileri
-*.jsonl
-
 # Model Checkpoints ve Tokenizer dosyaları
 checkpoints2/
 nexus-ai-v2-core/
 nexus-ai-v2-final/
-*.json
+# Model Checkpoints ve Tokenizer dosyaları
+checkpoints2/
+nexus-ai-v2-core/
+nexus-ai-v2-final/
+nexus-final-encoder/
+nexus-lora-backbone/
+nexus-lora-backbone-final/
+standard_deberta_nexus/
+*.pt
+
+nexus-final-encoder/
+nexus-lora-bakcbone/
+nexus-lora-backbone-final/
+standard_deberta_nexus/
+*.pt
+
+*.pyc
+*.session
+wandb/
+*.pkl
+*.pt
+.env

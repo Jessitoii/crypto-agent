@@ -1,0 +1,1549 @@
+--- SIMULATION RUN: 2026-01-03 10:24:48.911278 ---
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-31 13:42:29
+------------------------------------------------------------
+📰 HABER: **🇺🇸 JUST IN: **US initial jobless claims came in at 199K, below expectations of 219K and also down from the previous 215K reading.
+
+[News |](https://...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 88759.8
+   - RSI: 39.57
+   - BTC Trend (1h): %-0.04
+   - Market Cap: $1787.40 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %65)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-31 16:57:30):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: 1.62 USDT
+   - Kar/Zarar: 1.62 USDT
+   - Görülen En İyi Fiyat (Peak): 89025.1
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-31 14:04:49
+------------------------------------------------------------
+📰 HABER: **⚡️ NEW:** Trump Media to distribute digital tokens to $DJT shareholders via Cryptodotcom’s Cronos blockchain.
+
+[News |](https://cointelegraph.com/) ...
+🎯 HEDEF: TRUMPUSDT (Official Trump)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 4.907
+   - RSI: 46.36
+   - BTC Trend (1h): %0.27
+   - Market Cap: $1.01 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %78)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-31 17:20:00):
+   - Durum: 🏁 [TEST] KAPANDI: TRUMPUSDT | PnL: 1.22 USDT
+   - Kar/Zarar: 1.22 USDT
+   - Görülen En İyi Fiyat (Peak): 4.927
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-31 16:05:46
+------------------------------------------------------------
+📰 HABER: **Historical closes for ****$BTC**** on New Year's Eve:**
+
+2010: $0.30
+2011: $4.74
+2012: $13.50
+2013: $757.00
+2014: $320.00
+2015: $432.00
+2016: $981.0...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 87893.2
+   - RSI: 21.02
+   - BTC Trend (1h): %-0.57
+   - Market Cap: $1787.40 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %65)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-31 19:21:00):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: 0.01 USDT
+   - Kar/Zarar: 0.01 USDT
+   - Görülen En İyi Fiyat (Peak): 88024.3
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-31 18:05:13
+------------------------------------------------------------
+📰 HABER: **🔥 ADOPTION:** Binance’s global user base surpassed 300M in 2025, with total trading volume around $34T.
+
+[News |](https://cointelegraph.com/) [Marke...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 87605.2
+   - RSI: 56.72
+   - BTC Trend (1h): %0.07
+   - Market Cap: $1787.40 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %78)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-31 21:20:15):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: 2.88 USDT
+   - Kar/Zarar: 2.88 USDT
+   - Görülen En İyi Fiyat (Peak): 87917.3
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-31 23:55:40
+------------------------------------------------------------
+📰 HABER: 🔥** JUST IN**: Tether bought 8,888.8888888 $BTC in Q4 2025, says CEO Paolo Ardoino.
+
+[News |](https://cointelegraph.com/) [Markets |](https://cointele...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 87621.7
+   - RSI: 35.26
+   - BTC Trend (1h): %-0.08
+   - Market Cap: $1787.40 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %65)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-01 03:10:45):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: 1.18 USDT
+   - Kar/Zarar: 1.18 USDT
+   - Görülen En İyi Fiyat (Peak): 87791.9
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-01 01:02:14
+------------------------------------------------------------
+📰 HABER: 🇺🇸 **TODAY**: Senator Lummis says, “The Responsible Financial Innovation Act of 2026 allows major banks to offer digital asset custody, staking, and p...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 87820.7
+   - RSI: 66.57
+   - BTC Trend (1h): %0.17
+   - Market Cap: $1787.40 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %78)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-01 04:17:15):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: 1.36 USDT
+   - Kar/Zarar: 1.36 USDT
+   - Görülen En İyi Fiyat (Peak): 88021.4
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-01 02:02:05
+------------------------------------------------------------
+📰 HABER: 🇺🇸 **NEW**: [US lawmakers](https://cointelegraph.com/news/banking-committee-market-structure-markup-january) expected to advance crypto market structu...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 87887.5
+   - RSI: 48.61
+   - BTC Trend (1h): %0.07
+   - Market Cap: $1787.40 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %75)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-01 05:17:15):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: 2.02 USDT
+   - Kar/Zarar: 2.02 USDT
+   - Görülen En İyi Fiyat (Peak): 88065.0
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-01 03:00:08
+------------------------------------------------------------
+📰 HABER: 🇺🇸 **LATEST**: CFTC Chair Michael Selig appoints Amir Zaidi as Chief of Staff, citing his role in launching CFTC-regulated Bitcoin futures during Trum...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 87864.2
+   - RSI: 35.79
+   - BTC Trend (1h): %-0.01
+   - Market Cap: $1787.40 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %65)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-01 06:15:15):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: 1.12 USDT
+   - Kar/Zarar: 1.12 USDT
+   - Görülen En İyi Fiyat (Peak): 87968.5
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-01 04:04:02
+------------------------------------------------------------
+📰 HABER: 🚨** LATEST**: Tom Lee points to silver and gold's parabolic rallies as evidence that skepticism toward digital assets in 2026 is misplaced.
+
+“Gold mov...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 87785.5
+   - RSI: 15.42
+   - BTC Trend (1h): %-0.14
+   - Market Cap: $1787.40 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %78)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-01 07:19:15):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: -2.39 USDT
+   - Kar/Zarar: -2.39 USDT
+   - Görülen En İyi Fiyat (Peak): 87785.7
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-01 15:02:07
+------------------------------------------------------------
+📰 HABER: **🇺🇸 ETF FLOWS**: SOL and XRP spot ETFs saw net inflows on Dec. 31, while BTC and ETH spot ETFs saw net outflows.
+
+BTC: -$348.10M
+ETH: -$72.06M
+SOL: $...
+🎯 HEDEF: XRPUSDT (Xrp)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 1.8549
+   - RSI: 36.99
+   - BTC Trend (1h): %0.11
+   - Market Cap: $121.08 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %78)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-01 18:17:15):
+   - Durum: 🏁 [TEST] KAPANDI: XRPUSDT | PnL: 0.59 USDT
+   - Kar/Zarar: 0.59 USDT
+   - Görülen En İyi Fiyat (Peak): 1.8572
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-01 19:33:56
+------------------------------------------------------------
+📰 HABER: 🔥 **LATEST**: Tether purchased 8,888.8888888 $BTC in Q4 2025, according to CEO Paolo Ardoino.
+
+[News |](https://cointelegraph.com/) [Markets |](https:...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 88127.8
+   - RSI: 62.19
+   - BTC Trend (1h): %0.04
+   - Market Cap: $1787.40 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %75)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-01 22:49:00):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: 2.05 USDT
+   - Kar/Zarar: 2.05 USDT
+   - Görülen En İyi Fiyat (Peak): 88312.3
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-01 20:22:14
+------------------------------------------------------------
+📰 HABER: 🚨 **UPDATE**: Meteora, Jupiter and Uniswap led all DeFi protocols in 2025 by fee revenue, each generating over $1 billion for the year.
+
+[News |](http...
+🎯 HEDEF: UNIUSDT (Uniswap)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 5.826
+   - RSI: 43.33
+   - BTC Trend (1h): %0.21
+   - Market Cap: $3.67 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %78)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-01 23:37:15):
+   - Durum: 🏁 [TEST] KAPANDI: UNIUSDT | PnL: -5.49 USDT
+   - Kar/Zarar: -5.49 USDT
+   - Görülen En İyi Fiyat (Peak): 5.828
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-02 00:43:12
+------------------------------------------------------------
+📰 HABER: 🇹🇲 **ADOPTION**: Turkmenistan officially legalizes crypto mining and exchanges under central bank oversight.
+
+[News |](https://cointelegraph.com/) [Ma...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 88650.0
+   - RSI: 42.83
+   - BTC Trend (1h): %-0.26
+   - Market Cap: $1787.40 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %65)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-02 03:58:15):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: 1.28 USDT
+   - Kar/Zarar: 1.28 USDT
+   - Görülen En İyi Fiyat (Peak): 88850.0
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-02 01:14:45
+------------------------------------------------------------
+📰 HABER: 🚨 **NEW**: [Crypto hack](https://cointelegraph.com/news/losses-crypto-hacks-down-60-december) losses dropped 60% in December to $76 million from $194....
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 88695.0
+   - RSI: 36.74
+   - BTC Trend (1h): %0.11
+   - Market Cap: $1787.40 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %65)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-02 04:30:00):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: -0.60 USDT
+   - Kar/Zarar: -0.60 USDT
+   - Görülen En İyi Fiyat (Peak): 88714.5
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-02 02:00:13
+------------------------------------------------------------
+📰 HABER: 🚨 **NEW**: Hyperliquid founder Jeff reaffirms the protocol's commitment to credible neutrality.
+
+No private investors, market maker deals, or protocol...
+🎯 HEDEF: HYPEUSDT (Hyperliquid)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 24.355
+   - RSI: 58.14
+   - BTC Trend (1h): %-0.16
+   - Market Cap: $5.92 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %78)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-02 05:15:15):
+   - Durum: 🏁 [TEST] KAPANDI: HYPEUSDT | PnL: -1.52 USDT
+   - Kar/Zarar: -1.52 USDT
+   - Görülen En İyi Fiyat (Peak): 24.386
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-02 02:33:48
+------------------------------------------------------------
+📰 HABER: 🗞 Catch up on the news over the last 24 hours!
+
+🔥 [Tether](https://t.me/cointelegraph/66538) bought 8,888.8888888 $BTC in Q4 2025, says CEO Paolo Ardo...
+🎯 HEDEF: XRPUSDT (Xrp)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 1.8719
+   - RSI: 59.26
+   - BTC Trend (1h): %-0.18
+   - Market Cap: $121.08 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %68)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-02 05:49:00):
+   - Durum: 🏁 [TEST] KAPANDI: XRPUSDT | PnL: 1.18 USDT
+   - Kar/Zarar: 1.18 USDT
+   - Görülen En İyi Fiyat (Peak): 1.8742
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-02 04:32:33
+------------------------------------------------------------
+📰 HABER: 🚨** ALERT**: ZachXBT reports hundreds of wallets being drained across EVM chains for under $2K each, with over $107K stolen so far and the cause still...
+🎯 HEDEF: ETHUSDT (Ethereum)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 3015.49
+   - RSI: 41.53
+   - BTC Trend (1h): %-0.10
+   - Market Cap: $371.82 BILLION
+🧠 AI KARARI:
+   - Aksiyon: SHORT (Güven: %75)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-02 07:47:45):
+   - Durum: 🏁 [TEST] KAPANDI: ETHUSDT | PnL: 0.77 USDT
+   - Kar/Zarar: 0.77 USDT
+   - Görülen En İyi Fiyat (Peak): 3013.15
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-02 07:30:27
+------------------------------------------------------------
+📰 HABER: ⚡️ **UPDATE**: Crypto Fear and Greed Index rises to 28 (Fear) from yesterday's 20 (Extreme Fear), showing slight improvement in market sentiment.
+
+[Ne...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 88820.5
+   - RSI: 38.19
+   - BTC Trend (1h): %-0.02
+   - Market Cap: $1787.40 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %65)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-02 10:45:30):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: 0.07 USDT
+   - Kar/Zarar: 0.07 USDT
+   - Görülen En İyi Fiyat (Peak): 88883.4
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-02 08:26:02
+------------------------------------------------------------
+📰 HABER: ⚡️ **NEW**: Coinbase CEO Brian Armstrong outlines 2026 priorities including global exchange expansion, scaling stablecoins and payments, and driving o...
+🎯 HEDEF: ETHUSDT (Ethereum)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 3025.36
+   - RSI: 51.99
+   - BTC Trend (1h): %0.18
+   - Market Cap: $371.82 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %78)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-02 11:41:15):
+   - Durum: 🏁 [TEST] KAPANDI: ETHUSDT | PnL: 0.52 USDT
+   - Kar/Zarar: 0.52 USDT
+   - Görülen En İyi Fiyat (Peak): 3028.79
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-02 09:04:23
+------------------------------------------------------------
+📰 HABER: 🚨 **LATEST**: [Bithumb](https://cointelegraph.com/news/bithumb-dormant-crypto-assets-200m-inactive-accounts) flags $200M in dormant crypto across 2.6M...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 89101.0
+   - RSI: 58.68
+   - BTC Trend (1h): %0.34
+   - Market Cap: $1787.40 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %65)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-02 12:19:30):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: -0.07 USDT
+   - Kar/Zarar: -0.07 USDT
+   - Görülen En İyi Fiyat (Peak): 89295.5
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-02 11:35:01
+------------------------------------------------------------
+📰 HABER: 🔥 **BULLISH**: Bitcoin is well positioned to outperform in 2026, driven by easing expectations and structural adoption, according to** **K33 Research....
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 89477.1
+   - RSI: 35.43
+   - BTC Trend (1h): %-0.20
+   - Market Cap: $1787.40 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %65)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-02 14:50:15):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: 0.16 USDT
+   - Kar/Zarar: 0.16 USDT
+   - Görülen En İyi Fiyat (Peak): 89529.6
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-02 13:35:14
+------------------------------------------------------------
+📰 HABER: 🔥 **UPDATE**: Solana** **led all blockchains by activity in 2025, processing over 121 billion transactions during the year.
+
+[News |](https://cointele...
+🎯 HEDEF: SOLUSDT (Wrapped Sol)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 128.38
+   - RSI: 28.40
+   - BTC Trend (1h): %-0.02
+   - Market Cap: $1.60 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %78)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-02 16:50:15):
+   - Durum: 🏁 [TEST] KAPANDI: SOLUSDT | PnL: 1.17 USDT
+   - Kar/Zarar: 1.17 USDT
+   - Görülen En İyi Fiyat (Peak): 128.57
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-02 17:45:16
+------------------------------------------------------------
+📰 HABER: **🔥 BULLISH: **Solana enters 2026 with strong RWA momentum, as tokenized assets hit a record $873M and ETF inflows build a case for new highs, [accord...
+🎯 HEDEF: SOLUSDT (Wrapped Sol)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 131.26
+   - RSI: 51.22
+   - BTC Trend (1h): %0.50
+   - Market Cap: $1.60 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %78)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-02 21:00:30):
+   - Durum: 🏁 [TEST] KAPANDI: SOLUSDT | PnL: 0.00 USDT
+   - Kar/Zarar: 0.00 USDT
+   - Görülen En İyi Fiyat (Peak): 131.47
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-02 19:55:09
+------------------------------------------------------------
+📰 HABER: **🔥 JUST IN**: Neuralink plans to start high-volume brain-implant production and fully automated surgeries in 2026, Elon Musk said, aiming to help par...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 89898.3
+   - RSI: 40.93
+   - BTC Trend (1h): %0.25
+   - Market Cap: $1787.40 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %75)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-02 23:10:15):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: -0.72 USDT
+   - Kar/Zarar: -0.72 USDT
+   - Görülen En İyi Fiyat (Peak): 89968.0
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-31 08:52:51
+------------------------------------------------------------
+📰 HABER: Ethereum hit a new daily record of 2.2 million transactions this week, with average fees around $0.17. Fees have continued to fall since peaking above...
+🎯 HEDEF: ETHUSDT (Ethereum)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 2967.67
+   - RSI: 37.22
+   - BTC Trend (1h): %-0.21
+   - Market Cap: $371.82 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %78)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-31 12:08:00):
+   - Durum: 🏁 [TEST] KAPANDI: ETHUSDT | PnL: 0.83 USDT
+   - Kar/Zarar: 0.83 USDT
+   - Görülen En İyi Fiyat (Peak): 2972.0
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-31 09:46:32
+------------------------------------------------------------
+📰 HABER: Neo co-founder Erik Zhang accused Da Hongfei of failing to disclose Neo Foundation finances and urged a full, verifiable report. He said Da will step ...
+🎯 HEDEF: NEOUSDT (Unknown)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 3.607
+   - RSI: 69.23
+   - BTC Trend (1h): %0.30
+   - Market Cap: UNKNOWN/SMALL
+🧠 AI KARARI:
+   - Aksiyon: SHORT (Güven: %75)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-31 13:01:45):
+   - Durum: 🏁 [TEST] KAPANDI: NEOUSDT | PnL: 0.00 USDT
+   - Kar/Zarar: 0.00 USDT
+   - Görülen En İyi Fiyat (Peak): 3.605
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-31 12:17:55
+------------------------------------------------------------
+📰 HABER: Binance said its global user base surpassed 300 million in 2025, with total trading volume of about $34 trillion. Retail trading rose 125% year over y...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 88956.1
+   - RSI: 60.87
+   - BTC Trend (1h): %0.19
+   - Market Cap: $1787.40 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %78)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-31 15:33:00):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: -0.33 USDT
+   - Kar/Zarar: -0.33 USDT
+   - Görülen En İyi Fiyat (Peak): 88961.4
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-31 13:32:49
+------------------------------------------------------------
+📰 HABER: U.S. initial jobless claims for the week ending Dec. 27 fell to 199k, the lowest since the week ending Nov. 29, versus expectations of 220k. The prior...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 88773.3
+   - RSI: 46.66
+   - BTC Trend (1h): %-0.13
+   - Market Cap: $1787.40 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %78)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-31 16:48:00):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: -0.06 USDT
+   - Kar/Zarar: -0.06 USDT
+   - Görülen En İyi Fiyat (Peak): 88794.6
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-01 00:54:24
+------------------------------------------------------------
+📰 HABER: Tether CEO Paolo Ardoino said that Tether accumulated 8,888.8888888 BTC in Q4 2025. According to monitoring by [@EmberCN](https://t.me/EmberCN), Tethe...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 87784.9
+   - RSI: 65.78
+   - BTC Trend (1h): %0.18
+   - Market Cap: $1787.40 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %78)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-01 04:09:30):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: 1.39 USDT
+   - Kar/Zarar: 1.39 USDT
+   - Görülen En İyi Fiyat (Peak): 87929.0
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-01 04:04:29
+------------------------------------------------------------
+📰 HABER: South Korea’s largest crypto exchange, Upbit, will list XAUT trading pairs against KRW, BTC, and USDT. XAUT is backed 1:1 by gold bars that meet the L...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 87785.5
+   - RSI: 15.42
+   - BTC Trend (1h): %-0.14
+   - Market Cap: $1787.40 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %78)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-01 07:19:30):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: -2.97 USDT
+   - Kar/Zarar: -2.97 USDT
+   - Görülen En İyi Fiyat (Peak): 87785.7
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-01 06:22:25
+------------------------------------------------------------
+📰 HABER: On Dec. 31 (ET), Bitcoin spot ETFs recorded a net outflow of $348 million, with none of the 12 ETFs seeing net inflows. Ethereum spot ETFs saw net out...
+🎯 HEDEF: XRPUSDT (Xrp)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 1.8449
+   - RSI: 53.33
+   - BTC Trend (1h): %-0.06
+   - Market Cap: $121.08 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %78)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-01 09:37:30):
+   - Durum: 🏁 [TEST] KAPANDI: XRPUSDT | PnL: -0.11 USDT
+   - Kar/Zarar: -0.11 USDT
+   - Görülen En İyi Fiyat (Peak): 1.8464
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-01 08:41:41
+------------------------------------------------------------
+📰 HABER: a16z crypto outlined 17 key focus areas for the crypto industry in 2026, including better, more clever onramps/ offramps for stablecoins, advancing RW...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 87700.0
+   - RSI: 53.11
+   - BTC Trend (1h): %0.10
+   - Market Cap: $1787.40 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %75)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-01 11:56:45):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: 0.05 USDT
+   - Kar/Zarar: 0.05 USDT
+   - Görülen En İyi Fiyat (Peak): 87713.5
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-01 11:15:48
+------------------------------------------------------------
+📰 HABER: WuBlockchain's Top 10 Asia News of 2025: Abu Dhabi's MGX Invests $2 Billion in Binance, Kazakhstan Establishes National Crypto Reserve and Buys BNB, R...
+🎯 HEDEF: ETCUSDT (Ethereum Classic)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 11.612
+   - RSI: 57.78
+   - BTC Trend (1h): %0.18
+   - Market Cap: $1.92 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %78)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-01 14:31:00):
+   - Durum: 🏁 [TEST] KAPANDI: ETCUSDT | PnL: -0.95 USDT
+   - Kar/Zarar: -0.95 USDT
+   - Görülen En İyi Fiyat (Peak): 11.618
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-01 15:10:55
+------------------------------------------------------------
+📰 HABER: Vitalik Buterin reflected on Ethereum’s progress in 2025, noting increases in the gas limit, higher blob counts, improvements in node software quality...
+🎯 HEDEF: ETHUSDT (Ethereum)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 2979.76
+   - RSI: 31.18
+   - BTC Trend (1h): %-0.01
+   - Market Cap: $371.82 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %65)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-01 18:26:00):
+   - Durum: 🏁 [TEST] KAPANDI: ETHUSDT | PnL: 0.75 USDT
+   - Kar/Zarar: 0.75 USDT
+   - Görülen En İyi Fiyat (Peak): 2986.0
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-02 07:28:39
+------------------------------------------------------------
+📰 HABER: OKX released its 38th Proof of Reserves (snapshot date: Dec. 11). User BTC holdings were about 130k BTC, up 0.05% from the previous snapshot on Nov. 1...
+🎯 HEDEF: ETHUSDT (Ethereum)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 3023.65
+   - RSI: 24.57
+   - BTC Trend (1h): %-0.03
+   - Market Cap: $371.82 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %78)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-02 10:43:45):
+   - Durum: 🏁 [TEST] KAPANDI: ETHUSDT | PnL: -1.67 USDT
+   - Kar/Zarar: -1.67 USDT
+   - Görülen En İyi Fiyat (Peak): 3024.23
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-02 09:21:51
+------------------------------------------------------------
+📰 HABER: According to @hashed_official data, since mid-December Dexter has gradually overtaken Coinbase to become the largest daily facilitator for x402 transa...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 89158.4
+   - RSI: 52.56
+   - BTC Trend (1h): %0.11
+   - Market Cap: $1787.40 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %78)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-02 12:37:00):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: -0.33 USDT
+   - Kar/Zarar: -0.33 USDT
+   - Görülen En İyi Fiyat (Peak): 89188.0
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-02 12:06:13
+------------------------------------------------------------
+📰 HABER: Binance has extended its Monitoring Tag to four additional tokens — Acala (ACA), DAR Open Network (D), Streamr (DATA), and Flow (FLOW), effective Janu...
+🎯 HEDEF: ETCUSDT (Ethereum Classic)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 12.126
+   - RSI: 54.10
+   - BTC Trend (1h): %-0.13
+   - Market Cap: $1.92 BILLION
+🧠 AI KARARI:
+   - Aksiyon: SHORT (Güven: %78)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-02 15:21:15):
+   - Durum: 🏁 [TEST] KAPANDI: ETCUSDT | PnL: 0.33 USDT
+   - Kar/Zarar: 0.33 USDT
+   - Görülen En İyi Fiyat (Peak): 12.113
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-02 13:50:05
+------------------------------------------------------------
+📰 HABER: 2025 Technical Trends: Bitcoin expands OP_RETURN and advances new scripting (CTV/CSFS); Ethereum completes Pectra & Fusaka dual upgrades and launches ...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 89448.0
+   - RSI: 64.99
+   - BTC Trend (1h): %0.02
+   - Market Cap: $1787.40 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %75)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-02 17:05:15):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: -1.31 USDT
+   - Kar/Zarar: -1.31 USDT
+   - Görülen En İyi Fiyat (Peak): 89468.0
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-02 14:41:32
+------------------------------------------------------------
+📰 HABER: Bitfinex 2016 hack mastermind Ilya Lichtenstein has been released early, citing sentence reductions under the U.S. First Step Act signed by President ...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 89353.7
+   - RSI: 60.88
+   - BTC Trend (1h): %-0.25
+   - Market Cap: $1787.40 BILLION
+🧠 AI KARARI:
+   - Aksiyon: SHORT (Güven: %75)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-02 17:56:45):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: -3.26 USDT
+   - Kar/Zarar: -3.26 USDT
+   - Görülen En İyi Fiyat (Peak): 89088.0
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-02 15:09:06
+------------------------------------------------------------
+📰 HABER: Grayscale Head of Research Zach Pandl said in a CNBC interview that 2026 could mark the start of crypto’s “institutional era,” with Bitcoin likely rea...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 89200.6
+   - RSI: 44.73
+   - BTC Trend (1h): %0.12
+   - Market Cap: $1787.40 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %78)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-02 18:24:15):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: -3.39 USDT
+   - Kar/Zarar: -3.39 USDT
+   - Görülen En İyi Fiyat (Peak): 89383.0
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-02 20:31:33
+------------------------------------------------------------
+📰 HABER: Aave Labs said that, in response to recent community discussions, it plans to explore sharing a portion of revenue generated outside the protocol with...
+🎯 HEDEF: AAVEUSDT (Aave)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 160.04
+   - RSI: 61.28
+   - BTC Trend (1h): %-0.09
+   - Market Cap: $2.49 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %78)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-02 23:46:45):
+   - Durum: 🏁 [TEST] KAPANDI: AAVEUSDT | PnL: 5.06 USDT
+   - Kar/Zarar: 5.06 USDT
+   - Görülen En İyi Fiyat (Peak): 161.39
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-03 01:58:49
+------------------------------------------------------------
+📰 HABER: According to @EmberCN, that Ethereum treasury company Bitmine (BMNR) continued to increase its ETH staking this morning. On-chain data shows that arou...
+🎯 HEDEF: ETHUSDT (Ethereum)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 3129.15
+   - RSI: 59.27
+   - BTC Trend (1h): %0.15
+   - Market Cap: $371.82 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %78)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-03 05:14:00):
+   - Durum: 🏁 [TEST] KAPANDI: ETHUSDT | PnL: -2.92 USDT
+   - Kar/Zarar: -2.92 USDT
+   - Görülen En İyi Fiyat (Peak): 3129.82
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-03 02:51:15
+------------------------------------------------------------
+📰 HABER: Valuation pressure on Bitcoin treasury companies is mounting, with about 40% of the top 100 firms now trading below the net asset value of their Bitco...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 90300.1
+   - RSI: 62.44
+   - BTC Trend (1h): %0.16
+   - Market Cap: $1787.40 BILLION
+🧠 AI KARARI:
+   - Aksiyon: SHORT (Güven: %78)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-03 06:06:30):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: 0.65 USDT
+   - Kar/Zarar: 0.65 USDT
+   - Görülen En İyi Fiyat (Peak): 90241.5
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-03 04:14:48
+------------------------------------------------------------
+📰 HABER: Stablecoin giant Tether has disclosed an investment in SQRIL, a real-time cross-border QR code payment platform. The size of the investment has not be...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 90220.9
+   - RSI: 34.85
+   - BTC Trend (1h): %-0.05
+   - Market Cap: $1787.40 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %65)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-03 07:30:00):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: -0.22 USDT
+   - Kar/Zarar: -0.22 USDT
+   - Görülen En İyi Fiyat (Peak): 90259.9
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-03 07:26:16
+------------------------------------------------------------
+📰 HABER: On Jan. 2 (ET), spot Bitcoin ETFs recorded total net inflows of $471 million, with BlackRock's IBIT leading at $287 million. Spot Ethereum ETFs saw to...
+🎯 HEDEF: XRPUSDT (Xrp)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 1.9905
+   - RSI: 27.68
+   - BTC Trend (1h): %-0.50
+   - Market Cap: $121.08 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %75)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-03 10:41:30):
+   - Durum: 🏁 [TEST] KAPANDI: XRPUSDT | PnL: 4.12 USDT
+   - Kar/Zarar: 4.12 USDT
+   - Görülen En İyi Fiyat (Peak): 2.0015
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-01 14:27:02
+------------------------------------------------------------
+📰 HABER: [​​](http://telegraph.controller.bot/files/8336652911/BQACAgIAAxkBAAITZGlWhBXtw8sVE2UNSZLrWpyRK5c1AAI2iAAC67e5SpJqlhMPMnKWOAQ)**2025: The Year Bitcoin...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 87799.3
+   - RSI: 39.51
+   - BTC Trend (1h): %-0.08
+   - Market Cap: $1787.40 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %65)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-01 17:42:15):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: 0.59 USDT
+   - Kar/Zarar: 0.59 USDT
+   - Görülen En İyi Fiyat (Peak): 87870.0
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-31 08:31:18
+------------------------------------------------------------
+📰 HABER: Spot bitcoin ETFs record $355 million net inflows, ending 7-day negative streak - [The Block](https://www.theblock.co/post/384037/spot-bitcoin-etf-355...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 88549.2
+   - RSI: 36.19
+   - BTC Trend (1h): %0.06
+   - Market Cap: $1787.40 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %78)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-31 11:46:30):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: -2.26 USDT
+   - Kar/Zarar: -2.26 USDT
+   - Görülen En İyi Fiyat (Peak): 88564.7
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-31 15:00:14
+------------------------------------------------------------
+📰 HABER: Trump Media to distribute new rewards token to DJT shareholders with Crypto.com - [The Block](https://www.theblock.co/post/384059/trump-media-distribu...
+🎯 HEDEF: TRUMPUSDT (Official Trump)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 4.906
+   - RSI: 60.42
+   - BTC Trend (1h): %-0.61
+   - Market Cap: $1.01 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %78)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-31 18:15:15):
+   - Durum: 🏁 [TEST] KAPANDI: TRUMPUSDT | PnL: -1.43 USDT
+   - Kar/Zarar: -1.43 USDT
+   - Görülen En İyi Fiyat (Peak): 4.913
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-31 17:01:54
+------------------------------------------------------------
+📰 HABER: CFTC Chair Selig taps Amir Zaidi as chief of staff citing his past role in approving bitcoin futures - [The Block](https://www.theblock.co/post/384068...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 87634.8
+   - RSI: 55.88
+   - BTC Trend (1h): %-0.33
+   - Market Cap: $1787.40 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %65)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-31 20:17:00):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: -1.22 USDT
+   - Kar/Zarar: -1.22 USDT
+   - Görülen En İyi Fiyat (Peak): 87656.1
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-31 20:17:04
+------------------------------------------------------------
+📰 HABER: Flow exploit leaves NFT loan borrowers ‘in limbo’ after network pause - [The Block](https://www.theblock.co/post/384094/flow-exploit-nft-loan-borrower...
+🎯 HEDEF: FLOWUSDT (Unknown)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 0.089
+   - RSI: 50.00
+   - BTC Trend (1h): %-0.31
+   - Market Cap: UNKNOWN/SMALL
+🧠 AI KARARI:
+   - Aksiyon: SHORT (Güven: %75)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-31 23:18:15):
+   - Durum: 🏁 [TEST] KAPANDI: FLOWUSDT | PnL: -11.24 USDT
+   - Kar/Zarar: -11.24 USDT
+   - Görülen En İyi Fiyat (Peak): 0.089
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-01 13:05:14
+------------------------------------------------------------
+📰 HABER: Japan, South Korea lead Asia’s local stablecoin push in 2025 - [The Block](https://www.theblock.co/post/383835/asias-stablecoin-focus-2025?utm_source=...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 87896.4
+   - RSI: 32.62
+   - BTC Trend (1h): %-0.08
+   - Market Cap: $1787.40 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %65)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-01 16:20:15):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: 0.66 USDT
+   - Kar/Zarar: 0.66 USDT
+   - Görülen En İyi Fiyat (Peak): 87954.2
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-01 16:03:41
+------------------------------------------------------------
+📰 HABER: Crypto ETFs head into 2026 with regulatory tailwinds as issuers brace for a crowded year ahead - [The Block](https://www.theblock.co/post/383361/crypt...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 87931.5
+   - RSI: 43.84
+   - BTC Trend (1h): %0.04
+   - Market Cap: $1787.40 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %78)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-01 19:18:45):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: -0.78 USDT
+   - Kar/Zarar: -0.78 USDT
+   - Görülen En İyi Fiyat (Peak): 87950.1
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-01 20:07:08
+------------------------------------------------------------
+📰 HABER: BTC, SOL and HYPE treasury execs forecast M&A, diversification and more institutional adoption in 2026 - [The Block](https://www.theblock.co/post/3839...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 88289.0
+   - RSI: 35.95
+   - BTC Trend (1h): %0.20
+   - Market Cap: $1787.40 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %75)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-01 23:22:15):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: 0.33 USDT
+   - Kar/Zarar: 0.33 USDT
+   - Görülen En İyi Fiyat (Peak): 88328.0
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-02 03:24:58
+------------------------------------------------------------
+📰 HABER: Iran moves to accept crypto payments in weapon sales to evade sanctions: FT - [The Block](https://www.theblock.co/post/384101/iran-accept-crypto-weapo...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 88815.4
+   - RSI: 50.45
+   - BTC Trend (1h): %0.42
+   - Market Cap: $1787.40 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %78)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-02 06:40:00):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: 1.29 USDT
+   - Kar/Zarar: 1.29 USDT
+   - Görülen En İyi Fiyat (Peak): 88947.9
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-02 05:34:47
+------------------------------------------------------------
+📰 HABER: Vitalik Buterin stresses real usability and decentralization over winning ‘next meta’ - [The Block](https://www.theblock.co/post/384108/vitalik-buteri...
+🎯 HEDEF: ETHUSDT (Ethereum)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 3011.16
+   - RSI: 35.85
+   - BTC Trend (1h): %-0.18
+   - Market Cap: $371.82 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %65)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-02 08:50:00):
+   - Durum: 🏁 [TEST] KAPANDI: ETHUSDT | PnL: 0.59 USDT
+   - Kar/Zarar: 0.59 USDT
+   - Görülen En İyi Fiyat (Peak): 3013.56
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-02 06:15:16
+------------------------------------------------------------
+📰 HABER: Hundreds of crypto wallets drained across EVM chains, root cause still unidentified: ZachXBT - [The Block](https://www.theblock.co/post/384118/crypto-...
+🎯 HEDEF: ETHUSDT (Ethereum)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 3017.39
+   - RSI: 54.49
+   - BTC Trend (1h): %0.11
+   - Market Cap: $371.82 BILLION
+🧠 AI KARARI:
+   - Aksiyon: SHORT (Güven: %78)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-02 09:30:30):
+   - Durum: 🏁 [TEST] KAPANDI: ETHUSDT | PnL: -1.39 USDT
+   - Kar/Zarar: -1.39 USDT
+   - Görülen En İyi Fiyat (Peak): 3016.54
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-02 10:42:36
+------------------------------------------------------------
+📰 HABER: Ethereum daily transactions hit all-time high, surpassing 2021 NFT boom - [The Block](https://www.theblock.co/post/384130/ethereum-daily-transactions-...
+🎯 HEDEF: ETHUSDT (Ethereum)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 3058.58
+   - RSI: 68.30
+   - BTC Trend (1h): %0.52
+   - Market Cap: $371.82 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %78)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-02 13:57:45):
+   - Durum: 🏁 [TEST] KAPANDI: ETHUSDT | PnL: -0.40 USDT
+   - Kar/Zarar: -0.40 USDT
+   - Görülen En İyi Fiyat (Peak): 3060.88
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-02 17:36:32
+------------------------------------------------------------
+📰 HABER: Bitfinex hacker Ilya Lichtenstein says he is being released early as part of ‘Trump’s First Step Act’ - [The Block](https://www.theblock.co/post/38415...
+🎯 HEDEF: TRUMPUSDT (Official Trump)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 5.039
+   - RSI: 56.67
+   - BTC Trend (1h): %-0.06
+   - Market Cap: $1.01 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %78)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-02 20:51:45):
+   - Durum: 🏁 [TEST] KAPANDI: TRUMPUSDT | PnL: -3.57 USDT
+   - Kar/Zarar: -3.57 USDT
+   - Görülen En İyi Fiyat (Peak): 5.042
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-31 10:18:56
+------------------------------------------------------------
+📰 HABER: [**Winklevoss-backed Cypherpunk buys $28 million of zcash, now owns 1.7% of supply**](https://www.coindesk.com/business/2025/12/31/winklevoss-backed-c...
+🎯 HEDEF: ZECUSDT (Zcash)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 525.55
+   - RSI: 60.39
+   - BTC Trend (1h): %0.27
+   - Market Cap: $8.34 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %78)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-31 13:34:00):
+   - Durum: 🏁 [TEST] KAPANDI: ZECUSDT | PnL: -1.05 USDT
+   - Kar/Zarar: -1.05 USDT
+   - Görülen En İyi Fiyat (Peak): 525.85
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-31 12:18:56
+------------------------------------------------------------
+📰 HABER: [**Bitwise files for 11 'strategy' ETFs, tracking tokens including AAVE, ZEC, TAO**](https://www.coindesk.com/markets/2025/12/31/bitwise-files-for-11-...
+🎯 HEDEF: ZECUSDT (Zcash)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 522.58
+   - RSI: 32.51
+   - BTC Trend (1h): %0.19
+   - Market Cap: $8.34 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %78)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-31 15:22:30):
+   - Durum: 🏁 [TEST] KAPANDI: ZECUSDT | PnL: -15.42 USDT
+   - Kar/Zarar: -15.42 USDT
+   - Görülen En İyi Fiyat (Peak): 523.04
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-31 14:18:56
+------------------------------------------------------------
+📰 HABER: [**APT falls as token underperforms wider crypto markets**](https://www.coindesk.com/markets/2025/12/31/apt-falls-as-token-underperforms-wider-crypto-...
+🎯 HEDEF: APTUSDT (Aptos)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 1.6988
+   - RSI: 49.20
+   - BTC Trend (1h): %0.25
+   - Market Cap: $1.40 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %65)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-31 17:34:00):
+   - Durum: 🏁 [TEST] KAPANDI: APTUSDT | PnL: -3.36 USDT
+   - Kar/Zarar: -3.36 USDT
+   - Görülen En İyi Fiyat (Peak): 1.7017
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2025-12-31 15:18:56
+------------------------------------------------------------
+📰 HABER: [**Trump Media to distribute new digital tokens to DJT shareholders**](https://www.coindesk.com/business/2025/12/31/trump-media-to-distribute-digital-...
+🎯 HEDEF: TRUMPUSDT (Official Trump)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 4.896
+   - RSI: 31.11
+   - BTC Trend (1h): %-1.14
+   - Market Cap: $1.01 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %78)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2025-12-31 18:34:00):
+   - Durum: 🏁 [TEST] KAPANDI: TRUMPUSDT | PnL: 0.61 USDT
+   - Kar/Zarar: 0.61 USDT
+   - Görülen En İyi Fiyat (Peak): 4.906
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-01 16:18:56
+------------------------------------------------------------
+📰 HABER: [**Vitalik Buterin on the two goals Ethereum must meet to become the ‘world computer’**](https://www.coindesk.com/tech/2026/01/01/vitalik-buterin-on-t...
+🎯 HEDEF: ETHUSDT (Ethereum)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 2982.88
+   - RSI: 36.04
+   - BTC Trend (1h): %-0.14
+   - Market Cap: $371.82 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %65)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-01 19:34:00):
+   - Durum: 🏁 [TEST] KAPANDI: ETHUSDT | PnL: 0.48 USDT
+   - Kar/Zarar: 0.48 USDT
+   - Görülen En İyi Fiyat (Peak): 2985.91
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-01 21:18:56
+------------------------------------------------------------
+📰 HABER: [**December FOMC minutes show the Fed is worried short-term funding could seize up**](https://www.coindesk.com/policy/2026/01/01/december-fomc-minutes...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 88325.9
+   - RSI: 64.85
+   - BTC Trend (1h): %-0.02
+   - Market Cap: $1787.40 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %75)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-02 00:34:00):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: -0.02 USDT
+   - Kar/Zarar: -0.02 USDT
+   - Görülen En İyi Fiyat (Peak): 88378.8
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-02 03:18:56
+------------------------------------------------------------
+📰 HABER: [**XRP bounces, but $2 remains the hurdle as exchange supply hits 8-year low**](https://www.coindesk.com/markets/2026/01/02/xrp-bounces-but-usd2-remai...
+🎯 HEDEF: XRPUSDT (Xrp)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 1.8817
+   - RSI: 69.03
+   - BTC Trend (1h): %0.37
+   - Market Cap: $121.08 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %78)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-02 06:34:00):
+   - Durum: 🏁 [TEST] KAPANDI: XRPUSDT | PnL: 0.37 USDT
+   - Kar/Zarar: 0.37 USDT
+   - Görülen En İyi Fiyat (Peak): 1.8828
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-02 04:18:56
+------------------------------------------------------------
+📰 HABER: [**Dogecoin surges 7% as a double-bottom break sparks DOGE rally**](https://www.coindesk.com/markets/2026/01/02/dogecoin-surges-7-as-a-double-bottom-b...
+🎯 HEDEF: DOGEUSDT (Dogecoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 0.12855
+   - RSI: 47.83
+   - BTC Trend (1h): %-0.03
+   - Market Cap: $23.58 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %75)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-02 07:34:00):
+   - Durum: 🏁 [TEST] KAPANDI: DOGEUSDT | PnL: -4.90 USDT
+   - Kar/Zarar: -4.90 USDT
+   - Görülen En İyi Fiyat (Peak): 0.12866
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-02 04:18:56
+------------------------------------------------------------
+📰 HABER: [**Tether adds nearly $800 million in bitcoin, bringing holdings above 96,000 BTC**](https://www.coindesk.com/markets/2026/01/02/tether-adds-nearly-us...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 88771.1
+   - RSI: 43.71
+   - BTC Trend (1h): %-0.03
+   - Market Cap: $1787.40 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %78)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-02 07:34:00):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: -0.02 USDT
+   - Kar/Zarar: -0.02 USDT
+   - Görülen En İyi Fiyat (Peak): 88789.8
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-02 10:18:56
+------------------------------------------------------------
+📰 HABER: [**Internet Computer climbs back to $3 as short-term momentum improves**](https://www.coindesk.com/markets/2026/01/02/internet-computer-climbs-back-to...
+🎯 HEDEF: ICPUSDT (Internet Computer)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 3.008
+   - RSI: 64.29
+   - BTC Trend (1h): %0.87
+   - Market Cap: $1.69 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %78)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-02 13:34:00):
+   - Durum: 🏁 [TEST] KAPANDI: ICPUSDT | PnL: 1.33 USDT
+   - Kar/Zarar: 1.33 USDT
+   - Görülen En İyi Fiyat (Peak): 3.016
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-02 14:18:56
+------------------------------------------------------------
+📰 HABER: [**Bitcoin miner Bitfarms exiting Latin America with $30M sale of Paraguay site**](https://www.coindesk.com/business/2026/01/02/bitcoin-miner-bitfarms...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 88801.1
+   - RSI: 9.29
+   - BTC Trend (1h): %-0.89
+   - Market Cap: $1787.40 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %75)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-02 17:34:00):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: -2.98 USDT
+   - Kar/Zarar: -2.98 USDT
+   - Görülen En İyi Fiyat (Peak): 88942.8
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-02 15:18:56
+------------------------------------------------------------
+📰 HABER: [**$110 billion in crypto left South Korea in 2025 owing to strict trading rules**](https://www.coindesk.com/business/2026/01/02/usd110-billion-in-cry...
+🎯 HEDEF: BTCUSDT (Bitcoin)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 89106.0
+   - RSI: 43.67
+   - BTC Trend (1h): %0.32
+   - Market Cap: $1787.40 BILLION
+🧠 AI KARARI:
+   - Aksiyon: SHORT (Güven: %75)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-02 18:34:00):
+   - Durum: 🏁 [TEST] KAPANDI: BTCUSDT | PnL: -4.00 USDT
+   - Kar/Zarar: -4.00 USDT
+   - Görülen En İyi Fiyat (Peak): 88756.5
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-02 17:18:56
+------------------------------------------------------------
+📰 HABER: [**Tom Lee urges BitMine shareholders to approve share increase ahead of January 14 vote**](https://www.coindesk.com/business/2026/01/02/tom-lee-urges...
+🎯 HEDEF: ETHUSDT (Ethereum)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 3140.6
+   - RSI: 55.80
+   - BTC Trend (1h): %1.22
+   - Market Cap: $371.82 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %65)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-02 20:34:00):
+   - Durum: 🏁 [TEST] KAPANDI: ETHUSDT | PnL: -3.83 USDT
+   - Kar/Zarar: -3.83 USDT
+   - Görülen En İyi Fiyat (Peak): 3145.0
+============================================================
+
+============================================================
+🔔 YENİ İŞLEM TESPİTİ | 2026-01-03 07:18:56
+------------------------------------------------------------
+📰 HABER: [**XRP jumps 8% above $2 as traders bet on a friendlier SEC**](https://www.coindesk.com/markets/2026/01/03/xrp-jumps-8-above-usd2-as-traders-bet-on-a-...
+🎯 HEDEF: XRPUSDT (Xrp)
+📊 ANALİZ VERİLERİ:
+   - Giriş Fiyatı: 1.9947
+   - RSI: 16.40
+   - BTC Trend (1h): %-0.40
+   - Market Cap: $121.08 BILLION
+🧠 AI KARARI:
+   - Aksiyon: LONG (Güven: %78)
+   - TP/SL: %None/%None
+   - Sebep: None
+------------------------------------------------------------
+🏁 İŞLEM SONUCU (2026-01-03 10:34:00):
+   - Durum: 🏁 [TEST] KAPANDI: XRPUSDT | PnL: -1.40 USDT
+   - Kar/Zarar: -1.40 USDT
+   - Görülen En İyi Fiyat (Peak): 2.0005
+============================================================
