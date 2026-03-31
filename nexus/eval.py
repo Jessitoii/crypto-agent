@@ -5,8 +5,12 @@ from transformers import AutoModel, AutoTokenizer, get_linear_schedule_with_warm
 import pandas as pd
 import numpy as np
 from torch.optim import AdamW
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from config import DATA_DIR
 
-# 1. MODEL TANIMI (SEQUENTIAL HEADS)
+# 1. MODEL DEFINITION (SEQUENTIAL HEADS)
 class NexusMultiHead(nn.Module):
     def __init__(self, model_name="microsoft/deberta-v3-small", dropout_rate=0.2):
         super().__init__()
@@ -28,7 +32,7 @@ class NexusMultiHead(nn.Module):
         pooled = outputs.last_hidden_state[:, 0, :]
         return self.classifier(pooled), self.tp_head(pooled), self.validity_head(pooled)
 
-# 2. DATASET VE MASKELENMİŞ KAYIP (LOSS) MANTIĞI
+# 2. DATASET AND MASKED LOSS LOGIC
 class NexusDataset(Dataset):
     def __init__(self, data_path, tokenizer, max_len=256):
         self.df = pd.read_json(data_path)
@@ -39,7 +43,7 @@ class NexusDataset(Dataset):
 
     def __getitem__(self, item):
         row = self.df.iloc[item]
-        # Text temizliği ve context injection
+        # Text cleaning and context injection
         text = str(row['text']) 
         encoding = self.tokenizer(text, max_length=self.max_len, padding='max_length', truncation=True, return_tensors="pt")
         
@@ -51,7 +55,7 @@ class NexusDataset(Dataset):
             'val_targets': torch.tensor(row['validity_minutes'] or 0.0, dtype=torch.float)
         }
 
-# 3. EĞİTİM DÖNGÜSÜ (CUSTOM TRAINER)
+# 3. CUSTOM TRAINER LOOP
 def train_nexus(data_path, model_name="microsoft/deberta-v3-small", epochs=3):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     tokenizer = AutoTokenizer.from_pretrained(model_name)
@@ -62,7 +66,7 @@ def train_nexus(data_path, model_name="microsoft/deberta-v3-small", epochs=3):
 
     optimizer = AdamW(model.parameters(), lr=2e-5)
     
-    # Loss Fonksiyonları
+    # Loss Functions
     criterion_cls = nn.CrossEntropyLoss()
     criterion_reg = nn.MSELoss()
 
@@ -80,19 +84,19 @@ def train_nexus(data_path, model_name="microsoft/deberta-v3-small", epochs=3):
 
             logits, tp_preds, val_preds = model(input_ids, attention_mask)
 
-            # --- MASKELENMİŞ LOSS HESABI ---
-            # 1. Sınıflandırma Kaybı (Her zaman hesaplanır)
+            # --- MASKED LOSS CALCULATION ---
+            # 1. Classification Loss (Calculated for all samples)
             loss_cls = criterion_cls(logits, labels)
 
-            # 2. Regresyon Kaybı (Sadece LONG (2) veya SHORT (1) ise hesaplanır)
-            mask = (labels != 0).float() # HOLD (0) olanları maskele
+            # 2. Regression Loss (Calculated only for LONG (2) or SHORT (1))
+            mask = (labels != 0).float() # Mask HOLD (0) samples
             
-            # Maskelenmiş MSE: (tahmin - gerçek)^2 * mask -> HOLD ise 0 olur
+            # Masked MSE: (prediction - target)^2 * mask -> HOLD results in 0
             loss_tp = (criterion_reg(tp_preds.squeeze(), tp_targets) * mask).mean()
             loss_val = (criterion_reg(val_preds.squeeze(), val_targets) * mask).mean()
 
-            # Toplam Kayıp (Lambda katsayıları: Regresyonu başta düşük tutuyoruz)
-            loss = loss_cls + (0.1 * loss_tp) + (0.1 * loss_val) 
+            # Total Loss (Lambda weights: initially low for regression)
+            loss = loss_cls + (0.1 * loss_tp) + (0.1 * loss_val)
             
             loss.backward()
             optimizer.step()
@@ -101,7 +105,7 @@ def train_nexus(data_path, model_name="microsoft/deberta-v3-small", epochs=3):
         print(f"Epoch {epoch+1}/{epochs} | Loss: {total_loss/len(loader):.4f}")
 
     torch.save(model.state_dict(), "nexus_multihead_final.bin")
-    print("Model kaydedildi.")
+    print("Model saved successfully.")
 
 if __name__ == "__main__":
-    train_nexus("data/nexus_elite_v2_12.json")
+    train_nexus(str(DATA_DIR / "nexus_elite_v2_12.json"))

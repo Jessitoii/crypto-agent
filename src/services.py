@@ -144,13 +144,13 @@ async def execute_trade_logic(ctx, pair, dec, stats, source, msg, changes, searc
         api_result = await ctx.real_exchange.execute_trade(
             pair, dec["action"], trade_amount, leverage, tp_pct, sl_pct
         )
-        if api_result == "Pozisyon Açma Hatası":
+        if api_result == "Execution failed":
             ctx.log_ui(
                 f"Binance rejected trade: {pair.upper()}. Simulation cancelled.",
                 "error",
             )
             can_open_paper_trade = False
-        elif api_result == "Bağlantı Yok":
+        elif api_result == "No connection":
             ctx.log_ui("API not connected. Falling back to Paper Trading.", "warning")
             can_open_paper_trade = True
         else:
@@ -399,11 +399,8 @@ async def process_news(msg, source, ctx):
     )
 
 
-# --- LOOPS ---
-
-
 async def websocket_loop(ctx):
-    """Main Binance Websocket loop with auto-recovery and memory initialization."""
+    """Main Binance Websocket loop with auto-recovery."""
     ctx.log_ui("Connecting Websocket (Sniper Mode)...", "info")
 
     while ctx.app_state.is_running:
@@ -568,7 +565,7 @@ async def telegram_loop(ctx):
 
 
 async def collector_loop(ctx):
-    """Periodically triggers data collection verification for pending model analysis events."""
+    """Periodically triggers data collection verification."""
     ctx.log_ui("Data Collector Active", "success")
     while True:
         await asyncio.sleep(60)

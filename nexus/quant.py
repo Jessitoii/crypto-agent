@@ -25,36 +25,34 @@ class NexusTechScoreGate:
         self.funding_limit = funding_limit
         self.vol_target = vol_target
 
-    # -------------------------
-    # Utility
-    # -------------------------
     def _sigmoid(self, x):
         return 1.0 / (1.0 + np.exp(-x))
 
     def _clamp(self, x):
         return float(np.clip(x, 0.0, 1.0))
 
-    # -------------------------
-    # Factor Gates
-    # -------------------------
     def rsi_gate(self, rsi, side):
-    # Gaussian-like scoring: En yüksek puanı 55-60 civarında ver
+        """
+        Gaussian-like scoring: Peak score centered around 55-60 for LONG, 45 for SHORT.
+        """
         center = 55 if side == "LONG" else 45
-        width = 15 # Bu genişlik puanın ne kadar yayılacağını belirler
+        width = 15 # Standard deviation of the score distribution
         
-        # Eşik değerine göre uzaklık
+        # Distance calculation
         diff = abs(rsi - center)
         score = np.exp(-(diff**2) / (2 * width**2))
         
-        # Ekstra Veto: Sert Kesim
-        if side == "LONG" and rsi > 75: score *= 0.1
-        if side == "SHORT" and rsi < 25: score *= 0.1
+        # Hard Cut Veto for extreme RSI levels
+        if side == "LONG" and rsi > 75: 
+            score *= 0.1
+        if side == "SHORT" and rsi < 25: 
+            score *= 0.1
         
         return score
 
     def funding_gate(self, funding, side):
         """
-        Penalize crowded side only.
+        Penalize crowded sides based on funding pressure.
         """
         direction = 1 if side == "LONG" else -1
         pressure = direction * funding
@@ -70,16 +68,12 @@ class NexusTechScoreGate:
 
     def volatility_gate(self, vol_z):
         """
-        Penalize extreme volatility regimes.
-        vol_z = ATR / rolling_ATR
+        Penalize extreme volatility regimes (vol_z = ATR / rolling_ATR).
         """
         return self._sigmoid(
             -self.k_vol * abs(vol_z - self.vol_target)
         )
 
-    # -------------------------
-    # Aggregation
-    # -------------------------
     def technical_score(
         self,
         side,
@@ -90,7 +84,7 @@ class NexusTechScoreGate:
         weights=None
     ):
         """
-        Returns 0-1 technical confidence score
+        Returns 0-1 technical confidence score via logit-space aggregation.
         """
 
         if weights is None:
@@ -108,7 +102,7 @@ class NexusTechScoreGate:
             "vol": self.volatility_gate(vol_z)
         }
 
-        # Logit-space aggregation (critical)
+        # Logit-space aggregation for robust scoring
         logit = 0.0
         for k, w in weights.items():
             g = np.clip(gates[k], 1e-6, 1 - 1e-6)
@@ -118,17 +112,17 @@ class NexusTechScoreGate:
         return self._clamp(score)
 
 def run_standalone_test():
+    """Diagnostic test for technical gate logic."""
     gate = NexusTechScoreGate()
     
-
-# Senaryo: RSI 20'den 80'e giderken, Trend sabitken LONG skoru nasıl değişiyor?
+    # Test Scenario: Evaluate how LONG technical score changes as RSI moves from 20 to 90
     rsi_values = np.linspace(20, 90, 100)
     scores = [gate.technical_score("LONG", rsi=r, funding=0.01, trend_strength=0.5, vol_z=1.0) for r in rsi_values]
-    print(scores)
+    
     plt.plot(rsi_values, scores)
     plt.xlabel("RSI")
     plt.ylabel("Technical Score")
-    plt.title("Technical Score vs RSI")
+    plt.title("Technical Score vs RSI (LONG Scenario)")
     plt.show()
 
 if __name__ == "__main__":

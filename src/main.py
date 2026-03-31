@@ -9,22 +9,17 @@ import threading
 
 # Modules
 from config import (
+    FIXED_TRADE_AMOUNT,
+    DATA_DIR,
     USE_GROQCLOUD,
     GROQCLOUD_API_KEY,
     GROQCLOUD_MODEL,
-    USE_MAINNET,
-    REAL_TRADING_ENABLED,
+    STARTING_BALANCE,
     API_KEY,
     API_SECRET,
     IS_TESTNET,
-    TARGET_CHANNELS,
-    RSS_FEEDS,
     API_ID,
-    API_HASH,
-    TELETHON_SESSION_NAME,
-    STARTING_BALANCE,
-    LEVERAGE,
-    FIXED_TRADE_AMOUNT,
+    API_HASH
 )
 from exchange import PaperExchange
 from brain import AgentBrain
@@ -36,13 +31,8 @@ from database import MemoryManager
 from dashboard import create_dashboard
 import services
 
-# Path Configuration
-path = os.path.realpath(__file__)
-dir = os.path.dirname(path)
-dir = dir.replace("src", "data")
-os.chdir(dir)
-
-SESSION_PATH = os.path.join(dir, "crypto_agent_session")
+# Runtime Configuration
+SESSION_PATH = str(DATA_DIR / "crypto_agent_session")
 
 class BotContext:
     def __init__(self):
@@ -70,12 +60,12 @@ if __name__ == "__main__":
     )
     ctx.real_exchange = BinanceExecutionEngine(API_KEY, API_SECRET, testnet=IS_TESTNET)
     ctx.collector = TrainingDataCollector()
-    ctx.dataset_manager = DatasetManager()
+    ctx.dataset_manager = DatasetManager(str(DATA_DIR / "training_dataset.jsonl"))
     ctx.telegram_client = TelegramClient(
         SESSION_PATH, API_ID, API_HASH, use_ipv6=False, timeout=10
     )
     ctx.stream_command_queue = None
-    ctx.memory = MemoryManager()
+    ctx.memory = MemoryManager(str(DATA_DIR / "nexus_db.sqlite"))
 
 
     # Technical Logger Wrapper

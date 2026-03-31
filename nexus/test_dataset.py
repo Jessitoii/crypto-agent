@@ -29,9 +29,6 @@ async def get_technicals_and_outcomes(ctx, pair, msg_ts):
     1. Technicals at moment of news (RSI, Trend, etc.)
     2. Future outcomes (Max Gain/Loss in next 20m, 1h)
     """
-    # We need 100 mins BEFORE for RSI/Indicators + 60 mins AFTER for outcomes
-    # Total range: [msg_ts - 100m, msg_ts + 60m]
-    
     start_ts_buffer = msg_ts - (100 * 60) # 100 mins before
     end_ts_outcome = msg_ts + (60 * 60)   # 60 mins after
     
@@ -40,16 +37,12 @@ async def get_technicals_and_outcomes(ctx, pair, msg_ts):
         interval='1m',
         startTime=int(start_ts_buffer * 1000),
         endTime=int(end_ts_outcome * 1000),
-        limit=200 # Should cover 160 mins easily
+        limit=200 
     )
     
     if not klines or len(klines) < 100:
         return None
 
-    # Parse Klines
-    # kline format: [open_time, open, high, low, close, ...]
-    # We need to find the index that corresponds to 'msg_ts'
-    
     msg_index = -1
     parsed_klines = []
     
@@ -63,19 +56,14 @@ async def get_technicals_and_outcomes(ctx, pair, msg_ts):
             'c': float(k[4]),
             'v': float(k[5])
         })
-        # Find the candle that CLOSET to msg_ts but ideally just before or at
-        # Since interval is 1m, check absolute diff < 60s
         if abs(k_ts - msg_ts) < 60:
             msg_index = i
             
-    if msg_index == -1 or msg_index < 14: # Need at least 14 for RSI
+    if msg_index == -1 or msg_index < 14:
         return None
 
-    # --- 1. CALCULATE TECHNICALS (At msg_index) ---
-    # Slice up to msg_index (inclusive)
+    # --- 1. CALCULATE TECHNICALS ---
     past_candles = parsed_klines[:msg_index+1]
-    
-    # RSI
     closes = [c['c'] for c in past_candles]
     prices = np.array(closes)
     
@@ -88,22 +76,13 @@ async def get_technicals_and_outcomes(ctx, pair, msg_ts):
     rs = up / down if down != 0 else 0
     rsi = 100 - (100 / (1 + rs))
     
-    # Momentum (1h change)
     if len(prices) >= 60:
         mom_1h = (prices[-1] - prices[-60]) / prices[-60] * 100
     else:
         mom_1h = 0.0
         
-    # Volatility (ATR-like or StdDev)
-    # Simple Vol Z: (Current Range - Avg Range) / Std Range ? 
-    # Let's use simplified Vol from quant.py: vol_z = ATR / rolling_ATR (implemented loosely here)
-    # We'll just pass a dummy or calculated vol.
-    # Let's calculate std dev of last 20 closes as proxy
     vol_z = np.std(prices[-20:]) / np.mean(prices[-20:]) * 100 if len(prices) >= 20 else 0.0
-
-    # BTC Trend (Fetch separately or rely on global cache? -> Fetching separate for simplicity)
-    # For speed, let's assume valid btc trend or skip it.
-    btc_trend = 0.0 # Placeholder for now to avoid doubled API calls per coin
+    btc_trend = 0.0 
     
     technicals = {
         'rsi': rsi,
@@ -113,10 +92,9 @@ async def get_technicals_and_outcomes(ctx, pair, msg_ts):
         'close': past_candles[-1]['c']
     }
 
-    # --- 2. CALCULATE OUTCOMES (Future) ---
+    # --- 2. CALCULATE OUTCOMES ---
     future_candles = parsed_klines[msg_index+1:]
     
-    # 20m Outcome
     outcome_20m = future_candles[:20]
     if not outcome_20m:
         max_gain_20m = 0.0
@@ -134,13 +112,13 @@ async def get_technicals_and_outcomes(ctx, pair, msg_ts):
     outcomes = {
         'max_gain_20m': max_gain_20m,
         'max_loss_20m': max_loss_20m,
-        'future_candles': future_candles # Save full future candles for simulation replay
+        'future_candles': future_candles 
     }
 
     return technicals, outcomes
 
 async def generate_dataset():
-    print("🚀 STARTED: Dataset Generation (15 Days)...")
+    print("[SYSTEM] Starting Dataset Generation (15 Day Window)...")
     
     # 1. Setup Context
     ctx = type('obj', (object,), {})
@@ -159,13 +137,11 @@ async def generate_dataset():
     
     # 3. Iterate
     results = []
-    # 15 days ago
     start_date = datetime.now(timezone.utc) - timedelta(days=15)
-    
     count = 0
     
     for channel in TARGET_CHANNELS:
-        print(f"📡 Scanning {channel}...")
+        print(f"[SCAN] Analyzing channel: {channel}")
         async for message in client.iter_messages(channel, offset_date=start_date, reverse=True):
             if not message.text: continue
             
@@ -180,14 +156,13 @@ async def generate_dataset():
                 
             for pair in detected_pairs:
                 try:
-                    # Logic to skip if pair is invalid or USDT
                     if pair == "USDT": continue
 
                     print(f"Processing {pair} at {message.date}...")
                     
                     data = await get_technicals_and_outcomes(ctx, pair, msg_ts)
                     if not data:
-                        print(f"  ❌ No data for {pair}")
+                        print(f"[WARNING] Insufficient data for {pair}")
                         continue
                         
                     technicals, outcomes = data
@@ -218,17 +193,17 @@ async def generate_dataset():
                     count += 1
                     
                     if count % 10 == 0:
-                        print(f"✅ Collected {count} samples so far...")
+                        print(f"[INFO] Current Progress: {count} samples collected.")
                         
                 except Exception as e:
-                    print(f"⚠️ Error {pair}: {e}")
+                    print(f"[ERROR] Processing failure for {pair}: {e}")
                     
     # 4. Save
     output_path = os.path.join(dir, "offline_test_data.json")
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(results, f, indent=2, ensure_ascii=False)
         
-    print(f"💾 Saved {len(results)} samples to {output_path}")
+    print(f"[SUCCESS] Dataset completed. {len(results)} samples saved to {output_path}")
     
     await client.disconnect()
     await ctx.real_exchange.client.close_connection()

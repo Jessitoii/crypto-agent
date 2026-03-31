@@ -6,20 +6,19 @@ from telethon import TelegramClient
 from dotenv import load_dotenv
 from services import send_telegram_alert
 
-# 1. LOGLARI FULLE (DEBUG MODU)
-# Bu sayede "Connect" derken arka planda ne döndüğünü göreceğiz.
+# Enable full debug logging for troubleshooting connections
 logging.basicConfig(
     format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s',
-    level=logging.DEBUG  # <--- KRİTİK AYAR
+    level=logging.DEBUG 
 )
 
 load_dotenv()
 
 API_ID = os.getenv('API_ID')
 API_HASH = os.getenv('API_HASH')
-SESSION_NAME = 'crypto_agent_session' # Geçici bir session kullanalım
+SESSION_NAME = 'crypto_agent_session'
 
-# Klasör ayarları (Standart prosedür)
+# Path configuration
 path = os.path.realpath(__file__)
 dir = os.path.dirname(path)
 dir = dir.replace('src', 'data')
@@ -32,45 +31,44 @@ ctx = Context()
 ctx.telegram_client = None
 
 async def main():
-    print(f"--- 🕵️‍♂️ DERİN ANALİZ BAŞLIYOR ---")
-    print(f"Python Sürümü: {sys.version}")
-    print(f"Session Yolu: {SESSION_PATH}")
+    print(f"--- STARTING TELEGRAM DEBUG ANALYSIS ---")
+    print(f"Python Version: {sys.version}")
+    print(f"Session Path: {SESSION_PATH}")
     
-    # 2. İSTEMCİ AYARLARI (IPv6'yı Kapatıyoruz)
-    # use_ipv6=False parametresi bazen hayat kurtarır.
+    # Initialize client with IPv4 force and strict timeout
     client = TelegramClient(
         SESSION_PATH, 
         int(API_ID), 
         API_HASH,
-        use_ipv6=False,    # <--- IPv4 ZORLAMASI
-        timeout=10         # <--- 10 SANİYE SONRA HATA VERSİN (Beklemesin)
+        use_ipv6=False,    
+        timeout=10         
     )
 
-    print("⏳ client.connect() çağrılıyor... (Logları izle)")
+    print("Attempting client.connect()...")
     
     try:
-        # Bağlantı denemesi
+        # Connection attempt
         await client.connect()
         ctx.telegram_client = client
         
         await send_telegram_alert(ctx, "Telegram Debug")
         if client.is_connected():
-            print("\n✅ BAĞLANTI BAŞARILI! (Sorun IPv6 veya Timeout olabilirmiş)")
+            print("\n[SUCCESS] Connection established.")
             me = await client.get_me()
-            await client.send_message('me', 'Merhaba')
+            await client.send_message('me', 'Debug Message')
             if me:
-                print(f"👤 Kimlik: {me.username}")
+                print(f"Identity: {me.username}")
             else:
-                print("❓ Bağlı ama kimlik yok (Yetkisiz Session).")
+                print("Connected but no identity found (Unauthorized session).")
         else:
-            print("\n❌ Bağlantı kurulamadı (is_connected=False)")
+            print("\n[ERROR] Connection failed (is_connected=False).")
             
     except Exception as e:
-        print(f"\n💥 HATA YAKALANDI: {e}")
+        print(f"\n[CRITICAL ERROR] {e}")
     
     finally:
         await client.disconnect()
-        print("--- ANALİZ BİTTİ ---")
+        print("--- ANALYSIS COMPLETED ---")
 
 if __name__ == '__main__':
     asyncio.run(main())

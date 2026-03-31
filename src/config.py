@@ -1,4 +1,10 @@
 import os
+from pathlib import Path
+
+# Project Directory Routing
+BASE_DIR = Path(__file__).resolve().parent.parent
+DATA_DIR = BASE_DIR / "data"
+NEXUS_DIR = BASE_DIR / "nexus"
 from dotenv import load_dotenv
 # Import prompts for external module access
 from prompts import (

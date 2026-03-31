@@ -20,21 +20,21 @@ from sentence_transformers import SentenceTransformer
 class NexusLayerFusion(nn.Module):
     def __init__(self, hidden_size=768):
         super().__init__()
-        # Üç katmanı yan yana koyduğumuz için giriş boyutu 768 * 3 oluyor
+        # Concatenate three layers, resulting in 3x hidden size input
         self.proj = nn.Linear(hidden_size * 3, hidden_size)
         self.norm = nn.LayerNorm(hidden_size)
         self.dropout = nn.Dropout(0.2)
 
     def forward(self, all_hidden_states):
-        # L8, L10 ve L12 (Son katman)
+        # Extract L8, L10, and L12 (Final layer)
         l8 = all_hidden_states[8]
         l10 = all_hidden_states[10]
         l12 = all_hidden_states[11]
 
-        # Katmanları enine (dim=-1) birleştiriyoruz
-        fused = torch.cat([l8, l10, l12], dim=-1) # Boyut: [Batch, Seq, 2304]
+        # Concatenate layers along the hidden dimension
+        fused = torch.cat([l8, l10, l12], dim=-1) # Shape: [Batch, Seq, 2304]
 
-        # Bu devasa vektörü 768 boyutuna indirirken nedensellik etkileşimlerini öğrenir
+        # Project fused vector back to hidden_size to learn inter-layer interactions
         x = self.proj(fused)
         x = self.norm(x)
         return self.dropout(x)
@@ -71,7 +71,6 @@ class NexusV2Production(nn.Module):
         super().__init__()
         self.gate_encoder = AutoModel.from_pretrained(backbone_name,output_hidden_states=True )
         self.dir_encoder = AutoModel.from_pretrained(backbone_name, output_hidden_states=True)
-        # self.encoder SİLİNDİ
         self.tokenizer = AutoTokenizer.from_pretrained(backbone_name)
         hidden_size = self.gate_encoder.config.hidden_size
 
@@ -84,12 +83,12 @@ class NexusV2Production(nn.Module):
         self.dir_out = nn.Linear(hidden_size, 1)
 
         # REVISION: TP Head redesigned to avoid Zero-Collapse.
-        # Tanh yerine lineer çıktı + Clipping (Hardtanh) kullanarak gradyan akışını güçlendirdik.
+        # Uses Hardtanh instead of Tanh for output clipping to maintain gradient flow.
         self.tp_head = nn.Sequential(
             nn.Linear(hidden_size, 128),
             nn.GELU(),
             nn.Linear(128, 1),
-            nn.Hardtanh(min_val=-1.0, max_val=1.0) # Gradyanların ölmesini engeller
+            nn.Hardtanh(min_val=-1.0, max_val=1.0)
         )
         self.val_head = nn.Sequential(
             nn.Linear(hidden_size, 128),
@@ -106,7 +105,7 @@ class NexusV2Production(nn.Module):
         gate_out = self.gate_encoder(input_ids=input_ids, attention_mask=attention_mask)
         gate_hidden = self.gate_fusion(gate_out.hidden_states)  # [batch, seq, hidden]
 
-        # FIX: mask parametresini geç
+        # Pass attention mask to reasoner
         gate_ctx = self.gate_reasoner(gate_hidden, attention_mask)  # [batch, hidden]
         gate_logit = self.gate_out(gate_ctx)
         gate_prob = torch.sigmoid(gate_logit)  # [batch, 1]
@@ -115,11 +114,11 @@ class NexusV2Production(nn.Module):
         dir_out = self.dir_encoder(input_ids=input_ids, attention_mask=attention_mask)
         dir_hidden = self.dir_fusion(dir_out.hidden_states)  # [batch, seq, hidden]
 
-        # FIX: Gate mask tek seferde doğru şekilde uygula
+        # Apply gate masking
         gate_mask = gate_prob.unsqueeze(-1)  # [batch, 1, 1]
         dir_hidden_gated = dir_hidden * gate_mask  # [batch, seq, hidden]
 
-        # FIX: mask parametresini geç
+        # Pass attention mask to reasoner
         dir_ctx = self.dir_reasoner(dir_hidden_gated, attention_mask)
         dir_logit = self.dir_out(dir_ctx)
 
@@ -136,7 +135,7 @@ class NexusV2Production(nn.Module):
             'dir_ctx': dir_ctx
         }
 
-    def predict(self, texts, threshold=0.5, temperature=0.5301): # Kalibre edilmiş temp kullan!
+    def predict(self, texts, threshold=0.5, temperature=0.5301): # Use calibrated temperature
       """
       NEXUS v5.0 Dual-Core Inference
       """
@@ -146,7 +145,7 @@ class NexusV2Production(nn.Module):
       if isinstance(texts, str):
           texts = [texts]
 
-      # Stage 1 eğitimiyle uyumlu max_length
+      # max_length aligned with Stage 1 training
       inputs = self.tokenizer(
           texts,
           return_tensors="pt",
@@ -161,7 +160,7 @@ class NexusV2Production(nn.Module):
               attention_mask=inputs['attention_mask']
           )
 
-          # Logitleri sıcaklık ile ölçekle
+          # Scale logits by temperature
           gate_probs = torch.sigmoid(outputs['gate'] / temperature).cpu().numpy()
           dir_probs = torch.sigmoid(outputs['direction'] / temperature).cpu().numpy()
           tp_preds = outputs['tp'].cpu().numpy()
@@ -174,14 +173,14 @@ class NexusV2Production(nn.Module):
 
           gate_decision = 1 if g_prob >= threshold else 0
 
-          # Keskin Nişancı Mantığı: Eğer işlem yoksa yön bilgisini kirletme
+          # Gate Decision Logic: Avoid direction pollution if no trade is detected
           if gate_decision == 1:
               direction = 'LONG' if d_prob >= 0.5 else 'SHORT'
               dir_conf = d_prob if d_prob >= 0.5 else (1 - d_prob)
               tp_val = round(float(tp_preds[i][0]), 2)
               validity_val = round(float(val_preds[i][0]), 1)
           else:
-              direction = 'WAIT' # Veya None
+              direction = 'WAIT'
               dir_conf = 0.0
               tp_val = 0.0
               validity_val = 0.0
@@ -206,26 +205,26 @@ class NexusPredictor:
     def __init__(self, model_path="standard_deberta_nexus"):
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         
-        # 1. Kaydedilen modeli ve tokenizer'ı yükle
+        # 1. Load weights and tokenizer
         try:
             self.tokenizer = AutoTokenizer.from_pretrained(model_path)
         except Exception:
-            # Yerelde bulamazsa orijinal DeBERTa tokenizer'ını indir/yükle
-            print("Yerel tokenizer bulunamadı, orijinal DeBERTa tokenizer'ı yükleniyor...")
+            # Fallback to original DeBERTa tokenizer if local not found
+            print("Local tokenizer not found, downloading original DeBERTa tokenizer...")
             self.tokenizer = AutoTokenizer.from_pretrained("microsoft/deberta-v3-base")
             
         self.model = AutoModelForSequenceClassification.from_pretrained(model_path).to(self.device)
         self.model.eval()
         self.labels = {0: "HOLD", 1: "SHORT", 2: "LONG"}
         
-        # Sınıf haritası
+        # Class mapping
         self.labels = {0: "HOLD", 1: "SHORT", 2: "LONG"}
 
     def predict(self, news_text, symbol):
-        # Veriyi eğitimdeki formatta birleştir
+        # Concatenate data using training format
         formatted_text = f"[N] {news_text} [C] {symbol}"
         
-        # Tokenize et
+        # Tokenize
         inputs = self.tokenizer(
             formatted_text,
             return_tensors="pt",
@@ -234,13 +233,13 @@ class NexusPredictor:
             padding=True
         ).to(self.device)
 
-        # Tahmin yap
+        # Inference
         with torch.no_grad():
             outputs = self.model(**inputs)
             logits = outputs.logits
             prediction = torch.argmax(logits, dim=-1).item()
             
-            # Olasılıkları görmek istersen (opsiyonel)
+            # Extract confidence probabilities
             probs = torch.nn.functional.softmax(logits, dim=-1)
             confidence = probs[0][prediction].item()
 

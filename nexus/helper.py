@@ -37,7 +37,6 @@ def convert_nexus_to_grpo_sft(input_file, output_file):
     with open(input_file, 'r', encoding='utf-8') as f:
         lines = f.readlines()
 
-
     converted_data = []
 
     for line in lines:
@@ -45,18 +44,17 @@ def convert_nexus_to_grpo_sft(input_file, output_file):
         user_news = data['messages'][1]['content']
         assistant_raw = data['messages'][2]['content']
         
-        # 1. Muhakeme (Reasoning) kısmını ayır
+        # Extract reasoning section
         reasoning_match = re.search(r"REASONING:(.*?)(?=ACTION:|$)", assistant_raw, re.S)
         reasoning_text = reasoning_match.group(1).strip() if reasoning_match else "Analyzing market structure..."
 
-        # 2. Düz metin olan Action kısımlarını Regex ile yakala
-        # (ACTION: SHORT, CONVICTION_SCORE: 87 vb.)
+        # Extract text-based Action attributes via Regex (e.g. ACTION: SHORT, CONVICTION_SCORE: 87)
         action_val = re.search(r"ACTION:\s*(\w+)", assistant_raw)
         conviction_val = re.search(r"CONVICTION_SCORE:\s*(\d+)", assistant_raw)
         tp_val = re.search(r"TP_PCT:\s*([-+]?\d*\.?\d+)", assistant_raw)
         validity_val = re.search(r"VALIDITY_MINUTES:\s*(\d+)", assistant_raw)
 
-        # 3. JSON objesini oluştur
+        # Construct solution object
         solution_dict = {
             "reasoning": reasoning_text,
             "action": action_val.group(1) if action_val else "HOLD",
@@ -65,13 +63,11 @@ def convert_nexus_to_grpo_sft(input_file, output_file):
             "validity_minutes": int(validity_val.group(1)) if validity_val else 0
         }
         
-        # JSON'u stringe çevir (indent=2 okunabilirliği artırır ama LLM eğitimi için opsiyoneldir)
+        # Serialize to JSON string
         solution_json = json.dumps(solution_dict, ensure_ascii=False)
 
-        # 4. Yeni formatı birleştir
-        final_assistant_content = (
-            f"{solution_json}"
-        )
+        # Assemble final conversation entry
+        final_assistant_content = f"{solution_json}"
 
         new_entry = {
             "messages": [
@@ -86,7 +82,8 @@ def convert_nexus_to_grpo_sft(input_file, output_file):
         for line in converted_data:
             f.write(line)
 
-    print(f"✅ {len(converted_data)} veri 'Strict JSON' formatına çevrildi: {output_file}")
+    print(f"[SUCCESS] {len(converted_data)} records converted to 'Strict JSON' format: {output_file}")
 
-# Çalıştır
-convert_nexus_to_grpo_sft('data/nexus_train_ready_v3.jsonl', 'nexus_grpo_sft_ready.jsonl')
+# Execution
+if __name__ == "__main__":
+    convert_nexus_to_grpo_sft('data/nexus_train_ready_v3.jsonl', 'nexus_grpo_sft_ready.jsonl')

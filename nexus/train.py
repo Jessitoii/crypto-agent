@@ -7,8 +7,12 @@ from tqdm import tqdm
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import GroupShuffleSplit
+import os
+import sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from config import DATA_DIR
 
-# 1. KONFİGÜRASYON
+# 1. CONFIGURATION
 class Config:
     MODEL_NAME = "microsoft/deberta-v3-base"
     MAX_LEN = 256
@@ -17,7 +21,7 @@ class Config:
     LR = 2e-5
     NUM_CLASSES = 3  # 0: Hold, 1: Short, 2: Long
 
-# 2. DATASET YAPISI
+# 2. DATASET STRUCTURE
 class NewsDataset(Dataset):
     def __init__(self, df, tokenizer, max_len):
         self.texts = df['text'].tolist()
@@ -43,12 +47,12 @@ class NewsDataset(Dataset):
             'labels': torch.tensor(self.labels[idx], dtype=torch.long)
         }
 
-# 3. EĞİTİM FONKSİYONU
+# 3. TRAINING FUNCTION
 def train_standard_deberta(train_df, val_df):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     tokenizer = AutoTokenizer.from_pretrained(Config.MODEL_NAME)
     
-    # HuggingFace'in hazır sınıflandırma modelini kullanıyoruz
+    # Using standard HuggingFace sequence classification model
     model = AutoModelForSequenceClassification.from_pretrained(
         Config.MODEL_NAME, 
         num_labels=Config.NUM_CLASSES
@@ -84,24 +88,24 @@ def train_standard_deberta(train_df, val_df):
             total_loss += loss.item()
             pbar.set_postfix({'loss': f"{loss.item():.4f}"})
             
-    # Modeli kaydet
+    # Save model
     model.save_pretrained("standard_deberta_nexus")
-    print("Eğitim tamamlandı ve model kaydedildi.")
+    print("Training complete. Model saved.")
 
 
 def prepare_nexus_data(json_path):
-    # 1. Veriyi Yükle
-    print(f"Veri yükleniyor: {json_path}")
+    # 1. Load Data
+    print(f"Loading data: {json_path}")
     df = pd.read_json(json_path)
     
-    # 2. Gerekli Sütun Kontrolü
+    # 2. Column Validation
     required_cols = ['text', 'label', 'original_id']
     for col in required_cols:
         if col not in df.columns:
-            raise ValueError(f"Hata: Veri setinde '{col}' sütunu bulunamadı!")
+            raise ValueError(f"Error: Required column '{col}' missing from dataset.")
 
-    # 3. Group-Based Splitting (Sızıntıyı Önlemek İçin Şart)
-    # Aynı 'original_id'ye sahip tüm satırlar aynı sete gider.
+    # 3. Group-Based Splitting
+    # Ensures all rows with the same 'original_id' are in the same split to prevent leakage.
     gss = GroupShuffleSplit(n_splits=1, train_size=0.85, random_state=42)
     
     train_idx, val_idx = next(gss.split(df, groups=df['original_id']))
@@ -109,20 +113,20 @@ def prepare_nexus_data(json_path):
     train_df = df.iloc[train_idx].reset_index(drop=True)
     val_df = df.iloc[val_idx].reset_index(drop=True)
 
-    # 4. İstatistikleri Raporla
+    # 4. Statistics Report
     print("\n" + "="*30)
-    print("VERİ BÖLME RAPORU")
+    print("DATA SPLIT REPORT")
     print("="*30)
-    print(f"Toplam Satır: {len(df)}")
-    print(f"Eğitim Satır: {len(train_df)} ({train_df['original_id'].nunique()} eşsiz haber)")
-    print(f"Validasyon Satır: {len(val_df)} ({val_df['original_id'].nunique()} eşsiz haber)")
+    print(f"Total Rows: {len(df)}")
+    print(f"Train Rows: {len(train_df)} ({train_df['original_id'].nunique()} unique news articles)")
+    print(f"Validation Rows: {len(val_df)} ({val_df['original_id'].nunique()} unique news articles)")
     
-    print("\nSınıf Dağılımı (Train):")
+    print("\nClass Distribution (Train):")
     # 0: Hold, 1: Short, 2: Long
     print(train_df['label'].value_counts(normalize=True).sort_index())
     
     return train_df, val_df
 
-train_df, val_df = prepare_nexus_data('data/nexus_elite_dataset_v5.json')
+train_df, val_df = prepare_nexus_data(str(DATA_DIR / "nexus_elite_dataset_v5.json"))
 
 train_standard_deberta(train_df, val_df)

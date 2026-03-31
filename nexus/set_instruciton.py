@@ -2,8 +2,7 @@ import json
 import re
 import os
 
-# --- AYARLAR ---
-# Dosya yollarını tam kontrol et!
+# --- SETTINGS ---
 INPUT_FILE = "data/synthetic_finetune_data.jsonl" 
 OUTPUT_FILE = "data/final_finetune_ready.json"
 
@@ -26,18 +25,18 @@ def get_volatility_category(peak_pct):
         if val >= 2.5: return "High"
         if val >= 1.0: return "Medium"
         return "Low"
-    except:
+    except Exception:
         return "Low"
 
 def transform_data():
     if not os.path.exists(INPUT_FILE):
-        print(f"❌ HATA: {INPUT_FILE} bulunamadı! Lütfen yolu kontrol et.")
+        print(f"[ERROR] {INPUT_FILE} not found! Please verify the path.")
         return
 
     final_list = []
     processed_count = 0
 
-    print(f"🔄 {INPUT_FILE} okunuyor ve dönüştürülüyor...")
+    print(f"[INFO] Parsing and transforming {INPUT_FILE}...")
 
     with open(INPUT_FILE, 'r', encoding='utf-8') as f:
         for line_num, line in enumerate(f, 1):
@@ -47,15 +46,14 @@ def transform_data():
             try:
                 entry = json.loads(line)
                 
-                # 1. Mevcut output'u parçala (Hatırla: Teacher'dan gelen format)
-                # Output genelde "Analysis: ... \nAction: ... \nPeak: ..." şeklindeydi.
+                # Parse current teacher-generated output structure
                 output_text = entry.get('output', '')
                 lines = output_text.split("\n")
                 
                 analysis_line = next((l for l in lines if l.startswith("Analysis:")), "Analysis: N/A")
                 action_line = next((l for l in lines if l.startswith("Action:")), "Action: HOLD")
                 
-                # 2. Peak değerini REGEX ile çek
+                # Extract numeric peak value via REGEX
                 peak_line = next((l for l in lines if l.startswith("Peak:")), "")
                 match = re.search(r"Peak:\s*(-?[\d.]+)", peak_line)
                 
@@ -65,10 +63,10 @@ def transform_data():
                 else:
                     vol_cat = "Low"
 
-                # 3. Formata uygun yeni entry oluştur
+                # Construct final entry following specified format
                 new_entry = {
                     "instruction": FINAL_INSTRUCTION,
-                    "input": entry.get('input', ''), # Mevcut inputu koru
+                    "input": entry.get('input', ''), 
                     "output": f"{analysis_line}\n{action_line}\nExpected Volatility: {vol_cat}"
                 }
                 
@@ -76,14 +74,14 @@ def transform_data():
                 processed_count += 1
                 
             except json.JSONDecodeError as e:
-                print(f"⚠️ Satır {line_num} atlandı (Hatalı JSON): {e}")
+                print(f"[WARNING] Line {line_num} skipped (Invalid JSON): {e}")
                 continue
 
-    # Eğitim için standart JSON (List) formatında kaydet
+    # Persist in standard JSON list format for fine-tuning
     with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
         json.dump(final_list, f, indent=4, ensure_ascii=False)
 
-    print(f"✅ Başarılı! {processed_count} satır işlendi ve {OUTPUT_FILE} dosyasına kaydedildi.")
+    print(f"[SUCCESS] {processed_count} lines processed and exported to {OUTPUT_FILE}.")
 
 if __name__ == "__main__":
     transform_data()

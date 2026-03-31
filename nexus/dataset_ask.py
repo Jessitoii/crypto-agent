@@ -10,29 +10,31 @@ from google.genai import types
 
 load_dotenv()
 
+import sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from config import DATA_DIR
 MODE = "GEMINI"
 
-# --- AYARLAR ---
+# --- SETTINGS ---
 GROQ_API_KEY = os.getenv("GROQCLOUD_API_KEY")
-INPUT_FILE = "data/hold_data.json"
-OUTPUT_FILE = "data/hold_data_reasoning.json"
-IRREVELANT_OUTPUT_FILE = "data/nexus_elite_v2_12_ultra_pure_groq_irrelevant.json"
+INPUT_FILE = str(DATA_DIR / "hold_data.json")
+OUTPUT_FILE = str(DATA_DIR / "hold_data_reasoning.json")
+IRREVELANT_OUTPUT_FILE = str(DATA_DIR / "nexus_elite_v2_12_ultra_pure_groq_irrelevant.json")
 MODEL = "llama-3.3-70b-versatile"
 GEMINI_API_KEY = os.getenv("GOOGLE_API_KEY")
 
 client = AsyncGroq(api_key=GROQ_API_KEY)
 gclient = genai.Client(api_key=GEMINI_API_KEY)
 
-# --- YARDIMCI FONKSİYON: GÜVENLİ KAYIT ---
 def save_progress(data, filename):
-    """Veriyi diske yazar, veri kaybını önler."""
+    """Writes data to disk to prevent data loss."""
     with open(filename, 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
-        f.flush() # Buffer'ı zorla boşalt
+        f.flush()
 
 async def check_relevance(news_text, label, symbol):
     """
-    Haberin coin ile alakasını LLM'e sorar. Timeout mekanizması eklenmiştir.
+    Asks LLM about the relevance of the news to the coin.
     """
     action_map = {1: "SHORT (Price Drop)", 2: "LONG (Price Rise)", 0: "HOLD"}
     intended_action = action_map.get(label, "UNKNOWN")
@@ -72,10 +74,7 @@ async def check_relevance(news_text, label, symbol):
     
     while retries < max_retries:
         try:
-            # --- KRİTİK EKLENTİ: TIMEOUT ---
-            # asyncio.wait_for ile API çağrısını sarmalıyoruz.
-            # 30 saniye içinde cevap gelmezse exception fırlatır ve retry mekanizması çalışır.
-            
+            # Wrap API call with asyncio.wait_for to trigger retry on timeout
             if MODE == "GROQ":
                 completion = await asyncio.wait_for(
                     client.chat.completions.create(
@@ -84,22 +83,16 @@ async def check_relevance(news_text, label, symbol):
                         temperature=0,
                         max_tokens=10
                     ),
-                    timeout=30.0 # 30 Saniye Timeout
+                    timeout=30.0
                 )
                 response = completion.choices[0].message.content.strip()
                 return "[RELEVANT]" in response
 
             elif MODE == "GEMINI":
-                # Gemini synchronous client kullanıyorsun ama async loop içindeyiz.
-                # Bloklamayı önlemek için thread içinde çalıştırmak daha sağlıklı ama
-                # şimdilik basit timeout mantığı kuralım.
-                # Google GenAI kütüphanesi kendi timeout parametresine sahip olabilir, 
-                # ancak asyncio ile sarmalamak en garantisidir (blocking call olsa bile).
-                
-                # Not: gclient senkron çalışır, bu yüzden asyncio.to_thread kullanmalıyız.
+                # gclient is synchronous, so wrapping with asyncio.to_thread for non-blocking execution
                 def run_gemini():
                     return gclient.models.generate_content(
-                        model="gemma-3-27b-it", # Model ismini düzelttim, gemma-3 henüz stabil olmayabilir veya gemma-2-27b-it kastettin.
+                        model="gemma-3-27b-it", 
                         contents=prompt,
                         config=types.GenerateContentConfig(temperature=0)
                     )
@@ -112,9 +105,9 @@ async def check_relevance(news_text, label, symbol):
                 return "[RELEVANT]" in response
 
         except asyncio.TimeoutError:
-            print(f"⏰ [TIMEOUT] İstek zaman aşımına uğradı. Tekrar deneniyor ({retries+1}/{max_retries})")
+            print(f"[TIMEOUT] Request timed out. Retrying ({retries+1}/{max_retries})")
             retries += 1
-            await asyncio.sleep(2) # Biraz bekle
+            await asyncio.sleep(2)
 
         except Exception as e:
             error_msg = str(e)
@@ -126,47 +119,40 @@ async def check_relevance(news_text, label, symbol):
                 if ms_match: wait_time = float(ms_match.group(1)) / 1000.0
                 elif sec_match: wait_time = float(sec_match.group(1))
                 wait_time += 0.5
-                print(f"⏳ [RATE LIMIT] {wait_time:.2f}s bekleniyor... (Deneme {retries}/{max_retries})")
+                print(f"[RATE LIMIT] Waiting {wait_time:.2f}s... (Attempt {retries}/{max_retries})")
                 await asyncio.sleep(wait_time)
             else:
-                print(f"❌ [ERROR] {e}")
-                retries += 1 # Diğer hatalarda da retry yapması için artırdım, yoksa sonsuz döngü olabilir.
+                print(f"[ERROR] {e}")
+                retries += 1 
                 await asyncio.sleep(1)
                 
-    return False # Retries biterse False dön (Güvenli taraf)
+    return False
 
 async def process_dataset():
-    # Mevcut çıktı dosyası varsa oradan devam et (Resume Capability)
     processed_count = 0
     perfected_data = []
     irrelevant_data = []
-    # Eğer daha önce bir çıktı dosyası oluşturduysan onu yükle
+    
     if os.path.exists(OUTPUT_FILE):
         try:
             with open(OUTPUT_FILE, 'r', encoding='utf-8') as f:
                 perfected_data = json.load(f)
-                # Basit bir mantıkla kaç tanesi işlendiğini tahmin edemeyiz çünkü filtreleme yapıyoruz.
-                # Ancak kaynak veri setini sırayla işliyorsak, index takibi yapmak gerekir.
-                # Şimdilik "Resume" mantığını karıştırmıyorum, sadece veri kaybını önlemeye odaklanıyorum.
-        except:
+        except Exception:
             pass
 
     with open(INPUT_FILE, 'r', encoding='utf-8') as f:
         data = json.load(f)
     
-    print(f"🔍 Toplam {len(data)} entry inceleniyor...")
+    print(f"[INFO] Analyzing total {len(data)} entries...")
     
     try:
         relevant_count = 0
         irrelevant_count = 0
-        # Tqdm'e 'initial' parametresi ekleyerek resume mantığı eklenebilir ama
-        # şimdilik baştan başlatıp sürekli kaydetmeye odaklanalım.
+        
         for i, entry in enumerate(tqdm(data)):
+            # --- OPTIMIZATION ---
+            # Skip entry if already processed logic could be added here
             
-            # --- OPTİMİZASYON ---
-            # Eğer bu entry zaten perfected_data içinde varsa (ID kontrolü vb.) atla
-            # (Bu kısım senin veri yapına göre özelleştirilmeli, şimdilik pas geçiyorum)
-
             news_text = entry.get('text', '')
             symbol = news_text.split('[C]')[-1].strip() if '[C]' in news_text else "General"
             
@@ -179,29 +165,26 @@ async def process_dataset():
                 irrelevant_count += 1
                 irrelevant_data.append(entry)
 
-            # --- CHECKPOINT SAVING ---
-            # Her 10 işlemde bir veya son işlemde diske yaz
-            
+            # Checkpoint saving
             save_progress(perfected_data, OUTPUT_FILE)
             save_progress(irrelevant_data, IRREVELANT_OUTPUT_FILE)
+            
     except KeyboardInterrupt:
-        print("\n🛑 [USER INTERRUPT] İşlem kullanıcı tarafından durduruldu!")
-        print("💾 Mevcut ilerleme kaydediliyor...")
+        print("\n[USER INTERRUPT] Process stopped by user.")
+        print("[SYSTEM] Saving current progress...")
         save_progress(perfected_data, OUTPUT_FILE)
         save_progress(irrelevant_data, IRREVELANT_OUTPUT_FILE)
-        print("✅ Kaydedildi. Çıkış yapılıyor.")
+        print("[SUCCESS] Data saved. Exiting.")
         return
 
-    print(f"\n✅ İşlem tamamlandı!")
-    print(f"📉 Orijinal: {len(data)} | ✨ Temizlenmiş: {relevant_count} | ❌ İrrelevant: {irrelevant_count}")
-    f.close()
+    print(f"\n[SUCCESS] Operation completed.")
+    print(f"[STATS] Original: {len(data)} | Cleaned: {relevant_count} | Irrelevant: {irrelevant_count}")
 
 if __name__ == "__main__":
     if GROQ_API_KEY == "YOUR_GROQ_API_KEY":
-        print("❌ Hata: API Key eksik!")
+        print("[ERROR] API Key missing.")
     else:
         try:
             asyncio.run(process_dataset())
-            
         except KeyboardInterrupt:
             pass

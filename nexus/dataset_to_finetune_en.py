@@ -10,8 +10,7 @@ from google import genai
 from google.genai import types
 from pydantic import BaseModel, Field
 
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from config import GROQCLOUD_API_KEY, GEMINI_MODEL, GOOGLE_API_KEY
+from config import GROQCLOUD_API_KEY, GEMINI_MODEL, GOOGLE_API_KEY, DATA_DIR
 
 class Response(BaseModel):
     reasoning: str = Field(..., description="90-130 words. Mechanistic flow analysis. Focus on news-to-price transmission.")
@@ -50,22 +49,20 @@ You must respond ONLY with a JSON object. No prose, no intro, no outro.
 """
 # Config
 MODEL_NAME = "llama-3.3-70b-versatile" 
-INPUT_FILE = "data/raw_market_outcomes_v1_5.jsonl"
-OUTPUT_FILE = "data/synthetic_finetune_data_v2_5.jsonl"
-
-
+INPUT_FILE = str(DATA_DIR / "raw_market_outcomes_v1_5.jsonl")
+OUTPUT_FILE = str(DATA_DIR / "synthetic_finetune_data_v2_5.jsonl")
 
 client = AsyncGroq(api_key=GROQCLOUD_API_KEY)
 gclient = genai.Client(api_key=GOOGLE_API_KEY)
 USE_GEMINI = True
 
 def get_sampling_params(phase, persona):
-    # Çok daha düşük temperature: Daha kararlı ve daha az "uydurma"
+    # Low temperature for stability and reduced hallucination
     base_temp = 0.15 if phase == "canonical" else 0.25
     return {
         "temperature": base_temp,
-        "top_p": 0.1, # Top_p'yi de düşür ki en yüksek olasılıklı kelimelere odaklansın
-        "frequency_penalty": 1.1, # Tekrarları engellemek için hafifçe artır
+        "top_p": 0.1, 
+        "frequency_penalty": 1.1, 
         "presence_penalty": 0.0
     }
 
@@ -83,7 +80,7 @@ async def ask_teacher_llm(row, phase="canonical", persona="neutral"):
     peak_pct = d['peak_pct']
     peak_min = d['peak_min']
 
-    # 2️⃣, 3️⃣, 4️⃣, 5️⃣ Düzeltmeler: Edge, Horizon, Consistency ve Risk Posture
+    # Adjustments: Edge, Horizon, Consistency and Risk Posture
     prompt = f"""
 Role: Senior Market Microstructure & Order Flow Analyst.
 Objective: Conduct a mechanical potentiality analysis of a news event at $t_0$.
@@ -175,35 +172,32 @@ JSON OUTPUT FORMAT:
         except Exception as e:
             error_msg = str(e)
 
-            # --- 429 RATE LIMIT AYIKLAMA MANTIĞI ---
+            # --- 429 RATE LIMIT PARSING LOGIC ---
             if "429" in error_msg:
                 retries += 1
-                # Regex ile bekleme süresini bul (ms veya s)
-                # Örn: "Please try again in 690ms" veya "try again in 2s"
+                # Extract wait time via regex (ms or s)
                 ms_match = re.search(r"try again in (\d+)ms", error_msg)
                 sec_match = re.search(r"try again in (\d+)s", error_msg)
 
-                wait_time = 1.0 # Default 1 saniye
+                wait_time = 1.0 
 
                 if ms_match:
                     wait_time = float(ms_match.group(1)) / 1000.0
                 elif sec_match:
                     wait_time = float(sec_match.group(1))
 
-                # Güvenlik payı ekle (0.2 saniye)
                 wait_time += 0.2
 
-                print(f"⏳ [RATE LIMIT] 429 Hata! {wait_time:.2f}s bekleniyor... (Deneme {retries}/{max_retries})")
+                print(f"[RATE LIMIT] 429 Error detected. Waiting {wait_time:.2f}s... (Attempt {retries}/{max_retries})")
                 await asyncio.sleep(wait_time)
-                continue # Döngü başına dön ve tekrar dene
+                continue 
             
             else:
-                print(f"❌ [ERROR] LLM Request Failed: {e}")
+                print(f"[ERROR] LLM Request Failed: {e}")
                 return None
 
 
 async def process_distillation():
-
     startfrom = 0
     async with aiofiles.open(INPUT_FILE, mode='r', encoding='utf-8') as f:
         lines = await f.readlines()
@@ -219,7 +213,7 @@ async def process_distillation():
                 re.IGNORECASE
             )
             URL_REGEX2 = re.compile(
-                r"http?://\S+|www\.\S+",
+                r"https?://\S+|www\.\S+",
                 re.IGNORECASE
             )
             def remove_urls(text: str) -> str:
@@ -229,7 +223,7 @@ async def process_distillation():
 
             d['news'] = remove_urls(row['news'])
             row['news'] = d['news']            
-            # 2️⃣ Düzeltme: Persona olay bazlı atanır, aynı olaya farklı kararlar verilmesi engellenir.
+            
             persona_roll = random.random()
             persona = "risk-averse" if persona_roll < 0.2 else "aggressive" if persona_roll > 0.8 else "neutral"
             
@@ -272,7 +266,7 @@ async def process_distillation():
             }
             await out_f.write(json.dumps(entry, ensure_ascii=False) + "\n")
             
-            sys.stdout.write(f"\r🚀 {i+1}/{len(lines)}")
+            sys.stdout.write(f"\r[INFO] Progress: {i+1}/{len(lines)}")
             sys.stdout.flush()
 
 if __name__ == "__main__":

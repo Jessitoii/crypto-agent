@@ -5,49 +5,53 @@ import torch
 from trl import SFTTrainer
 from transformers import TrainingArguments
 from datasets import load_dataset
-# 1. MODEL AYARLARI
-max_seq_length = 2048 # HFT analizi için fazlasıyla yeterli
-dtype = None # GPU mimarisine göre otomatik seçer (bfloat16 veya float16)
-load_in_4bit = True # VRAM dostu 4-bit kuantizasyon
+import sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from config import DATA_DIR
+
+# 1. MODEL CONFIGURATION
+max_seq_length = 2048 # Sufficient for HFT analysis
+dtype = None # Auto-selected based on GPU (bfloat16 or float16)
+load_in_4bit = True # VRAM-efficient 4-bit quantization
 
 model, tokenizer = FastLanguageModel.from_pretrained(
-    "unsloth/Ministral-3-3B-Instruct-2512", # Veya "unsloth/gemma-2-9b-bnb-4bit"
+    "unsloth/Ministral-3-3B-Instruct-2512",
     max_seq_length = max_seq_length,
     dtype = dtype,
     load_in_4bit = load_in_4bit,
     use_gradient_checkpointing = "unsloth", # True or "unsloth" for long context
 )
 
-# 2. LoRA (Düşük Dereceli Adaptasyon) PARAMETRELERİ
+# 2. LoRA PARAMETERS
 model = FastLanguageModel.get_peft_model(
     model,
-    r = 32, # Modelin esnekliği (1300 satır için 32 ideal)
+    r = 32, # Rank/Flexibility
     target_modules = ["q_proj", "k_proj", "v_proj", "o_proj",
                       "gate_proj", "up_proj", "down_proj",],
     lora_alpha = 32,
-    lora_dropout = 0, # Eğitim hızı için 0 kalsın
-    bias = "none",    # Eğitim stabilitesi için
-    use_gradient_checkpointing = "unsloth", # VRAM tasarrufu
+    lora_dropout = 0, # Optimization for speed
+    bias = "none",    # Optimization for stability
+    use_gradient_checkpointing = "unsloth", # VRAM optimization
     random_state = 3407,
 )
 
-# 3. VERİ SETİ FORMATLAMA
+# 3. DATASET FORMATTING
 def formatting_prompts_func(examples):
     instructions = examples["instruction"]
     inputs       = examples["input"]
     outputs      = examples["output"]
     texts = []
     for instruction, input, output in zip(instructions, inputs, outputs):
-        # Modelin 'Reasoning' ve 'Action' arasındaki bağı kurduğu yapı
+        # Structure that links Reasoning and Action
         text = f"### Instruction:\n{instruction}\n\n### Input:\n{input}\n\n### Response:\n{output} <|end_of_text|>"
         texts.append(text)
     return { "text" : texts, }
 
-# 'data/synthetic_finetune_data.json' dosyanın yolunu ver
-dataset = load_dataset("json", data_files="data/final_finetune_ready.json", split="train")
+# Load and map dataset
+dataset = load_dataset("json", data_files=str(DATA_DIR / "final_finetune_ready.json"), split="train")
 dataset = dataset.map(formatting_prompts_func, batched = True,)
 
-# 4. EĞİTİM (TRAINING) ARGÜMANLARI
+# 4. TRAINING ARGUMENTS
 trainer = SFTTrainer(
     model = model,
     tokenizer = tokenizer,
@@ -56,11 +60,11 @@ trainer = SFTTrainer(
     max_seq_length = max_seq_length,
     dataset_num_proc = 2,
     args = TrainingArguments(
-        per_device_train_batch_size = 2, # VRAM yetmezse 1 yap
-        gradient_accumulation_steps = 4, # Batch size'ı sanal olarak artırır
+        per_device_train_batch_size = 2, # Adjust to 1 if VRAM is insufficient
+        gradient_accumulation_steps = 4, # Virtual batch size increase
         warmup_steps = 5,
-        max_steps = -1, # Epoch bazlı gitmek için -1
-        num_train_epochs = 3, # 1300 satır için 3 tur (Overfitting riskine dikkat!)
+        max_steps = -1, # Use -1 for epoch-based training
+        num_train_epochs = 3,
         learning_rate = 2e-4,
         fp16 = not torch.cuda.is_bf16_supported(),
         bf16 = torch.cuda.is_bf16_supported(),
@@ -73,10 +77,10 @@ trainer = SFTTrainer(
     ),
 )
 
-# 5. ATEŞLE!
+# 5. TRAINING START
 trainer_stats = trainer.train()
 
-# 6. MODELİ KAYDET (GGUF veya LoRA olarak)
-model.save_pretrained("crypto_trader_lora") # Sadece adaptörü kaydeder
+# 6. SAVE MODEL (LoRA / GGUF)
+model.save_pretrained("crypto_trader_lora") # Saves adapter weights only
 tokenizer.save_pretrained("crypto_trader_lora")
-model.save_pretrained_gguf("model_gguf", tokenizer, quantization_method = "q4_k_m") # Ollama için GGUF
+model.save_pretrained_gguf("model_gguf", tokenizer, quantization_method = "q4_k_m") # GGUF for Ollama
