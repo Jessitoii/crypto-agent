@@ -96,35 +96,38 @@ The core thesis: **news-derived sentiment, when properly labeled and paired with
 
 **Root cause of signal collapse:** Standard cross-entropy SFT loss optimizes token-level prediction, not the downstream trading objective. The custom models learned to hedge by outputting HOLD for all inputs, minimizing loss without learning discriminative signal. Fix direction: sequence-level reward modeling or direct preference optimization (DPO).
 
-> The dataset (`nexus_elite_dataset_v5.json`) is publicly available on Kaggle: **[https://www.kaggle.com/datasets/alpercanzer/crypto-news-to-action]**
+> The dataset (`nexus_elite_dataset_v5.json`) is publicly available on Kaggle: **[Crypto News to Action](https://www.kaggle.com/datasets/alpercanzer/crypto-news-to-action)**
 
 ---
 
 ## Project Structure
 
 ```
-crypto-agent/
-├── data/
-│   ├── nexus_elite_dataset_v5.json   # 15,672 labeled samples (LONG/SHORT/HOLD)
-│   └── raw/                          # Raw scraped news
-├── models/
-│   ├── sentiment/                    # Fine-tuned DeBERTa checkpoints
-│   └── prompts/                      # LLM system prompts & templates
-├── src/
-│   ├── agent.py                      # Main agent loop (signal generation)
-│   ├── classifier.py                 # DeBERTa inference wrapper
-│   ├── llm_client.py                 # Ollama / OpenAI-compat API client
-│   ├── pump_dump_detector.py         # Anomaly detection logic
-│   ├── data_pipeline.py              # News ingestion & preprocessing
-│   └── labeler.py                    # Dataset labeling utilities
-├── training/
-│   ├── train_deberta.py              # SFT training script
-│   ├── config.yaml                   # Training hyperparameters
-│   └── evaluate.py                   # Eval metrics
-├── notebooks/
-│   └── analysis.ipynb                # Signal analysis & model comparison
-├── requirements.txt
-└── README.md
+Crypto-Agent/
+├── data/                         # Persistent storage, datasets & forensic logs
+│   ├── backtest_results/         # Performance audit reports (.txt)
+│   ├── nexus_elite_dataset_v5.json # Production-grade training dataset
+│   └── crypto_agent_session      # Telegram session persistence
+├── nexus/                        # Research & Machine Learning Infrastructure
+│   ├── model.py                  # Dual-Core Transformer Architecture (NexusPredictor)
+│   ├── technical_gate.py         # Logit-space Technical Veto Logic
+│   ├── backtest_engine.py        # Forensic Simulation & Playback Engine
+│   ├── forensic_miner.py         # High-speed RAM-based signal extraction
+│   ├── train_backbone.py         # DeBERTa-v3 SFT pipeline
+│   ├── train_llm_adapter.py      # LoRA fine-tuning for NEXUS-7 (Ministral/Gemma)
+│   ├── distillation_engine.py    # Synthetic reasoning & data distillation
+│   └── ...                       # Dataset audits & NLP utilities
+├── src/                          # Real-time Orchestration & Execution
+│   ├── main.py                   # Global system entry point
+│   ├── brain.py                  # Neural & LLM reasoning orchestrator
+│   ├── services.py               # Core business logic & signal routing
+│   ├── binance_client.py         # Low-latency exchange execution
+│   ├── exchange.py               # Paper-trading & PnL simulation
+│   ├── dashboard.py              # Real-time monitoring interface
+│   └── ...                       # Infrastructure & utilities
+├── backtest_analysis.py          # Results aggregator & diagnostic tool
+├── requirements.txt              # Dependency manifest
+└── README.md                     # Project documentation
 ```
 
 ---
@@ -143,40 +146,36 @@ source venv/bin/activate  # Windows: venv\Scripts\activate
 # 3. Install dependencies
 pip install -r requirements.txt
 
-# 4. Set up Ollama and pull models
-# Install Ollama: https://ollama.com
-ollama pull gemma:27b
-ollama pull mistral:14b-instruct
-
-# 5. (Optional) Download the dataset
-# Place nexus_elite_dataset_v5.json into data/
+# 4. Set up environment variables
+# Create a .env file with your API_ID, API_HASH (Telegram) and Exchange keys
 ```
 
 ---
 
 ## Usage
 
-### Run the agent (LLM reasoning mode)
-
+### 1. Initialize Infrastructure
+Before running the bot, establish a secure Telegram session:
 ```bash
-# Uses Ollama locally — no API key required
-python src/agent.py --model gemma:27b --input "Bitcoin ETF rejected by SEC, volume spike detected"
+python src/setup.py
 ```
 
-### Fine-tune the sentiment classifier
-
+### 2. Launch Production Agent
+Starts the real-time news scraping and neural decision loop:
 ```bash
-python training/train_deberta.py \
-  --dataset data/nexus_elite_dataset_v5.json \
-  --model microsoft/deberta-v3-large \
-  --epochs 5 \
-  --lr 2e-5
+python src/main.py
 ```
 
-### Run evaluation
-
+### 3. Execute Forensic Backtest
+Simulate the agent's performance against historical data caches:
 ```bash
-python training/evaluate.py --checkpoint models/sentiment/checkpoint-best
+python nexus/backtest_engine.py
+```
+
+### 4. Technical Performance Audit
+Analyze the statistical outcomes of previous backtest runs:
+```bash
+python backtest_analysis.py
 ```
 
 ---
@@ -187,40 +186,33 @@ python training/evaluate.py --checkpoint models/sentiment/checkpoint-best
 
 | Split | Size | Labels |
 |---|---|---|
-| Train | ~12,500 | LONG / SHORT / HOLD |
-| Validation | ~1,600 | LONG / SHORT / HOLD |
-| Test | ~1,572 | LONG / SHORT / HOLD |
+| Train | ~13,321 | LONG / SHORT / HOLD |
+| Validation | ~2,351 | LONG / SHORT / HOLD |
 
-Samples include crypto news headlines, social media snippets, and brief market commentary — each labeled with the appropriate trading signal given the context.
-
-📦 **Kaggle:** [nexus-elite-dataset-v5](https://www.kaggle.com) ← update with actual link
+📦 **Kaggle:** [Crypto News to Action](https://www.kaggle.com/datasets/alpercanzer/crypto-news-to-action)
 
 ---
 
-## Limitations
+## Capabilities & Limitations
 
-- The system generates **signals, not financial advice**. No backtesting framework is included in this version.
-- Custom fine-tuned models currently **collapse to HOLD** — the SFT objective does not align with trading signal quality. DPO or RLHF is the intended next step.
-- LLM reasoning quality is **model-dependent**; smaller quantized models produce noisier outputs.
+- **Forensic Replay**: Includes a high-fidelity backtesting suite to validate signals before live deployment.
+- **Neural Veto**: Technical gates (RSI/Funding) can override AI signals to prevent "top-buying".
+- **Signals, not Advice**: The system generates quantitative signals; final risk remains with the operator.
+- **Model Drift**: Fine-tuned models require periodic recalibration against changing market regimes.
 
 ---
 
 ## Roadmap
 
 - [ ] Replace SFT with DPO for signal-level alignment
-- [ ] Add backtesting module (vectorbt / backtrader)
-- [ ] Stream live CryptoPanic feed in real-time
-- [ ] Evaluate Qwen2.5-14B and DeepSeek-R1 as reasoning layers
-- [ ] Multi-coin portfolio signal aggregation
+- [x] High-fidelity Forensic Backtesting suite
+- [ ] Real-time CryptoPanic/NewsAPI integration
+- [ ] Evaluate DeepSeek-R1 for chain-of-thought trading reasoning
+- [ ] Multi-coin portfolio risk aggregation engine
+- [x] RAM-cached market data mining for micro-latency research
 
 ---
 
 ## License
 
 MIT License — see [LICENSE](LICENSE) for details.
-
----
-
-<p align="center">
-  Built by <a href="https://github.com/Jessitoii">Jessitoii</a> · Dataset on <a href="https://www.kaggle.com">Kaggle</a>
-</p>
