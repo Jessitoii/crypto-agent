@@ -1,3 +1,14 @@
+"""
+Background Services and Business Logic
+
+This module implements the core business logic of the Crypto-Agent.
+It manages asynchronous service loops for:
+1. Real-time news ingestion and processing (Telegram, RSS).
+2. Market data synchronization via WebSockets.
+3. Automated trade execution and risk management.
+4. Data collection and outcome verification for model refinement.
+"""
+
 import asyncio
 import time
 import json
@@ -20,11 +31,18 @@ from config import (
 )
 from price_buffer import PriceBuffer
 
+# Static mapping for top market assets to optimize lookup performance
 TARGET_PAIRS = get_top_100_map()
 
 
 def log_txt(message, filename="trade_logs.txt"):
-    """Logs trade-related messages to a text file for auditing."""
+    """
+    Logs trade-related events to a persistent text file for auditing.
+    
+    Args:
+        message (str): Log message content.
+        filename (str): Name of the audit log file.
+    """
     base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     data_dir = os.path.join(base_dir, "data")
     if not os.path.exists(data_dir):
@@ -35,8 +53,18 @@ def log_txt(message, filename="trade_logs.txt"):
 
 
 async def update_system_balance(ctx, last_pnl=0.0):
-    """Syncs system balance from either the real exchange or simulation PnL."""
+    """
+    Synchronizes the local balance state with the execution engine.
+    
+    In live mode, it fetches the actual wallet balance from Binance.
+    In paper mode, it applies simulated PnL to the virtual balance.
+    
+    Args:
+        ctx (BotContext): Main application context.
+        last_pnl (float): Realized profit or loss to apply (Paper mode).
+    """
     if REAL_TRADING_ENABLED:
+        # Brief sleep to allow exchange-side balance settlement
         await asyncio.sleep(1)
         total, available = await ctx.real_exchange.get_usdt_balance()
         if total > 0:
@@ -56,7 +84,13 @@ async def update_system_balance(ctx, last_pnl=0.0):
 
 
 async def send_telegram_alert(ctx, message):
-    """Sends an alert message to the 'me' chat on Telegram."""
+    """
+    Dispatches critical alerts to the user's private Telegram chat.
+    
+    Args:
+        ctx (BotContext): Application context.
+        message (str): The alert message content.
+    """
     try:
         if not ctx.telegram_client.is_connected():
             print("[TELEGRAM] Warning: No connection, attempting to connect...")
@@ -78,11 +112,21 @@ async def send_telegram_alert(ctx, message):
 
 
 async def ensure_fresh_data(ctx, pair):
-    """Checks data freshness and fetches missing historical candles if needed."""
+    """
+    Validates data freshness and triggers backfills if latency is detected.
+    
+    Args:
+        ctx (BotContext): Application context.
+        pair (str): Target asset pair.
+        
+    Returns:
+        bool: True if data is synchronized and ready for analysis.
+    """
     stats = ctx.market_memory[pair]
     is_stale = False
     current_minute = int(time.time() / 60)
 
+    # Heuristic: Data is stale if last candle is > 3 minutes old or missing
     if stats.current_price == 0:
         is_stale = True
     elif stats.candles:
@@ -110,20 +154,36 @@ async def ensure_fresh_data(ctx, pair):
 
 
 async def execute_trade_logic(ctx, pair, dec, stats, source, msg, changes, search_res):
-    """Executes trade logic based on AI decision, including risk scaling and order placement."""
+    """
+    Orchestrates the transition from AI decision to order execution.
+    
+    Implements tiered risk allocation based on model confidence and 
+    manages dual execution (Real + Virtual Simulation).
+    
+    Args:
+        ctx (BotContext): Application context.
+        pair (str): Target pair.
+        dec (dict): AI recommendation object.
+        stats (PriceBuffer): Market data buffer.
+        source (str): News source label.
+        msg (str): Original news text.
+        changes (dict): Price delta metrics.
+        search_res (str): Supplement research context.
+    """
     confidence = dec.get("confidence", 0)
     balance = ctx.exchange.balance
 
-    # Risk Tier 1: Low Risk (Conf 65-74%)
+    # --- TIERED RISK ALLOCATION STRATEGY ---
+    # Risk Tier 1: Conservative (Conf 65-74%)
     trade_amount = balance * 0.40  
     leverage = 10  
     
-    # Risk Tier 2: Standard Risk (Conf 75-89%)
+    # Risk Tier 2: Standard (Conf 75-89%)
     if confidence >= 75:
         trade_amount = balance * 0.50  
         leverage = 15  
     
-    # Risk Tier 3: Nuclear Mode (Conf 90%+)
+    # Risk Tier 3: Aggressive / Nuclear Mode (Conf 90%+)
     if confidence >= 90:
         trade_amount = balance * 0.60  
         leverage = 20  
@@ -139,7 +199,7 @@ async def execute_trade_logic(ctx, pair, dec, stats, source, msg, changes, searc
 
     can_open_paper_trade = False
 
-    # --- 1. Real Exchange Execution ---
+    # --- 1. Real-World Execution Pipeline ---
     if REAL_TRADING_ENABLED:
         api_result = await ctx.real_exchange.execute_trade(
             pair, dec["action"], trade_amount, leverage, tp_pct, sl_pct
@@ -158,7 +218,7 @@ async def execute_trade_logic(ctx, pair, dec, stats, source, msg, changes, searc
     else:
         can_open_paper_trade = True
 
-    # --- 2. Simulation & Logging ---
+    # --- 2. Simulation & Performance Tracking ---
     if can_open_paper_trade:
         log, color = ctx.exchange.open_position(
             symbol=pair,
@@ -177,6 +237,7 @@ async def execute_trade_logic(ctx, pair, dec, stats, source, msg, changes, searc
         ctx.log_ui(full_log, color)
         log_txt(full_log)
 
+        # Persistence for offline training and evaluation
         ctx.dataset_manager.log_trade_entry(
             symbol=pair,
             news=msg,
@@ -187,7 +248,7 @@ async def execute_trade_logic(ctx, pair, dec, stats, source, msg, changes, searc
         )
         asyncio.create_task(send_telegram_alert(ctx, full_log))
 
-        # Start WebSocket tracking for the pair
+        # Dynamic WebSocket subscription to track the specific asset high-frequency
         subscribe_msg = {
             "method": "SUBSCRIBE",
             "params": [f"{pair.lower()}@kline_1m"],
@@ -197,12 +258,23 @@ async def execute_trade_logic(ctx, pair, dec, stats, source, msg, changes, searc
 
 
 async def process_news(msg, source, ctx):
-    """Main news processing workflow: filtering, detection, research, and analysis."""
+    """
+    Universal entry point for news processing.
+    
+    Handles deduplication, symbol extraction, market research, 
+    AI inference, and order book safety verification.
+    
+    Args:
+        msg (str): Raw news content.
+        source (str): Source identifier (e.g., 'TELEGRAM', 'RSS').
+        ctx (BotContext): Application context.
+    """
     start_time = time.time()
     if not ctx.app_state.is_running:
         return
 
-    # --- 1. Filtering & Preparation ---
+    # --- 1. Filtering & Deduplication ---
+    # Prevents processing the same event multiple times across different channels
     is_dup, score = ctx.memory.is_duplicate(msg)
     if is_dup:
         ctx.log_ui(f"[DUPLICATE] News filtered (Similarity: {score:.2f})", "warning")
@@ -214,6 +286,7 @@ async def process_news(msg, source, ctx):
 
     log_txt(f"[{source}] Incoming News: {clean_msg}")
 
+    # Heuristic filter for summary/digest news which lack immediate alpha
     for word in IGNORE_KEYWORDS:
         if word in msg_lower:
             ctx.log_ui(f"[FILTER] Stale keywords detected: '{word}'", "warning")
@@ -221,7 +294,8 @@ async def process_news(msg, source, ctx):
 
     ctx.log_ui(f"[{source}] Processing: {msg[:40]}...", "info")
 
-    # --- 2. Coin Detection ---
+    # --- 2. Ticker Detection ---
+    # Uses hierarchical detection: Regex (Performance) -> LLM (Accuracy)
     detected_pairs = find_coins(msg, coin_map=TARGET_PAIRS)
 
     if not detected_pairs:
@@ -233,7 +307,7 @@ async def process_news(msg, source, ctx):
                 ctx.log_ui(f"AGENT FOUND: {found_symbol}", "success")
                 detected_pairs.append(pot_pair)
 
-    # --- 3. Analysis Loop ---
+    # --- 3. Asset Analysis Loop ---
     coin_map = get_top_100_map()
 
     for pair in detected_pairs:
@@ -244,7 +318,7 @@ async def process_news(msg, source, ctx):
 
         stats = ctx.market_memory[pair]
 
-        # Web Research
+        # Dynamic Web Research to provide LLM with the latest sectoral context
         smart_query = await ctx.brain.generate_search_query(
             msg, pair.replace("usdt", "")
         )
@@ -252,7 +326,6 @@ async def process_news(msg, source, ctx):
         search_res = await perform_research(smart_query)
 
         clean_symbol = pair.replace("usdt", "").lower()
-
         c_data = coin_map.get(clean_symbol)
         if isinstance(c_data, dict):
             coin_full_name = c_data.get("name", "Unknown").title()
@@ -261,7 +334,7 @@ async def process_news(msg, source, ctx):
             coin_full_name = "Unknown"
             m_cap = 0
 
-        # Market Cap Format
+        # Market Cap Formatting
         if m_cap > 1_000_000_000:
             cap_str = f"${m_cap / 1_000_000_000:.2f} BILLION"
         elif m_cap > 1_000_000:
@@ -272,7 +345,7 @@ async def process_news(msg, source, ctx):
         rsi_val = stats.calculate_rsi()
         changes = stats.get_all_changes()
 
-        # BTC Trend Correlation
+        # BTC Trend Correlation Sync
         btc_pair = "btcusdt"
         btc_stats = ctx.market_memory.get(btc_pair)
 
@@ -298,7 +371,7 @@ async def process_news(msg, source, ctx):
 
         ctx.log_ui(f"Analysis Price ({pair}): {stats.current_price}", "info")
 
-        # AI Analysis Execution
+        # --- AI INFERENCE ENGINE ---
         volume_24h, funding_rate = await ctx.real_exchange.get_extended_metrics(pair)
         
         dec = await ctx.brain.analyze_specific(
@@ -315,10 +388,10 @@ async def process_news(msg, source, ctx):
             funding_rate,
         )
 
-        # Data collection for model refinement
+        # Log decision for downstream data mining
         ctx.collector.log_decision(msg, pair, stats.current_price, str(changes), dec)
 
-        # Dashboard Decision Log
+        # Populate Dashboard with recent decision state
         decision_record = {
             "time": datetime.datetime.now().strftime("%H:%M:%S"),
             "symbol": pair.upper().replace("USDT", ""),
@@ -335,7 +408,7 @@ async def process_news(msg, source, ctx):
         decision_id = ctx.memory.log_decision(decision_record)  
         dec["db_id"] = decision_id
 
-        # --- 4. Order Book Safety Checks ---
+        # --- 4. Order Book Integrity & Spread Verification ---
         if dec["action"] in ["LONG", "SHORT"] and REAL_TRADING_ENABLED:
             imbalance, depth_info = await ctx.real_exchange.get_order_book_imbalance(
                 pair
@@ -345,6 +418,7 @@ async def process_news(msg, source, ctx):
                 "info",
             )
 
+            # Cancel Longs if there is extreme sell pressure in the book
             if dec["action"] == "LONG" and imbalance < -0.5:
                 ctx.log_ui(
                     f"Order Wall Detected: High Sell Pressure ({imbalance:.2f}). LONG Cancelled.",
@@ -353,6 +427,7 @@ async def process_news(msg, source, ctx):
                 dec["action"] = "HOLD"  
                 dec["reason"] += " [CANCELLED: Sell Wall]"
 
+            # Cancel Shorts if there is extreme buy pressure in the book
             elif dec["action"] == "SHORT" and imbalance > 0.5:
                 ctx.log_ui(
                     f"Order Wall Detected: High Buy Pressure ({imbalance:.2f}). SHORT Cancelled.",
@@ -369,9 +444,9 @@ async def process_news(msg, source, ctx):
                 ask = float(ticker["askPrice"])
 
                 spread_pct = ((ask - bid) / ask) * 100
-
                 ctx.log_ui(f"Spread Analysis ({pair}): {spread_pct:.3f}%", "info")
 
+                # Block execution if the spread is too high (avoid slippage)
                 if spread_pct > 0.3:  
                     ctx.log_ui(
                         f"High Spread Warning ({spread_pct:.2f}%). Execution skipped.",
@@ -383,6 +458,7 @@ async def process_news(msg, source, ctx):
             except Exception as e:
                 ctx.log_ui(f"Could not retrieve spread data: {e}", "warning")
 
+        # Threshold check: Only execute if AI confidence meets the criteria
         if dec["confidence"] >= 65 and dec["action"] in ["LONG", "SHORT"]:
             await execute_trade_logic(
                 ctx, pair, dec, stats, source, msg, changes, search_res
@@ -395,12 +471,17 @@ async def process_news(msg, source, ctx):
 
     end_time = time.time()
     ctx.log_ui(
-        f"[{source}] Processing Time: {end_time - start_time:.2f} s.", "info"
+        f"[{source}] Processing Cycle Time: {end_time - start_time:.2f} s.", "info"
     )
 
 
 async def websocket_loop(ctx):
-    """Main Binance Websocket loop with auto-recovery."""
+    """
+    Asynchronous WebSocket supervisor for real-time market data.
+    
+    Handles automatic reconnections and delegates message processing 
+    to specific handlers.
+    """
     ctx.log_ui("Connecting Websocket (Sniper Mode)...", "info")
 
     while ctx.app_state.is_running:
@@ -409,6 +490,7 @@ async def websocket_loop(ctx):
                 ctx.log_ui("Websocket Connected.", "success")
 
                 async def sender():
+                    """Sends subscription/unsubscription commands to Binance."""
                     while ctx.app_state.is_running:
                         try:
                             command = await ctx.stream_command_queue.get()
@@ -418,15 +500,11 @@ async def websocket_loop(ctx):
                             break  
 
                 async def receiver():
-                    """Handles incoming WebSocket messages for price updates and position tracking."""
+                    """Handles incoming price updates and triggers position checks."""
                     async for msg in ws:
                         try:
                             raw_data = json.loads(msg)
-
-                            if "data" in raw_data:
-                                data = raw_data["data"]
-                            else:
-                                data = raw_data
+                            data = raw_data.get("data", raw_data)
 
                             if isinstance(data, dict) and data.get("e") == "kline":
                                 pair = data["s"].lower()
@@ -442,6 +520,7 @@ async def websocket_loop(ctx):
                                     price, ts, is_closed
                                 )
 
+                                # Active Position Monitor Synchronization
                                 if pair in ctx.exchange.positions:
                                     log, color, closed_sym, pnl, peak_price, decision_id = (
                                         ctx.exchange.check_positions(pair, price)
@@ -471,7 +550,12 @@ async def websocket_loop(ctx):
 
 
 async def position_monitor_loop(ctx):
-    """Watchdog loop to monitor open positions for expiry and validity."""
+    """
+    High-frequency watchdog for open positions.
+    
+    Secondary monitoring channel to ensure TP/SL/Expiry are caught 
+    even if WebSocket updates for a specific ticker are delayed.
+    """
     ctx.log_ui("Position Monitor Active.", "success")
 
     while ctx.app_state.is_running:
@@ -488,7 +572,6 @@ async def position_monitor_loop(ctx):
                     continue
 
                 current_price = ctx.market_memory[pair].current_price
-
                 if current_price == 0:
                     continue
 
@@ -510,20 +593,33 @@ async def position_monitor_loop(ctx):
 
 
 async def handle_closed_position(ctx, symbol, pnl, peak_price, log_msg, decision_id=None): 
-    """Cleanup tasks when a position is closed: real-exchange sync, logging, and metrics."""
-
+    """
+    Post-trade cleanup and performance recording.
+    
+    Args:
+        ctx (BotContext): Application context.
+        symbol (str): Ticker that was closed.
+        pnl (float): Realized profit/loss.
+        peak_price (float): Maximum/Minimum price reached during the trade.
+        log_msg (str): Summary log message.
+        decision_id (int, optional): Reference to the original AI decision.
+    """
+    # Liquidation on real exchange if enabled
     if REAL_TRADING_ENABLED:
         asyncio.create_task(ctx.real_exchange.close_position_market(symbol))
 
     try:
+        # Audit Trail Logging
         ctx.dataset_manager.log_trade_exit(symbol, pnl, "Closed", peak_price)
         asyncio.create_task(send_telegram_alert(ctx, log_msg))
         
+        # SQLite Persistence
         if ctx.exchange.history:
             last_trade = ctx.exchange.history[-1]
             last_trade["peak_price"] = peak_price
             ctx.memory.log_trade(last_trade, decision_id)
 
+        # Unsubscribe from high-frequency updates to save bandwidth/resources
         try:
             unsubscribe_msg = {
                 "method": "UNSUBSCRIBE",
@@ -534,6 +630,7 @@ async def handle_closed_position(ctx, symbol, pnl, peak_price, log_msg, decision
         except Exception:
             pass
         
+        # Trigger balance synchronization
         asyncio.create_task(update_system_balance(ctx, last_pnl=pnl))
 
     except Exception as e:
@@ -541,32 +638,38 @@ async def handle_closed_position(ctx, symbol, pnl, peak_price, log_msg, decision
 
 
 async def telegram_loop(ctx):
-    """Initializes and runs the Telegram client listener for news channels."""
-    ctx.log_ui("Connecting Telegram...", "info")
+    """
+    Bootstraps and maintains the Telegram event listener.
+    """
+    ctx.log_ui("Connecting Telegram Service...", "info")
     try:
         await ctx.telegram_client.start()
 
         print(f"TELEGRAM CONNECTED: {ctx.telegram_client.is_connected()}")
         print(f"TELEGRAM AUTHORIZED: {await ctx.telegram_client.is_user_authorized()}")
-        await send_telegram_alert(ctx, "Telegram Connected")
+        await send_telegram_alert(ctx, "Telegram Ingestion Service Online")
+        
         if not await ctx.telegram_client.is_user_authorized():
-            ctx.log_ui("TELEGRAM SESSION FAILED", "error")
+            ctx.log_ui("TELEGRAM SESSION AUTHORIZATION FAILED", "error")
             return
 
-        ctx.log_ui("Telegram Listening", "success")
+        ctx.log_ui("Telegram Listener Registered", "success")
 
         @ctx.telegram_client.on(events.NewMessage(chats=TARGET_CHANNELS))
         async def handler(event):
+            """Handler for incoming messages from targeted Alpha channels."""
             if event.message.message:
                 await process_news(event.message.message, "TELEGRAM", ctx)
 
     except Exception as e:
-        ctx.log_ui(f"Telegram Error: {e}", "error")
+        ctx.log_ui(f"Telegram Service Error: {e}", "error")
 
 
 async def collector_loop(ctx):
-    """Periodically triggers data collection verification."""
-    ctx.log_ui("Data Collector Active", "success")
+    """
+    Periodically validates the accuracy of historical trade outcomes.
+    """
+    ctx.log_ui("Data Verification Service Active", "success")
     while True:
         await asyncio.sleep(60)
         curr_prices = {
@@ -579,9 +682,12 @@ async def collector_loop(ctx):
 
 
 async def rss_loop(ctx):
-    """Starts the RSS feed monitor loop."""
-    ctx.log_ui("Initializing RSS Module...", "info")
+    """
+    Initializes the RSS Monitoring subsystem.
+    """
+    ctx.log_ui("Initializing RSS Ingestion...", "info")
     rss_bot = RSSMonitor(
         callback_func=lambda msg, src: asyncio.create_task(process_news(msg, src, ctx))
     )
     await rss_bot.start_loop()
+

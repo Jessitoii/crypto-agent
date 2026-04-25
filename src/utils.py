@@ -1,3 +1,13 @@
+"""
+General Purpose Utilities and Crypto Domain Logic
+
+This module provides essential utility functions for:
+1. Asset discovery and ticker normalization.
+2. Market data retrieval from external APIs (Binance, CoinGecko).
+3. Sectoral categorization and fundamental property mapping.
+4. Asynchronous web research and OSINT gathering.
+"""
+
 import requests
 from ddgs import DDGS
 import asyncio
@@ -5,12 +15,23 @@ import re
 from config import DANGEROUS_TICKERS, AMBIGUOUS_COINS
 
 def get_top_pairs(limit=50):
-    """Fetches top volume USDT pairs from Binance in the last 24h."""
+    """
+    Fetches the highest volume USDT futures pairs from Binance.
+    
+    Excludes leveraged tokens (UP/DOWN) and stablecoin pairs to focus on
+    high-alpha assets.
+    
+    Args:
+        limit (int): Number of pairs to retrieve.
+        
+    Returns:
+        list: A list of lowercase ticker symbols (e.g., ['btcusdt', 'ethusdt']).
+    """
     try:
         url = "https://api.binance.com/api/v3/ticker/24hr"
         response = requests.get(url).json()
         
-        # Filter USDT pairs (excluding leveraged tokens and stablecoins)
+        # Filter logic: focus on USDT pairs and exclude noise
         filtered = [
             x for x in response 
             if x['symbol'].endswith('USDT') 
@@ -19,16 +40,24 @@ def get_top_pairs(limit=50):
             and x['symbol'] not in ['USDCUSDT', 'FDUSDUSDT', 'TUSDUSDT']
         ]
         
-        # Sort by quoteVolume and take top X
+        # Sort by quoteVolume (sectoral indicator of liquidity and interest)
         sorted_pairs = sorted(filtered, key=lambda x: float(x['quoteVolume']), reverse=True)[:limit]
         
         return [x['symbol'].lower() for x in sorted_pairs]
     except Exception as e:
-        print(f"ERROR: Could not fetch pair list! {e}")
+        print(f"ERROR: Could not fetch pair list from Binance: {e}")
+        # Return hardcoded majors as safety fallback
         return ['btcusdt', 'ethusdt', 'bnbusdt', 'solusdt']
 
 def get_top_100_map():
-    """Returns a map of top 100 coins by market cap from CoinGecko."""
+    """
+    Retrieves the top 100 cryptocurrencies by market cap from CoinGecko.
+    
+    Builds a bidirectional map for lookups by both full name and symbol.
+    
+    Returns:
+        dict: A dictionary mapping names and symbols to their market cap and metadata.
+    """
     url = "https://api.coingecko.com/api/v3/coins/markets"
     params = {
         "vs_currency": "usd",
@@ -44,11 +73,12 @@ def get_top_100_map():
         
         coin_data = {}
         for coin in data:
+            # Primary index: Full Name (lowercase)
             coin_data[coin['name'].lower()] = {
                 'symbol': coin['symbol'].lower(),
                 'cap': coin['market_cap'] if coin['market_cap'] else 0
             }
-            # Also index by symbol for quick access
+            # Secondary index: Symbol (lowercase)
             coin_data[coin['symbol'].lower()] = {
                 'symbol': coin['symbol'].lower(),
                 'cap': coin['market_cap'] if coin['market_cap'] else 0,
@@ -58,32 +88,54 @@ def get_top_100_map():
         return coin_data
 
     except Exception as e:
-        print(f"[ERROR] CoinGecko request failed: {e}")
+        print(f"[ERROR] CoinGecko market cap request failed: {e}")
         return {}
 
 def search_web_sync(query):
-    """Performs synchronous search on DuckDuckGo (to be run in thread)."""
+    """
+    Performs a synchronous web search via DuckDuckGo.
+    
+    Args:
+        query (str): The search query.
+        
+    Returns:
+        str: A formatted summary of the top search results.
+    """
     try:
         results = DDGS().text(query, max_results=2)
         if not results:
             return "No search results found."
         
-        summary = "WEB SEARCH RESULTS:\n"
+        summary = "WEB RESEARCH CONTEXT:\n"
         for res in results:
             summary += f"- {res['title']}: {res['body']}\n"
         
-        print(f"Search completed for: {query}")
-        print(summary)
         return summary
     except Exception as e:
-        return f"Search Error: {e}"
+        return f"Search Provider Error: {e}"
 
 async def perform_research(query):
-    """Performs non-blocking research using a thread pool."""
+    """
+    Executes an asynchronous web search.
+    
+    Args:
+        query (str): The search query.
+        
+    Returns:
+        str: Search results string.
+    """
     return await asyncio.to_thread(search_web_sync, query)
 
 def clean_coin_map(raw_map):
-    """Cleans raw coin map into {Symbol: Name} format."""
+    """
+    Normalizes a diverse coin map into a consistent internal format.
+    
+    Args:
+        raw_map (dict): Input map (from CoinGecko or other sources).
+        
+    Returns:
+        dict: Normalized map in {SYMBOL: name} format.
+    """
     clean_map = {}
     if not raw_map: 
         return {}
@@ -98,6 +150,21 @@ def clean_coin_map(raw_map):
     return clean_map
 
 def find_coins(msg, coin_map=None):
+    """
+    Identifies crypto symbols in a text block using complex heuristic rules.
+    
+    Rules handle:
+    1. Dangerous tickers (short words matching common English).
+    2. Ambiguous tickers (words with dual meanings in trading context).
+    3. Standard symbol/name detection.
+    
+    Args:
+        msg (str): Input news text.
+        coin_map (dict): Reference map of valid coins.
+        
+    Returns:
+        list: A list of detected pairs in 'SYMBOLUSDT' format.
+    """
     if not msg: 
         return []
     
@@ -107,21 +174,23 @@ def find_coins(msg, coin_map=None):
     msg_lower = msg.lower()
     msg_upper = msg.upper()
     
+    # Contextual anchors to increase precision of regex detection
     context_pattern = r'(protocol|network|token|coin|dao|chain|finance|labs|swap)'
 
     for symbol, full_name in coin_map.items():
         if check_is_stablecoin(symbol):
             continue
 
-        # CASE 1: DANGEROUS TICKERS (e.g., THE, IT, IS)
-        # Rule: Only match if uppercase and near a context word.
+        # CATEGORY 1: DANGEROUS TICKERS (e.g., THE, IT, IS, ON)
+        # Requirement: Ticker must be uppercase AND accompanied by a context keyword.
         if symbol in DANGEROUS_TICKERS:
             strict_pattern = rf'\b{symbol}\b\s+{context_pattern}'
             if re.search(strict_pattern, msg_upper, re.IGNORECASE):
                 detected_symbols.add(symbol)
             continue
 
-        # CASE 2: AMBIGUOUS COINS (e.g., LINK, GAS, NEAR)
+        # CATEGORY 2: AMBIGUOUS TICKERS (e.g., LINK, GAS, NEAR)
+        # Focus on uppercase symbols or explicit full-name mentions.
         if symbol in AMBIGUOUS_COINS:
             if rf'\b{symbol}\b' in msg_upper: 
                 if re.search(rf'\b{symbol}\b', msg_upper):
@@ -133,10 +202,12 @@ def find_coins(msg, coin_map=None):
                 detected_symbols.add(symbol)
             continue
 
-        # CASE 3: STANDARD COINS
+        # CATEGORY 3: STANDARD DISCOVERY
+        # Simple word-boundary matching for tickers.
         if re.search(rf'\b{symbol}\b', msg_upper):
             detected_symbols.add(symbol)
         
+        # Full-name fallback matching
         elif full_name and len(full_name) > 2:
             if rf' {full_name} ' in f' {msg_lower} ': 
                 detected_symbols.add(symbol)
@@ -144,11 +215,21 @@ def find_coins(msg, coin_map=None):
     return [f"{s}USDT" for s in detected_symbols]
 
 def check_is_stablecoin(symbol):
+    """
+    Checks if a symbol is classified as a stablecoin.
+    
+    Args:
+        symbol (str): Asset symbol.
+        
+    Returns:
+        bool: True if identified as a stablecoin.
+    """
     try:
         return "stablecoin" in coin_categories.get(symbol, "").lower()
     except Exception:
         return False
     
+# Sectoral Classification Map for Model Context
 coin_categories = {
     # --- TOP 10 & MAJORS ---
     'BTC': 'Layer-1 (Store of Value)',

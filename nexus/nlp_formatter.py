@@ -1,6 +1,18 @@
+"""
+NEXUS-X Dataset Conversion & Serialization Utility
+
+This module provides transformation utilities for converting raw instruction data 
+into specialized formats for Supervised Fine-Tuning (SFT) and 
+Group Relative Policy Optimization (GRPO).
+
+It handles the mapping of text-based assistant reasoning into structured 
+JSON solutions, enforcing the strict "Clinical Market Pathologist" persona.
+"""
+
 import json
 import re
 
+# Standardized Persona manifest for the Nexus family
 system_prompt = """
 ## 1. MISSION: NARRATIVE DECONSTRUCTION
 You are NEXUS-X, a Clinical Market Pathologist. Your sole purpose is to filter out "Narrative Noise" and identify "Structural Shocks." You don't just classify news; you analyze the kinetic energy of information and its ability to force market participants into mandatory actions.
@@ -34,6 +46,16 @@ You must output ONLY a valid JSON object using the fields from your analytical t
 - CONVICTION_SCORE > 90 is required for any action other than HOLD."""
 
 def convert_nexus_to_grpo_sft(input_file, output_file):
+    """
+    Converts raw chat-format logs into a structured SFT dataset with JSON payloads.
+    
+    Parses unstructured reasoning/action strings from the assistant response 
+    using regex and re-serializes them as a unified JSON object for training.
+    
+    Args:
+        input_file (str): Path to the source .jsonl dataset.
+        output_file (str): Target path for the converted .jsonl dataset.
+    """
     with open(input_file, 'r', encoding='utf-8') as f:
         lines = f.readlines()
 
@@ -41,20 +63,21 @@ def convert_nexus_to_grpo_sft(input_file, output_file):
 
     for line in lines:
         data = json.loads(line)
+        # Extract user news and raw assistant reasoning
         user_news = data['messages'][1]['content']
         assistant_raw = data['messages'][2]['content']
         
-        # Extract reasoning section
+        # Forensic extraction of reasoning block using lookahead regex
         reasoning_match = re.search(r"REASONING:(.*?)(?=ACTION:|$)", assistant_raw, re.S)
         reasoning_text = reasoning_match.group(1).strip() if reasoning_match else "Analyzing market structure..."
 
-        # Extract text-based Action attributes via Regex (e.g. ACTION: SHORT, CONVICTION_SCORE: 87)
+        # Extract discrete action attributes via positional regex patterns
         action_val = re.search(r"ACTION:\s*(\w+)", assistant_raw)
         conviction_val = re.search(r"CONVICTION_SCORE:\s*(\d+)", assistant_raw)
         tp_val = re.search(r"TP_PCT:\s*([-+]?\d*\.?\d+)", assistant_raw)
         validity_val = re.search(r"VALIDITY_MINUTES:\s*(\d+)", assistant_raw)
 
-        # Construct solution object
+        # Re-construct solution into the targeted 'Strict JSON' schema
         solution_dict = {
             "reasoning": reasoning_text,
             "action": action_val.group(1) if action_val else "HOLD",
@@ -63,27 +86,25 @@ def convert_nexus_to_grpo_sft(input_file, output_file):
             "validity_minutes": int(validity_val.group(1)) if validity_val else 0
         }
         
-        # Serialize to JSON string
+        # Serialize back to JSON string for the final assistant message
         solution_json = json.dumps(solution_dict, ensure_ascii=False)
-
-        # Assemble final conversation entry
-        final_assistant_content = f"{solution_json}"
 
         new_entry = {
             "messages": [
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": user_news},
-                {"role": "assistant", "content": final_assistant_content}
+                {"role": "assistant", "content": solution_json}
             ]
         }
         converted_data.append(json.dumps(new_entry, ensure_ascii=False) + "\n")
 
+    # Persist the transformed dataset
     with open(output_file, 'w', encoding='utf-8') as f:
         for line in converted_data:
             f.write(line)
 
-    print(f"[SUCCESS] {len(converted_data)} records converted to 'Strict JSON' format: {output_file}")
+    print(f"[SUCCESS] Serialization complete. {len(converted_data)} records optimized for GRPO SFT: {output_file}")
 
-# Execution
 if __name__ == "__main__":
+    # Standard conversion pipeline execution
     convert_nexus_to_grpo_sft('data/nexus_train_ready_v3.jsonl', 'nexus_grpo_sft_ready.jsonl')

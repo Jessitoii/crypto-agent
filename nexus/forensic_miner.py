@@ -1,3 +1,15 @@
+"""
+Fast RAM-Based Dataset Miner (Forensic Engine)
+
+This module implements a high-performance market data mining system. 
+Unlike the standard sequential miner, it loads historical klines into 
+system RAM using Pickle caches, allowing for microsecond-latency 
+lookups across years of data.
+
+It is designed to 'replay' historical Telegram news events against 
+real-time price buffers to identify perfectly-timed alpha signals.
+"""
+
 import asyncio
 import json
 import os
@@ -7,16 +19,16 @@ import pandas as pd
 from datetime import datetime, timedelta, timezone
 from telethon import TelegramClient
 import aiofiles
+import random
 
-# Project Modules
+# Project Core Path Configuration
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from config import TARGET_CHANNELS, API_ID, API_HASH
 from utils import find_coins, get_top_100_map, coin_categories
 from binance_client import BinanceExecutionEngine
 from main import BotContext
-import random
 
-# --- SETTINGS ---
+# --- MINING HEURISTICS ---
 LOOKBACK_DAYS = 225
 OBSERVATION_WINDOW = 40
 MIN_ROI_THRESHOLD = 0.5
@@ -26,15 +38,21 @@ CACHE_PATH = "market_cache/klines"
 COIN_MAP = get_top_100_map()
 
 class RAMDataCenter:
+    """
+    In-memory market data warehouse for high-speed forensic analysis.
+    """
     def __init__(self, path):
         self.path = path
-        self.klines = {} # { 'BTCUSDT': DataFrame }
+        self.klines = {} # Schema: { 'BTCUSDT': pd.DataFrame }
         self.btc_df = None
         self.passed = 0
         self.passedCoins = []
 
     def load_all_to_ram(self):
-        print("[SYSTEM] Loading datasets into RAM, please wait...")
+        """
+        Loads all localized pickle caches into system memory.
+        """
+        print("[SYSTEM] Hydrating RAM Market Cache...")
         files = glob.glob(f"{self.path}/*.pkl")
         for i, file in enumerate(files):
             symbol = os.path.basename(file).split("_")[0]
@@ -46,17 +64,31 @@ class RAMDataCenter:
                 if symbol == "BTCUSDT":
                     self.btc_df = df
                 
-                # Progress update
+                # Progress Telemetry
                 if i % 10 == 0:
-                    sys.stdout.write(f"\r[RAM] Load progress: %{(i/len(files))*100:.1f}")
+                    sys.stdout.write(f"\r[RAM] Load status: %{(i/len(files))*100:.1f}")
                     sys.stdout.flush()
             except Exception as e:
-                print(f"\n[ERROR] {symbol} failed to load: {e}")
+                print(f"\n[ERROR] Asset {symbol} failed to hydrate: {e}")
         
-        print(f"\n[SYSTEM] {len(self.klines)} symbols loaded to RAM. Ready for mining.")
+        print(f"\n[SUCCESS] {len(self.klines)} assets ready in high-speed buffer.")
 
     async def get_fast_outcome(self, ctx, symbol, msg_ts, btc_trend):
-        """Technical analysis over RAM. Includes RSI and multi-timeframe momentum."""
+        """
+        Calculates the market outcome for a specific event using RAM lookups.
+        
+        Performs Technical Analysis (Momentum, RSI) and analyzes the 
+        forward-looking 40-minute price window.
+        
+        Args:
+            ctx (BotContext): Execution context for API access.
+            symbol (str): Target ticker.
+            msg_ts (float): News event timestamp.
+            btc_trend (float): Concurrent BTC price momentum.
+            
+        Returns:
+            dict: Event metadata if successful, else None.
+        """
         if symbol not in self.klines.keys(): 
             self.passed += 1
             self.passedCoins.append(symbol)
@@ -66,57 +98,50 @@ class RAMDataCenter:
         target_ts = (int(msg_ts) // 60) * 60 * 1000 
         
         try:
-            # 1. News Event Index
+            # 1. Event Window Indexing
             idx = df.index.get_indexer([target_ts], method='pad')[0]
             if idx < 60 or idx + OBSERVATION_WINDOW >= len(df): return None
             
-            # 2. Technical Metrics (Momentum)
+            # 2. Pre-Event Market Mechanics (Momentum)
             entry_price = df.iloc[idx]['c']
             ch_1m = ((entry_price - df.iloc[idx-1]['c']) / df.iloc[idx-1]['c']) * 100
             ch_10m = ((entry_price - df.iloc[idx-10]['c']) / df.iloc[idx-10]['c']) * 100
             ch_1h = ((entry_price - df.iloc[idx-60]['c']) / df.iloc[idx-60]['c']) * 100
             
-            # 3. RSI Calculation (Manual 14-period rolling)
+            # 3. High-Fidelity RSI Estimation (14-period)
             delta = df.iloc[idx-20 : idx+1]['c'].diff()
-            up = delta.clip(lower=0)
-            down = -1 * delta.clip(upper=0)
-            ema_up = up.rolling(window=14).mean()
-            ema_down = down.rolling(window=14).mean()
+            up, down = delta.clip(lower=0), -1 * delta.clip(upper=0)
+            ema_up, ema_down = up.rolling(window=14).mean(), down.rolling(window=14).mean()
             rs = ema_up / ema_down
             rsi_val = 100 - (100 / (1 + rs.iloc[-1]))
 
-            # 4. Performance Analysis (Forward 40-min window)
+            # 4. Post-Event Volatility Analysis
             future_df = df.iloc[idx+1 : idx + OBSERVATION_WINDOW + 1]
             max_h = ((future_df['h'].max() - entry_price) / entry_price) * 100
             min_l = ((future_df['l'].min() - entry_price) / entry_price) * 100
             
-            # 5. Decision Mechanism
-            action = None
-            peak_pct = 0
-            peak_min = 0
+            # 5. Labeling Heuristics
+            action, peak_pct, peak_min = None, 0, 0
 
             if max_h >= MIN_ROI_THRESHOLD and abs(min_l) < STOP_LOSS_LIMIT:
-                funding = await ctx.real_exchange.client.futures_funding_rate(symbol=symbol.upper(), limit=1)
-                funding_rate = float(funding[0]['fundingRate']) if funding else 0.01
-                action = "LONG"
-                peak_pct = round(max_h, 2)
+                action, peak_pct = "LONG", round(max_h, 2)
                 peak_min = int(future_df['h'].argmax()) + 1
             elif abs(min_l) >= MIN_ROI_THRESHOLD and max_h < STOP_LOSS_LIMIT:
-                funding = await ctx.real_exchange.client.futures_funding_rate(symbol=symbol.upper(), limit=1)
-                funding_rate = float(funding[0]['fundingRate']) if funding else 0.01
-                action = "SHORT"
-                peak_pct = round(min_l, 2)
+                action, peak_pct = "SHORT", round(min_l, 2)
                 peak_min = int(future_df['l'].argmin()) + 1
 
+            # Skip positive outcomes; this miner focuses on generating 'HOLD' noise data
             if action: return None
 
-            # 6. Symbol Sanitization (e.g. 1000PEPE -> PEPE)
+            # 6. Metadata Enrichment
             clean_symbol = symbol.replace("USDT", "")
             lookup_symbol = clean_symbol[4:] if clean_symbol.startswith("1000") else clean_symbol
-            
             coin_info = COIN_MAP.get(lookup_symbol.lower(), {})
+            
+            # Fetch real-time funding for ground-truth parity
             funding = await ctx.real_exchange.client.futures_funding_rate(symbol=symbol.upper(), limit=1)
             funding_rate = float(funding[0]['fundingRate']) if funding else 0.01
+
             return {
                 "symbol": symbol,
                 "price": round(entry_price, 6),
@@ -126,9 +151,7 @@ class RAMDataCenter:
                 "btc_trend": btc_trend,
                 "funding": funding_rate,
                 "momentum": {
-                    "1m": round(ch_1m, 2),
-                    "10m": round(ch_10m, 2),
-                    "1h": round(ch_1h, 2)
+                    "1m": round(ch_1m, 2), "10m": round(ch_10m, 2), "1h": round(ch_1h, 2)
                 },
                 "action": "HOLD",
                 "peak_pct": peak_pct,
@@ -136,32 +159,36 @@ class RAMDataCenter:
                 "time": datetime.fromtimestamp(msg_ts).strftime('%H:%M')
             }
         except Exception as e:
-            print("[ERROR] Measurement failure in get_fast_outcome:", e)
+            print("[ERROR] Diagnostic failure in RAM lookup:", e)
             return None
     
     def get_btc_trend_ram(self, msg_ts):
-        """Fetches BTC trend from RAM-cached data."""
+        """
+        Extracts historical BTC momentum from RAM.
+        """
         if self.btc_df is None: return 0.0
         target_ts = (int(msg_ts) // 60) * 60 * 1000
         try:
             idx = self.btc_df.index.get_indexer([target_ts], method='pad')[0]
             if idx < 60: return 0.0
-            start_p = self.btc_df.iloc[idx - 60]['c']
-            end_p = self.btc_df.iloc[idx]['c']
+            start_p, end_p = self.btc_df.iloc[idx - 60]['c'], self.btc_df.iloc[idx]['c']
             return round(((end_p - start_p) / start_p) * 100, 2)
         except Exception: 
             return 0.0
 
 async def main():
-    # 1. RAM Initialization
+    """
+    Main orchestration for the RAM Mining Service.
+    """
+    # Initialize high-speed data environment
     ram = RAMDataCenter(CACHE_PATH)
     ram.load_all_to_ram()
-    print("[SYSTEM] RAM preparation complete.")
+    
     ctx = BotContext()
     ctx.real_exchange = BinanceExecutionEngine("", "")
     await ctx.real_exchange.connect()
 
-    # 2. Telegram Initialization
+    # Establish Telegram Scraper session
     client = TelegramClient("crypto_agent_session", API_ID, API_HASH)
     await client.connect()
 
@@ -172,10 +199,8 @@ async def main():
         async with aiofiles.open(OUTPUT_FILE, mode='a', encoding='utf-8') as f:
             random.shuffle(TARGET_CHANNELS)
             for channel in TARGET_CHANNELS:
-                print(f"\n[MINING] Scrapping channel: {channel}")
-                # Bulk fetch messages for optimization
+                print(f"\n[SCRAPING] Replaying Signal History for: {channel}")
                 all_msgs = await client.get_messages(channel, offset_date=start_date, limit=20000)
-                
                 random.shuffle(all_msgs)
                 
                 for i, message in enumerate(all_msgs):
@@ -185,7 +210,7 @@ async def main():
                     detected = find_coins(message.text, COIN_MAP)
                     if not detected: continue
                     
-                    # Fetch BTC trend and outcome from RAM
+                    # Parallel correlation analysis via RAM lookups
                     btc_trend = ram.get_btc_trend_ram(message.date.timestamp())
                     
                     for pair in detected:
@@ -194,18 +219,16 @@ async def main():
                             entry = {"ts": message.date.isoformat(), "news": message.text, "data": res}
                             await f.write(json.dumps(entry, ensure_ascii=False) + "\n")
                             found += 1
-                            print(f"\n[MATCH] [{res['action']}] {pair} | %{res['peak_pct']} | {message.date.strftime('%H:%M')}")
+                            print(f"\n[MATCH] [{res['action']}] {pair} | {message.date.strftime('%H:%M')}")
                     
-                    # Progress log
+                    # Mining Progress UI
                     if i % 100 == 0:
-                        sys.stdout.write(f"\r[INFO] Channel: {channel} | Progress: %{((i+1)/len(all_msgs))*100:.1f} | Total Diamonds: {found}")
+                        sys.stdout.write(f"\r[INFO] Channel: {channel} | Scanned: {i+1} | Total Signals: {found}")
                         sys.stdout.flush()
 
     finally:
         await client.disconnect()
-        print(f"\n\n[WARNING] {ram.passed} symbols skipped.")
-        print("[INFO] Skipped symbols: ", list(set(ram.passedCoins)))
-        print(f"\n[SUCCESS] Mining completed. {found} records written to {OUTPUT_FILE}.")
+        print(f"\n[SYSTEM] Mining pipeline concluded. {found} signals serialized to {OUTPUT_FILE}.")
 
 if __name__ == "__main__":
     asyncio.run(main())

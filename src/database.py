@@ -1,3 +1,16 @@
+"""
+Persistent Storage and Memory Management
+
+This module manages the system's persistent memory layer using SQLite3.
+It handles news deduplication through TF-IDF vectorization and cosine similarity,
+logs AI-driven decisions, and maintains a comprehensive trade history.
+
+Key Features:
+- Semantic deduplication of incoming news streams.
+- Relational mapping between AI decisions and realized trade outcomes.
+- Startup hydration of runtime state from historical records.
+"""
+
 import sqlite3
 import time
 import json
@@ -6,17 +19,37 @@ from sklearn.metrics.pairwise import cosine_similarity
 import re
 
 class MemoryManager:
+    """
+    Manages SQLite database operations and semantic memory features.
+    
+    Attributes:
+        db_path (str): File path to the SQLite database.
+        vectorizer (TfidfVectorizer): Scikit-learn vectorizer for similarity analysis.
+    """
     def __init__(self, db_path="nexus_db.sqlite"):
+        """
+        Initializes the MemoryManager and ensures schema integrity.
+        
+        Args:
+            db_path (str): Absolute or relative path to the database file.
+        """
         self.db_path = db_path
         self._init_db()
         self.vectorizer = TfidfVectorizer(stop_words='english')
 
     def _init_db(self):
-        """Initializes database tables."""
+        """
+        Initializes database tables and creates optimized indices.
+        
+        Schemas include:
+        - news: Raw ingestion logs for deduplication.
+        - decisions: AI-generated recommendations and confidence metrics.
+        - trades: Realized virtual or live trade outcomes.
+        """
         conn = sqlite3.connect(self.db_path)
         cursor = conn.cursor()
         
-        # 1. TABLE: NEWS
+        # TABLE: NEWS - Stores raw news context for semantic comparison
         cursor.execute('''
             CREATE TABLE IF NOT EXISTS news (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -27,7 +60,7 @@ class MemoryManager:
         ''')
         cursor.execute('CREATE INDEX IF NOT EXISTS idx_news_timestamp ON news (timestamp)')
 
-        # 2. TABLE: AI DECISIONS
+        # TABLE: DECISIONS - Records the logic behind every trade recommendation
         cursor.execute('''
             CREATE TABLE IF NOT EXISTS decisions (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -45,7 +78,7 @@ class MemoryManager:
             )
         ''')
 
-        # 3. TABLE: TRADE HISTORY
+        # TABLE: TRADE HISTORY - Audit ledger for execution performance
         cursor.execute('''
             CREATE TABLE IF NOT EXISTS trades (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -66,19 +99,40 @@ class MemoryManager:
         conn.close()
 
     def clean_text(self, text):
-        """Normalizes text by lowercasing and removing URLs/special characters."""
+        """
+        Normalizes raw text for improved semantic matching.
+        
+        Args:
+            text (str): Input text block.
+            
+        Returns:
+            str: Normalized, lowercase text without URLs or special characters.
+        """
         text = text.lower()
         text = re.sub(r'http\S+', '', text)
         text = re.sub(r'[^\w\s]', '', text)
         return text
 
     def is_duplicate(self, new_text, threshold=0.75):
-        """Checks if the news content is a duplicate of recent entries using TF-IDF and cosine similarity."""
+        """
+        Evaluates the semantic similarity of new content against recent history.
+        
+        Utilizes TF-IDF vectorization and Cosine Similarity to identify 
+        redundant news items across different providers.
+        
+        Args:
+            new_text (str): The incoming news content.
+            threshold (float): Minimum similarity coefficient [0, 1] to flag as duplicate.
+            
+        Returns:
+            tuple: (bool: Is Duplicate, float: Maximum Similarity Score)
+        """
         clean_new = self.clean_text(new_text)
         if not clean_new.strip(): return True, 1.0
 
         conn = sqlite3.connect(self.db_path)
         cursor = conn.cursor()
+        # Restrict comparison to the last 24 hours to maintain topical relevance
         limit_time = time.time() - (24 * 60 * 60)
         cursor.execute('SELECT content FROM news WHERE timestamp > ? ORDER BY id DESC LIMIT 100', (limit_time,))
         rows = cursor.fetchall()
@@ -90,19 +144,26 @@ class MemoryManager:
         try:
             corpus = past_news + [clean_new]
             tfidf_matrix = self.vectorizer.fit_transform(corpus)
+            # Compare the last item (new_text) with all previous items in the matrix
             similarities = cosine_similarity(tfidf_matrix[-1], tfidf_matrix[:-1])
             max_sim = similarities.flatten().max() if similarities.size > 0 else 0.0
             
             if max_sim >= threshold:
-                print(f"[SIMILARITY] Duplicate content detected: {max_sim:.2f}")
+                print(f"[SIMILARITY] Redundant content discarded: {max_sim:.2f}")
                 return True, max_sim
             return False, max_sim
         except Exception as e:
-            print(f"[ERROR] Similarity check failed: {e}")
+            print(f"[ERROR] Similarity calculation failed: {e}")
             return False, 0.0
 
     def add_news(self, source, content):
-        """Adds news entry to the database."""
+        """
+        Records a raw news event in the database.
+        
+        Args:
+            source (str): Source identifier (e.g., 'Telegram').
+            content (str): Raw news content.
+        """
         try:
             conn = sqlite3.connect(self.db_path)
             cursor = conn.cursor()
@@ -111,11 +172,17 @@ class MemoryManager:
             conn.commit()
             conn.close()
         except Exception as e:
-            print(f"[ERROR] Database write failed: {e}")
+            print(f"[ERROR] Database ingestion failed: {e}")
 
     def log_decision(self, record):
         """
-        Logs an AI decision to the database and returns the inserted ID.
+        Persists an AI trade decision and returns its unique identifier.
+        
+        Args:
+            record (dict): Comprehensive decision metadata.
+            
+        Returns:
+            int: The unique database ID of the inserted record.
         """
         decision_id = None
         try:
@@ -132,12 +199,16 @@ class MemoryManager:
             conn.commit()
             conn.close()
         except Exception as e:
-            print(f"[ERROR] Database decision log failed: {e}")
+            print(f"[ERROR] Decision persistence failed: {e}")
         return decision_id
 
     def log_trade(self, record, decision_id=None):
         """
-        Logs a completed trade to the database.
+        Logs a realized trade outcome, linked to its original decision.
+        
+        Args:
+            record (dict): Trade results (PnL, Exit Price, etc.).
+            decision_id (int, optional): DB ID of the AI recommendation.
         """
         try:
             conn = sqlite3.connect(self.db_path)
@@ -159,17 +230,23 @@ class MemoryManager:
             conn.commit()
             conn.close()
         except Exception as e:
-            print(f"[ERROR] Database trade log failed: {e}")
+            print(f"[ERROR] Trade outcome persistence failed: {e}")
 
     def load_recent_history(self, ctx):
         """
-        Loads the last 100 decisions and 50 trades into context on startup.
+        Hydrates the application context with recent historical data on bootstrap.
+        
+        Loads the last 100 AI decisions and 50 closed trades into the UI/Runtime
+        to provide immediate continuity for the operator.
+        
+        Args:
+            ctx (BotContext): Application context.
         """
         conn = sqlite3.connect(self.db_path)
         conn.row_factory = sqlite3.Row
         cursor = conn.cursor()
         
-        # 1. Load Decisions
+        # Phase 1: Hydrate AI Recommendation Deque
         cursor.execute('SELECT * FROM decisions ORDER BY id DESC LIMIT 100')
         decisions = cursor.fetchall()
         for d in reversed(decisions):
@@ -180,7 +257,7 @@ class MemoryManager:
             }
             ctx.ai_decisions.append(rec)
 
-        # 2. Load Trades
+        # Phase 2: Hydrate Closed Trades Ledger
         cursor.execute('SELECT * FROM trades ORDER BY id DESC LIMIT 50')
         trades = cursor.fetchall()
         for t in reversed(trades):
@@ -192,14 +269,20 @@ class MemoryManager:
             ctx.exchange.history.append(rec)
             
         conn.close()
-        print(f"[SYSTEM] Memory refreshed: {len(decisions)} decisions, {len(trades)} trades loaded.")
+        print(f"[SYSTEM] State Hydrated: {len(decisions)} decisions, {len(trades)} trades restored.")
 
     def get_full_trade_story(self):
-        """Retrieves combined report: Decision -> Trade -> Outcome."""
+        """
+        Generates a unified performance report by joining decisions and outcomes.
+        
+        Returns:
+            list: A list of unified trade records (AI Reason -> Execution Outcome).
+        """
         conn = sqlite3.connect(self.db_path)
         conn.row_factory = sqlite3.Row
         cursor = conn.cursor()
         
+        # JOIN query to correlate predictive reasoning with real-world alpha
         query = '''
             SELECT 
                 d.timestamp as time, d.symbol, d.action, d.confidence, d.reason as ai_reason,

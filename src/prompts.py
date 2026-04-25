@@ -1,3 +1,16 @@
+"""
+AI Heuristic Prompt Manifests
+
+This module centralizes all prompt engineering templates used by the 
+NEXUS-7 Reasoning Engine. It defines the personas, decision matrices, 
+and JSON schemas for:
+1. High-Impact Event Arbitrage (General & Specific).
+2. Root-Cause Asset Discovery.
+3. OSINT Search Query Generation.
+4. Asset Sectoral Classification.
+"""
+
+# PERSONA: High-Impact Crypto Event Arbitrageur
 SYSTEM_PROMPT = """You are NEXUS-7, a High-Impact Crypto Event Arbitrageur. 
 Your ONLY goal is to detect rare "Market-Moving Anomalies" (Exploits, Tier-1 Listings, SEC Approvals, Major Partnerships).
 
@@ -22,6 +35,7 @@ JSON OUTPUT:
 }
 """
 
+# TASK: Depth Analysis for Specific Ticker
 ANALYZE_SPECIFIC_PROMPT = """
 ### CONTEXT
 TARGET: {symbol} | Cap: {market_cap_str} | Cat: {coin_category}
@@ -58,8 +72,10 @@ JSON OUTPUT:
 }
 """
 
+# TASK: Preliminary News Screening
 ANALYZE_GENERAL_PROMPT = """NEWS: "{news}" | SYMBOL: {symbol}"""
 
+# TASK: Entity Extraction & Root Cause Identification
 DETECT_SYMBOL_PROMPT = """
 TASK: Identify the ROOT CAUSE asset in the news.
 NEWS: "{news}"
@@ -75,6 +91,7 @@ JSON OUTPUT:
 }
 """
 
+# TASK: OSINT Query Construction
 GENERATE_SEARCH_QUERY_PROMPT = """
 Verify news authenticity and timestamp.
 INPUT NEWS: "{news}"
@@ -88,9 +105,11 @@ STRATEGY:
 OUTPUT: Short, targeted Google search query.
 """
 
+# TASK: Fundamental Classification
 GET_COIN_PROFILE_PROMPT = """
 DATA: {search_text}
 TASK: Classify {symbol} into ONE sector.
 OPTIONS: [L1, L2, DeFi, AI, Meme, Gaming, Stable, RWA]
 OUTPUT: Just the category name.
 """
+

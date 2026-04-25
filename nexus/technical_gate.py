@@ -1,10 +1,20 @@
+"""
+NEXUS Quantitative Scoring Gate (Technical Filter)
+
+This module provides a robust technical validation layer that produces 
+a 0-1 confidence score based on market microstructure metrics.
+
+It is used to 'gate' LLM-based signals against technical realities 
+(RSI extremes, Funding pressure, Momentum divergence) to prevent 
+trading into exhausted trends.
+"""
+
 import numpy as np
 import matplotlib.pyplot as plt
 
 class NexusTechScoreGate:
     """
-    Produces a 0-1 technical confidence score.
-    This is NOT a signal generator.
+    Technical validation engine for signal verification.
     """
     def __init__(
         self,
@@ -26,23 +36,35 @@ class NexusTechScoreGate:
         self.vol_target = vol_target
 
     def _sigmoid(self, x):
+        """Standard sigmoid activation for probability mapping."""
         return 1.0 / (1.0 + np.exp(-x))
 
     def _clamp(self, x):
+        """Clamps values to the 0-1 probability range."""
         return float(np.clip(x, 0.0, 1.0))
 
     def rsi_gate(self, rsi, side):
         """
-        Gaussian-like scoring: Peak score centered around 55-60 for LONG, 45 for SHORT.
+        Gaussian-weighted scoring centered around optimal entry zones.
+        
+        LONG Entry Target: 55-60 RSI.
+        SHORT Entry Target: 40-45 RSI.
+        
+        Args:
+            rsi (float): Current RSI (14) value.
+            side (str): 'LONG' or 'SHORT'.
+            
+        Returns:
+            float: 0-1 technical score for RSI.
         """
         center = 55 if side == "LONG" else 45
-        width = 15 # Standard deviation of the score distribution
+        width = 15 # Statistical variance of the score
         
-        # Distance calculation
+        # Calculate distance-based activation
         diff = abs(rsi - center)
         score = np.exp(-(diff**2) / (2 * width**2))
         
-        # Hard Cut Veto for extreme RSI levels
+        # Sectoral Veto: Penalize entries into extreme overbought/oversold exhaustion
         if side == "LONG" and rsi > 75: 
             score *= 0.1
         if side == "SHORT" and rsi < 25: 
@@ -52,7 +74,7 @@ class NexusTechScoreGate:
 
     def funding_gate(self, funding, side):
         """
-        Penalize crowded sides based on funding pressure.
+        Scoring logic for funding-rate-based crowded trade detection.
         """
         direction = 1 if side == "LONG" else -1
         pressure = direction * funding
@@ -62,13 +84,13 @@ class NexusTechScoreGate:
 
     def trend_gate(self, trend_strength):
         """
-        trend_strength ∈ [-1, 1]
+        Maps normalized trend strength [-1, 1] to a technical confidence score.
         """
         return self._sigmoid(self.k_trend * trend_strength)
 
     def volatility_gate(self, vol_z):
         """
-        Penalize extreme volatility regimes (vol_z = ATR / rolling_ATR).
+        Analyzes volatility Z-score to penalize abnormal ATR spikes.
         """
         return self._sigmoid(
             -self.k_vol * abs(vol_z - self.vol_target)
@@ -84,10 +106,21 @@ class NexusTechScoreGate:
         weights=None
     ):
         """
-        Returns 0-1 technical confidence score via logit-space aggregation.
+        Aggregates multi-factor technical gates into a unified logit-space score.
+        
+        Args:
+            side (str): Trade direction.
+            rsi (float): Asset RSI.
+            funding (float): Futures funding rate.
+            trend_strength (float): Directional momentum strength.
+            vol_z (float): Volatility Z-score.
+            weights (dict, optional): Custom weighting for feature aggregation.
+            
+        Returns:
+            float: Final 0-1 technical confidence multiplier.
         """
-
         if weights is None:
+            # Default weighting prioritizing RSI and Trend parity
             weights = {
                 "rsi": 0.30,
                 "funding": 0.25,
@@ -102,27 +135,31 @@ class NexusTechScoreGate:
             "vol": self.volatility_gate(vol_z)
         }
 
-        # Logit-space aggregation for robust scoring
+        # Logit-space aggregation ensures that a single 0-score gate 
+        # heavily suppresses the total score (Veto effect).
         logit = 0.0
         for k, w in weights.items():
             g = np.clip(gates[k], 1e-6, 1 - 1e-6)
             logit += w * np.log(g / (1 - g))
 
-        score = self._sigmoid(logit)
-        return self._clamp(score)
+        return self._clamp(self._sigmoid(logit))
 
 def run_standalone_test():
-    """Diagnostic test for technical gate logic."""
+    """Visualizes the technical scoring curve for diagnostic validation."""
     gate = NexusTechScoreGate()
     
-    # Test Scenario: Evaluate how LONG technical score changes as RSI moves from 20 to 90
+    # Generate test range for RSI sensitivity analysis
     rsi_values = np.linspace(20, 90, 100)
     scores = [gate.technical_score("LONG", rsi=r, funding=0.01, trend_strength=0.5, vol_z=1.0) for r in rsi_values]
     
-    plt.plot(rsi_values, scores)
+    plt.figure(figsize=(10, 5))
+    plt.plot(rsi_values, scores, label="LONG Technical Confidence")
+    plt.axvline(x=55, color='g', linestyle='--', label="Optimal LONG Zone")
     plt.xlabel("RSI")
-    plt.ylabel("Technical Score")
-    plt.title("Technical Score vs RSI (LONG Scenario)")
+    plt.ylabel("Technical Confidence Score")
+    plt.title("NEXUS Technical Gate Logic Profile")
+    plt.legend()
+    plt.grid(True, alpha=0.3)
     plt.show()
 
 if __name__ == "__main__":

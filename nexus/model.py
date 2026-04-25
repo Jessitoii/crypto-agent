@@ -1,3 +1,17 @@
+"""
+NEXUS-V2 Production Model Architecture (Dual-Core Inference)
+
+This module defines the core neural architecture for the Crypto-Agent's 
+decision-making engine. It features a sophisticated dual-pathway 
+transformer-based design:
+
+1. Gate Pathway: Determines if an event is a "Structural Shock" (binary).
+2. Direction Pathway: Predicts market direction (LONG/SHORT) if gated.
+3. Regression Heads: Estimate Take Profit (TP) and Validity Timeframes.
+
+Architecture highlights: Layer Fusion (L8, L10, L12), Deep Reasoning Blocks 
+(Stacked Decoders), and Temperature-calibrated Inference.
+"""
 
 import os
 import random
@@ -18,31 +32,37 @@ from tqdm import tqdm
 from sentence_transformers import SentenceTransformer
 
 class NexusLayerFusion(nn.Module):
+    """
+    Implements cross-layer information flow for deep transformer representations.
+    
+    Concatenates hidden states from different depth levels (L8, L10, L12) 
+    to capture both intermediate syntactic and final semantic features.
+    """
     def __init__(self, hidden_size=768):
         super().__init__()
-        # Concatenate three layers, resulting in 3x hidden size input
+        # 3x hidden size input due to concatenation of 3 layers
         self.proj = nn.Linear(hidden_size * 3, hidden_size)
         self.norm = nn.LayerNorm(hidden_size)
         self.dropout = nn.Dropout(0.2)
 
     def forward(self, all_hidden_states):
-        # Extract L8, L10, and L12 (Final layer)
+        # Specific depth selection based on empirical performance in v2.0
         l8 = all_hidden_states[8]
         l10 = all_hidden_states[10]
         l12 = all_hidden_states[11]
 
-        # Concatenate layers along the hidden dimension
-        fused = torch.cat([l8, l10, l12], dim=-1) # Shape: [Batch, Seq, 2304]
-
-        # Project fused vector back to hidden_size to learn inter-layer interactions
+        # Inter-layer feature fusion
+        fused = torch.cat([l8, l10, l12], dim=-1) 
         x = self.proj(fused)
         x = self.norm(x)
         return self.dropout(x)
 
-# ==========================================
 class DeepReasoningBlock(nn.Module):
     """
-    NEXUS v4.6: Device-safe & Stacked Transformer Decoder Layers.
+    Stacked Transformer Decoder Layers for iterative market logic synthesis.
+    
+    Uses a learnable 'Reasoning Query' to extract context from token embeddings 
+    through multi-head cross-attention.
     """
     def __init__(self, hidden_size, num_layers=4, num_heads=12, dropout=0.3):
         super().__init__()
@@ -67,28 +87,31 @@ class DeepReasoningBlock(nn.Module):
         return x.squeeze(1)
 
 class NexusV2Production(nn.Module):
+    """
+    The main production model featuring the Dual-Core asynchronous architecture.
+    """
     def __init__(self, backbone_name="microsoft/deberta-v3-base"):
         super().__init__()
-        self.gate_encoder = AutoModel.from_pretrained(backbone_name,output_hidden_states=True )
+        # Parallel encoders to prevent gradient interference between Gate and Direction tasks
+        self.gate_encoder = AutoModel.from_pretrained(backbone_name, output_hidden_states=True)
         self.dir_encoder = AutoModel.from_pretrained(backbone_name, output_hidden_states=True)
         self.tokenizer = AutoTokenizer.from_pretrained(backbone_name)
         hidden_size = self.gate_encoder.config.hidden_size
 
-        self.gate_fusion = NexusLayerFusion(768)
-        self.dir_fusion = NexusLayerFusion(768)
-        self.gate_reasoner = DeepReasoningBlock(hidden_size, num_layers=4, num_heads=12)
-        self.dir_reasoner = DeepReasoningBlock(hidden_size, num_layers=4, num_heads=12)
+        self.gate_fusion = NexusLayerFusion(hidden_size)
+        self.dir_fusion = NexusLayerFusion(hidden_size)
+        self.gate_reasoner = DeepReasoningBlock(hidden_size)
+        self.dir_reasoner = DeepReasoningBlock(hidden_size)
 
         self.gate_out = nn.Linear(hidden_size, 1)
         self.dir_out = nn.Linear(hidden_size, 1)
 
-        # REVISION: TP Head redesigned to avoid Zero-Collapse.
-        # Uses Hardtanh instead of Tanh for output clipping to maintain gradient flow.
+        # Non-linear regression heads for trade parameter estimation
         self.tp_head = nn.Sequential(
             nn.Linear(hidden_size, 128),
             nn.GELU(),
             nn.Linear(128, 1),
-            nn.Hardtanh(min_val=-1.0, max_val=1.0)
+            nn.Hardtanh(min_val=-1.0, max_val=1.0) # Prevents extreme outliers
         )
         self.val_head = nn.Sequential(
             nn.Linear(hidden_size, 128),
@@ -99,32 +122,36 @@ class NexusV2Production(nn.Module):
 
     def forward(self, input_ids, attention_mask):
         """
-        FIX #2: Duplicate code removed, proper masking added
+        Executes the hierarchical prediction pass.
+        
+        Args:
+            input_ids (torch.Tensor): Tokenized news indices.
+            attention_mask (torch.Tensor): Mask for padding tokens.
+            
+        Returns:
+            dict: Multi-task logits and context vectors.
         """
-        # 1. GATE PATHWAY
+        # 1. GATE PATHWAY: Structural Shock Detection
         gate_out = self.gate_encoder(input_ids=input_ids, attention_mask=attention_mask)
-        gate_hidden = self.gate_fusion(gate_out.hidden_states)  # [batch, seq, hidden]
-
-        # Pass attention mask to reasoner
-        gate_ctx = self.gate_reasoner(gate_hidden, attention_mask)  # [batch, hidden]
+        gate_hidden = self.gate_fusion(gate_out.hidden_states)
+        gate_ctx = self.gate_reasoner(gate_hidden, attention_mask)
         gate_logit = self.gate_out(gate_ctx)
-        gate_prob = torch.sigmoid(gate_logit)  # [batch, 1]
+        gate_prob = torch.sigmoid(gate_logit)
 
-        # 2. DIRECTION PATHWAY
+        # 2. DIRECTION PATHWAY: Gated Directional Prediction
         dir_out = self.dir_encoder(input_ids=input_ids, attention_mask=attention_mask)
-        dir_hidden = self.dir_fusion(dir_out.hidden_states)  # [batch, seq, hidden]
+        dir_hidden = self.dir_fusion(dir_out.hidden_states)
 
-        # Apply gate masking
-        gate_mask = gate_prob.unsqueeze(-1)  # [batch, 1, 1]
-        dir_hidden_gated = dir_hidden * gate_mask  # [batch, seq, hidden]
+        # Apply attention-based gating to isolate relevant tokens for direction
+        gate_mask = gate_prob.unsqueeze(-1) 
+        dir_hidden_gated = dir_hidden * gate_mask 
 
-        # Pass attention mask to reasoner
         dir_ctx = self.dir_reasoner(dir_hidden_gated, attention_mask)
         dir_logit = self.dir_out(dir_ctx)
 
-        # 3. REGRESSION HEADS
-        tp_out = self.tp_head(gate_ctx) * 5.0
-        val_out = self.val_head(gate_ctx) * 20.0
+        # 3. REGRESSION PATHWAY: Trade Execution Parameters
+        tp_out = self.tp_head(gate_ctx) * 5.0 # Max 5% ROI targeted
+        val_out = self.val_head(gate_ctx) * 20.0 # Max 20 min validity targeted
 
         return {
             'gate': gate_logit,
@@ -135,96 +162,104 @@ class NexusV2Production(nn.Module):
             'dir_ctx': dir_ctx
         }
 
-    def predict(self, texts, threshold=0.5, temperature=0.5301): # Use calibrated temperature
-      """
-      NEXUS v5.0 Dual-Core Inference
-      """
-      self.eval()
-      device = next(self.parameters()).device
+    def predict(self, texts, threshold=0.5, temperature=0.5301):
+        """
+        High-level inference wrapper with temperature calibration.
+        
+        Args:
+            texts (Union[str, List[str]]): News headlines to analyze.
+            threshold (float): Confidence threshold for structural shock gate.
+            temperature (float): Calibrated scalar for probability smoothing.
+            
+        Returns:
+            Union[dict, List[dict]]: Final trade decisions and parameters.
+        """
+        self.eval()
+        device = next(self.parameters()).device
 
-      if isinstance(texts, str):
-          texts = [texts]
+        if isinstance(texts, str):
+            texts = [texts]
 
-      # max_length aligned with Stage 1 training
-      inputs = self.tokenizer(
-          texts,
-          return_tensors="pt",
-          padding=True,
-          truncation=True,
-          max_length=256
-      ).to(device)
+        inputs = self.tokenizer(
+            texts,
+            return_tensors="pt",
+            padding=True,
+            truncation=True,
+            max_length=256
+        ).to(device)
 
-      with torch.no_grad():
-          outputs = self.forward(
-              input_ids=inputs['input_ids'],
-              attention_mask=inputs['attention_mask']
-          )
+        with torch.no_grad():
+            outputs = self.forward(
+                input_ids=inputs['input_ids'],
+                attention_mask=inputs['attention_mask']
+            )
 
-          # Scale logits by temperature
-          gate_probs = torch.sigmoid(outputs['gate'] / temperature).cpu().numpy()
-          dir_probs = torch.sigmoid(outputs['direction'] / temperature).cpu().numpy()
-          tp_preds = outputs['tp'].cpu().numpy()
-          val_preds = outputs['validity'].cpu().numpy()
+            # Apply temperature scaling to logits before probability conversion
+            gate_probs = torch.sigmoid(outputs['gate'] / temperature).cpu().numpy()
+            dir_probs = torch.sigmoid(outputs['direction'] / temperature).cpu().numpy()
+            tp_preds = outputs['tp'].cpu().numpy()
+            val_preds = outputs['validity'].cpu().numpy()
 
-      results = []
-      for i in range(len(texts)):
-          g_prob = float(gate_probs[i][0])
-          d_prob = float(dir_probs[i][0])
+        results = []
+        for i in range(len(texts)):
+            g_prob = float(gate_probs[i][0])
+            d_prob = float(dir_probs[i][0])
 
-          gate_decision = 1 if g_prob >= threshold else 0
+            gate_decision = 1 if g_prob >= threshold else 0
 
-          # Gate Decision Logic: Avoid direction pollution if no trade is detected
-          if gate_decision == 1:
-              direction = 'LONG' if d_prob >= 0.5 else 'SHORT'
-              dir_conf = d_prob if d_prob >= 0.5 else (1 - d_prob)
-              tp_val = round(float(tp_preds[i][0]), 2)
-              validity_val = round(float(val_preds[i][0]), 1)
-          else:
-              direction = 'WAIT'
-              dir_conf = 0.0
-              tp_val = 0.0
-              validity_val = 0.0
+            # Conditional trade parameter extraction
+            if gate_decision == 1:
+                direction = 'LONG' if d_prob >= 0.5 else 'SHORT'
+                dir_conf = d_prob if d_prob >= 0.5 else (1 - d_prob)
+                tp_val = round(float(tp_preds[i][0]), 2)
+                validity_val = round(float(val_preds[i][0]), 1)
+            else:
+                direction = 'WAIT' # Passive stance
+                dir_conf, tp_val, validity_val = 0.0, 0.0, 0.0
 
-          res = {
-              'text': texts[i],
-              'gate': gate_decision,
-              'gate_confidence': round(g_prob, 4),
-              'direction': direction,
-              'direction_confidence': round(float(dir_conf), 4),
-              'take_profit_pct': tp_val,
-              'validity_minutes': validity_val,
-          }
-          results.append(res)
+            results.append({
+                'text': texts[i],
+                'gate': gate_decision,
+                'gate_confidence': round(g_prob, 4),
+                'direction': direction,
+                'direction_confidence': round(float(dir_conf), 4),
+                'take_profit_pct': tp_val,
+                'validity_minutes': validity_val,
+            })
 
-      return results if len(results) > 1 else results[0]
-
-
-
+        return results if len(results) > 1 else results[0]
 
 class NexusPredictor:
+    """
+    Standard Production Predictor wrapper for sequence classification backends.
+    """
     def __init__(self, model_path="standard_deberta_nexus"):
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         
-        # 1. Load weights and tokenizer
         try:
             self.tokenizer = AutoTokenizer.from_pretrained(model_path)
         except Exception:
-            # Fallback to original DeBERTa tokenizer if local not found
-            print("Local tokenizer not found, downloading original DeBERTa tokenizer...")
+            print("[WARN] Local tokenizer not found, reverting to DeBERTa-base default.")
             self.tokenizer = AutoTokenizer.from_pretrained("microsoft/deberta-v3-base")
             
         self.model = AutoModelForSequenceClassification.from_pretrained(model_path).to(self.device)
         self.model.eval()
         self.labels = {0: "HOLD", 1: "SHORT", 2: "LONG"}
-        
-        # Class mapping
-        self.labels = {0: "HOLD", 1: "SHORT", 2: "LONG"}
 
     def predict(self, news_text, symbol):
-        # Concatenate data using training format
+        """
+        Performs inference on a single news event.
+        
+        Args:
+            news_text (str): Content of the news.
+            symbol (str): Target asset ticker.
+            
+        Returns:
+            dict: Decision object.
+        """
+        # Inject context tokens into the sequence
         formatted_text = f"[N] {news_text} [C] {symbol}"
         
-        # Tokenize
         inputs = self.tokenizer(
             formatted_text,
             return_tensors="pt",
@@ -233,13 +268,12 @@ class NexusPredictor:
             padding=True
         ).to(self.device)
 
-        # Inference
         with torch.no_grad():
             outputs = self.model(**inputs)
             logits = outputs.logits
             prediction = torch.argmax(logits, dim=-1).item()
             
-            # Extract confidence probabilities
+            # Confidence estimation via Softmax
             probs = torch.nn.functional.softmax(logits, dim=-1)
             confidence = probs[0][prediction].item()
 
